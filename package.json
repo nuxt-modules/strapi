@@ -1,5 +1,5 @@
 {
-  "name": "strapi-module",
+  "name": "@nuxtjs/strapi",
   "version": "0.0.0",
   "description": "",
   "repository": "",
@@ -19,7 +19,12 @@
     "release": "yarn test && standard-version && git push --follow-tags && npm publish",
     "test": "yarn lint && jest"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@nuxt/http": "^0.5.3",
+    "cookie-universal-nuxt": "^2.1.4",
+    "defu": "^2.0.4",
+    "hookable": "^4.1.1"
+  },
   "devDependencies": {
     "@babel/core": "latest",
     "@babel/preset-env": "latest",

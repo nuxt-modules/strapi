@@ -46,8 +46,8 @@
           }"
           @click="focus = false"
         >
-          <span class="font-bold hidden sm:block">{{ result.category }}</span>
-          <IconChevronRight class="w-3 h-3 mx-1 hidden sm:block" />
+          <span v-if="result.category" class="font-bold hidden sm:block">{{ result.category }}</span>
+          <IconChevronRight v-if="result.category" class="w-3 h-3 mx-1 hidden sm:block" />
           {{ result.title }}
         </NuxtLink>
       </li>

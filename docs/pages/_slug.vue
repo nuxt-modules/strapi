@@ -36,6 +36,7 @@ export default {
     const [prev, next] = await $content(app.i18n.locale)
       .only(['title', 'slug'])
       .sortBy('position', 'asc')
+      .sortBy('categoryPosition', 'asc')
       .surround(slug, { before: 1, after: 1 })
       .fetch()
 

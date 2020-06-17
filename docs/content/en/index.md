@@ -2,7 +2,7 @@
 title: Introduction
 description: ''
 position: 1
-category: 'Guide'
+category: ''
 categoryPosition: 1
 ---
 

@@ -38,7 +38,7 @@ Then, add `@nuxtjs/strapi` to the `modules` section of `nuxt.config.js`:
   modules: [
     '@nuxtjs/strapi'
   ],
-  content: {
+  strapi: {
     // Options
   }
 }

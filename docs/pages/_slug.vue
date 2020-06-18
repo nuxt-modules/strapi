@@ -98,7 +98,7 @@ export default {
   }
 }
 .nuxt-content h3 {
-  @apply text-2xl font-extrabold mb-2 pb-1 border-b -mt-16 pt-20;
+  @apply text-2xl font-extrabold mb-2 pb-1 -mt-16 pt-20;
 
   & > a {
     @apply ml-6;

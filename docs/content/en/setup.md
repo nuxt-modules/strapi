@@ -34,7 +34,7 @@ Add `@nuxtjs/strapi` dependency to your project:
 Then, add `@nuxtjs/strapi` to the `modules` section of `nuxt.config.js`:
 
 ```js[nuxt.config.js]
-{
+export default {
   modules: [
     '@nuxtjs/strapi'
   ],

@@ -127,29 +127,17 @@ Store `jwt` in `cookies`.
 
 Remove `jwt` from `$http` and `$cookies`.
 
-### `getEntries`
+### `find`
 
-### `getEntryCount`
+### `count`
 
-### `getEntry`
+### `findOne`
 
-### `createEntry`
+### `create`
 
-### `updateEntry`
+### `update`
 
-### `deleteEntry`
-
-### `$entity.find()`
-
-### `$entity.findOne()`
-
-### `$entity.count()`
-
-### `$entity.create()`
-
-### `$entity.update()`
-
-### `$entity.delete()`
+### `delete`
 
 ## Extends
 

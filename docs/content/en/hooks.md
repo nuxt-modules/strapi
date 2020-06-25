@@ -1,12 +1,10 @@
 ---
-title: Advanced
+title: Hooks
 description: ''
 position: 3
 category: Guide
 categoryPosition: 2
 ---
-
-## Hooks
 
 The module adds some hooks you can use.
 

@@ -25,17 +25,101 @@ this.$strapi.user.avatar = ''
 
 ## Methods
 
+### `find(entity, params)`
+
+- Returns `Promise`
+
+Get entries. Returns entries matching the query filters. You can read more about parameters [here](https://strapi.io/documentation/v3.x/content-api/parameters.html).
+
+```js
+await this.$strapi.find('products', params)
+// With entity shortcut
+await this.$strapi.$products.find(params)
+```
+
+> See the [Strapi endpoints](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints).
+
+### `count(entity, params)`
+
+- Returns `Promise`
+
+Count entries. Returns the count of entries matching the query filters. You can read more about parameters [here](https://strapi.io/documentation/v3.x/content-api/parameters.html).
+
+```js
+await this.$strapi.count('products', params)
+// With entity shortcut
+await this.$strapi.$products.count(params)
+```
+
+> See the [Strapi endpoints](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints).
+
+### `findOne(entity, id)`
+
+- Returns `Promise`
+
+Get an entry. Returns an entry by id.
+
+```js
+await this.$strapi.findOne('products', 1)
+// With entity shortcut
+await this.$strapi.$products.findOne(1)
+```
+
+> See the [Strapi endpoints](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints).
+
+### `create(entity, data)`
+
+- Returns `Promise`
+
+Creates an entry and returns its value.
+
+```js
+await this.$strapi.create('products', { title: '' })
+// With entity shortcut
+await this.$strapi.$products.create({ title: '' })
+```
+
+> See the [Strapi endpoints](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints).
+
+### `update(entity, id, data)`
+
+- Returns `Promise`
+
+Partially updates an entry by id and returns its value. Fields that aren't sent in the query are not changed in the db. Send a null value if you want to clear them.
+
+```js
+await this.$strapi.update('products', 1, { title: '' })
+// With entity shortcut
+await this.$strapi.$products.update(1, { title: '' })
+```
+
+> See the [Strapi endpoints](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints).
+
+### `delete(entity, id)`
+
+- Returns `Promise`
+
+Deletes an entry by id and returns its value.
+
+```js
+await this.$strapi.delete('products', 1)
+// With entity shortcut
+await this.$strapi.$products.delete(1)
+```
+
+> See the [Strapi endpoints](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints).
+
 ### `register(form)`
 
 - Returns `Promise`
 
 Register using local strategy. Sets the [User](#setuseruser) and [Token](#settokentoken).
 
-> See the [Strapi documentation](https://strapi.io/documentation/v3.x/plugins/users-permissions.html#registration).
-
 ```js
 await this.$strapi.register({ username: '', email: '', password: '' })
 ```
+
+> See the [Strapi documentation](https://strapi.io/documentation/v3.x/plugins/users-permissions.html#registration).
 
 ### `login(form)`
 
@@ -43,21 +127,21 @@ await this.$strapi.register({ username: '', email: '', password: '' })
 
 Login using local strategy. Sets the [User](#setuseruser) and [Token](#settokentoken).
 
-> See the [Strapi documentation](https://strapi.io/documentation/v3.x/plugins/users-permissions.html#login).
-
 ```js
 await this.$strapi.login({ identifier: '', password: '' })
 ```
+
+> See the [Strapi documentation](https://strapi.io/documentation/v3.x/plugins/users-permissions.html#login).
 
 ### `forgotPassword(form)`
 
 - Returns `Promise`
 
-> See the [Strapi documentation](https://strapi.io/documentation/v3.x/plugins/users-permissions.html#forgotten-password).
-
 ```js
 await this.$strapi.forgotPassword({ email: '' })
 ```
+
+> See the [Strapi documentation](https://strapi.io/documentation/v3.x/plugins/users-permissions.html#forgotten-password).
 
 ### `resetPassword(form)`
 
@@ -65,21 +149,21 @@ await this.$strapi.forgotPassword({ email: '' })
 
 Reset password. Sets the [User](#setuseruser) and [Token](#settokentoken).
 
-> See the [Strapi documentation](https://strapi.io/documentation/v3.x/plugins/users-permissions.html#reset-password).
-
 ```js
 await this.$strapi.resetPassword({ code: '', password: '', passwordConfirmation: '' })
 ```
+
+> See the [Strapi documentation](https://strapi.io/documentation/v3.x/plugins/users-permissions.html#reset-password).
 
 ### `sendEmailConfirmation(form)`
 
 - Returns `Promise`
 
-See the [Strapi documentation](https://strapi.io/documentation/v3.x/plugins/users-permissions.html#email-validation).
-
 ```js
 await this.$strapi.sendEmailConfirmation({ email: '' })
 ```
+
+> See the [Strapi documentation](https://strapi.io/documentation/v3.x/plugins/users-permissions.html#email-validation).
 
 ### `logout()`
 
@@ -107,15 +191,19 @@ On `ssr` mode, this method is called on the server-side only and the data are hy
 
 Set user data.
 
-> You can use the `$strapi.user` property to mutate the object instead of overriding the `user`.
-
 ```js
-this.$auth.setUser(user)
+this.$strapi.setUser(user)
 ```
+
+> You can use the `$strapi.user` property to mutate the object instead of overriding the `user`.
 
 ### `getToken()`
 
 Returns `jwt` from cookies.
+
+```js
+this.$strapi.getToken()
+```
 
 ### `setToken(token)`
 
@@ -123,21 +211,17 @@ Sets token inside `$http` as a [jwt](https://jwt.io/) `Bearer`.
 
 Store `jwt` in `cookies`.
 
+```js
+this.$strapi.setToken(token)
+```
+
 ### `clearToken()`
 
 Remove `jwt` from `$http` and `$cookies`.
 
-### `find`
-
-### `count`
-
-### `findOne`
-
-### `create`
-
-### `update`
-
-### `delete`
+```js
+this.$strapi.clearToken()
+```
 
 ## Extends
 

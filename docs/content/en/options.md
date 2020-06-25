@@ -32,4 +32,4 @@ export default {
 await this.$strapi.$products.find()
 ```
 
-See more in [Usage](/usage).
+See more in [Usage](/usage#entities).

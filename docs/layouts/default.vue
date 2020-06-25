@@ -11,7 +11,7 @@
             <div class="lg:hidden flex-1 flex justify-center px-4 mt-8 mb-4 w-full">
               <SearchInput />
             </div>
-            <ul class="lg:pl-0 p-4 lg:py-8 lg:pr-8">
+            <ul class="lg:pl-1 p-4 lg:py-8 lg:pr-8">
               <li v-for="(docs, category) in categories" :key="category" class="mb-6 last:mb-0">
                 <h3 v-if="category" class="aside-title">{{ category }}</h3>
                 <ul>

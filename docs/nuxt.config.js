@@ -63,7 +63,9 @@ export default {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     // Doc: https://github.com/nuxt-community/color-mode-module
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    // https://github.com/bdrtsky/nuxt-ackee
+    'nuxt-ackee'
   ],
   /*
   ** Nuxt.js modules
@@ -107,5 +109,10 @@ export default {
     lazy: true,
     seo: false,
     langDir: 'i18n/'
+  },
+  ackee: {
+    server: 'https://ackee.nuxtjs.com',
+    domainId: '4370defe-04f9-4987-82d7-817b4de6b253',
+    detailed: true
   }
 }

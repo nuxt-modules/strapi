@@ -7,6 +7,7 @@ categoryPosition: "1"
 features:
   - Painless authentication
   - RESTful methods
+  - Adaptive SDK for API entities
   - Handle errors with hooks
 ---
 

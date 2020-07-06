@@ -18,7 +18,7 @@
 - Adaptive SDK for API entities
 - Handle errors with hooks
 
-[📖 Read the documentation](https://strapi.nuxtjs.org)
+[📖 &nbsp;Read the documentation](https://strapi.nuxtjs.org)
 
 ## Development
 
@@ -28,6 +28,7 @@
 
 ## License
 
+[MIT License](./LICENSE)
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/strapi/latest.svg

@@ -16,14 +16,14 @@ Add `@nuxtjs/strapi` dependency to your project:
   <code-block label="Yarn" active>
 
   ```bash
-  yarn add @nuxtjs/strapi
+  yarn add --dev @nuxtjs/strapi
   ```
 
   </code-block>
   <code-block label="NPM">
 
   ```bash
-  npm install @nuxtjs/strapi
+  npm install --save-dev @nuxtjs/strapi
   ```
 
   </code-block>
@@ -31,11 +31,11 @@ Add `@nuxtjs/strapi` dependency to your project:
 
 ## Configure
 
-Then, add `@nuxtjs/strapi` to the `modules` section of `nuxt.config.js`:
+Then, add `@nuxtjs/strapi` to the `buildModules` section of `nuxt.config.js`:
 
 ```js[nuxt.config.js]
 export default {
-  modules: [
+  buildModules: [
     '@nuxtjs/strapi'
   ],
   strapi: {

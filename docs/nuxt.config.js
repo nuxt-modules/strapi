@@ -21,12 +21,12 @@ export default {
       { hid: 'og:site_name', property: 'og:site_name', content: 'Strapi Module' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:url', property: 'og:url', content: URL },
-      // { hid: 'og:image', property: 'og:image', content: `${URL}/card.png` },
+      { hid: 'og:image', property: 'og:image', content: `${URL}/card.png` },
       // Twitter Card
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@nuxt_js' },
       { hid: 'twitter:title', name: 'twitter:title', content: 'Strapi Module' },
-      // { hid: 'twitter:image', name: 'twitter:image', content: `${URL}/card.png` },
+      { hid: 'twitter:image', name: 'twitter:image', content: `${URL}/card.png` },
       { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'The NuxtJS Framework' }
     ],
     link: [

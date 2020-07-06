@@ -5,7 +5,7 @@ position: "1"
 category: ''
 categoryPosition: "1"
 features:
-  - Painless authentication
+  - Authentication support
   - RESTful methods
   - Adaptive SDK for API entities
   - Handle errors with hooks

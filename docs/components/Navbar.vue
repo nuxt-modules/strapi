@@ -9,8 +9,11 @@
           <NuxtLink
             :to="localePath('slug')"
             class="text-xl font-bold tracking-tight flex items-center flex-shrink-0"
-            aria-label="Nuxt Content Logo"
-          >Strapi Module</NuxtLink>
+            :class="{ 'text-gray-800': $colorMode.value === 'light' }"
+            aria-label="Strapi Module Logo"
+          >
+            <IconLogo class="h-8 w-auto" />
+          </NuxtLink>
         </div>
         <div class="hidden flex-1 lg:flex justify-center ml-4 mr-2 lg:mx-8 w-4/6">
           <SearchInput />

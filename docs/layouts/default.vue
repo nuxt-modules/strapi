@@ -39,7 +39,7 @@
               </a>
 
               <a
-                href="https://github.com/nuxt/content"
+                href="https://github.com/nuxt-community/strapi-module"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Github"

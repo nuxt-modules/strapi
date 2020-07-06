@@ -1,3 +1,6 @@
+![nuxt-strapi](https://user-images.githubusercontent.com/904724/86584438-2cb77e80-bf85-11ea-9579-1b5d13b70766.png)
+
+
 # @nuxtjs/strapi
 
 [![npm version][npm-version-src]][npm-version-href]
@@ -13,7 +16,7 @@
 
 ## Features
 
-- Painless authentication
+- Authentication support
 - RESTful methods
 - Adaptive SDK for API entities
 - Handle errors with hooks

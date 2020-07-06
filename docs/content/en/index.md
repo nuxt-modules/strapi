@@ -11,7 +11,7 @@ features:
   - Handle errors with hooks
 ---
 
-This module is a wrapper around [Strapi](https://strapi.io/).
+This module is a wrapper around [Strapi](https://strapi.io/) for [NuxtJS](https://nuxtjs.org).
 
 ## Features
 

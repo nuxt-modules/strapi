@@ -1,4 +1,4 @@
-[![nuxt-strapi](https://user-images.githubusercontent.com/904724/86584438-2cb77e80-bf85-11ea-9579-1b5d13b70766.png)](https://strapi.nuxtjs.org)
+[![@nuxtjs/strapi](https://user-images.githubusercontent.com/904724/86619169-5d65db00-bfba-11ea-980a-b62eaaa4b879.png)](https://strapi.nuxtjs.org)
 
 
 # @nuxtjs/strapi

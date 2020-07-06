@@ -8,7 +8,7 @@ categoryPosition: 3
 
 ## `url`
 
-- Default: `http://localhost:1337`
+- Default: `process.env.STRAPI_URL || http://localhost:1337`
 
 URL of the Strapi server.
 

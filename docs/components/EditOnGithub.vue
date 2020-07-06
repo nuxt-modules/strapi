@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     link () {
-      return `https://github.com/nuxt-company/strapi-module/edit/master/docs/content${this.document.path}${this.document.extension}`
+      return `https://github.com/nuxt-community/strapi-module/edit/master/docs/content${this.document.path}${this.document.extension}`
     }
   }
 }

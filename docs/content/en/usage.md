@@ -74,7 +74,7 @@ export default {
 ```js{}[middleware/auth.js]
 export default function ({ redirect, $strapi }) {
   if (!$strapi.user) {
-    return redirect({ name: 'login' })
+    return redirect('/login')
   }
 }
 ```
@@ -106,13 +106,23 @@ await this.$strapi.$products.find()
 
 ## Advanced
 
+### Accessing $http
+
 If you defined custom routes in your Strapi API that goes out of the REST scope, this module exposes `$http`:
 
 ```js
 this.results = await this.$strapi.$http.$get('/products/search', { searchParams: { _q: 't-shirt' } })
 ```
 
-You often need to update your user, and so on define a custom route in Strapi: `PUT /users/me`, you can use this module to call it this way:
+### Updating current user
+
+<base-alert type="info">
+
+You often need to update your user, and so on define a custom route in Strapi: `PUT /users/me`.
+
+</base-alert>
+
+You can use this module to call it this way:
 
 ```js
 const user = await this.$strapi.$users.update('me', form)

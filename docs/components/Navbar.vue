@@ -30,7 +30,7 @@
             <IconTwitter class="w-6 h-6" />
           </a>
           <a
-            href="https://github.com/nuxt-company/strapi-module"
+            href="https://github.com/nuxt-community/strapi-module"
             target="_blank"
             rel="noopener noreferrer"
             title="Github"

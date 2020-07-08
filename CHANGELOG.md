@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/nuxt-company/strapi-module/compare/v0.1.0...v0.1.1) (2020-07-08)
+
+
+### Bug Fixes
+
+* **lib:** use findOne to get users me ([50ca41c](https://github.com/nuxt-company/strapi-module/commit/50ca41c38bf6862a7ca7b6973032d1e9b3dcb271))
+
 ## [0.1.0](https://github.com/nuxt-community/strapi-module/compare/v0.0.1...v0.1.0) (2020-07-06)
 
 ### 0.0.1 (2020-06-24)

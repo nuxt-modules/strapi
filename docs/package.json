@@ -20,7 +20,7 @@
     "vue-scrollactive": "^0.9.3"
   },
   "devDependencies": {
-    "@nuxt/static": "^0.0.12",
+    "@nuxt/static": "^1.0.0",
     "@nuxtjs/color-mode": "^1.0.0",
     "@nuxtjs/eslint-config": "^3.0.0",
     "@nuxtjs/eslint-module": "^2.0.0",

@@ -13,6 +13,7 @@ describe('module', () => {
 
   test('render', async () => {
     const html = await get('/')
-    expect(html).toContain('Works!')
+    expect(html).toContain('@nuxtjs/strapi')
+    expect(html).toContain('http://localhost:1337')
   })
 })

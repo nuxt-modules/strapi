@@ -2,7 +2,7 @@
   <div>
     <h1>@nuxtjs/strapi</h1>
     <h2>$strapi.state</h2>
-    <pre>{{ $strapi.state }}</pre>
+    <pre>{{ JSON.stringify($strapi.state) }}</pre>
     <h2>options.url</h2>
     <pre>{{ $strapi.$http._defaults.prefixUrl }}</pre>
   </div>

@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/nuxt-community/strapi-module/compare/v0.1.1...v0.1.2) (2020-07-16)
+
+
+### Features
+
+* use runtimeConfig to avoid building when changing Strapi URL ([4442467](https://github.com/nuxt-community/strapi-module/commit/4442467b294ee7352dccf3131682e20b0f89f706))
+
+
+### Bug Fixes
+
+* update test with new example ([404fdca](https://github.com/nuxt-community/strapi-module/commit/404fdca6f880c685d31c84a20838b5fd5e05b1e0))
+
 ### [0.1.1](https://github.com/nuxt-company/strapi-module/compare/v0.1.0...v0.1.1) (2020-07-08)
 
 

@@ -1676,12 +1676,12 @@
     html-minifier "^4.0.0"
     node-html-parser "^1.2.20"
 
-"@nuxt/http@^0.5.9":
-  version "0.5.9"
-  resolved "https://registry.yarnpkg.com/@nuxt/http/-/http-0.5.9.tgz#57bb9cb1aa3732e5aa19bfb744378fc127c43f90"
-  integrity sha512-AsPUVns2AuhtRpq5yh/sdw9UpwobBSEbniiizYznEoVWFEhniVuPXagBqMu3FefddnAfKvLNiEX6NBg7pv/LvQ==
+"@nuxt/http@^0.5.10":
+  version "0.5.10"
+  resolved "https://registry.yarnpkg.com/@nuxt/http/-/http-0.5.10.tgz#b51f81cc8881c86e4336ee386a6e7eec0a84c64b"
+  integrity sha512-dQ3r6+vcbH066dSRuAHZeWWFtzGRHq4+QKDRmlwoxjqUq1fcuL892V8RfpadR6kYb34CcJS0pDAqkSZeyJXx6A==
   dependencies:
-    "@nuxtjs/proxy" "^2.0.0"
+    "@nuxtjs/proxy" "^2.0.1"
     abort-controller "^3.0.0"
     consola "^2.14.0"
     destr "^1.0.0"
@@ -1896,10 +1896,10 @@
     request "^2.88.2"
     request-promise-native "^1.0.8"
 
-"@nuxtjs/proxy@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/proxy/-/proxy-2.0.0.tgz#cf19894eac721a2ad896293f241371f046db71e7"
-  integrity sha512-ewiOLAhfQlE/QWiQkHH0MQBYrtTRRSuz5SqDly1Zy/M3cN9bxqWd9d5Ty/GnU3nLtwsfW64TrRKuTw8/gT1nFQ==
+"@nuxtjs/proxy@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/proxy/-/proxy-2.0.1.tgz#2469b6e316311aa8c60d348502a54bfe6d5536aa"
+  integrity sha512-RVZ6iYeAuWteot9oer3vTDCOEiTwg37Mqf6yy8vPD0QQaw4z3ykgM++MzfUl85jM14+qNnODZj5EATRoCY009Q==
   dependencies:
     consola "^2.11.3"
     http-proxy-middleware "^1.0.4"

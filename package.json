@@ -2,7 +2,7 @@
   "name": "@nuxtjs/strapi",
   "version": "0.1.2",
   "description": "Strapi module for NuxtJS",
-  "repository": "nuxt-community/storybook",
+  "repository": "nuxt-community/strapi-module",
   "license": "MIT",
   "author": "NuxtJS",
   "contributors": [

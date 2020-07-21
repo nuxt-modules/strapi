@@ -1,9 +1,10 @@
 {
   "name": "@nuxtjs/strapi",
   "version": "0.1.2",
-  "description": "",
-  "repository": "",
+  "description": "Strapi module for NuxtJS",
+  "repository": "nuxt-community/storybook",
   "license": "MIT",
+  "author": "NuxtJS",
   "contributors": [
     {
       "name": "Benjamin Canac <canacb1@gmail.com>"

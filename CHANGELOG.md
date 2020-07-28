@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/nuxt-community/strapi-module/compare/v0.1.2...v0.1.3) (2020-07-28)
+
+
+### Bug Fixes
+
+* avoid redefine property if exists ([4ac979c](https://github.com/nuxt-community/strapi-module/commit/4ac979c0dff1aac8d045e097ff6c7e1e4303ed4c))
+
 ### [0.1.2](https://github.com/nuxt-community/strapi-module/compare/v0.1.1...v0.1.2) (2020-07-16)
 
 

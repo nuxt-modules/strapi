@@ -31,14 +31,14 @@
     "@babel/preset-env": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
-    "@nuxtjs/eslint-config": "latest",
+    "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/module-test-utils": "latest",
     "babel-eslint": "latest",
     "babel-jest": "latest",
     "eslint": "latest",
     "husky": "latest",
     "jest": "latest",
-    "nuxt-edge": "latest",
+    "nuxt-edge": "^2.14.1-26598267.60f68638",
     "standard-version": "latest"
   },
   "publishConfig": {

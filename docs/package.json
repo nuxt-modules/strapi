@@ -10,19 +10,19 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@nuxt/content": "^1.4.1",
+    "@nuxt/content": "^1.5.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "lodash.groupby": "^4.6.0",
-    "nuxt-edge": "^2.14.0-26582020.6ab65fbf",
+    "nuxt-edge": "^2.14.0-26597729.aebf0ffe",
     "nuxt-i18n": "^6.13.1",
     "prism-themes": "^1.4.0",
-    "tailwindcss": "^1.5.1",
+    "tailwindcss": "^1.6.0",
     "vue-scrollactive": "^0.9.3"
   },
   "devDependencies": {
     "@nuxt/static": "^1.0.0",
-    "@nuxtjs/color-mode": "^1.0.0",
-    "@nuxtjs/eslint-config": "^3.0.0",
+    "@nuxtjs/color-mode": "^1.0.2",
+    "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/tailwindcss": "^2.1.0",
     "babel-eslint": "^10.1.0",

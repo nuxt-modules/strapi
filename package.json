@@ -38,7 +38,7 @@
     "eslint": "latest",
     "husky": "latest",
     "jest": "latest",
-    "nuxt-edge": "^2.14.1-26598267.60f68638",
+    "nuxt-edge": "^2.14.1-26599706.4db7e432",
     "standard-version": "latest"
   },
   "publishConfig": {

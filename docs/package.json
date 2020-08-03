@@ -12,11 +12,5 @@
   "dependencies": {
     "@nuxt/content-theme-docs": "0.3.1",
     "nuxt": "2.14.0"
-  },
-  "keywords": [
-    "nuxt-theme-docs",
-    "nuxt-module",
-    "nuxt",
-    "nuxt/content"
-  ]
+  }
 }

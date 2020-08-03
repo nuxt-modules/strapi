@@ -1,4 +1,4 @@
-[![@nuxtjs/strapi](https://storybook.nuxtjs.org/preview.png)](https://strapi.nuxtjs.org)
+[![@nuxtjs/strapi](https://strapi.nuxtjs.org/preview.png)](https://strapi.nuxtjs.org)
 
 
 # @nuxtjs/strapi

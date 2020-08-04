@@ -116,11 +116,11 @@ this.results = await this.$strapi.$http.$get('/products/search', { searchParams:
 
 ### Updating current user
 
-<base-alert type="info">
+<alert type="info">
 
 You often need to update your user, and so on define a custom route in Strapi: `PUT /users/me`.
 
-</base-alert>
+</alert>
 
 You can use this module to call it this way:
 

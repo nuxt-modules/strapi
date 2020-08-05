@@ -1,9 +1,8 @@
 ---
 title: Introduction
 description: ''
-position: "1"
+position: 1
 category: ''
-categoryPosition: "1"
 features:
   - Authentication support
   - RESTful methods
@@ -11,12 +10,13 @@ features:
   - Handle errors with hooks
 ---
 
-![nuxt-strapi](/card.png)
+<img src="/preview.png" class="light-img" />
+<img src="/preview-dark.png" class="dark-img" />
 
 This module is a wrapper around [Strapi](https://strapi.io/) for [NuxtJS](https://nuxtjs.org).
 
 ## Features
 
-<base-list :items="features"></base-list>
+<list :items="features"></list>
 
-<p class="flex items-center">Enjoy light and dark mode: <color-switcher class="p-2"></color-switcher></p>
+<p class="flex items-center">Enjoy light and dark mode:&nbsp;<app-color-switcher class="p-2"></app-color-switcher></p>

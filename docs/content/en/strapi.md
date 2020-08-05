@@ -1,9 +1,8 @@
 ---
 title: $strapi
 description: ''
-position: 1
+position: 5
 category: API
-categoryPosition: 3
 ---
 
 This module globally injects `$strapi` instance, meaning that you can access it anywhere using `this.$strapi`. For plugins, asyncData, fetch, nuxtServerInit and Middleware, you can access it from `context.$strapi`.
@@ -181,11 +180,11 @@ Fetch `me` user from `/users/me` route if a `jwt` is present in the cookies. Set
 
 > This method is called by default on init, so you don't have to.
 
-<base-alert type="info">
+<alert type="info">
 
 On `ssr` mode, this method is called on the server-side only and the data are hydrated client-side so the HTTP call happens only once.
 
-</base-alert>
+</alert>
 
 ### `setUser(user)`
 

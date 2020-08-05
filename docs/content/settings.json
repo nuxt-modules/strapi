@@ -1,0 +1,10 @@
+{
+    "title": "@nuxtjs/strapi",
+    "url": "https://strapi.nuxtjs.org/",
+    "logo": {
+        "light": "/logo-light.svg",
+        "dark": "/logo-dark.svg"
+    },
+    "github": "nuxt-community/strapi-module",
+    "twitter": "@nuxt_js"
+}

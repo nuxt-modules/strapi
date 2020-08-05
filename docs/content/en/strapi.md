@@ -30,11 +30,44 @@ this.$strapi.user.avatar = ''
 
 Get entries. Returns entries matching the query filters. You can read more about parameters [here](https://strapi.io/documentation/v3.x/content-api/parameters.html).
 
+The second argument `params` is for query parameters:
+
 ```js
-await this.$strapi.find('products', params)
+await this.$strapi.find('products', { title: '' })
 // With entity shortcut
-await this.$strapi.$products.find(params)
+await this.$strapi.$products.find({ title: '' })
 ```
+<alert type="info">
+You can also pass an array in two ways:
+</alert>
+
+<code-group>
+  <code-block label="Syntax" active>
+
+```js
+//1st method
+await $strapi.find('products', [['categories.name', 'women'], ['categories.name', 'men']])
+// With entity shortcut
+await $strapi.$products.find([['categories.name', 'women'], ['categories.name', 'men']])
+
+//2nd method
+await $strapi.find('products', { 'categories.name': ['women', 'men'] })
+// With entity shortcut
+await $strapi.$products.find({ 'categories.name': ['women', 'men'] })
+```
+
+  </code-block>
+  <code-block label="Output">
+
+```js
+//1st method
+"?categories.name=woman&categories.name=men"
+//2nd method
+"?categories.name=women%2Cmen"
+```
+
+  </code-block>
+</code-group>
 
 > See the [Strapi endpoints](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints).
 

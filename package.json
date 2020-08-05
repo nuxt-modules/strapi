@@ -24,7 +24,7 @@
   "dependencies": {
     "@nuxt/http": "^0.5.10",
     "cookie-universal-nuxt": "^2.1.4",
-    "defu": "^3.0.1",
+    "defu": "^3.1.0",
     "hookable": "^4.1.1"
   },
   "devDependencies": {
@@ -39,7 +39,7 @@
     "eslint": "latest",
     "husky": "latest",
     "jest": "latest",
-    "nuxt": "2.14.0",
+    "nuxt": "2.14.1",
     "standard-version": "latest"
   },
   "publishConfig": {

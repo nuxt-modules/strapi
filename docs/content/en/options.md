@@ -1,9 +1,8 @@
 ---
 title: options
 description: ''
-position: 2
+position: 6
 category: API
-categoryPosition: 3
 ---
 
 ## `url`

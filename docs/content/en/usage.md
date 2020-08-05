@@ -1,9 +1,8 @@
 ---
 title: Usage
 description: ''
-position: 2
+position: 3
 category: Guide
-categoryPosition: 2
 ---
 
 ## Authentication

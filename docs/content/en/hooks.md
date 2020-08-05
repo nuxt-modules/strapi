@@ -1,9 +1,8 @@
 ---
 title: Hooks
 description: ''
-position: 3
+position: 4
 category: Guide
-categoryPosition: 2
 ---
 
 The module adds some hooks you can use.

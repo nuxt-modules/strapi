@@ -4,9 +4,5 @@ export default theme({
   env: {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN
   },
-  loading: { color: '#846fee' },
-  generate: {
-    fallback: '404.html', // for Netlify
-    routes: ['/'] // give the first url to start crawling
-  }
+  loading: { color: '#8E75FF' }
 })

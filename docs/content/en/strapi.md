@@ -141,6 +141,24 @@ await this.$strapi.$products.delete(1)
 
 > See the [Strapi endpoints](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints).
 
+### `graphql(data)`
+
+- Returns `Promise`
+
+Performs an HTTP request to GraphQL API and returns its value
+
+```js
+await this.$strapi.graphql({
+  query: `
+    query {
+      products {
+        name
+      }
+    }
+  `
+});
+```
+
 ### `register(form)`
 
 - Returns `Promise`

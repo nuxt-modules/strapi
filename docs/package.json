@@ -12,5 +12,8 @@
   "dependencies": {
     "@nuxt/content-theme-docs": "^0.4.1",
     "nuxt": "^2.14.1"
+  },
+  "devDependencies": {
+    "nuxt-ackee": "^1.0.1"
   }
 }

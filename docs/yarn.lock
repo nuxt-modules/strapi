@@ -1097,10 +1097,10 @@
     rc9 "^1.0.0"
     std-env "^2.2.1"
 
-"@nuxt/content-theme-docs@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@nuxt/content-theme-docs/-/content-theme-docs-0.5.1.tgz#75728144d384ade745f2b89267fad72489827973"
-  integrity sha512-PGQUa0wwrpU1F4qWGZb2lBnj9cUwa4bn/ZbpWAdaIkyFyN8HIrCuWlPPBXCZU+Qz7myyYimC7LK9ZgCmYVOVyw==
+"@nuxt/content-theme-docs@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@nuxt/content-theme-docs/-/content-theme-docs-0.5.2.tgz#9858988577b07046e7cddfc53cdf6e7efd5fa37f"
+  integrity sha512-GvnQGiFzpgBdybP3GPlHjiuZw+/JOeeEDpuCR0pDgx2TuSGVcdnYgiq0rbUJHWRNiO1srbyu/WdckonA9/Sefw==
   dependencies:
     "@nuxt/content" "^1.6.1"
     "@nuxt/types" "^2.14.3"

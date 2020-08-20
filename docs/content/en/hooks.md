@@ -45,9 +45,9 @@ export default {
     // get user related data
   },
   mounted() {
-    this.unregisterUserHook = this.$strapi.hook('userUpdated', () => {
+    this.unregisterUserHook = this.$strapi.hook('userUpdated', (user) => {
       this.$fetch()
-    }
+    })
   },
   beforeDestroy() {
     if (this.unregisterUserHook) {

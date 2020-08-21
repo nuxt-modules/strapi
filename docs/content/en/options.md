@@ -31,4 +31,27 @@ export default {
 await this.$strapi.$products.find()
 ```
 
+Entities can also be defined as objects to specify the content type.
+
+- `name`
+  - Type: `String`
+- `type`
+  - Type: `String`
+  - Default: `collection`
+  - Values: `'collection' || 'single'`
+
+**Example**
+
+```js{}[nuxt.config.js]
+export default {
+  strapi: {
+    entities: [
+      { name: 'homepage', type: 'single' }
+    ]
+  }
+}
+```
+
+> Check out the [Strapi documentation](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints) on API endpoints.
+
 See more in [Usage](/usage#entities).

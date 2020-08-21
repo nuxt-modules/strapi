@@ -1565,18 +1565,18 @@
     html-minifier "^4.0.0"
     node-html-parser "^1.2.20"
 
-"@nuxt/http@^0.5.10":
-  version "0.5.10"
-  resolved "https://registry.yarnpkg.com/@nuxt/http/-/http-0.5.10.tgz#b51f81cc8881c86e4336ee386a6e7eec0a84c64b"
-  integrity sha512-dQ3r6+vcbH066dSRuAHZeWWFtzGRHq4+QKDRmlwoxjqUq1fcuL892V8RfpadR6kYb34CcJS0pDAqkSZeyJXx6A==
+"@nuxt/http@^0.5.11":
+  version "0.5.11"
+  resolved "https://registry.yarnpkg.com/@nuxt/http/-/http-0.5.11.tgz#7ebe3a408a497f411d50260e7cdae5cbf9348e50"
+  integrity sha512-JU967q283r1f0OAAdghiu/O9jvcARzaSHhGdQA1/tRP6etvS8x5LSmwfgIMAdeVyvOvEFu46gmTpgk4+WoCV0g==
   dependencies:
     "@nuxtjs/proxy" "^2.0.1"
     abort-controller "^3.0.0"
-    consola "^2.14.0"
+    consola "^2.15.0"
     destr "^1.0.0"
-    ky "^0.21.0"
+    ky "^0.23.0"
     node-fetch "^2.6.0"
-    web-streams-polyfill "^2.1.1"
+    web-streams-polyfill "^3.0.0"
 
 "@nuxt/loading-screen@^2.0.2":
   version "2.0.2"
@@ -7093,10 +7093,10 @@ kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
-ky@^0.21.0:
-  version "0.21.0"
-  resolved "https://registry.yarnpkg.com/ky/-/ky-0.21.0.tgz#341eafec690f8a314392a9869074cc4665992bfa"
-  integrity sha512-b0byZCPvuikmLj3vSH7V/LdkzBC5rpiRr75ZD9PLg9nGMO1u3o1kmzaMPvVvQolyZnNqtuvm0eq3h3nMUzg98A==
+ky@^0.23.0:
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/ky/-/ky-0.23.0.tgz#54c2f3fa9003d591cb2f368384e6c84795a92e64"
+  integrity sha512-+t2CbQsLmpN3HeYPBxN+VbZqBOd86njF3cvnueC77pJKVHRjiMI0Ac+pfkB8e17Bw1dGHbMk9hrHst9Bw7ndgw==
 
 last-call-webpack-plugin@^3.0.0:
   version "3.0.0"
@@ -11418,10 +11418,10 @@ watchpack@^1.7.4:
     chokidar "^3.4.1"
     watchpack-chokidar2 "^2.0.0"
 
-web-streams-polyfill@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/web-streams-polyfill/-/web-streams-polyfill-2.1.1.tgz#2c82b6193849ccb9efaa267772c28260ef68d6d2"
-  integrity sha512-dlNpL2aab3g8CKfGz6rl8FNmGaRWLLn2g/DtSc9IjB30mEdE6XxzPfPSig5BwGSzI+oLxHyETrQGKjrVVhbLCg==
+web-streams-polyfill@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/web-streams-polyfill/-/web-streams-polyfill-3.0.0.tgz#c8bcb1e2ec1820088ca201674486a0f1feae848b"
+  integrity sha512-tcZlIJ+VBxuDXdRFF3PCZTJ3yUISGklG4hkl3CDGOlZ8XwpN90L5YsJNoSPH72wZ4nbsatE/OfIaxfM3p+6W7w==
 
 webidl-conversions@^5.0.0:
   version "5.0.0"

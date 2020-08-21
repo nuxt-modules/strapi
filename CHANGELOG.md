@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/nuxt-community/strapi-module/compare/v0.1.4...v0.1.5) (2020-08-21)
+
+
+### Features
+
+* handle single-type entity type ([#35](https://github.com/nuxt-community/strapi-module/issues/35)) ([04b440b](https://github.com/nuxt-community/strapi-module/commit/04b440b105ecb63932d98d5e3a64fd265919353b))
+
+
+### Bug Fixes
+
+* **plugin:** reactivity on hydatation ([#34](https://github.com/nuxt-community/strapi-module/issues/34)) ([b7e764f](https://github.com/nuxt-community/strapi-module/commit/b7e764f50f70ad68012fcc4a6f8d769f6ae27b67))
+
 ### [0.1.4](https://github.com/nuxt-community/strapi-module/compare/v0.1.3...v0.1.4) (2020-08-18)
 
 ### [0.1.3](https://github.com/nuxt-community/strapi-module/compare/v0.1.2...v0.1.3) (2020-07-28)

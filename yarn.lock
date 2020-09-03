@@ -1579,10 +1579,10 @@
     html-minifier "^4.0.0"
     node-html-parser "^1.2.20"
 
-"@nuxt/http@^0.5.11":
-  version "0.5.11"
-  resolved "https://registry.yarnpkg.com/@nuxt/http/-/http-0.5.11.tgz#7ebe3a408a497f411d50260e7cdae5cbf9348e50"
-  integrity sha512-JU967q283r1f0OAAdghiu/O9jvcARzaSHhGdQA1/tRP6etvS8x5LSmwfgIMAdeVyvOvEFu46gmTpgk4+WoCV0g==
+"@nuxt/http@^0.5.12":
+  version "0.5.12"
+  resolved "https://registry.yarnpkg.com/@nuxt/http/-/http-0.5.12.tgz#7385a72d9e9d15c969705ccd67512957b85475aa"
+  integrity sha512-h8fOmUw7DgQidTAuCM8wkx8kNOIye87ukE7GaQvB3FasU6wQZN4hTU2gM55dwOPasafEWHfa19ac8AmJ9h1OdA==
   dependencies:
     "@nuxtjs/proxy" "^2.0.1"
     abort-controller "^3.0.0"

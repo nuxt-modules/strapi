@@ -1574,17 +1574,17 @@
     html-minifier "^4.0.0"
     node-html-parser "^1.2.20"
 
-"@nuxt/http@^0.5.12":
-  version "0.5.12"
-  resolved "https://registry.yarnpkg.com/@nuxt/http/-/http-0.5.12.tgz#7385a72d9e9d15c969705ccd67512957b85475aa"
-  integrity sha512-h8fOmUw7DgQidTAuCM8wkx8kNOIye87ukE7GaQvB3FasU6wQZN4hTU2gM55dwOPasafEWHfa19ac8AmJ9h1OdA==
+"@nuxt/http@^0.5.13":
+  version "0.5.13"
+  resolved "https://registry.yarnpkg.com/@nuxt/http/-/http-0.5.13.tgz#ccb06195e5125ba50863d490d245f88be745b737"
+  integrity sha512-YqI/TgoO0JTMrTOPBbqI43xItiEMgek6EoMdyqXUDeFniH7v/T/RrD0R/dHZVH3A32STNmVWCcmiAl/BuJA4Pw==
   dependencies:
     "@nuxtjs/proxy" "^2.0.1"
     abort-controller "^3.0.0"
     consola "^2.15.0"
     destr "^1.0.0"
     ky "^0.23.0"
-    node-fetch "^2.6.0"
+    node-fetch "^2.6.1"
     web-streams-polyfill "^3.0.0"
 
 "@nuxt/loading-screen@^2.0.2":

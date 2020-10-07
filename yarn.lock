@@ -1574,16 +1574,16 @@
     html-minifier "^4.0.0"
     node-html-parser "^1.2.20"
 
-"@nuxt/http@^0.5.13":
-  version "0.5.13"
-  resolved "https://registry.yarnpkg.com/@nuxt/http/-/http-0.5.13.tgz#ccb06195e5125ba50863d490d245f88be745b737"
-  integrity sha512-YqI/TgoO0JTMrTOPBbqI43xItiEMgek6EoMdyqXUDeFniH7v/T/RrD0R/dHZVH3A32STNmVWCcmiAl/BuJA4Pw==
+"@nuxt/http@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@nuxt/http/-/http-0.6.0.tgz#7f6f7592cfd95f57fc9f992314efd118f7f115f1"
+  integrity sha512-p564xyaGW57YQ7Xj3DYnWvOus/HCD8rcvFQMpCUqzcIIIM6fFF6crgMwSpPlpqrxglJA6+PvXv8hnG41k3DSVQ==
   dependencies:
     "@nuxtjs/proxy" "^2.0.1"
     abort-controller "^3.0.0"
     consola "^2.15.0"
     destr "^1.0.0"
-    ky "^0.23.0"
+    ky "^0.24.0"
     node-fetch "^2.6.1"
     web-streams-polyfill "^3.0.0"
 
@@ -7109,10 +7109,10 @@ kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
-ky@^0.23.0:
-  version "0.23.0"
-  resolved "https://registry.yarnpkg.com/ky/-/ky-0.23.0.tgz#54c2f3fa9003d591cb2f368384e6c84795a92e64"
-  integrity sha512-+t2CbQsLmpN3HeYPBxN+VbZqBOd86njF3cvnueC77pJKVHRjiMI0Ac+pfkB8e17Bw1dGHbMk9hrHst9Bw7ndgw==
+ky@^0.24.0:
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/ky/-/ky-0.24.0.tgz#337e534a7f47c12476988eef3cb968daef318349"
+  integrity sha512-/vpuQguwV30jErrqLpoaU/YJAFALrUkqqWLILnSoBOj5/O/LKzro/pPNtxbLgY6m4w5XNM6YZ3v7/or8qLlFuw==
 
 last-call-webpack-plugin@^3.0.0:
   version "3.0.0"

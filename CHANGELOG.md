@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/nuxt-community/strapi-module/compare/v0.1.6...v0.1.7) (2020-10-08)
+
+
+### Features
+
+* Tiny change to plugin.js to reduce the size of lodash on build ([#45](https://github.com/nuxt-community/strapi-module/issues/45)) ([8b59046](https://github.com/nuxt-community/strapi-module/commit/8b5904693446b592a308fe8c028e26ddb1e372eb))
+
+
+### Bug Fixes
+
+* **lib:** better error handling ([58a9d17](https://github.com/nuxt-community/strapi-module/commit/58a9d17ec3be63fd837bf1d273ba5b298221f54e))
+
 ### [0.1.6](https://github.com/nuxt-community/strapi-module/compare/v0.1.5...v0.1.6) (2020-08-25)
 
 ### [0.1.5](https://github.com/nuxt-community/strapi-module/compare/v0.1.4...v0.1.5) (2020-08-21)

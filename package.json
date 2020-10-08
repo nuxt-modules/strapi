@@ -22,7 +22,7 @@
     "test": "yarn lint && jest"
   },
   "dependencies": {
-    "@nuxt/http": "^0.5.13",
+    "@nuxt/http": "^0.6.0",
     "cookie-universal-nuxt": "^2.1.4",
     "defu": "^3.1.0",
     "hookable": "^4.1.2"

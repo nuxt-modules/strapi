@@ -32,7 +32,7 @@
     "@babel/preset-env": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
-    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-config": "^4.0.0",
     "@nuxtjs/module-test-utils": "latest",
     "babel-eslint": "latest",
     "babel-jest": "latest",

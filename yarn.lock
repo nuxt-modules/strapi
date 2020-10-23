@@ -5878,10 +5878,10 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hookable@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/hookable/-/hookable-4.1.2.tgz#c9d91a75066b759fcc4ba985574d76bccf903304"
-  integrity sha512-yY+8B/QJAbeC9r99K04ra0zBkpFaang2ZDrSkpODBqzRCWyu+7qppMWJb7TdwJc+Ubqcn/R/Imxg5WsxDSJOmg==
+hookable@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/hookable/-/hookable-4.2.0.tgz#45cc57b1d9da1ad038c64238ac0bf55ad4cf2293"
+  integrity sha512-IrdgzqvSuqCBgJqL/dQgOF3vKNRc13Uud+wLD/8kB4LKlpVF1uhLHJDLenL89fscyXBqvto/AXR+rrRlmtz7lQ==
 
 hoopy@^0.1.4:
   version "0.1.4"

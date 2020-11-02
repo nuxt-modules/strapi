@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/nuxt-community/strapi-module/compare/v0.1.7...v0.1.8) (2020-11-02)
+
+
+### Bug Fixes
+
+* **lib:** dont fetch user on server with target static ([#68](https://github.com/nuxt-community/strapi-module/issues/68)) ([0a74b5a](https://github.com/nuxt-community/strapi-module/commit/0a74b5a263b8721102be70ec2608bb118cd1fcf3))
+
 ### [0.1.7](https://github.com/nuxt-community/strapi-module/compare/v0.1.6...v0.1.7) (2020-10-08)
 
 

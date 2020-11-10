@@ -24,7 +24,7 @@
   "dependencies": {
     "@nuxt/http": "^0.6.0",
     "cookie-universal-nuxt": "^2.1.4",
-    "defu": "^3.1.0",
+    "defu": "^3.2.2",
     "hookable": "^4.3.1"
   },
   "devDependencies": {

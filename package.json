@@ -34,6 +34,7 @@
     "@commitlint/config-conventional": "latest",
     "@nuxtjs/eslint-config": "^4.0.0",
     "@nuxtjs/module-test-utils": "latest",
+    "@nuxtjs/proxy": "^2.0.1",
     "babel-eslint": "latest",
     "babel-jest": "latest",
     "eslint": "latest",

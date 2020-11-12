@@ -10,9 +10,9 @@ module.exports = {
   ],
   proxy: {
     '/api': {
-      target: 'https://api.poe.house',
+      target: 'https://pokeapi.co',
       pathRewrite: {
-        '^/api': '/'
+        '^/api': '/api/v2'
       }
     }
   },

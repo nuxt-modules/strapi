@@ -22,7 +22,7 @@
     "test": "yarn lint && jest"
   },
   "dependencies": {
-    "@nuxt/http": "^0.6.0",
+    "@nuxt/http": "^0.6.1",
     "cookie-universal-nuxt": "^2.1.4",
     "defu": "^3.2.2",
     "hookable": "^4.3.1"
@@ -39,7 +39,7 @@
     "eslint": "latest",
     "husky": "latest",
     "jest": "latest",
-    "nuxt": "2.14.7",
+    "nuxt": "2.14.12",
     "standard-version": "latest"
   },
   "publishConfig": {

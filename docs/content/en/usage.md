@@ -1,13 +1,13 @@
 ---
 title: Usage
-description: ''
+description: 'Learn how to use the Strapi module in your Nuxt app'
 position: 3
 category: Guide
 ---
 
 ## Authentication
 
-To handle authentication in your Nuxt.js app with Strapi, you can:
+To handle authentication in your Nuxt app with Strapi, you can:
 
 ### Login
 

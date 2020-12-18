@@ -1,6 +1,6 @@
 ---
 title: $strapi
-description: ''
+description: 'Use the $strapi inside your Nuxt app'
 position: 5
 category: API
 ---

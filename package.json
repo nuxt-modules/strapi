@@ -22,25 +22,27 @@
     "test": "yarn lint && jest"
   },
   "dependencies": {
-    "@nuxt/http": "^0.6.0",
+    "@nuxt/http": "^0.6.1",
+    "@nuxt/ufo": "^0.5.2",
     "cookie-universal-nuxt": "^2.1.4",
     "defu": "^3.2.2",
-    "hookable": "^4.3.1"
+    "hookable": "^4.3.1",
+    "requrl": "^3.0.1"
   },
   "devDependencies": {
-    "@babel/core": "latest",
-    "@babel/preset-env": "latest",
-    "@commitlint/cli": "latest",
-    "@commitlint/config-conventional": "latest",
-    "@nuxtjs/eslint-config": "^4.0.0",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/module-test-utils": "latest",
     "babel-eslint": "latest",
-    "babel-jest": "latest",
-    "eslint": "latest",
-    "husky": "latest",
-    "jest": "latest",
-    "nuxt": "2.14.7",
-    "standard-version": "latest"
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.15.0",
+    "husky": "^4.3.6",
+    "jest": "^26.6.3",
+    "nuxt": "2.14.12",
+    "standard-version": "^9.0.0"
   },
   "publishConfig": {
     "access": "public"

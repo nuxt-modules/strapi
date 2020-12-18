@@ -1,6 +1,6 @@
 ---
-title: options
-description: ''
+title: Options
+description: 'Discover the options of the Strapi module for Nuxt'
 position: 6
 category: API
 ---

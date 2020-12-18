@@ -1,6 +1,6 @@
 ---
 title: Setup
-description: ''
+description: 'Learn how to setup Strapi in your Nuxt app'
 position: 2
 category: Guide
 ---

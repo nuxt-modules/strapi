@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: ''
+description: 'Nuxt Strapi is a Nuxt module for first class integration with Strapi'
 position: 1
 category: ''
 features:

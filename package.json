@@ -22,8 +22,8 @@
     "test": "yarn lint && jest"
   },
   "dependencies": {
-    "@nuxt/http": "^0.6.1",
-    "@nuxt/ufo": "^0.5.2",
+    "@nuxt/http": "^0.6.2",
+    "@nuxt/ufo": "^0.5.3",
     "cookie-universal-nuxt": "^2.1.4",
     "defu": "^3.2.2",
     "hookable": "^4.3.1",
@@ -38,11 +38,11 @@
     "@nuxtjs/module-test-utils": "latest",
     "babel-eslint": "latest",
     "babel-jest": "^26.6.3",
-    "eslint": "^7.15.0",
+    "eslint": "^7.17.0",
     "husky": "^4.3.6",
     "jest": "^26.6.3",
     "nuxt": "2.14.12",
-    "standard-version": "^9.0.0"
+    "standard-version": "^9.1.0"
   },
   "publishConfig": {
     "access": "public"

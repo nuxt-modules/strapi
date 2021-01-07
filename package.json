@@ -14,6 +14,7 @@
     "lib"
   ],
   "main": "lib/module.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "dev": "nuxt example",
     "docs": "nuxt docs",

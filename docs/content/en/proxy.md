@@ -1,7 +1,7 @@
 ---
 title: Using a proxy
 description: 'Use Strapi behind a proxy with Nuxt Proxy module'
-position: 7
+position: 8
 category: Advanced
 fullscreen: true
 ---

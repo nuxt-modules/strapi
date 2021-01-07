@@ -6,3 +6,6 @@ coverage
 
 # Plugin
 lib/plugin.js
+
+# Typings
+/**/*.d.ts

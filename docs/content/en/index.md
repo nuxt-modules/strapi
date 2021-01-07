@@ -8,12 +8,16 @@ features:
   - RESTful methods
   - Adaptive SDK for API entities
   - Handle errors with hooks
+  - TypeScript support
 ---
 
 <img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>
 <img src="/preview-dark.png" class="dark-img" width="1280" height="640" alt=""/>
 
 This module is a wrapper around [Strapi](https://strapi.io/) for [NuxtJS](https://nuxtjs.org).
+
+If you want to know how to use this module with TypeScript,
+check out [this page](https://strapi.nuxtjs.org/typescript) of the docs.
 
 ## Features
 

@@ -38,7 +38,7 @@ export interface NuxtStrapi {
    * Use this object to access details about the
    * authenticated user or to directly set a user prop.
    * */
-  user: { [key: string]: any };
+  user: Record<string, any>;
 
   /**
    * Get entries.

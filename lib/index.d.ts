@@ -153,6 +153,12 @@ declare module 'vue/types/vue' {
   }
 }
 
+declare module 'vuex/types/index' {
+  interface Store<S> {
+    $strapi: NuxtStrapi;
+  }
+}
+
 declare module '@nuxt/types' {
   interface Context {
     $strapi: NuxtStrapi;

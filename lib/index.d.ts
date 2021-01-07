@@ -3,7 +3,7 @@ import { Context } from '@nuxt/types';
 import { NuxtHTTPInstance } from '@nuxt/http';
 import { NuxtCookies } from 'cookie-universal-nuxt';
 
-type NuxtStrapiQueryParams<T> = T | { [key: string]: any };
+type NuxtStrapiQueryParams<T> = T | Record<string, any>;
 
 interface NuxtStrapiGraphQLParams {
   query: string;

@@ -32,21 +32,23 @@ You now have access to `this.$strapi` inside your components and to `ctx.$strapi
 import Vue from 'vue'
 
 interface BlogPost {
-	title: string;
-	description: string;
+  title: string;
+  description: string;
 }
 
 export default Vue.extend({
-  mounted() {
-  	this.$strapi.create<BlogPost>(
+  async data () {
+    const post = await this.$strapi.create<BlogPost>(
       'posts',
       {
         title: 'Welcome to Strapi',
-        description: 'Strapi is awesome!',
+        description: 'Strapi is awesome!'
       }
-    ).then((post) => {
-    	console.log(post);
-    });
+    )
+
+    return {
+      post
+    }
   }
 })
 </script>
@@ -61,18 +63,18 @@ import Vue from 'vue'
 import { Context } from '@nuxt/types'
 
 interface BlogPost {
-	title: string;
-	description: string;
+  title: string;
+  description: string;
 }
 
 export default Vue.extend({
-  async asyncData(ctx: Context) {
-  	const posts = await ctx.$strapi.find<BlogPost[]>(
-      'posts',
-    );
-  	
-  	return {
-  		posts,
+  async asyncData (ctx: Context) {
+    const posts = await ctx.$strapi.find<BlogPost[]>(
+      'posts'
+    )
+
+    return {
+      posts
     }
   }
 })
@@ -107,13 +109,13 @@ interface BlogPost {
 type Entities = 'posts' | 'projects'
 
 export default Vue.extend({
-  async asyncData(ctx: Context) {
+  async asyncData (ctx: Context) {
     const posts = await ctx.$strapi.find<BlogPost[], Entities>(
-      'posts',
-    );
+      'posts'
+    )
 
     return {
-      posts,
+      posts
     }
   }
 })
@@ -137,13 +139,13 @@ interface BlogPost {
 }
 
 export default Vue.extend({
-  async asyncData(ctx: Context) {
+  async asyncData (ctx: Context) {
     const posts: BlogPost[] = await this.$strapi.find(
-      'posts',
-    );
+      'posts'
+    )
 
     return {
-      posts,
+      posts
     }
   }
 })

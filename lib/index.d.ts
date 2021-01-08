@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Context } from '@nuxt/types';
+import { Context, NuxtAppOptions } from '@nuxt/types';
 import { NuxtHTTPInstance } from '@nuxt/http';
 import { NuxtCookies } from 'cookie-universal-nuxt';
 
@@ -160,6 +160,10 @@ declare module 'vuex/types/index' {
 }
 
 declare module '@nuxt/types' {
+  interface NuxtAppOptions {
+    $strapi: NuxtStrapi;
+  }
+
   interface Context {
     $strapi: NuxtStrapi;
   }

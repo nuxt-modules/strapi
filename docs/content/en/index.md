@@ -16,9 +16,6 @@ features:
 
 This module is a wrapper around [Strapi](https://strapi.io/) for [NuxtJS](https://nuxtjs.org).
 
-If you want to know how to use this module with TypeScript,
-check out [this page](https://strapi.nuxtjs.org/typescript) of the docs.
-
 ## Features
 
 <list :items="features"></list>

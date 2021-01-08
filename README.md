@@ -20,6 +20,7 @@
 - RESTful methods
 - Adaptive SDK for API entities
 - Handle errors with hooks
+- TypeScript support
 
 [📖 &nbsp;Read the documentation](https://strapi.nuxtjs.org)
 

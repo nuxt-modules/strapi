@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.10](https://github.com/nuxt-community/strapi-module/compare/v0.1.9...v0.1.10) (2021-01-08)
+
+
+### Features
+
+* added typescript support and updated docs accordingly ([#94](https://github.com/nuxt-community/strapi-module/issues/94)) ([64f1927](https://github.com/nuxt-community/strapi-module/commit/64f1927c2a412d0b8c0c8920431b1dbe30f35f2b))
+
 ### [0.1.9](https://github.com/nuxt-community/strapi-module/compare/v0.1.8...v0.1.9) (2020-12-18)
 
 

@@ -1,5 +1,3 @@
-import Vue from 'vue';
-import { Context, NuxtAppOptions } from '@nuxt/types';
 import { NuxtHTTPInstance } from '@nuxt/http';
 import { NuxtCookies } from 'cookie-universal-nuxt';
 

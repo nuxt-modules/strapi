@@ -125,7 +125,7 @@ export default Vue.extend({
 ### Query params
 
 Some query methods won't be accepted by the compiler if you define generics as in `$strapi.find<BlogPost[]>`
-(e.g.: the array methods described [here](https://strapi.nuxtjs.org/strapi#findentity-params)).
+(e.g.: the array methods described [here](/strapi#findentity-params)).
 
 You can get around this issue by doing something like below.
 

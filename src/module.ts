@@ -7,11 +7,9 @@ import type { ModuleOptions } from './types'
 const defaults: ModuleOptions = {
   url: process.env.STRAPI_URL || 'http://localhost:1337',
   entities: [],
-  session: {
-    key: 'strapi_jwt',
-    expires: 'session',
-    cookie: {}
-  }
+  key: 'strapi_jwt',
+  expires: 'session',
+  cookie: {}
 }
 
 async function strapiModule (moduleOptions) {

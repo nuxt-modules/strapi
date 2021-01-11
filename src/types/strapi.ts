@@ -5,11 +5,9 @@ import { CookieSerializeOptions } from 'cookie'
 type NuxtStrapiQueryParams<T> = T | Record<string, any>;
 
 export interface StrapiOptions {
-  session: {
-    key: string
-    expires: 'session' | number
-    cookie: CookieSerializeOptions
-  }
+  key: string
+  expires: 'session' | number
+  cookie: CookieSerializeOptions
 }
 
 interface NuxtStrapiGraphQLParams {

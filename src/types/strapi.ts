@@ -1,7 +1,16 @@
-import { NuxtHTTPInstance } from '@nuxt/http';
-import { NuxtCookies } from 'cookie-universal-nuxt';
+import { NuxtHTTPInstance } from '@nuxt/http'
+import { NuxtCookies } from 'cookie-universal-nuxt'
+import { CookieSerializeOptions } from 'cookie'
 
 type NuxtStrapiQueryParams<T> = T | Record<string, any>;
+
+export interface StrapiOptions {
+  session: {
+    key: string
+    expires: 'session' | number
+    cookie: CookieSerializeOptions
+  }
+}
 
 interface NuxtStrapiGraphQLParams {
   query: string;
@@ -31,7 +40,7 @@ interface NuxtStrapiResetPasswordData {
   passwordConfirmation: string;
 }
 
-export interface NuxtStrapi {
+export interface $Strapi {
   /**
    * Use this object to access details about the
    * authenticated user or to directly set a user prop.
@@ -44,7 +53,7 @@ export interface NuxtStrapi {
    * You can read more about parameters
    * [here](https://strapi.io/documentation/developer-docs/latest/content-api/parameters.html).
    * */
-  find<T = any, Entities = string>(entity: Entities, params?: NuxtStrapiQueryParams<T> ): Promise<T>;
+  find<T = any, Entities = string>(entity: Entities, params?: NuxtStrapiQueryParams<T>): Promise<T>;
 
   /**
    * Count entries.
@@ -143,26 +152,4 @@ export interface NuxtStrapi {
   $http: NuxtHTTPInstance;
 
   $cookies: NuxtCookies;
-}
-
-declare module 'vue/types/vue' {
-  interface Vue {
-    $strapi: NuxtStrapi;
-  }
-}
-
-declare module 'vuex/types/index' {
-  interface Store<S> {
-    $strapi: NuxtStrapi;
-  }
-}
-
-declare module '@nuxt/types' {
-  interface NuxtAppOptions {
-    $strapi: NuxtStrapi;
-  }
-
-  interface Context {
-    $strapi: NuxtStrapi;
-  }
 }

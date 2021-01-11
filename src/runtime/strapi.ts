@@ -1,20 +1,41 @@
 import Vue from 'vue'
 import Hookable from 'hookable'
+import destr from 'destr'
 import reqURL from 'requrl'
-import { joinURL } from '@nuxt/ufo'
+import { joinURL } from 'ufo'
+import { NuxtHTTPInstance } from '@nuxt/http'
+import { NuxtCookies } from 'cookie-universal-nuxt'
+import type { StrapiOptions } from '../types'
 
-const TOKEN_KEY = 'strapi_jwt'
+const getExpirationDate = (ms: number) => new Date(Date.now() + ms)
+const isExpired = (expires: Date | undefined) => {
+  if (!expires) { return false }
+  if (new Date(expires) <= new Date()) {
+    return true
+  }
+  return false
+}
 
-class Strapi extends Hookable {
-  constructor (ctx) {
+export class Strapi extends Hookable {
+  private state: { user: null | any }
+  private useClientStorage: boolean
+  private clientStorage: 'localStorage' | 'sessionStorage'
+  $cookies: NuxtCookies
+  $http: NuxtHTTPInstance
+  options: StrapiOptions
+  constructor (ctx, options: StrapiOptions) {
     super()
 
     ctx.$config = ctx.$config || {} // fallback for Nuxt < 2.13
     const runtimeConfig = ctx.$config.strapi || {}
-    this.state = Vue.observable({ user: null })
-
     this.$cookies = ctx.app.$cookies
     this.$http = ctx.$http.create({})
+    this.options = options
+
+    this.state = Vue.observable({ user: null })
+    this.clientStorage = this.options.session.expires === 'session' ? 'sessionStorage' : 'localStorage'
+    this.useClientStorage = process.client && typeof window[this.clientStorage] !== 'undefined'
+
     this.syncToken()
     const url = runtimeConfig.url || '<%= options.url %>'
     if (process.server && ctx.req && url.startsWith('/')) {
@@ -28,7 +49,7 @@ class Strapi extends Hookable {
         return
       }
 
-      const { response: { data: { message: msg } } } = err
+      const { response: { data: { message: msg } } }: any = err
 
       let message
       if (Array.isArray(msg)) {
@@ -39,7 +60,8 @@ class Strapi extends Hookable {
         message = msg
       }
 
-      err.message = message
+      err.message = message;
+      (err as any).original = (err.response as any).data
       this.callHook('error', err)
     })
   }
@@ -54,7 +76,7 @@ class Strapi extends Hookable {
 
   async register (data) {
     this.clearToken()
-    const { user, jwt } = await this.$http.$post('/auth/local/register', data)
+    const { user, jwt } = await this.$http.$post<any>('/auth/local/register', data)
     this.setToken(jwt)
     this.setUser(user)
     return { user, jwt }
@@ -62,7 +84,7 @@ class Strapi extends Hookable {
 
   async login (data) {
     this.clearToken()
-    const { user, jwt } = await this.$http.$post('/auth/local', data)
+    const { user, jwt } = await this.$http.$post<any>('/auth/local', data)
     this.setToken(jwt)
     this.setUser(user)
     return { user, jwt }
@@ -75,7 +97,7 @@ class Strapi extends Hookable {
 
   async resetPassword (data) {
     this.clearToken()
-    const { user, jwt } = await this.$http.$post('/auth/reset-password', data)
+    const { user, jwt } = await this.$http.$post<any>('/auth/reset-password', data)
     this.setToken(jwt)
     this.setUser(user)
     return { user, jwt }
@@ -143,38 +165,46 @@ class Strapi extends Hookable {
   }
 
   async graphql (query) {
-    const { data } = await this.$http.$post(`/graphql`, query)
+    const { data } = await this.$http.$post('/graphql', query)
     return data
   }
 
   getToken () {
     let token
-    if (process.client && typeof window.localStorage !== 'undefined') {
-      token = window.localStorage.getItem(TOKEN_KEY)
+    if (this.useClientStorage) {
+      const session = destr(window[this.clientStorage].getItem(this.options.session.key))
+      if (session && !isExpired(session.expires)) {
+        token = session.token
+      }
     }
     if (!token) {
-      token = this.$cookies.get(TOKEN_KEY)
+      token = this.$cookies.get(this.options.session.key)
     }
     return token
   }
 
-  setToken (jwt) {
-    this.$http.setToken(jwt, 'Bearer')
-    if (process.client && typeof window.localStorage !== 'undefined') {
-      window.localStorage.setItem(TOKEN_KEY, jwt)
+  setToken (token) {
+    const expires = this.options.session.expires === 'session' ? undefined : getExpirationDate(this.options.session.expires)
+
+    if (this.useClientStorage) {
+      window[this.clientStorage].setItem(this.options.session.key, JSON.stringify({ token, expires }))
     }
-    this.$cookies.set(TOKEN_KEY, jwt)
+    this.$cookies.set(this.options.session.key, token, {
+      ...this.options.session.cookie,
+      expires
+    })
+    this.$http.setToken(token, 'Bearer')
   }
 
   clearToken () {
     this.$http.setToken(false)
-    if (process.client && typeof window.localStorage !== 'undefined') {
-      window.localStorage.removeItem(TOKEN_KEY)
+    if (this.useClientStorage) {
+      window[this.clientStorage].removeItem(this.options.session.key)
     }
-    this.$cookies.remove(TOKEN_KEY)
+    this.$cookies.remove(this.options.session.key)
   }
 
-  syncToken (jwt) {
+  syncToken (jwt?) {
     if (!jwt) {
       jwt = this.getToken()
     }
@@ -185,84 +215,4 @@ class Strapi extends Hookable {
     }
     return jwt
   }
-}
-
-export default async function (ctx, inject) {
-  <%= JSON.stringify(options.entities) %>.forEach((entity) => {
-  let key
-  let type = 'collection'
-  if (typeof entity === 'object') {
-    key = `$${entity.name}`
-    type = entity.type || 'collection'
-    entity = entity.name
-  } else {
-    key = `$${entity}`
-  }
-  if (Strapi.prototype.hasOwnProperty(key)) {
-    return
-  }
-  Object.defineProperty(Strapi.prototype, key, {
-    get () {
-      const that = this
-      return ({
-        single: {
-          find (...args) {
-            return that.find(entity, ...args)
-          },
-          update (...args) {
-            return that.update(entity, ...args)
-          },
-          delete (...args) {
-            return that.delete(entity, ...args)
-          }
-        },
-        collection: {
-          find (...args) {
-            return that.find(entity, ...args)
-          },
-          findOne (...args) {
-            return that.findOne(entity, ...args)
-          },
-          count (...args) {
-            return that.count(entity, ...args)
-          },
-          create (...args) {
-            return that.create(entity, ...args)
-          },
-          update (...args) {
-            return that.update(entity, ...args)
-          },
-          delete (...args) {
-            return that.delete(entity, ...args)
-          }
-        }
-      })[type]
-    }
-  })
-})
-
-  const strapi = new Strapi(ctx)
-
-  if (process.server && !process.static) {
-    // Check if jwt to get user
-    await strapi.fetchUser()
-
-    ctx.beforeNuxtRender(({ nuxtState }) => {
-      nuxtState.strapi = strapi.state
-    })
-  }
-
-  const { nuxtState = {} } = ctx || {}
-  // Client-side hydration
-  if (process.client && nuxtState.strapi) {
-    strapi.state = Vue.observable(nuxtState.strapi)
-  }
-
-  // SPA mode or fallback
-  if (process.client && !nuxtState.strapi) {
-    await strapi.fetchUser()
-  }
-
-  inject('strapi', strapi)
-  ctx.$strapi = strapi
 }

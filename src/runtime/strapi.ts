@@ -3,18 +3,10 @@ import Hookable from 'hookable'
 import destr from 'destr'
 import reqURL from 'requrl'
 import { joinURL } from 'ufo'
-import { NuxtHTTPInstance } from '@nuxt/http'
-import { NuxtCookies } from 'cookie-universal-nuxt'
-import type { StrapiOptions } from '../types'
-
-const getExpirationDate = (ms: number) => new Date(Date.now() + ms)
-const isExpired = (expires: Date | undefined) => {
-  if (!expires) { return false }
-  if (new Date(expires) <= new Date()) {
-    return true
-  }
-  return false
-}
+import type { NuxtHTTPInstance } from '@nuxt/http'
+import type { NuxtCookies } from 'cookie-universal-nuxt'
+import type { StrapiOptions } from 'types'
+import { getExpirationDate, isExpired } from './utils'
 
 export class Strapi extends Hookable {
   private state: { user: null | any }
@@ -162,7 +154,7 @@ export class Strapi extends Hookable {
   }
 
   async graphql (query) {
-    const { data } = await this.$http.$post('/graphql', query)
+    const { data } = await this.$http.$post('/graphql', query) as any
     return data
   }
 

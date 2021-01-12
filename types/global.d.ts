@@ -1,4 +1,4 @@
-import type { $Strapi } from './strapi'
+import { $Strapi } from './strapi'
 import { ModuleOptions } from './module'
 
 declare module '@nuxt/types' {
@@ -11,7 +11,7 @@ declare module '@nuxt/types' {
   }
 
   interface Configuration {
-    image?: Partial<ModuleOptions>
+    strapi?: Partial<ModuleOptions>
   }
 }
 
@@ -22,6 +22,7 @@ declare module 'vue/types/vue' {
 }
 
 declare module 'vuex/types/index' {
+  // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
   interface Store<S> {
     $strapi: $Strapi
   }

@@ -1,23 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ES2018",
     "baseUrl": ".",
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "declaration": true,
-    "lib" : [
-      "DOM"
-    ],
     "types": [
-      "@nuxt/types",
       "@types/node"
     ],
     "paths": {
-      "@nuxtjs/strapi/*": [ "src/*" ]
+      "@nuxt/image/*": [
+        "src/*"
+      ]
     }
-  },
-  "include": [
-    "src"
-  ]
+  }
 }

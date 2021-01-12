@@ -16,6 +16,7 @@ export interface NuxtStrapiLoginResult {
 }
 
 export interface StrapiOptions {
+  url: string
   key: string
   expires: 'session' | number
   cookie: CookieSerializeOptions

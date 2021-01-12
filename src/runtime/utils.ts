@@ -4,8 +4,5 @@ export function getExpirationDate (ms: number) {
 
 export function isExpired (expires: Date | undefined) {
   if (!expires) { return false }
-  if (new Date(expires) <= new Date()) {
-    return true
-  }
-  return false
+  return new Date(expires) <= new Date()
 }

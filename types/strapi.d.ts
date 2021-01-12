@@ -2,27 +2,25 @@ import { NuxtHTTPInstance } from '@nuxt/http'
 import { NuxtCookies } from 'cookie-universal-nuxt'
 import { CookieSerializeOptions } from 'cookie'
 
-type NuxtStrapiQueryParams<T> = T | Record<string, any>;
+export type NuxtStrapiQueryParams<T> = T | Record<string, any>;
 
 export interface StrapiOptions {
-  session: {
-    key: string
-    expires: 'session' | number
-    cookie: CookieSerializeOptions
-  }
+  key: string
+  expires: 'session' | number
+  cookie: CookieSerializeOptions
 }
 
-interface NuxtStrapiGraphQLParams {
+export interface NuxtStrapiGraphQLParams {
   query: string;
 }
 
-interface NuxtStrapiRegistrationData {
+export interface NuxtStrapiRegistrationData {
   username: string;
   email: string;
   password: string;
 }
 
-interface NuxtStrapiLoginData {
+export interface NuxtStrapiLoginData {
   /**
    * Can be either the email or the username set by the user.
    * */
@@ -30,11 +28,11 @@ interface NuxtStrapiLoginData {
   password: string;
 }
 
-interface NuxtStrapiEmailData {
+export interface NuxtStrapiEmailData {
   email: string;
 }
 
-interface NuxtStrapiResetPasswordData {
+export interface NuxtStrapiResetPasswordData {
   code: string;
   password: string;
   passwordConfirmation: string;

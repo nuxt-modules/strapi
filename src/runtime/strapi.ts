@@ -3,23 +3,14 @@ import Hookable from 'hookable'
 import destr from 'destr'
 import reqURL from 'requrl'
 import { joinURL } from 'ufo'
-import { NuxtHTTPInstance } from '@nuxt/http'
-import { NuxtCookies } from 'cookie-universal-nuxt'
-import type { StrapiOptions } from '../types'
-
-const getExpirationDate = (ms: number) => new Date(Date.now() + ms)
-const isExpired = (expires: Date | undefined) => {
-  if (!expires) { return false }
-  if (new Date(expires) <= new Date()) {
-    return true
-  }
-  return false
-}
+import type { NuxtHTTPInstance } from '@nuxt/http'
+import type { NuxtCookies } from 'cookie-universal-nuxt'
+import type { StrapiOptions } from 'types'
+import { getExpirationDate, isExpired } from './utils'
 
 export class Strapi extends Hookable {
   private state: { user: null | any }
   private useClientStorage: boolean
-  private clientStorage: 'localStorage' | 'sessionStorage'
   $cookies: NuxtCookies
   $http: NuxtHTTPInstance
   options: StrapiOptions
@@ -33,11 +24,9 @@ export class Strapi extends Hookable {
     this.options = options
 
     this.state = Vue.observable({ user: null })
-    this.clientStorage = this.options.session.expires === 'session' ? 'sessionStorage' : 'localStorage'
-    this.useClientStorage = process.client && typeof window[this.clientStorage] !== 'undefined'
 
     this.syncToken()
-    const url = runtimeConfig.url || '<%= options.url %>'
+    const url = runtimeConfig.url
     if (process.server && ctx.req && url.startsWith('/')) {
       this.$http.setBaseURL(joinURL(reqURL(ctx.req), url))
     } else {
@@ -165,32 +154,41 @@ export class Strapi extends Hookable {
   }
 
   async graphql (query) {
-    const { data } = await this.$http.$post('/graphql', query)
+    const { data } = await this.$http.$post('/graphql', query) as any
     return data
+  }
+
+  getClientStorage () {
+    const storageType = this.options.expires === 'session' ? 'sessionStorage' : 'localStorage'
+
+    if (process.client && typeof window[storageType] !== 'undefined') {
+      return window[storageType]
+    }
+    return null
   }
 
   getToken () {
     let token
-    if (this.useClientStorage) {
-      const session = destr(window[this.clientStorage].getItem(this.options.session.key))
+    const clientStorage = this.getClientStorage()
+    if (clientStorage) {
+      const session = destr(clientStorage.getItem(this.options.key))
       if (session && !isExpired(session.expires)) {
         token = session.token
       }
     }
     if (!token) {
-      token = this.$cookies.get(this.options.session.key)
+      token = this.$cookies.get(this.options.key)
     }
     return token
   }
 
   setToken (token) {
-    const expires = this.options.session.expires === 'session' ? undefined : getExpirationDate(this.options.session.expires)
+    const expires = this.options.expires === 'session' ? undefined : getExpirationDate(this.options.expires)
 
-    if (this.useClientStorage) {
-      window[this.clientStorage].setItem(this.options.session.key, JSON.stringify({ token, expires }))
-    }
-    this.$cookies.set(this.options.session.key, token, {
-      ...this.options.session.cookie,
+    const clientStorage = this.getClientStorage()
+    clientStorage && clientStorage.setItem(this.options.key, JSON.stringify({ token, expires }))
+    this.$cookies.set(this.options.key, token, {
+      ...this.options.cookie,
       expires
     })
     this.$http.setToken(token, 'Bearer')
@@ -198,10 +196,9 @@ export class Strapi extends Hookable {
 
   clearToken () {
     this.$http.setToken(false)
-    if (this.useClientStorage) {
-      window[this.clientStorage].removeItem(this.options.session.key)
-    }
-    this.$cookies.remove(this.options.session.key)
+    const clientStorage = this.getClientStorage()
+    clientStorage && clientStorage.removeItem(this.options.key)
+    this.$cookies.remove(this.options.key)
   }
 
   syncToken (jwt?) {

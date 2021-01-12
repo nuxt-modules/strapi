@@ -4,6 +4,7 @@
     "target": "ESNext",
     "module": "ESNext",
     "outDir": "dist/runtime",
+    "declaration": true,
     "lib" : [
       "DOM"
     ],

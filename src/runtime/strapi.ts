@@ -5,7 +5,14 @@ import reqURL from 'requrl'
 import { joinURL } from 'ufo'
 import type { NuxtHTTPInstance } from '@nuxt/http'
 import type { NuxtCookies } from 'cookie-universal-nuxt'
-import type { StrapiOptions } from 'types'
+import type {
+  NuxtStrapiEmailData,
+  NuxtStrapiLoginData,
+  NuxtStrapiLoginResult, NuxtStrapiQueryParams,
+  NuxtStrapiRegistrationData, NuxtStrapiResetPasswordData,
+  NuxtStrapiUser,
+  StrapiOptions
+} from 'types'
 import { getExpirationDate, isExpired } from './utils'
 
 export class Strapi extends Hookable {
@@ -14,6 +21,7 @@ export class Strapi extends Hookable {
   $cookies: NuxtCookies
   $http: NuxtHTTPInstance
   options: StrapiOptions
+
   constructor (ctx, options: StrapiOptions) {
     super()
 
@@ -55,7 +63,7 @@ export class Strapi extends Hookable {
     })
   }
 
-  get user () {
+  get user (): NuxtStrapiUser {
     return this.state.user
   }
 
@@ -63,45 +71,45 @@ export class Strapi extends Hookable {
     Vue.set(this.state, 'user', user)
   }
 
-  async register (data) {
+  async register (data: NuxtStrapiRegistrationData): Promise<NuxtStrapiLoginResult> {
     this.clearToken()
     const { user, jwt } = await this.$http.$post<any>('/auth/local/register', data)
     this.setToken(jwt)
-    this.setUser(user)
+    await this.setUser(user)
     return { user, jwt }
   }
 
-  async login (data) {
+  async login (data: NuxtStrapiLoginData): Promise<NuxtStrapiLoginResult> {
     this.clearToken()
     const { user, jwt } = await this.$http.$post<any>('/auth/local', data)
     this.setToken(jwt)
-    this.setUser(user)
+    await this.setUser(user)
     return { user, jwt }
   }
 
-  forgotPassword (data) {
+  forgotPassword (data: NuxtStrapiEmailData): Promise<unknown> {
     this.clearToken()
     return this.$http.$post('/auth/forgot-password', data)
   }
 
-  async resetPassword (data) {
+  async resetPassword (data: NuxtStrapiResetPasswordData): Promise<NuxtStrapiLoginResult> {
     this.clearToken()
     const { user, jwt } = await this.$http.$post<any>('/auth/reset-password', data)
     this.setToken(jwt)
-    this.setUser(user)
+    await this.setUser(user)
     return { user, jwt }
   }
 
-  sendEmailConfirmation (data) {
+  sendEmailConfirmation (data: NuxtStrapiEmailData): Promise<unknown> {
     return this.$http.$post('/auth/send-email-confirmation', data)
   }
 
-  logout () {
-    this.setUser(null)
+  async logout (): Promise<void> {
+    await this.setUser(null)
     this.clearToken()
   }
 
-  async fetchUser () {
+  async fetchUser (): Promise<NuxtStrapiUser> {
     const jwt = this.syncToken()
     if (!jwt) {
       return null
@@ -109,7 +117,7 @@ export class Strapi extends Hookable {
 
     try {
       const user = await this.findOne('users', 'me')
-      this.setUser(user)
+      await this.setUser(user)
     } catch (e) {
       this.clearToken()
     }
@@ -117,27 +125,28 @@ export class Strapi extends Hookable {
     return this.user
   }
 
-  setUser (user) {
+  async setUser (user): Promise<void> {
     this.user = user
-    this.callHook('userUpdated', user)
+    await this.callHook('userUpdated', user)
   }
 
-  find (entity, searchParams) {
-    return this.$http.$get(`/${entity}`, { searchParams })
+  find<T = any, E = string> (entity: E, searchParams: NuxtStrapiQueryParams): Promise<T> {
+    return this.$http.$get<T>(`/${entity}`, { searchParams })
   }
 
-  count (entity, searchParams) {
-    return this.$http.$get(`/${entity}/count`, { searchParams })
+  count<T = any, E = string> (entity: E, searchParams: NuxtStrapiQueryParams): Promise<T> {
+    return this.$http.$get<T>(`/${entity}/count`, { searchParams })
   }
 
-  findOne (entity, id) {
-    return this.$http.$get(`/${entity}/${id}`)
+  findOne<T = any, E = string> (entity: E, id: string): Promise<T> {
+    return this.$http.$get<T>(`/${entity}/${id}`)
   }
 
-  create (entity, data) {
-    return this.$http.$post(`/${entity}`, data)
+  create<T = any, E = string> (entity: E, data: NuxtStrapiQueryParams): Promise<T> {
+    return this.$http.$post<T>(`/${entity}`, data)
   }
 
+  // TODO: define `update()` types
   update (entity, id, data) {
     if (typeof id === 'object') {
       data = id
@@ -148,17 +157,16 @@ export class Strapi extends Hookable {
     return this.$http.$put(`/${path}`, data)
   }
 
-  delete (entity, id) {
+  delete<T = any, E = string> (entity: E, id: string): Promise<T> {
     const path = [entity, id].filter(Boolean).join('/')
     return this.$http.$delete(`/${path}`)
   }
 
-  async graphql (query) {
-    const { data } = await this.$http.$post('/graphql', query) as any
-    return data
+  graphql<T = any> (query): Promise<T> {
+    return this.$http.$post<{ data: T }>('/graphql', query).then(res => res.data)
   }
 
-  getClientStorage () {
+  private getClientStorage () {
     const storageType = this.options.expires === 'session' ? 'sessionStorage' : 'localStorage'
 
     if (process.client && typeof window[storageType] !== 'undefined') {
@@ -167,7 +175,7 @@ export class Strapi extends Hookable {
     return null
   }
 
-  getToken () {
+  getToken (): string {
     let token
     const clientStorage = this.getClientStorage()
     if (clientStorage) {
@@ -182,7 +190,7 @@ export class Strapi extends Hookable {
     return token
   }
 
-  setToken (token) {
+  setToken (token: string): void {
     const expires = this.options.expires === 'session' ? undefined : getExpirationDate(this.options.expires)
 
     const clientStorage = this.getClientStorage()
@@ -194,14 +202,14 @@ export class Strapi extends Hookable {
     this.$http.setToken(token, 'Bearer')
   }
 
-  clearToken () {
+  clearToken (): void {
     this.$http.setToken(false)
     const clientStorage = this.getClientStorage()
     clientStorage && clientStorage.removeItem(this.options.key)
     this.$cookies.remove(this.options.key)
   }
 
-  syncToken (jwt?) {
+  private syncToken (jwt?) {
     if (!jwt) {
       jwt = this.getToken()
     }

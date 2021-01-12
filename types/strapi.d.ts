@@ -2,7 +2,18 @@ import { NuxtHTTPInstance } from '@nuxt/http'
 import { NuxtCookies } from 'cookie-universal-nuxt'
 import { CookieSerializeOptions } from 'cookie'
 
-export type NuxtStrapiQueryParams<T> = T | Record<string, any>;
+export type NuxtStrapiUser = Record<string, any>
+
+export type NuxtStrapiQueryParams =
+  string |
+  {[key: string]: string | number | boolean} |
+  Array<Array<string | number | boolean>> |
+  URLSearchParams
+
+export interface NuxtStrapiLoginResult {
+  user: NuxtStrapiUser
+  jwt: string
+}
 
 export interface StrapiOptions {
   key: string
@@ -51,7 +62,7 @@ export interface $Strapi {
    * You can read more about parameters
    * [here](https://strapi.io/documentation/developer-docs/latest/content-api/parameters.html).
    * */
-  find<T = any, Entities = string>(entity: Entities, params?: NuxtStrapiQueryParams<T>): Promise<T>;
+  find<T = any, Entities = string>(entity: Entities, params?: NuxtStrapiQueryParams): Promise<T>;
 
   /**
    * Count entries.
@@ -59,7 +70,7 @@ export interface $Strapi {
    * You can read more about parameters
    * [here](https://strapi.io/documentation/developer-docs/latest/content-api/parameters.html).
    * */
-  count<T = any, Entities = string>(entity: Entities, params?: NuxtStrapiQueryParams<T>): Promise<number>;
+  count<Entities = string>(entity: Entities, params?: NuxtStrapiQueryParams): Promise<number>;
 
   /**
    * Get an entry by id and returns its value.
@@ -69,14 +80,14 @@ export interface $Strapi {
   /**
    * Creates an entry and returns its value.
    * */
-  create<T = any, Entities = string>(entity: Entities, data?: NuxtStrapiQueryParams<T>): Promise<T>;
+  create<T = any, Entities = string>(entity: Entities, data?: NuxtStrapiQueryParams): Promise<T>;
 
   /**
    * Partially updates an entry by id and returns its value.
    * Fields that aren't sent in the query are not changed in the db.
    * Send a null value if you want to clear them.
    * */
-  update<T = any, Entities = string>(entity: Entities, id: string, data?: NuxtStrapiQueryParams<T>): Promise<T>;
+  update<T = any, Entities = string>(entity: Entities, id: string, data?: NuxtStrapiQueryParams): Promise<T>;
 
   /**
    * Deletes an entry by id and returns its value.

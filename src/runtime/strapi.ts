@@ -129,11 +129,11 @@ export class Strapi extends Hookable {
     await this.callHook('userUpdated', user)
   }
 
-  find<T = any, E = string> (entity: E, searchParams: NuxtStrapiQueryParams): Promise<T> {
+  find<T = any, E = string> (entity: E, searchParams?: NuxtStrapiQueryParams): Promise<T> {
     return this.$http.$get<T>(`/${entity}`, { searchParams })
   }
 
-  count<T = any, E = string> (entity: E, searchParams: NuxtStrapiQueryParams): Promise<T> {
+  count<T = any, E = string> (entity: E, searchParams?: NuxtStrapiQueryParams): Promise<T> {
     return this.$http.$get<T>(`/${entity}/count`, { searchParams })
   }
 

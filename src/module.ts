@@ -1,8 +1,8 @@
 import { resolve } from 'path'
 import defu from 'defu'
 import ms from 'ms'
-import type { ModuleOptions } from 'types'
 import { name, version } from '../package.json'
+import { ModuleOptions } from './types/module'
 
 const defaults: ModuleOptions = {
   url: process.env.STRAPI_URL || 'http://localhost:1337',

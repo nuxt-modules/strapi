@@ -5,6 +5,7 @@
     "module": "ESNext",
     "outDir": "dist/runtime",
     "declaration": true,
+    "declarationDir": "dist/types",
     "lib" : [
       "DOM"
     ],

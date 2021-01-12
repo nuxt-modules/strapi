@@ -12,7 +12,7 @@ import type {
   NuxtStrapiRegistrationData, NuxtStrapiResetPasswordData,
   NuxtStrapiUser,
   StrapiOptions
-} from 'types'
+} from '../types/strapi'
 import { getExpirationDate, isExpired } from './utils'
 
 export class Strapi extends Hookable {

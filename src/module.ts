@@ -2,9 +2,9 @@ import { resolve } from 'path'
 import defu from 'defu'
 import ms from 'ms'
 import { name, version } from '../package.json'
-import { ModuleOptions } from './types/module'
+import { NuxtStrapiModuleOptions } from './runtime/types'
 
-const defaults: ModuleOptions = {
+const defaults: NuxtStrapiModuleOptions = {
   url: process.env.STRAPI_URL || 'http://localhost:1337',
   entities: [],
   key: 'strapi_jwt',
@@ -15,7 +15,7 @@ const defaults: ModuleOptions = {
 async function strapiModule (moduleOptions) {
   const { nuxt } = this
 
-  const options = defu(moduleOptions, nuxt.options.strapi, defaults) as ModuleOptions
+  const options = defu(moduleOptions, nuxt.options.strapi, defaults) as NuxtStrapiModuleOptions
 
   if (typeof options.expires === 'string' && options.expires !== 'session') {
     options.expires = ms(options.expires)

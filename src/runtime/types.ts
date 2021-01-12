@@ -47,3 +47,11 @@ export interface NuxtStrapiResetPasswordData {
   password: string;
   passwordConfirmation: string;
 }
+
+export interface NuxtStrapiModuleOptions {
+  url: string
+  entities: string[],
+  key: string,
+  expires: 'session' | string | number,
+  cookie: CookieSerializeOptions
+}

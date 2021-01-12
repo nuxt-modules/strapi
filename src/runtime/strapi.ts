@@ -12,12 +12,11 @@ import type {
   NuxtStrapiRegistrationData, NuxtStrapiResetPasswordData,
   NuxtStrapiUser,
   StrapiOptions
-} from '../types/strapi'
+} from './types'
 import { getExpirationDate, isExpired } from './utils'
 
 export class Strapi extends Hookable {
   private state: { user: null | any }
-  private useClientStorage: boolean
   $cookies: NuxtCookies
   $http: NuxtHTTPInstance
   options: StrapiOptions

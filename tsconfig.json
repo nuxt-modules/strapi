@@ -8,7 +8,7 @@
       "@types/node"
     ],
     "paths": {
-      "@nuxt/image/*": [
+      "@nuxtjs/strapi/*": [
         "src/*"
       ]
     }

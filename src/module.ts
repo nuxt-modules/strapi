@@ -15,9 +15,10 @@ const defaults: ModuleOptions = {
 async function strapiModule (moduleOptions) {
   const { nuxt } = this
 
-  const options = defu(moduleOptions, nuxt.options.strapi, defaults)
-  if (typeof options.session.expires === 'string' && options.session.expires !== 'session') {
-    options.session.expires = ms(options.session.expires)
+  const options = defu(moduleOptions, nuxt.options.strapi, defaults) as ModuleOptions
+
+  if (typeof options.expires === 'string' && options.expires !== 'session') {
+    options.expires = ms(options.expires)
   }
 
   nuxt.options.publicRuntimeConfig = nuxt.options.publicRuntimeConfig || {}

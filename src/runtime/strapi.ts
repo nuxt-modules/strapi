@@ -26,7 +26,7 @@ export class Strapi extends Hookable {
     this.state = Vue.observable({ user: null })
 
     this.syncToken()
-    const url = runtimeConfig.url || '<%= options.url %>'
+    const url = runtimeConfig.url
     if (process.server && ctx.req && url.startsWith('/')) {
       this.$http.setBaseURL(joinURL(reqURL(ctx.req), url))
     } else {

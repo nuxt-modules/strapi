@@ -1,17 +1,8 @@
 module.exports = {
-  testEnvironment: 'node',
-  collectCoverage: true,
-  collectCoverageFrom: [
-    'lib/**/*.js',
-    '!lib/plugin.js'
-  ],
+  preset: '@nuxt/test-utils',
   moduleNameMapper: {
-    '^~/(.*)$': '<rootDir>/lib/$1',
-    '^~~$': '<rootDir>',
-    '^@@$': '<rootDir>',
-    '^@/(.*)$': '<rootDir>/lib/$1'
-  },
-  transform: {
-    '^.+\\.js$': 'babel-jest'
+    '~image': '<rootDir>/src/runtime/index.ts',
+    '~image/(.*)': '<rootDir>/src/runtime/$1',
+    '~/(.*)': '<rootDir>/$1'
   }
 }

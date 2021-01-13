@@ -13,11 +13,13 @@ You can register an `error` hook to display a toast for example:
 
 ```js{}[plugins/strapi.js]
 export default ({ $strapi, app }) => {
-  $strapi.hook('error', (e) => {
-    app.$toast.error(e.message)
+  $strapi.hook('error', (error) => {
+    app.$toast.error(error.message)
   })
 }
 ```
+
+You can also get the original error from Strapi api with `error.original`.
 
 ### `userUpdated`
 

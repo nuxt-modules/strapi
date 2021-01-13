@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { Strapi } from '@nuxtjs/strapi/runtime'
+import { Strapi } from '~strapi'
 
 const options = <%= JSON.stringify(options) %>
 

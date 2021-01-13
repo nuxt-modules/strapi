@@ -26,7 +26,7 @@ async function strapiModule (moduleOptions) {
   nuxt.options.publicRuntimeConfig.strapi.url = options.url
 
   const runtimeDir = resolve(__dirname, 'runtime')
-  nuxt.options.alias['@nuxtjs/strapi/runtime'] = runtimeDir
+  nuxt.options.alias['~strapi'] = runtimeDir
   nuxt.options.build.transpile.push(runtimeDir, 'destr', 'requrl', 'hookable', 'ufo')
 
   this.addPlugin({

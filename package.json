@@ -5,14 +5,15 @@
   "repository": "nuxt-community/strapi-module",
   "license": "MIT",
   "sideEffects": false,
-  "main": "dist/module.js",
-  "typings": "dist/types",
+  "main": "lib/module.js",
+  "typings": "types/index.d.ts",
   "files": [
-    "dist"
+    "lib",
+    "types"
   ],
   "scripts": {
     "build": "siroc build && yarn build:runtime",
-    "build:runtime": "tsc -p tsconfig.runtime.json && copyfiles \"src/runtime/**/*\" -e \"**/*.ts\" -u 2 dist/runtime",
+    "build:runtime": "tsc -p tsconfig.runtime.json && copyfiles \"src/runtime/**/*\" -e \"**/*.ts\" -u 2 lib/runtime",
     "dev": "yarn nuxt-ts example",
     "docs": "nuxt docs",
     "lint": "eslint --ext .ts --ext .vue .",

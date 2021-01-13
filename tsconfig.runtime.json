@@ -3,9 +3,9 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "outDir": "dist/runtime",
+    "outDir": "lib/runtime",
     "declaration": true,
-    "declarationDir": "dist/types",
+    "declarationDir": "types",
     "lib" : [
       "DOM"
     ],

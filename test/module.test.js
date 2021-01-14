@@ -4,7 +4,12 @@ describe('module', () => {
   setupTest({
     fixture: '../example',
     configFile: 'nuxt.config.ts',
-    server: true
+    server: true,
+    config: {
+      strapi: {
+        expires: '15d'
+      }
+    }
   })
 
   it('renders', async () => {

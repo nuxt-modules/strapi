@@ -81,75 +81,7 @@ export default Vue.extend({
 </script>
 ```
 
-## Known issues
-
-There are some known issues with the current implementation of TypeScript in the library,
-so we have listed some workarounds.
-
-### Entity shortcuts
-
-The current TypeScript implementation doesn't support entity shortcuts: your code may work,
-but it will throw type checking errors. This is why we made the `entity` parameter needed in
-every method which involves a query.
-
-You can however define the entities available to your Vue methods with
-[string literal types](https://www.typescriptlang.org/docs/handbook/literal-types.html#string-literal-types)
-as described below.
-
-```vue
-<script lang="ts">
-import Vue from 'vue'
-import { Context } from '@nuxt/types'
-
-interface BlogPost {
-  title: string;
-  description: string;
-}
-
-type Entities = 'posts' | 'projects'
-
-export default Vue.extend({
-  async asyncData (ctx: Context) {
-    const posts = await ctx.$strapi.find<BlogPost[], Entities>(
-      'posts'
-    )
-
-    return {
-      posts
-    }
-  }
-})
-</script>
-```
-
-### Query params
-
-Some query methods won't be accepted by the compiler if you define generics as in `$strapi.find<BlogPost[]>`
-(e.g.: the array methods described [here](/strapi#findentity-params)).
-
-You can get around this issue by doing something like below.
-
-```vue
-<script lang="ts">
-import Vue from 'vue'
-
-interface BlogPost {
-  title: string;
-  description: string;
-}
-
-export default Vue.extend({
-  async asyncData (ctx: Context) {
-    const posts: BlogPost[] = await this.$strapi.find(
-      'posts'
-    )
-
-    return {
-      posts
-    }
-  }
-})
-</script>
-```
-
-> You can always declare the return type by assigning a type to the variable instead of the method.
+<alert type="info">
+Entity shortcuts will not be correctly picked up by the Typescript compiler,
+we suggest not to use them if you're using Typescript.
+</alert>

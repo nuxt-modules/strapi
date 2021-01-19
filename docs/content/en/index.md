@@ -2,7 +2,7 @@
 title: Introduction
 description: 'Nuxt Strapi is a Nuxt module for first class integration with Strapi'
 position: 1
-category: ''
+category: 'Getting Started'
 features:
   - Authentication support
   - RESTful methods

@@ -11,7 +11,7 @@ The module adds some hooks you can use.
 
 You can register an `error` hook to display a toast for example:
 
-```js{}[plugins/strapi.js]
+```ts [plugins/strapi.js]
 export default ({ $strapi, app }) => {
   $strapi.hook('error', (error) => {
     app.$toast.error(error.message)
@@ -26,7 +26,7 @@ You can also get the original error from Strapi api with `error.original`.
 You can register an `userUpdated` hook to force refetch inside components:
 
 
-```vue{}[components/navbar.vue]
+```html [components/navbar.vue]
 <template>
   <div>
     <p v-for="(userInvoice, index) in userInvoices" key="index">

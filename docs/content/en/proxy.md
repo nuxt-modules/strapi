@@ -8,7 +8,7 @@ fullscreen: true
 
 You can use the [@nuxtjs/proxy](https://github.com/nuxt-community/proxy-module) module if you want to proxy your Strapi URL:
 
-```js [nuxt.config.js]
+```ts [nuxt.config.js]
 export default {
   modules: [
     '@nuxtjs/strapi',

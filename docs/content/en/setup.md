@@ -2,7 +2,7 @@
 title: Setup
 description: 'Learn how to setup Strapi in your Nuxt app'
 position: 2
-category: Guide
+category: Getting Started
 ---
 
 Check the [Nuxt.js documentation](https://nuxtjs.org/api/configuration-modules#the-modules-property) for more information about installing and using modules in Nuxt.js.
@@ -32,7 +32,7 @@ npm install @nuxtjs/strapi
 
 Then, add `@nuxtjs/strapi` to the `modules` section of `nuxt.config.js`:
 
-```js[nuxt.config.js]
+```ts [nuxt.config.js]
 export default {
   modules: ['@nuxtjs/strapi'],
   strapi: {

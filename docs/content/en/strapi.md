@@ -45,12 +45,12 @@ You can also pass an array in two ways:
   <code-block label="Syntax" active>
 
 ```js
-//1st method
+// 1st method
 await $strapi.find('products', [['categories.name', 'women'], ['categories.name', 'men']])
 // With entity shortcut
 await $strapi.$products.find([['categories.name', 'women'], ['categories.name', 'men']])
 
-//2nd method
+// 2nd method
 await $strapi.find('products', { 'categories.name': ['women', 'men'] })
 // With entity shortcut
 await $strapi.$products.find({ 'categories.name': ['women', 'men'] })
@@ -60,9 +60,9 @@ await $strapi.$products.find({ 'categories.name': ['women', 'men'] })
   <code-block label="Output">
 
 ```js
-//1st method
+// 1st method
 "?categories.name=woman&categories.name=men"
-//2nd method
+// 2nd method
 "?categories.name=women%2Cmen"
 ```
 

@@ -70,6 +70,8 @@ export default {
 </script>
 ```
 
+You can for example use a [Nuxt middleware](https://nuxtjs.org/docs/2.x/directory-structure/middleware) to protect pages when the user is not logged in:
+
 ```js{}[middleware/auth.js]
 export default function ({ redirect, $strapi }) {
   if (!$strapi.user) {
@@ -78,7 +80,7 @@ export default function ({ redirect, $strapi }) {
 }
 ```
 
-> You can check all the [methods available](/strapi#methods)
+> See all the [available methods](/strapi#methods)
 
 ## Entities
 

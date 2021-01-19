@@ -1,19 +1,20 @@
-const { setup, loadConfig, get } = require('@nuxtjs/module-test-utils')
+import { get, setupTest } from '@nuxt/test-utils'
 
 describe('module', () => {
-  let nuxt
-
-  beforeAll(async () => {
-    ({ nuxt } = (await setup(loadConfig(__dirname, '../../example'))))
-  }, 60000)
-
-  afterAll(async () => {
-    await nuxt.close()
+  setupTest({
+    fixture: '../example',
+    configFile: 'nuxt.config.ts',
+    server: true,
+    config: {
+      strapi: {
+        expires: '15d'
+      }
+    }
   })
 
-  test('render', async () => {
-    const html = await get('/')
-    expect(html).toContain('@nuxtjs/strapi')
-    expect(html).toContain('http://localhost:1337')
+  it('renders', async () => {
+    const { body } = await get('/')
+    expect(body).toContain('@nuxtjs/strapi')
+    expect(body).toContain('http://localhost:1337')
   })
 })

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "types": [
+      "@types/node"
+    ],
+    "paths": {
+      "@nuxtjs/strapi/*": [
+        "src/*"
+      ]
+    }
+  }
+}

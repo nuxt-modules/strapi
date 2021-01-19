@@ -1,11 +1,9 @@
-# Common
 node_modules
-dist
 .nuxt
+*.log
+cache/
+lib/
+types/
+.DS_Store
 coverage
-
-# Plugin
-lib/plugin.js
-
-# Typings
-/**/*.d.ts
+sw.*

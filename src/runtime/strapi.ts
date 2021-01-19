@@ -145,8 +145,7 @@ export class Strapi extends Hookable {
     return this.$http.$post<T>(`/${entity}`, data)
   }
 
-  // TODO: define `update()` types
-  update (entity, id, data) {
+  update<T = any, E = string> (entity: E, id: string, data: NuxtStrapiQueryParams): Promise<T> {
     if (typeof id === 'object') {
       data = id
       id = undefined

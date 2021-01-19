@@ -6,7 +6,7 @@
   "license": "MIT",
   "sideEffects": false,
   "main": "lib/module.js",
-  "typings": "types/index.d.ts",
+  "typings": "./types/index.d.ts",
   "files": [
     "lib",
     "types"

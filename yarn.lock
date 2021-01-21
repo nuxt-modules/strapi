@@ -4648,6 +4648,11 @@ destr@^1.0.0, destr@^1.0.1:
   resolved "https://registry.yarnpkg.com/destr/-/destr-1.0.1.tgz#d13db7f9d9c9ca4fcf24e86343d601217136ddc3"
   integrity sha512-LnEdINrd1ydSqRiAGjMBVrG/G8hNruwE+fEKlkJA14MGPEoI9T7zJDwGpkMTyXT2ASE0ycnN2SYn4k6Q7j7lHg==
 
+destr@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/destr/-/destr-1.1.0.tgz#2da6add6ba71e04fd0abfb1e642d4f6763235095"
+  integrity sha512-Ev/sqS5AzzDwlpor/5wFCDu0dYMQu/0x2D6XfAsQ0E7uQmamIgYJ6Dppo2T2EOFVkeVYWjc+PCLKaqZZ57qmLg==
+
 destroy@^1.0.4, destroy@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
@@ -6278,10 +6283,10 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hookable@^4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/hookable/-/hookable-4.3.1.tgz#aabad1925197701d2b3ea8de1a0d36f69cddaee7"
-  integrity sha512-E4YA6bjSfXDT6QsFIjz9F1rjJ8RH6qax5HBosvP7dhTTlErVTfe4RpuwpPEKhJOCBJwaI+snBWufbKa26eZBoQ==
+hookable@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/hookable/-/hookable-4.4.0.tgz#536d3dd95b89cedd1c7114c8efacdf186ab3c466"
+  integrity sha512-Nuax19F4uk+qTnt5IImF0RwdeBq2Mrf+a7ZRdg8CC2739xlnSGcyN+t+Etm67h7mRAjTbdyQzLY1X+LwkPs1PQ==
 
 hoopy@^0.1.4:
   version "0.1.4"
@@ -10810,10 +10815,10 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-siroc@^0.6.2:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/siroc/-/siroc-0.6.2.tgz#7e1d68921c4af850f824920e5f327a868074d9ff"
-  integrity sha512-c6QHoatFcbKAX1Ch6VBWpk+0c07VFR4y6Lr/RW3W3MRbktHKHXKLWvHMLp5QUZ22CwHhVK3d/THq28E9aYw+TQ==
+siroc@^0.6.3:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/siroc/-/siroc-0.6.3.tgz#3f5a986ea3f7664be6e82e2413d5ffdb9f98f571"
+  integrity sha512-9tFbs6lJLQBwJ/5TF26y0aepMVhT0iFm8KqMBpg/XtdoJZoybruHZAE4xzk2YWPM3AAlHZ6/bO/34ZqZKINfTg==
   dependencies:
     "@rollup/plugin-alias" "^3.1.1"
     "@rollup/plugin-commonjs" "^17.0.0"

@@ -4164,10 +4164,10 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
-docus@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/docus/-/docus-0.0.4.tgz#79ce7f6ae21173e4e2d0b4eef26cac2e614305c6"
-  integrity sha512-2gyuj/p7oWmpgLtkf8Gb/C1GxsHeArP6Y6rACN7TfS+6Z3nPCPl2OAtiI4bqV5N1Hswtf3AELB9mg1X4BoX1Jg==
+docus@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/docus/-/docus-0.0.5.tgz#bbe9f0f0d3e72b031b6098cb0e8970a99139ff38"
+  integrity sha512-j2IjZaiIMVFDquHdhVauN9zjziacnohgoe+Z/rKCm1DwcM8H+IuZj/LwacWrt9ZU/G56EVoj+gxbWnLHZv0I3g==
   dependencies:
     "@docsearch/css" "^1.0.0-alpha.28"
     "@docsearch/js" "^1.0.0-alpha.28"

@@ -10,7 +10,8 @@ export default withDocus({
   },
   docus: {
     colors: {
-      primar: '#8E75FF'
+      primary: '#8E75FF',
+      code: '#06B6D4'
     }
   },
   ackee: {

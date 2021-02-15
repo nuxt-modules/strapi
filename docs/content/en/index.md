@@ -19,5 +19,3 @@ This module is a wrapper around [Strapi](https://strapi.io/) for [NuxtJS](https:
 ## Features
 
 <list :items="features"></list>
-
-<p class="flex items-center">Enjoy light and dark mode:&nbsp;<app-color-switcher class="p-2"></app-color-switcher></p>

@@ -41,7 +41,7 @@
     "@nuxt/typescript-build": "^2.0.4",
     "@nuxt/typescript-runtime": "^2.0.1",
     "@nuxtjs/eslint-config": "^5.0.0",
-    "@nuxtjs/eslint-config-typescript": "^5.0.0",
+    "@nuxtjs/eslint-config-typescript": "^6.0.0",
     "@nuxtjs/module-test-utils": "latest",
     "@types/jest": "^26.0.20",
     "babel-eslint": "latest",

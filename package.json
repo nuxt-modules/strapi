@@ -5,15 +5,19 @@
   "repository": "nuxt-community/strapi-module",
   "license": "MIT",
   "sideEffects": false,
-  "main": "lib/module.js",
-  "typings": "./types/index.d.ts",
+  "exports": {
+    ".": "./lib/module.js",
+    "./lib/runtime/*": "./lib/runtime/*",
+    "./package.json": "./package.json"
+  },
+  "main": "./lib/module.js",
+  "typings": "./lib/runtime.d.ts",
   "files": [
     "lib",
     "types"
   ],
   "scripts": {
-    "build": "siroc build && yarn build:runtime",
-    "build:runtime": "tsc -p tsconfig.runtime.json && copyfiles \"src/runtime/**/*\" -e \"**/*.ts\" -u 2 lib/runtime",
+    "build": "siroc build",
     "dev": "yarn nuxt-ts example",
     "docs": "nuxt docs",
     "lint": "eslint --ext .ts --ext .vue .",
@@ -54,7 +58,12 @@
     "siroc": "^0.8.0",
     "standard-version": "^9.1.1",
     "ts-loader": "^8.0.18",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.3",
+    "vuex": "^3.6.2"
+  },
+  "peerDependencies": {
+    "@nuxt/types": "*",
+    "vuex": "*"
   },
   "publishConfig": {
     "access": "public"

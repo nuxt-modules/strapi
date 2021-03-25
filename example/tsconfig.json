@@ -23,9 +23,9 @@
       ]
     },
     "types": [
-      "@types/node",
+      "node",
       "@nuxt/types",
-      "../types"
+      "../lib/runtime.d.ts"
     ]
   },
   "exclude": [

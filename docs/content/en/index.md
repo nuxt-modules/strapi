@@ -18,4 +18,4 @@ This module is a wrapper around [Strapi](https://strapi.io/) for [NuxtJS](https:
 
 ## Features
 
-<list :items="features"></list>
+<d-list :items="features"></d-list>

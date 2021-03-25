@@ -1,10 +1,17 @@
 {
-    "title": "@nuxtjs/strapi",
-    "url": "https://strapi.nuxtjs.org/",
-    "logo": {
-        "light": "/logo-light.svg",
-        "dark": "/logo-dark.svg"
-    },
-    "github": "nuxt-community/strapi-module",
-    "twitter": "@nuxt_js"
+  "title": "@nuxtjs/strapi",
+  "url": "https://strapi.nuxtjs.org/",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "header": {
+    "title": false,
+    "logo": true
+  },
+  "colors": {
+    "primary": "#8E75FF"
+  },
+  "github": "nuxt-community/strapi-module",
+  "twitter": "@nuxt_js"
 }

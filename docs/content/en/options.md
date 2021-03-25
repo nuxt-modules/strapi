@@ -60,7 +60,7 @@ See more in [Usage](/usage#entities).
 
 ## `key`
 
-<badge>v0.2.0+</badge>
+<d-badge>v0.2.0+</d-badge>
 
 - Type: `String`
 - Default: `'strapi_jwt'`
@@ -76,7 +76,7 @@ export default {
 ```
 ## `expires`
 
-<badge>v0.2.0+</badge>
+<d-badge>v0.2.0+</d-badge>
 
 - Type: `String` or `Number` or `'session'`
 - Default: `'session'`
@@ -97,7 +97,7 @@ export default {
 
 ### `cookie`
 
-<badge>v0.2.0+</badge>
+<d-badge>v0.2.0+</d-badge>
 
 - Type: `Object`
 - Default: `{}`

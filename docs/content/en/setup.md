@@ -11,22 +11,22 @@ Check the [Nuxt.js documentation](https://nuxtjs.org/api/configuration-modules#t
 
 Add `@nuxtjs/strapi` dependency to your project:
 
-<code-group>
-  <code-block label="Yarn" active>
+<d-code-group>
+  <d-code-block label="Yarn" active>
 
 ```bash
 yarn add @nuxtjs/strapi
 ```
 
-  </code-block>
-  <code-block label="NPM">
+  </d-code-block>
+  <d-code-block label="NPM">
 
 ```bash
 npm install @nuxtjs/strapi
 ```
 
-  </code-block>
-</code-group>
+  </d-code-block>
+</d-code-group>
 
 ## Configure
 

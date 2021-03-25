@@ -8,7 +8,7 @@ category: Advanced
 ## Setup
 
 Thanks to [declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html),
-you can tell the TypeScript compiler where to find the `$strapi` types by adding these lines to your 
+you can tell the TypeScript compiler where to find the `$strapi` types by adding these lines to your
 `tsconfig.json`.
 
 ```json[tsconfig.json]
@@ -23,7 +23,7 @@ you can tell the TypeScript compiler where to find the `$strapi` types by adding
 
 ## Usage
 
-You now have access to `this.$strapi` inside your components and to `ctx.$strapi` inside 
+You now have access to `this.$strapi` inside your components and to `ctx.$strapi` inside
 `asyncData`, `fetch`, `plugins`, `middlewares` and `nuxtServerInit`.
 
 ### In component methods
@@ -81,7 +81,7 @@ export default Vue.extend({
 </script>
 ```
 
-<alert type="info">
+<d-alert type="info">
 Entity shortcuts will not be correctly picked up by the Typescript compiler,
 we suggest not to use them if you're using Typescript.
-</alert>
+</d-alert>

@@ -37,12 +37,12 @@ await this.$strapi.find('products', { title: '' })
 // With entity shortcut
 await this.$strapi.$products.find({ title: '' })
 ```
-<alert type="info">
+<d-alert type="info">
 You can also pass an array in two ways:
-</alert>
+</d-alert>
 
-<code-group>
-  <code-block label="Syntax" active>
+<d-code-group>
+  <d-code-block label="Syntax" active>
 
 ```js
 // 1st method
@@ -56,8 +56,8 @@ await $strapi.find('products', { 'categories.name': ['women', 'men'] })
 await $strapi.$products.find({ 'categories.name': ['women', 'men'] })
 ```
 
-  </code-block>
-  <code-block label="Output">
+  </d-code-block>
+  <d-code-block label="Output">
 
 ```js
 // 1st method
@@ -66,8 +66,8 @@ await $strapi.$products.find({ 'categories.name': ['women', 'men'] })
 "?categories.name=women%2Cmen"
 ```
 
-  </code-block>
-</code-group>
+  </d-code-block>
+</d-code-group>
 
 > See the [Strapi endpoints](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints).
 
@@ -231,11 +231,11 @@ Fetch `me` user from `/users/me` route if a `jwt` is present in the cookies. Set
 
 > This method is called by default on init, so you don't have to.
 
-<alert type="info">
+<d-alert type="info">
 
 On `ssr` mode, this method is called on the server-side only and the data are hydrated client-side so the HTTP call happens only once.
 
-</alert>
+</d-alert>
 
 ### `setUser(user)`
 

@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/strapi",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Strapi module for Nuxt",
   "repository": "nuxt-community/strapi-module",
   "license": "MIT",

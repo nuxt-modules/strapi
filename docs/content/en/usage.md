@@ -104,6 +104,47 @@ You can also define your Strapi entities to add shortcuts to the previous method
 ```js
 await this.$strapi.$products.find()
 ```
+## Usage with the Nuxt Composition Api
+
+First you need to install the [Nuxt Composition API](https://composition-api.nuxtjs.org/) and add it to your project
+
+In order to use the Composition API you must be on Nuxt v2.12 or above because we will be using the useFetch Hook instead of useAsync due to the fact that useAsync [won't re call the information after inital load](https://composition-api.nuxtjs.org/helpers/useAsync)
+
+Your setup method will look like this
+
+```
+import { useFetch, ref } from '@nuxtjs/composition-api'
+export default{
+  setup() {
+          const homepage = ref()
+          useFetch(async ({ $strapi }) => {
+              homepage.value = await $strapi.find('home')
+          })
+          return { homepage }
+      },
+}
+```
+> :warning: Remember that the JSON data is case sensitive
+
+If you want to use dynamic route matching you can pass in the url parameters by doing this
+
+```
+import { ref, useFetch, useRoute } from '@nuxtjs/composition-api'
+export default {
+    name: '_id',
+    setup() {
+        const article = ref()
+        const route = useRoute()
+        useFetch(async ({ $strapi }) => {
+            article.value = await $strapi.find('articles', {
+                slug: route.value.params.id,
+            })
+        })
+
+        return { article }
+    },
+}
+```
 
 ## Advanced
 

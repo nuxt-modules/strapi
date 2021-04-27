@@ -69,7 +69,7 @@ await $strapi.$products.find({ 'categories.name': ['women', 'men'] })
   </d-code-block>
 </d-code-group>
 
-> See the [Strapi endpoints](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints).
+> See the [Strapi endpoints](https://strapi.io/documentation/developer-docs/latest/developer-resources/content-api/content-api.html#endpoints).
 
 ### `count(entity, params)`
 
@@ -83,7 +83,7 @@ await this.$strapi.count('products', params)
 await this.$strapi.$products.count(params)
 ```
 
-> See the [Strapi endpoints](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints).
+> See the [Strapi endpoints](https://strapi.io/documentation/developer-docs/latest/developer-resources/content-api/content-api.html#endpoints).
 
 ### `findOne(entity, id)`
 
@@ -97,7 +97,7 @@ await this.$strapi.findOne('products', 1)
 await this.$strapi.$products.findOne(1)
 ```
 
-> See the [Strapi endpoints](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints).
+> See the [Strapi endpoints](https://strapi.io/documentation/developer-docs/latest/developer-resources/content-api/content-api.html#endpoints).
 
 ### `create(entity, data)`
 
@@ -111,7 +111,7 @@ await this.$strapi.create('products', { title: '' })
 await this.$strapi.$products.create({ title: '' })
 ```
 
-> See the [Strapi endpoints](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints).
+> See the [Strapi endpoints](https://strapi.io/documentation/developer-docs/latest/developer-resources/content-api/content-api.html#endpoints).
 
 ### `update(entity, id, data)`
 
@@ -125,7 +125,7 @@ await this.$strapi.update('products', 1, { title: '' })
 await this.$strapi.$products.update(1, { title: '' })
 ```
 
-> See the [Strapi endpoints](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints).
+> See the [Strapi endpoints](https://strapi.io/documentation/developer-docs/latest/developer-resources/content-api/content-api.html#endpoints).
 
 ### `delete(entity, id)`
 
@@ -139,7 +139,7 @@ await this.$strapi.delete('products', 1)
 await this.$strapi.$products.delete(1)
 ```
 
-> See the [Strapi endpoints](https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints).
+> See the [Strapi endpoints](https://strapi.io/documentation/developer-docs/latest/developer-resources/content-api/content-api.html#endpoints).
 
 ### `graphql(data)`
 
@@ -169,7 +169,7 @@ Register using local strategy. Sets the [User](#setuseruser) and [Token](#settok
 await this.$strapi.register({ username: '', email: '', password: '' })
 ```
 
-> See the [Strapi documentation](https://strapi.io/documentation/v3.x/plugins/users-permissions.html#registration).
+> See the [Strapi documentation](https://strapi.io/documentation/developer-docs/latest/development/plugins/users-permissions.html#registration).
 
 ### `login(form)`
 
@@ -181,7 +181,7 @@ Login using local strategy. Sets the [User](#setuseruser) and [Token](#settokent
 await this.$strapi.login({ identifier: '', password: '' })
 ```
 
-> See the [Strapi documentation](https://strapi.io/documentation/v3.x/plugins/users-permissions.html#login).
+> See the [Strapi documentation](https://strapi.io/documentation/developer-docs/latest/development/plugins/users-permissions.html#login).
 
 ### `forgotPassword(form)`
 
@@ -191,7 +191,7 @@ await this.$strapi.login({ identifier: '', password: '' })
 await this.$strapi.forgotPassword({ email: '' })
 ```
 
-> See the [Strapi documentation](https://strapi.io/documentation/v3.x/plugins/users-permissions.html#forgotten-password).
+> See the [Strapi documentation](https://strapi.io/documentation/developer-docs/latest/development/plugins/users-permissions.html#forgotten-reset-password).
 
 ### `resetPassword(form)`
 
@@ -203,7 +203,7 @@ Reset password. Sets the [User](#setuseruser) and [Token](#settokentoken).
 await this.$strapi.resetPassword({ code: '', password: '', passwordConfirmation: '' })
 ```
 
-> See the [Strapi documentation](https://strapi.io/documentation/v3.x/plugins/users-permissions.html#reset-password).
+> See the [Strapi documentation](https://strapi.io/documentation/developer-docs/latest/development/plugins/users-permissions.html#forgotten-reset-password).
 
 ### `sendEmailConfirmation(form)`
 
@@ -213,7 +213,7 @@ await this.$strapi.resetPassword({ code: '', password: '', passwordConfirmation:
 await this.$strapi.sendEmailConfirmation({ email: '' })
 ```
 
-> See the [Strapi documentation](https://strapi.io/documentation/v3.x/plugins/users-permissions.html#email-validation).
+> See the [Strapi documentation](https://strapi.io/documentation/developer-docs/latest/development/plugins/users-permissions.html#email-validation).
 
 ### `logout()`
 

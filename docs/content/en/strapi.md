@@ -183,7 +183,7 @@ Performs an HTTP request to GraphQL API and returns its value
   ```js
   import { findRestaurants } from 'restaurants.js'
 
-  await strapi.graphql({
+  await this.$strapi.graphql({
     query: findRestaurants()
   })
   ```

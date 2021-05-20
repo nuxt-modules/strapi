@@ -28,7 +28,7 @@ this.$strapi.user.avatar = ''
 
 - Returns `Promise`
 
-Get entries. Returns entries matching the query filters. You can read more about parameters [here](https://strapi.io/documentation/v3.x/content-api/parameters.html).
+Get entries. Returns entries matching the query filters. You can read more about parameters [here](https://strapi.io/documentation/developer-docs/latest/developer-resources/content-api/content-api.html#api-parameters).
 
 The second argument `params` is for query parameters:
 
@@ -75,7 +75,7 @@ await $strapi.$products.find({ 'categories.name': ['women', 'men'] })
 
 - Returns `Promise`
 
-Count entries. Returns the count of entries matching the query filters. You can read more about parameters [here](https://strapi.io/documentation/v3.x/content-api/parameters.html).
+Count entries. Returns the count of entries matching the query filters. You can read more about parameters [here](https://strapi.io/documentation/developer-docs/latest/developer-resources/content-api/content-api.html#api-parameters).
 
 ```js
 await this.$strapi.count('products', params)

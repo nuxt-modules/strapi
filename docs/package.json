@@ -10,8 +10,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "docus": "^0.1.5",
-    "nuxt": "^2.15.3"
+    "docus": "^0.5.6",
+    "nuxt": "^2.15.6"
   },
   "devDependencies": {
     "vue-plausible": "^1.1.4"

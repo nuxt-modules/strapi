@@ -147,17 +147,50 @@ await this.$strapi.$products.delete(1)
 
 Performs an HTTP request to GraphQL API and returns its value
 
-```js
-await this.$strapi.graphql({
-  query: `
-    query {
-      products {
+<d-code-group>
+  <d-code-block label="Directly in methods" active>
+
+  ```js
+
+  await strapi.graphql({
+    query: `query {
+      restaurants {
+        id
         name
       }
-    }
-  `
-});
-```
+    }`
+  });
+  ```
+
+  </d-code-block>
+  <d-code-block label="With graphql-tag">
+
+  ```js{}[restaurants.js]
+  import gql from "graphql-tag";
+  
+  export function findRestaurants() {
+    const query = gql`
+      query {
+        restaurants {
+          id
+          name
+        }
+      }`;
+    return query.loc.source.body;  
+  }
+  ```
+
+  ```js
+  import { findRestaurants } from 'restaurants.js'
+
+  await this.$strapi.graphql({
+    query: findRestaurants()
+  })
+  ```
+
+
+  </d-code-block>
+</d-code-group>
 
 ### `register(form)`
 

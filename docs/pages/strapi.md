@@ -37,12 +37,12 @@ await this.$strapi.find('products', { title: '' })
 // With entity shortcut
 await this.$strapi.$products.find({ title: '' })
 ```
-<d-alert type="info">
+<alert type="info">
 You can also pass an array in two ways:
-</d-alert>
+</alert>
 
-<d-code-group>
-  <d-code-block label="Syntax" active>
+<code-group>
+  <code-block label="Syntax" active>
 
 ```js
 // 1st method
@@ -56,8 +56,8 @@ await $strapi.find('products', { 'categories.name': ['women', 'men'] })
 await $strapi.$products.find({ 'categories.name': ['women', 'men'] })
 ```
 
-  </d-code-block>
-  <d-code-block label="Output">
+  </code-block>
+  <code-block label="Output">
 
 ```js
 // 1st method
@@ -66,8 +66,8 @@ await $strapi.$products.find({ 'categories.name': ['women', 'men'] })
 "?categories.name=women%2Cmen"
 ```
 
-  </d-code-block>
-</d-code-group>
+  </code-block>
+</code-group>
 
 > See the [Strapi endpoints](https://strapi.io/documentation/developer-docs/latest/developer-resources/content-api/content-api.html#endpoints).
 
@@ -147,8 +147,8 @@ await this.$strapi.$products.delete(1)
 
 Performs an HTTP request to GraphQL API and returns its value
 
-<d-code-group>
-  <d-code-block label="Directly in methods" active>
+<code-group>
+  <code-block label="Directly in methods" active>
 
   ```js
 
@@ -162,12 +162,12 @@ Performs an HTTP request to GraphQL API and returns its value
   });
   ```
 
-  </d-code-block>
-  <d-code-block label="With graphql-tag">
+  </code-block>
+  <code-block label="With graphql-tag">
 
   ```js{}[restaurants.js]
   import gql from "graphql-tag";
-  
+
   export function findRestaurants() {
     const query = gql`
       query {
@@ -176,7 +176,7 @@ Performs an HTTP request to GraphQL API and returns its value
           name
         }
       }`;
-    return query.loc.source.body;  
+    return query.loc.source.body;
   }
   ```
 
@@ -189,8 +189,8 @@ Performs an HTTP request to GraphQL API and returns its value
   ```
 
 
-  </d-code-block>
-</d-code-group>
+  </code-block>
+</code-group>
 
 ### `register(form)`
 
@@ -264,11 +264,11 @@ Fetch `me` user from `/users/me` route if a `jwt` is present in the cookies. Set
 
 > This method is called by default on init, so you don't have to.
 
-<d-alert type="info">
+<alert type="info">
 
 On `ssr` mode, this method is called on the server-side only and the data are hydrated client-side so the HTTP call happens only once.
 
-</d-alert>
+</alert>
 
 ### `setUser(user)`
 

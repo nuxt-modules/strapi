@@ -1,6 +1,6 @@
 ---
 title: Hooks
-description: 'Add hooks on Strapi HTTP calls'
+description: Add hooks on Strapi HTTP calls
 position: 4
 category: Guide
 ---

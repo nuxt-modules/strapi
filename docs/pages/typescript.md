@@ -81,7 +81,7 @@ export default Vue.extend({
 </script>
 ```
 
-<d-alert type="info">
+<alert type="info">
 Entity shortcuts will not be correctly picked up by the Typescript compiler,
 we suggest not to use them if you're using Typescript.
-</d-alert>
+</alert>

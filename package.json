@@ -44,8 +44,8 @@
     "@nuxt/types": "^2.15.6",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxt/typescript-runtime": "^2.1.0",
-    "@nuxtjs/eslint-config": "^6.0.0",
-    "@nuxtjs/eslint-config-typescript": "^6.0.0",
+    "@nuxtjs/eslint-config": "^6.0.1",
+    "@nuxtjs/eslint-config-typescript": "^6.0.1",
     "@nuxtjs/module-test-utils": "latest",
     "@types/jest": "^26.0.23",
     "babel-eslint": "latest",
@@ -58,7 +58,7 @@
     "siroc": "^0.10.1",
     "standard-version": "^9.3.0",
     "ts-loader": "^8.3.0",
-    "typescript": "^4.2.4",
+    "typescript": "^4.3.2",
     "vuex": "^3.6.2"
   },
   "peerDependencies": {

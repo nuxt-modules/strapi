@@ -49,11 +49,15 @@ You can also pass an array in two ways:
 await $strapi.find('products', [['categories.name', 'women'], ['categories.name', 'men']])
 // With entity shortcut
 await $strapi.$products.find([['categories.name', 'women'], ['categories.name', 'men']])
+// Entity shortcut with additional API Parameters
+await $strapi.$products.find([['categories.name', 'women'], ['categories.name', 'men'], ['_limit', '200']])
 
 // 2nd method
 await $strapi.find('products', { 'categories.name': ['women', 'men'] })
 // With entity shortcut
 await $strapi.$products.find({ 'categories.name': ['women', 'men'] })
+// Entity shortcut with additional API Parameters
+await $strapi.$products.find({ 'categories.name': ['women', 'men'], _limit: 200 })
 ```
 
   </code-block>

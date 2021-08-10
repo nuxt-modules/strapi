@@ -155,12 +155,17 @@ Performs an HTTP request to GraphQL API and returns its value
   <code-block label="Directly in methods" active>
 
   ```js
+  const restaurantId = 4;
 
   await strapi.graphql({
     query: `query {
-      restaurants {
-        id
+      restaurant(id: ${restaurantId}) {
         name
+        phone
+        owners {
+          first
+          last
+        }
       }
     }`
   });
@@ -172,12 +177,16 @@ Performs an HTTP request to GraphQL API and returns its value
   ```js{}[restaurants.js]
   import gql from "graphql-tag";
 
-  export function findRestaurants() {
+  export function getRestaurant() {
     const query = gql`
-      query {
-        restaurants {
-          id
+      query getRestaurant($id: Int!) {
+        restaurant(id: $id) {
           name
+          phone
+          owners {
+            first
+            last
+          }
         }
       }`;
     return query.loc.source.body;
@@ -185,10 +194,15 @@ Performs an HTTP request to GraphQL API and returns its value
   ```
 
   ```js
-  import { findRestaurants } from 'restaurants.js'
+  import { getRestaurant } from 'restaurants.js'
 
+  const restaurantId = 4;
+    
   await this.$strapi.graphql({
-    query: findRestaurants()
+    query: getRestaurant(),
+    variables: {
+      id: restaurantId
+    }
   })
   ```
 

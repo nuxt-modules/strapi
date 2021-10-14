@@ -73,6 +73,10 @@ await $strapi.$products.find({ 'categories.name': ['women', 'men'], _limit: 200 
   </code-block>
 </code-group>
 
+<alert type="info">
+ `_publicationState=preview` is added if nuxt is in preview mode (https://nuxtjs.org/docs/features/live-preview/)
+</alert>
+
 > See the [Strapi endpoints](https://strapi.io/documentation/developer-docs/latest/developer-resources/content-api/content-api.html#endpoints).
 
 ### `count(entity, params)`

@@ -20,6 +20,7 @@ export class Strapi extends Hookable {
   $cookies: NuxtCookies
   $http: NuxtHTTPInstance
   options: StrapiOptions
+  preview: boolean
 
   constructor (ctx, options: StrapiOptions) {
     super()
@@ -28,6 +29,7 @@ export class Strapi extends Hookable {
     const runtimeConfig = ctx.$config.strapi || {}
     this.$cookies = ctx.app.$cookies
     this.$http = ctx.$http.create({})
+    this.preview = ctx.query.preview
     this.options = options
 
     this.state = Vue.observable({ user: null })
@@ -130,10 +132,16 @@ export class Strapi extends Hookable {
   }
 
   find<T = any, E = string> (entity: E, searchParams?: NuxtStrapiQueryParams): Promise<T> {
+    searchParams = searchParams ?? {}
+    // eslint-disable-next-line dot-notation
+    searchParams['_publicationState'] = this.preview ? 'preview' : 'live'
     return this.$http.$get<T>(`/${entity}`, { searchParams })
   }
 
   count<T = any, E = string> (entity: E, searchParams?: NuxtStrapiQueryParams): Promise<T> {
+    searchParams = searchParams ?? {}
+    // eslint-disable-next-line dot-notation
+    searchParams['_publicationState'] = this.preview ? 'preview' : 'live'
     return this.$http.$get<T>(`/${entity}/count`, { searchParams })
   }
 

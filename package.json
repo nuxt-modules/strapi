@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "build": "unbuild",
-    "dev": "yarn nuxt-ts example",
+    "dev": "nuxt dev example",
     "docs": "nuxt docs",
     "lint": "eslint --ext .ts --ext .vue .",
     "prepublishOnly": "yarn build",
@@ -45,7 +45,6 @@
     "@nuxt/test-utils": "^0.2.2",
     "@nuxt/types": "^2.15.6",
     "@nuxt/typescript-build": "^2.1.0",
-    "@nuxt/typescript-runtime": "^2.1.0",
     "@nuxtjs/eslint-config": "^6.0.1",
     "@nuxtjs/eslint-config-typescript": "^6.0.1",
     "@nuxtjs/module-test-utils": "latest",

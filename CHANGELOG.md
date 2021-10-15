@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/nuxt-community/strapi-module/compare/v0.3.1...v0.3.2) (2021-10-15)
+
+
+### Features
+
+* **strapi:** handle query params in `findOne` method ([#167](https://github.com/nuxt-community/strapi-module/issues/167)) ([1c82fd6](https://github.com/nuxt-community/strapi-module/commit/1c82fd6fdc4b0c4ee173f751e05d38c3b2153cc8))
+
+
+### Bug Fixes
+
+* broken links to Strapi API parameters page ([#140](https://github.com/nuxt-community/strapi-module/issues/140)) ([4cda013](https://github.com/nuxt-community/strapi-module/commit/4cda013c73e86a5c3f3303ed0372d73be9746663))
+
 ### [0.3.1](https://github.com/nuxt-community/strapi-module/compare/v0.3.0...v0.3.1) (2021-03-25)
 
 

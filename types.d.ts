@@ -1,4 +1,5 @@
-import { CookieSerializeOptions } from 'cookie'
+import type { CookieSerializeOptions } from 'cookie'
+import type { Strapi } from './src/runtime'
 
 export type NuxtStrapiUser = Record<string, any>
 
@@ -54,4 +55,31 @@ export interface NuxtStrapiModuleOptions {
   key: string,
   expires: 'session' | string | number,
   cookie: CookieSerializeOptions
+}
+
+declare module '@nuxt/types' {
+  interface NuxtAppOptions {
+    $strapi: Strapi;
+  }
+
+  interface Context {
+    $strapi: Strapi;
+  }
+
+  interface Configuration {
+    strapi?: Partial<NuxtStrapiModuleOptions>
+  }
+}
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    $strapi: Strapi
+  }
+}
+
+declare module 'vuex/types/index' {
+  // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
+  interface Store<S> {
+    $strapi: Strapi
+  }
 }

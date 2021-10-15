@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import { Strapi } from '~strapi'
-
 const options = <%= JSON.stringify(options) %>
 
 options.entities.forEach((entity) => {

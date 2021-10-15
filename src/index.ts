@@ -1,7 +1,7 @@
 import { addPluginTemplate, defineNuxtModule, installModule, resolveModule } from '@nuxt/kit'
 import ms from 'ms'
+import { resolve } from 'pathe'
 import { NuxtStrapiModuleOptions } from '../types'
-import { runtimeDir, templateDir } from './dirs'
 
 export default defineNuxtModule<NuxtStrapiModuleOptions>({
   defaults: {
@@ -21,9 +21,11 @@ export default defineNuxtModule<NuxtStrapiModuleOptions>({
       url: options.url
     }
 
+    const runtimeDir = resolve(__dirname, 'runtime')
     nuxt.options.alias['~strapi'] = runtimeDir
     nuxt.options.build.transpile.push(runtimeDir, 'destr', 'requrl', 'hookable', 'ufo')
 
+    const templateDir = resolve(__dirname, 'templates')
     addPluginTemplate({
       src: resolveModule('./plugin.js', { paths: templateDir }),
       filename: 'strapi.js',

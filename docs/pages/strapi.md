@@ -24,7 +24,7 @@ this.$strapi.user.avatar = ''
 
 ## Methods
 
-### `find(entity, params)`
+### `find(entity, params?)`
 
 - Returns `Promise`
 
@@ -75,7 +75,7 @@ await $strapi.$products.find({ 'categories.name': ['women', 'men'], _limit: 200 
 
 > See the [Strapi endpoints](https://strapi.io/documentation/developer-docs/latest/developer-resources/content-api/content-api.html#endpoints).
 
-### `count(entity, params)`
+### `count(entity, params?)`
 
 - Returns `Promise`
 
@@ -89,7 +89,7 @@ await this.$strapi.$products.count(params)
 
 > See the [Strapi endpoints](https://strapi.io/documentation/developer-docs/latest/developer-resources/content-api/content-api.html#endpoints).
 
-### `findOne(entity, id)`
+### `findOne(entity, id, params?)`
 
 - Returns `Promise`
 
@@ -99,6 +99,12 @@ Get an entry. Returns an entry by id.
 await this.$strapi.findOne('products', 1)
 // With entity shortcut
 await this.$strapi.$products.findOne(1)
+```
+
+Like the `find` method, you can pass optional query params as a third argument:
+
+```js
+await this.$strapi.findOne('products', 1, { _publicationState: 'preview' })
 ```
 
 > See the [Strapi endpoints](https://strapi.io/documentation/developer-docs/latest/developer-resources/content-api/content-api.html#endpoints).
@@ -197,7 +203,7 @@ Performs an HTTP request to GraphQL API and returns its value
   import { getRestaurant } from 'restaurants.js'
 
   const restaurantId = 4;
-    
+
   await this.$strapi.graphql({
     query: getRestaurant(),
     variables: {

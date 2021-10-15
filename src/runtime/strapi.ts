@@ -137,8 +137,8 @@ export class Strapi extends Hookable {
     return this.$http.$get<T>(`/${entity}/count`, { searchParams })
   }
 
-  findOne<T = any, E = string> (entity: E, id: string): Promise<T> {
-    return this.$http.$get<T>(`/${entity}/${id}`)
+  findOne<T = any, E = string> (entity: E, id: string, searchParams?: NuxtStrapiQueryParams): Promise<T> {
+    return this.$http.$get<T>(`/${entity}/${id}`, { searchParams })
   }
 
   create<T = any, E = string> (entity: E, data: NuxtStrapiQueryParams): Promise<T> {

@@ -6,22 +6,24 @@
   "license": "MIT",
   "sideEffects": false,
   "exports": {
-    ".": "./lib/module.js",
-    "./lib/runtime/*": "./lib/runtime/*",
-    "./package.json": "./package.json"
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
   },
-  "main": "./lib/module.js",
-  "typings": "./lib/runtime.d.ts",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
-    "lib",
-    "types"
+    "dist"
   ],
   "scripts": {
-    "build": "siroc build",
+    "build": "unbuild",
     "dev": "yarn nuxt-ts example",
     "docs": "nuxt docs",
     "lint": "eslint --ext .ts --ext .vue .",
-    "release": "yarn test && standard-version && yarn build && git push --follow-tags && npm publish",
+    "prepublishOnly": "yarn build",
+    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
     "test": "yarn lint && jest"
   },
   "dependencies": {
@@ -55,10 +57,10 @@
     "husky": "^6.0.0",
     "jest": "^27.0.1",
     "nuxt": "2.15.6",
-    "siroc": "^0.10.1",
     "standard-version": "^9.3.0",
     "ts-loader": "^8.3.0",
     "typescript": "^4.3.2",
+    "unbuild": "^0.5.7",
     "vuex": "^3.6.2"
   },
   "peerDependencies": {

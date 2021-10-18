@@ -1,7 +1,7 @@
 import { addPluginTemplate, defineNuxtModule, installModule, resolveModule } from '@nuxt/kit'
 import ms from 'ms'
 import { resolve } from 'pathe'
-import { NuxtStrapiModuleOptions } from '../types'
+import { NuxtStrapiModuleOptions } from './types'
 
 export default defineNuxtModule<NuxtStrapiModuleOptions>({
   defaults: {

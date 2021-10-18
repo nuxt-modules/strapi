@@ -13,7 +13,7 @@
   },
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
-  "types": "types.d.ts",
+  "types": "dist/runtime.d.ts",
   "files": [
     "dist"
   ],

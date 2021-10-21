@@ -287,6 +287,7 @@ this.$strapi.logout()
 Fetch `me` user from `/users/me` route if a `jwt` is present in the cookies. Sets the `jwt` inside `$http`. Sets the [User](#setuseruser).
 
 > This method is called by default on init, so you don't have to.
+> This call will update $strapi.user, thus it can be useful to call when user data has been changed.
 
 <alert type="info">
 

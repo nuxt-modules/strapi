@@ -5,13 +5,6 @@
   "repository": "nuxt-community/strapi-module",
   "license": "MIT",
   "sideEffects": false,
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/runtime.d.ts",
   "files": [

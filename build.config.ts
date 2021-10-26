@@ -1,11 +1,11 @@
 export default {
   entries: [
     './src/index',
-    { input: 'src/runtime/index', name: 'runtime' },
-    { input: 'src/templates/', outDir: 'dist/templates', ext: 'js' }
+    { input: 'src/runtime/index', name: 'runtime' }
   ],
   externals: [
     'cookie', 'vue'
   ],
-  declaration: true
+  declaration: true,
+  emitCJS: false
 }

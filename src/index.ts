@@ -17,7 +17,7 @@ export default defineNuxtModule<NuxtStrapiModuleOptions>({
       options.expires = ms(options.expires)
     }
 
-    (nuxt.options.publicRuntimeConfig as any).strapi = {
+    nuxt.options.publicRuntimeConfig.strapi = {
       url: options.url
     }
 

@@ -1,4 +1,4 @@
-import { addPluginTemplate, defineNuxtModule, installModule, resolveModule } from '@nuxt/kit'
+import { addPlugin, addTemplate, defineNuxtModule, installModule, resolveModule } from '@nuxt/kit'
 import ms from 'ms'
 import { resolve } from 'pathe'
 import { NuxtStrapiModuleOptions } from './types'
@@ -25,12 +25,13 @@ export default defineNuxtModule<NuxtStrapiModuleOptions>({
     nuxt.options.alias['~strapi'] = runtimeDir
     nuxt.options.build.transpile.push(runtimeDir, 'destr', 'requrl', 'hookable', 'ufo')
 
-    const templateDir = resolve(__dirname, 'templates')
-    addPluginTemplate({
-      src: resolveModule('./plugin.js', { paths: templateDir }),
-      filename: 'strapi.js',
-      options
-    })
+    nuxt.options.alias['#strapi-config'] = addTemplate({
+      src: '',
+      filename: 'strapi-config.mjs',
+      getContents: () => `export default ${JSON.stringify(options, null, 2)}`
+    }).dst
+
+    addPlugin(resolveModule('./plugin.mjs', { paths: runtimeDir }))
 
     await installModule(nuxt, { src: '@nuxt/http' })
     await installModule(nuxt, { src: 'cookie-universal-nuxt' })

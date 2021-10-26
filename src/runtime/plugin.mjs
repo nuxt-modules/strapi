@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { Strapi } from '~strapi'
-const options = <%= JSON.stringify(options) %>
+import options from '#strapi-config'
 
 options.entities.forEach((entity) => {
   let key

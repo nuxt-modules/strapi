@@ -9,7 +9,8 @@ describe('module', () => {
       strapi: {
         expires: '15d'
       }
-    }
+    },
+    setupTimeout: 120000
   })
 
   it('renders', async () => {

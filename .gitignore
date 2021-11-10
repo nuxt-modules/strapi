@@ -8,7 +8,7 @@ node_modules
 coverage
 dist
 sw.*
-
+dist
 lib
 types
 .husky

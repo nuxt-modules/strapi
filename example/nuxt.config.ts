@@ -1,8 +1,7 @@
-import type { NuxtConfig } from '@nuxt/types'
+import { defineNuxtConfig } from 'nuxt3'
 
-export default <NuxtConfig>{
-  buildModules: ['@nuxt/typescript-build'],
-  modules: [
-    '../src/module.ts'
+export default defineNuxtConfig({
+  buildModules: [
+    '../src/module'
   ]
-}
+})

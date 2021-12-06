@@ -1,44 +1,48 @@
-import { resolve } from 'path'
 import defu from 'defu'
-import ms from 'ms'
-import { name, version } from '../package.json'
-import { NuxtStrapiModuleOptions } from './runtime/types'
+import { resolve } from 'pathe'
+import { defineNuxtModule, addPlugin } from '@nuxt/kit'
+import type { Nuxt } from '@nuxt/schema'
+import { StrapiOptions } from './types'
 
-const defaults: NuxtStrapiModuleOptions = {
-  url: process.env.STRAPI_URL || 'http://localhost:1337',
-  entities: [],
-  key: 'strapi_jwt',
-  expires: 'session',
-  cookie: {}
-}
+export default defineNuxtModule<StrapiOptions>({
+  name: '@nuxtjs/strapi',
+  configKey: 'strapi',
+  defaults: {
+    url: 'http://localhost:1337',
+    prefix: '/api',
+    version: 'v4'
+  },
+  setup (_options, nuxt: Nuxt) {
+    // Default runtimeConfig
+    const strapiConfig = nuxt.options.publicRuntimeConfig.strapi = defu(nuxt.options.publicRuntimeConfig.strapi, _options, {
+      url: process.env.STRAPI_URL
+    })
 
-async function strapiModule (moduleOptions) {
-  const { nuxt } = this
+    // Make sure url is set
+    if (!strapiConfig.url) {
+      throw new Error('Missing `STRAPI_URL` in `.env`')
+    }
 
-  const options = defu(moduleOptions, nuxt.options.strapi, defaults) as NuxtStrapiModuleOptions
+    // Add plugin to load user before bootstrap
+    addPlugin(resolve(__dirname, './plugins/strapi.ts'))
 
-  if (typeof options.expires === 'string' && options.expires !== 'session') {
-    options.expires = ms(options.expires)
+    // Add supabase composables
+    nuxt.hook('autoImports:dirs', (dirs) => {
+      dirs.push(resolve(__dirname, './composables'))
+    })
   }
+})
 
-  nuxt.options.publicRuntimeConfig = nuxt.options.publicRuntimeConfig || {}
-  nuxt.options.publicRuntimeConfig.strapi = nuxt.options.publicRuntimeConfig.strapi || {}
-  nuxt.options.publicRuntimeConfig.strapi.url = options.url
-
-  const runtimeDir = resolve(__dirname, 'runtime')
-  nuxt.options.alias['~strapi'] = runtimeDir
-  nuxt.options.build.transpile.push(runtimeDir, 'destr', 'requrl', 'hookable', 'ufo')
-
-  this.addPlugin({
-    src: resolve(runtimeDir, 'plugin.js'),
-    fileName: 'strapi.js',
-    options
-  })
-
-  await this.requireModule('@nuxt/http')
-  await this.requireModule('cookie-universal-nuxt')
+declare module '@nuxt/schema' {
+  interface ConfigSchema {
+    publicRuntimeConfig?: {
+      strapi?: StrapiOptions
+    }
+  }
+  interface NuxtConfig {
+    strapi?: StrapiOptions
+  }
+  interface NuxtOptions {
+    strapi?: StrapiOptions
+  }
 }
-
-(strapiModule as any).meta = { name, version }
-
-export default strapiModule

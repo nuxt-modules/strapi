@@ -1,22 +1,17 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "lib" : [
-      "DOM"
-    ],
+    "allowJs": true,
     "baseUrl": ".",
-    "moduleResolution": "Node",
+    "strict": true,
     "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
     "esModuleInterop": true,
+    "moduleResolution": "node",
+    "declaration": false,
+    "skipLibCheck": true,
     "resolveJsonModule": true,
-    "types": [
-      "node",
-      "@nuxt/types"
-    ],
-    "paths": {
-      "@nuxtjs/strapi/*": [
-        "src/*"
-      ]
-    }
+    "allowSyntheticDefaultImports": true,
+    "types": ["node", "@nuxt/kit"]
   }
 }

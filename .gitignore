@@ -7,8 +7,8 @@ node_modules
 .DS_Store
 coverage
 dist
-sw.*
-dist
-lib
-types
-.husky
+sw.js
+
+.output
+.env
+.history

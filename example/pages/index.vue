@@ -1,15 +1,17 @@
 <template>
   <div>
     <h1>@nuxtjs/strapi</h1>
-    <h2>$strapi.state</h2>
-    <pre>{{ JSON.stringify($strapi.state) }}</pre>
-    <h2>options.url</h2>
-    <pre>{{ $strapi.$http._defaults.prefixUrl }}</pre>
+    <h2>User</h2>
+    <pre>{{ user }}</pre>
+    <h2>Url</h2>
+    <pre>{{ url }}</pre>
+    <h2>Version</h2>
+    <pre>{{ version }}</pre>
   </div>
 </template>
 
-<style scoped>
-div {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-</style>
+<script lang="ts" setup>
+const user = useStrapiUser()
+const url = useStrapiUrl()
+const version = useStrapiVersion()
+</script>

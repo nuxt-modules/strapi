@@ -1,0 +1,6 @@
+export default defineNuxtPlugin(async () => {
+  const version = useStrapiVersion()
+  const { fetchUser } = version === 'v3' ? useStrapi3() : useStrapi4()
+
+  await fetchUser()
+})

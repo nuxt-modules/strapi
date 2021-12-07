@@ -1,8 +1,8 @@
-import type { FetchOptions } from 'ohmyfetch'
-import type { StrapiError as Strapi4Error } from '../types/v4'
-import type { StrapiError as Strapi3Error } from '../types/v3'
+import type { FetchError, FetchOptions } from 'ohmyfetch'
+import type { Strapi4Error } from '../types/v4'
+import type { Strapi3Error } from '../types/v3'
 
-const defaultErrors = err => ({
+const defaultErrors = (err: FetchError) => ({
   v4: {
     error: {
       status: 500,
@@ -39,7 +39,7 @@ export const useStrapiClient = () => {
           ...fetchOptions.headers
         }
       })
-    } catch (err) {
+    } catch (err: any) {
       const e: Strapi4Error | Strapi3Error = err.response?.data || defaultErrors(err)[version]
 
       nuxt.hooks.callHook('strapi:error' as any, e)

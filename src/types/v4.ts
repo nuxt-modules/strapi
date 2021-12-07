@@ -1,6 +1,6 @@
 import type { StrapiLocale } from '../types'
 
-export interface StrapiError {
+export interface Strapi4Error {
   error: {
     status: number
     name: string
@@ -21,7 +21,7 @@ export interface PaginationByOffset {
   withCount?: boolean
 }
 
-export interface StrapiRequestParams {
+export interface Strapi4RequestParams {
   fields?: Array<string>
   populate?: string | Array<string>
   sort?: string | Array<string>
@@ -31,7 +31,7 @@ export interface StrapiRequestParams {
   locale?: StrapiLocale
 }
 
-export interface StrapiResponse<T> {
+export interface Strapi4Response<T> {
   data: {
     id: number,
     attributes: T,

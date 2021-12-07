@@ -21,7 +21,7 @@
     "dev": "nuxt dev example",
     "lint": "eslint --ext .js,.ts,.vue .",
     "prepublishOnly": "yarn build",
-    "release": "yarn lint && standard-version && git push --follow-tags && npm publish"
+    "release": "yarn lint && standard-version && git push --follow-tags"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^8.0.0",

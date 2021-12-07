@@ -574,3 +574,6 @@ export interface StrapiResetPasswordData {
 export interface StrapiEmailConfirmationData {
   email: string
 }
+
+export * from './v3'
+export * from './v4'

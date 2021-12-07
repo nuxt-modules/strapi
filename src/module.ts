@@ -26,12 +26,14 @@ export default defineNuxtModule<StrapiOptions>({
     // Add plugin to load user before bootstrap
     addPlugin(resolve(__dirname, './plugins/strapi'))
 
-    // Add supabase composables
+    // Add strapi composables
     nuxt.hook('autoImports:dirs', (dirs) => {
       dirs.push(resolve(__dirname, './composables'))
     })
   }
 })
+
+export * from './types'
 
 declare module '@nuxt/schema' {
   interface ConfigSchema {

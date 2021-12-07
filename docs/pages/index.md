@@ -14,7 +14,7 @@ features:
 <img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>
 <img src="/preview-dark.png" class="dark-img" width="1280" height="640" alt=""/>
 
-This module is a wrapper around [Strapi](https://strapi.io/) for [NuxtJS](https://nuxtjs.org).
+This module is a wrapper around [Strapi v3](https://docs-v3.strapi.io/) for [Nuxt 2](https://nuxtjs.org).
 
 ## Features
 

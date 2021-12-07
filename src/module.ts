@@ -12,7 +12,7 @@ export default defineNuxtModule<StrapiOptions>({
     prefix: '/api',
     version: 'v4'
   },
-  setup (_options, nuxt: Nuxt) {
+  setup (_options: StrapiOptions, nuxt: Nuxt) {
     // Default runtimeConfig
     const strapiConfig = nuxt.options.publicRuntimeConfig.strapi = defu(nuxt.options.publicRuntimeConfig.strapi, _options, {
       url: process.env.STRAPI_URL
@@ -30,6 +30,8 @@ export default defineNuxtModule<StrapiOptions>({
     nuxt.hook('autoImports:dirs', (dirs) => {
       dirs.push(resolve(__dirname, './composables'))
     })
+
+    nuxt.options.build.transpile.push('@nuxtjs/strapi')
   }
 })
 

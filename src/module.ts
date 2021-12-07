@@ -24,7 +24,7 @@ export default defineNuxtModule<StrapiOptions>({
     }
 
     // Add plugin to load user before bootstrap
-    addPlugin(resolve(__dirname, './plugins/strapi.ts'))
+    addPlugin(resolve(__dirname, './plugins/strapi'))
 
     // Add supabase composables
     nuxt.hook('autoImports:dirs', (dirs) => {

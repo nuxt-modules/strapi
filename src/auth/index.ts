@@ -12,7 +12,7 @@ import type {
   StrapiUser
 } from '../types'
 
-export const setToken = (value: string) => {
+export const setToken = (value: string | null) => {
   useStrapiToken().value = value
 }
 export const setUser = (value: StrapiUser) => {

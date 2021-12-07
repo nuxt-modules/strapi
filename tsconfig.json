@@ -12,6 +12,12 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["node", "@nuxt/kit"]
+    "types": [
+      "node",
+      "@nuxt/kit"
+    ],
+    "paths": {
+      "#app": ["./node_modules/nuxt3/dist/app"]
+    }
   }
 }

@@ -11,6 +11,10 @@ import type {
   StrapiResetPasswordData,
   StrapiUser
 } from '../types'
+import { useStrapiToken } from '../composables/useStrapiToken'
+import { useStrapiUser } from '../composables/useStrapiUser'
+import { useStrapiClient } from '../composables/useStrapiClient'
+import { useStrapiUrl } from '../composables/useStrapiUrl'
 
 export const setToken = (value: string | null) => {
   useStrapiToken().value = value

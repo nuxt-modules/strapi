@@ -7,3 +7,4 @@ types/
 .DS_Store
 coverage
 sw.*
+dist

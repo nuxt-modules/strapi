@@ -2,6 +2,8 @@ import type {
   Strapi3RequestParams
 } from '../types/v3'
 import * as StrapiAuth from '../auth'
+import { useStrapiVersion } from './useStrapiVersion'
+import { useStrapiClient } from './useStrapiClient'
 
 export const useStrapi3 = () => {
   const version = useStrapiVersion()
@@ -71,7 +73,7 @@ export const useStrapi3 = () => {
    * @param  {Record<string, any>} data - Form data
    * @returns Promise<T>
    */
-  const update = <T>(contentType: string, id: string | number | Partial<T>, data?: Partial<T>): Promise<T> => {
+  const update = <T>(contentType: string, id?: string | number | Partial<T>, data?: Partial<T>): Promise<T> => {
     const client = useStrapiClient()
 
     if (typeof id === 'object') {

@@ -1,6 +1,10 @@
 import type { FetchError, FetchOptions } from 'ohmyfetch'
 import type { Strapi4Error } from '../types/v4'
 import type { Strapi3Error } from '../types/v3'
+import { useStrapiUrl } from './useStrapiUrl'
+import { useStrapiVersion } from './useStrapiVersion'
+import { useStrapiToken } from './useStrapiToken'
+import { useNuxtApp } from '#app'
 
 const defaultErrors = (err: FetchError) => ({
   v4: {

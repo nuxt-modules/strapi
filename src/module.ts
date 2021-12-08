@@ -30,8 +30,6 @@ export default defineNuxtModule<StrapiOptions>({
     nuxt.hook('autoImports:dirs', (dirs) => {
       dirs.push(resolve(__dirname, './composables'))
     })
-
-    nuxt.options.build.transpile.push('@nuxtjs/strapi')
   }
 })
 

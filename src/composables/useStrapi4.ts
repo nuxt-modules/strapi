@@ -61,11 +61,12 @@ export const useStrapi4 = () => {
    * @param  {Record<string, any>} data - Form data
    * @returns Promise<Strapi4Response<T>>
    */
-  const update = <T>(contentType: string, id?: string | number | Partial<T>, data?: Partial<T>): Promise<Strapi4Response<T>> => {
+  const update = <T>(contentType: string, id: string | number | Partial<T>, data?: Partial<T>): Promise<Strapi4Response<T>> => {
     const client = useStrapiClient()
 
     if (typeof id === 'object') {
       data = id
+      // @ts-ignore
       id = undefined
     }
 

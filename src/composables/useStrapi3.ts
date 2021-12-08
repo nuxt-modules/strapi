@@ -1,7 +1,6 @@
 import type {
   Strapi3RequestParams
 } from '../types/v3'
-import * as StrapiAuth from '../auth'
 import { useStrapiVersion } from './useStrapiVersion'
 import { useStrapiClient } from './useStrapiClient'
 
@@ -102,7 +101,6 @@ export const useStrapi3 = () => {
   }
 
   return {
-    ...StrapiAuth,
     count,
     find,
     findOne,

@@ -2,7 +2,6 @@ import type {
   Strapi4RequestParams,
   Strapi4Response
 } from '../types/v4'
-import * as StrapiAuth from '../auth'
 import { useStrapiVersion } from './useStrapiVersion'
 import { useStrapiClient } from './useStrapiClient'
 
@@ -91,7 +90,6 @@ export const useStrapi4 = () => {
   }
 
   return {
-    ...StrapiAuth,
     find,
     findOne,
     create,

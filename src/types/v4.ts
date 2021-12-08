@@ -31,11 +31,13 @@ export interface Strapi4RequestParams {
   locale?: StrapiLocale
 }
 
+export interface Strapi4ResponseData<T> {
+  id: number,
+  attributes: T,
+  meta: Record<string, unknown>
+}
+
 export interface Strapi4Response<T> {
-  data: {
-    id: number,
-    attributes: T,
-    meta: Record<string, unknown>
-  },
+  data: Strapi4ResponseData<T> | Strapi4ResponseData<T>[],
   meta: Record<string, unknown>
 }

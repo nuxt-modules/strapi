@@ -15,14 +15,14 @@ Add `@nuxtjs/strapi` dependency to your project:
   <code-block label="Yarn" active>
 
 ```bash
-yarn add @nuxtjs/strapi
+yarn add @nuxtjs/strapi@^0.3.1
 ```
 
   </code-block>
   <code-block label="NPM">
 
 ```bash
-npm install @nuxtjs/strapi
+npm install @nuxtjs/strapi@^0.3.1
 ```
 
   </code-block>

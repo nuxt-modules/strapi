@@ -1,6 +1,5 @@
 [![@nuxtjs/strapi](https://strapi.nuxtjs.org/preview.png)](https://strapi.nuxtjs.org)
 
-
 # @nuxtjs/strapi
 
 [![npm version][npm-version-src]][npm-version-href]

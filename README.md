@@ -8,16 +8,17 @@
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> [Strapi](https://strapi.io) module for [NuxtJS](https://nuxtjs.org)
+> [Strapi](https://strapi.io) module for [Nuxt 3](https://v3.nuxtjs.org)
 
 - [✨ &nbsp;Release Notes](https://github.com/nuxt-community/strapi-module/releases)
 - [📖 &nbsp;Read the documentation](https://strapi.nuxtjs.org)
 
 ## Features
 
+- Nuxt 3 ready
+- Strapi v3 + v4 compatible
 - Authentication support
 - RESTful methods
-- Adaptive SDK for API entities
 - Handle errors with hooks
 - TypeScript support
 

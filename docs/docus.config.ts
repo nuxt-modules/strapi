@@ -1,25 +1,14 @@
-export default {
+import { defineDocusConfig } from "docus"
+
+export default defineDocusConfig({
   title: '@nuxtjs/strapi',
   url: 'https://strapi.nuxtjs.org',
-  theme: {
-    colors: {
-      primary: '#8E75FF',
-      prism: {
-        background: '#F4F4F5 dark:#1F2937'
-      }
-    },
-    header: {
-      title: false,
-      logo: {
-        light: '/logo-light.svg',
-        dark: '/logo-dark.svg'
-      }
-    }
-  },
+  theme: '@docus/docs-theme',
+  template: 'docs',
   twitter: '@nuxt_js',
   github: {
     repo: 'nuxt-community/strapi-module',
     branch: 'main',
     releases: true
   }
-}
+})

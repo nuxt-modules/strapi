@@ -4,16 +4,18 @@
   "description": "Docs for @nuxtjs/strapi",
   "author": "NuxtJS",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "nuxi start",
+    "generate": "nuxi generate"
   },
   "dependencies": {
-    "docus": "^0.5.14",
-    "nuxt": "^2.15.6"
-  },
-  "devDependencies": {
+    "docus": "npm:docus-edge@latest",
+    "@docus/docs-theme": "npm:@docus/docs-theme-edge@latest",
+    "nuxt-edge": "latest",
+    "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge@latest",
     "vue-plausible": "^1.1.4"
-  }
+  },
+  "devDependencies": {}
 }

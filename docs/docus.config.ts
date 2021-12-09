@@ -1,4 +1,4 @@
-import { defineDocusConfig } from "docus"
+import { defineDocusConfig } from 'docus'
 
 export default defineDocusConfig({
   title: '@nuxtjs/strapi',

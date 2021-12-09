@@ -1,4 +1,3 @@
-import { resolve} from 'pathe'
 import { withDocus } from 'docus'
 
 export default withDocus({

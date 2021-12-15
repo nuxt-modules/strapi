@@ -11,10 +11,10 @@ import type {
   StrapiResetPasswordData,
   StrapiUser
 } from '../types'
-import { useStrapiToken } from '../composables/useStrapiToken'
-import { useStrapiUser } from '../composables/useStrapiUser'
-import { useStrapiClient } from '../composables/useStrapiClient'
-import { useStrapiUrl } from '../composables/useStrapiUrl'
+import { useStrapiToken } from './useStrapiToken'
+import { useStrapiUser } from './useStrapiUser'
+import { useStrapiClient } from './useStrapiClient'
+import { useStrapiUrl } from './useStrapiUrl'
 
 export const useStrapiAuth = () => {
   const url = useStrapiUrl()
@@ -54,7 +54,7 @@ export const useStrapiAuth = () => {
 
     const { jwt }: StrapiAuthenticationResponse = await client('/auth/local', { method: 'POST', body: data })
 
-    await setToken(jwt)
+    setToken(jwt)
 
     const user = await fetchUser()
 
@@ -88,7 +88,7 @@ export const useStrapiAuth = () => {
 
     const { jwt }: StrapiAuthenticationResponse = await client('/auth/local/register', { method: 'POST', body: data })
 
-    await setToken(jwt)
+    setToken(jwt)
 
     const user = await fetchUser()
 
@@ -125,7 +125,7 @@ export const useStrapiAuth = () => {
 
     const { jwt }: StrapiAuthenticationResponse = await client('/auth/reset-password', { method: 'POST', body: data })
 
-    await setToken(jwt)
+    setToken(jwt)
 
     const user = await fetchUser()
 
@@ -168,7 +168,7 @@ export const useStrapiAuth = () => {
 
     const { jwt }: StrapiAuthenticationResponse = await client(`/auth/${provider}/callback`, { method: 'GET', params: { access_token } })
 
-    await setToken(jwt)
+    setToken(jwt)
 
     const user = await fetchUser()
 

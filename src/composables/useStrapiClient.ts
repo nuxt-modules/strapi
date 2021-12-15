@@ -36,6 +36,7 @@ export const useStrapiClient = () => {
     }
     try {
       return await $fetch<T>(url, {
+        retry: 0,
         baseURL,
         ...fetchOptions,
         headers: {

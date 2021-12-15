@@ -26,13 +26,13 @@ export const useStrapiClient = () => {
   const nuxt = useNuxtApp()
   const baseURL = useStrapiUrl()
   const version = useStrapiVersion()
+  const token = useStrapiToken()
 
   return async <T> (url: string, fetchOptions: FetchOptions = {}): Promise<T> => {
     const headers: any = {}
 
-    const token = useStrapiToken().value
-    if (token) {
-      headers.Authorization = `Bearer ${token}`
+    if (token && token.value) {
+      headers.Authorization = `Bearer ${token.value}`
     }
     try {
       return await $fetch<T>(url, {

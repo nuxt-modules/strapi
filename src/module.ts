@@ -2,7 +2,7 @@ import defu from 'defu'
 import { resolve } from 'pathe'
 import { defineNuxtModule, addPlugin } from '@nuxt/kit'
 import type { Nuxt } from '@nuxt/schema'
-import { StrapiOptions } from './types'
+import type { StrapiOptions } from './types'
 
 export default defineNuxtModule<StrapiOptions>({
   name: '@nuxtjs/strapi',

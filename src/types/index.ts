@@ -1,3 +1,5 @@
+import type { Ref } from 'vue'
+
 export type StrapiLocale =
   | 'af'
   | 'af-NA'
@@ -543,10 +545,10 @@ export interface StrapiOptions {
   version?: StrapiOptionsVersion
 }
 
-export type StrapiUser = Record<string, any> | null
+export type StrapiUser = object | null
 
 export interface StrapiAuthenticationResponse {
-  user: Record<string, unknown>
+  user: Ref<StrapiUser>
   jwt: string
 }
 
@@ -556,7 +558,7 @@ export interface StrapiAuthenticationData {
 }
 
 export interface StrapiRegistrationData {
-  username: string
+  username?: string
   email: string
   password: string
 }

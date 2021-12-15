@@ -1,10 +1,9 @@
-import type {
-  Strapi3RequestParams
-} from '../types/v3'
+import type { Strapi3RequestParams } from '../types/v3'
 import { useStrapiVersion } from './useStrapiVersion'
 import { useStrapiClient } from './useStrapiClient'
 
 export const useStrapi3 = () => {
+  const client = useStrapiClient()
   const version = useStrapiVersion()
   if (version !== 'v3') {
     // eslint-disable-next-line no-console
@@ -19,8 +18,6 @@ export const useStrapi3 = () => {
    * @returns Promise<number>
    */
   const count = (contentType: string, params?: Strapi3RequestParams): Promise<number> => {
-    const client = useStrapiClient()
-
     return client(`/${contentType}/count`, { method: 'GET', params })
   }
 
@@ -29,11 +26,9 @@ export const useStrapi3 = () => {
    *
    * @param  {string} contentType - Content type's name pluralized
    * @param  {Strapi3RequestParams} params? - Query parameters
-   * @returns Promise<T[]>
+   * @returns Promise<T>
    */
-  const find = <T>(contentType: string, params?: Strapi3RequestParams): Promise<T[]> => {
-    const client = useStrapiClient()
-
+  const find = <T>(contentType: string, params?: Strapi3RequestParams): Promise<T> => {
     return client(`/${contentType}`, { method: 'GET', params })
   }
 
@@ -46,8 +41,6 @@ export const useStrapi3 = () => {
    * @returns Promise<T>
    */
   const findOne = <T>(contentType: string, id: string | number, params?: Strapi3RequestParams): Promise<T> => {
-    const client = useStrapiClient()
-
     return client(`/${contentType}/${id}`, { method: 'GET', params })
   }
 
@@ -59,8 +52,6 @@ export const useStrapi3 = () => {
    * @returns Promise<T>
    */
   const create = <T>(contentType: string, data: Partial<T>): Promise<T> => {
-    const client = useStrapiClient()
-
     return client(`/${contentType}`, { method: 'POST', body: data })
   }
 
@@ -73,8 +64,6 @@ export const useStrapi3 = () => {
    * @returns Promise<T>
    */
   const update = <T>(contentType: string, id?: string | number | Partial<T>, data?: Partial<T>): Promise<T> => {
-    const client = useStrapiClient()
-
     if (typeof id === 'object') {
       data = id
       id = undefined
@@ -93,8 +82,6 @@ export const useStrapi3 = () => {
    * @returns Promise<T>
    */
   const _delete = <T>(contentType: string, id?: string | number): Promise<T> => {
-    const client = useStrapiClient()
-
     const path = [contentType, id].filter(Boolean).join('/')
 
     return client(path, { method: 'DELETE' })

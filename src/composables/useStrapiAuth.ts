@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 
-import { Ref } from 'vue'
+import type { Ref } from 'vue'
 import type {
   StrapiAuthenticationData,
   StrapiAuthenticationResponse,
@@ -17,18 +17,19 @@ import { useStrapiClient } from '../composables/useStrapiClient'
 import { useStrapiUrl } from '../composables/useStrapiUrl'
 
 export const useStrapiAuth = () => {
+  const url = useStrapiUrl()
+  const token = useStrapiToken()
+  const user = useStrapiUser()
+  const client = useStrapiClient()
+
   const setToken = (value: string | null) => {
-    useStrapiToken().value = value
+    token.value = value
   }
   const setUser = (value: StrapiUser) => {
-    useStrapiUser().value = value
+    user.value = value
   }
 
   const fetchUser = async (): Promise<Ref<StrapiUser>> => {
-    const token = useStrapiToken()
-    const user = useStrapiUser()
-    const client = useStrapiClient()
-
     if (token.value && !user.value) {
       try {
         user.value = await client('/users/me')
@@ -51,13 +52,11 @@ export const useStrapiAuth = () => {
   const login = async (data: StrapiAuthenticationData): Promise<StrapiAuthenticationResponse> => {
     setToken(null)
 
-    const client = useStrapiClient()
-
     const { jwt }: StrapiAuthenticationResponse = await client('/auth/local', { method: 'POST', body: data })
 
     await setToken(jwt)
 
-    const user: StrapiUser = await fetchUser()
+    const user = await fetchUser()
 
     return {
       user,
@@ -87,13 +86,11 @@ export const useStrapiAuth = () => {
   const register = async (data: StrapiRegistrationData): Promise<StrapiAuthenticationResponse> => {
     setToken(null)
 
-    const client = useStrapiClient()
-
     const { jwt }: StrapiAuthenticationResponse = await client('/auth/local/register', { method: 'POST', body: data })
 
     await setToken(jwt)
 
-    const user: StrapiUser = await fetchUser()
+    const user = await fetchUser()
 
     return {
       user,
@@ -111,8 +108,6 @@ export const useStrapiAuth = () => {
   const forgotPassword = async (data: StrapiForgotPasswordData): Promise<void> => {
     setToken(null)
 
-    const client = useStrapiClient()
-
     await client('/auth/forgot-password', { method: 'POST', body: data })
   }
 
@@ -128,13 +123,11 @@ export const useStrapiAuth = () => {
   const resetPassword = async (data: StrapiResetPasswordData): Promise<StrapiAuthenticationResponse> => {
     setToken(null)
 
-    const client = useStrapiClient()
-
     const { jwt }: StrapiAuthenticationResponse = await client('/auth/reset-password', { method: 'POST', body: data })
 
     await setToken(jwt)
 
-    const user: StrapiUser = await fetchUser()
+    const user = await fetchUser()
 
     return {
       user,
@@ -150,8 +143,6 @@ export const useStrapiAuth = () => {
    * @returns Promise<void>
    */
   const sendEmailConfirmation = async (data: StrapiEmailConfirmationData): Promise<void> => {
-    const client = useStrapiClient()
-
     await client('/auth/send-email-confirmation', { method: 'POST', body: data })
   }
 
@@ -162,8 +153,6 @@ export const useStrapiAuth = () => {
    * @returns string
    */
   const getProviderAuthenticationUrl = (provider: StrapiAuthProvider): string => {
-    const url = useStrapiUrl()
-
     return new URL(`/connect/${provider}`, url).href
   }
 
@@ -177,13 +166,11 @@ export const useStrapiAuth = () => {
   const authenticateProvider = async (provider: StrapiAuthProvider, access_token: string): Promise<StrapiAuthenticationResponse> => {
     setToken(null)
 
-    const client = useStrapiClient()
-
     const { jwt }: StrapiAuthenticationResponse = await client(`/auth/${provider}/callback`, { method: 'GET', params: { access_token } })
 
     await setToken(jwt)
 
-    const user: StrapiUser = await fetchUser()
+    const user = await fetchUser()
 
     return {
       user,

@@ -14,9 +14,7 @@ export default defineNuxtModule<StrapiOptions>({
   },
   setup (_options: StrapiOptions, nuxt: Nuxt) {
     // Default runtimeConfig
-    const strapiConfig = nuxt.options.publicRuntimeConfig.strapi = defu(nuxt.options.publicRuntimeConfig.strapi, _options, {
-      url: process.env.STRAPI_URL
-    })
+    const strapiConfig = nuxt.options.publicRuntimeConfig.strapi = defu({ url: process.env.STRAPI_URL }, _options)
 
     // Make sure url is set
     if (!strapiConfig.url) {

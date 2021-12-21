@@ -8,7 +8,7 @@
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> [Strapi](https://strapi.io) module for [Nuxt 3](https://v3.nuxtjs.org)
+> [Strapi](https://strapi.io) module for [Nuxt](https://v3.nuxtjs.org)
 
 - [✨ &nbsp;Release Notes](https://github.com/nuxt-community/strapi-module/releases)
 - [📖 &nbsp;Read the documentation](https://strapi.nuxtjs.org)

@@ -1,12 +1,11 @@
 import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
+  declaration: true,
+  rollup: { cjsBridge: true },
   entries: [
     './src/module',
-    { input: 'src/plugins/', outDir: 'dist/plugins' },
-    { input: 'src/composables/', outDir: 'dist/composables' },
-    { input: 'src/types/', outDir: 'dist/types' }
+    { input: 'src/runtime/', outDir: 'dist/runtime' }
   ],
-  externals: ['@nuxt/kit', '@nuxt/schema', 'defu', 'pathe', 'vue'],
-  declaration: true
+  externals: ['@nuxt/kit', '@nuxt/schema', 'vue']
 })

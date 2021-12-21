@@ -1,23 +1,34 @@
-import type { Strapi4RequestParams } from '../types/v4'
+import type { Strapi3RequestParams } from '../../types/v3'
 import { useStrapiVersion } from './useStrapiVersion'
 import { useStrapiClient } from './useStrapiClient'
 
-export const useStrapi4 = () => {
+export const useStrapi3 = () => {
   const client = useStrapiClient()
   const version = useStrapiVersion()
-  if (version !== 'v4') {
+  if (version !== 'v3') {
     // eslint-disable-next-line no-console
-    console.warn('useStrapi4 is only available for v4')
+    console.warn('useStrapi3 is only available for v3')
+  }
+
+  /**
+   * Count {content-type} entries
+   *
+   * @param  {string} contentType - Content type's name pluralized
+   * @param  {Strapi3RequestParams} params? - Query parameters
+   * @returns Promise<number>
+   */
+  const count = (contentType: string, params?: Strapi3RequestParams): Promise<number> => {
+    return client(`/${contentType}/count`, { method: 'GET', params })
   }
 
   /**
    * Get a list of {content-type} entries
    *
    * @param  {string} contentType - Content type's name pluralized
-   * @param  {Strapi4RequestParams} params? - Query parameters
+   * @param  {Strapi3RequestParams} params? - Query parameters
    * @returns Promise<T>
    */
-  const find = <T>(contentType: string, params?: Strapi4RequestParams): Promise<T> => {
+  const find = <T>(contentType: string, params?: Strapi3RequestParams): Promise<T> => {
     return client(`/${contentType}`, { method: 'GET', params })
   }
 
@@ -26,10 +37,10 @@ export const useStrapi4 = () => {
    *
    * @param  {string} contentType - Content type's name pluralized
    * @param  {string|number} id - ID of entry
-   * @param  {Strapi4RequestParams} params? - Query parameters
+   * @param  {Strapi3RequestParams} params? - Query parameters
    * @returns Promise<T>
    */
-  const findOne = <T>(contentType: string, id: string | number, params?: Strapi4RequestParams): Promise<T> => {
+  const findOne = <T>(contentType: string, id: string | number, params?: Strapi3RequestParams): Promise<T> => {
     return client(`/${contentType}/${id}`, { method: 'GET', params })
   }
 
@@ -41,7 +52,7 @@ export const useStrapi4 = () => {
    * @returns Promise<T>
    */
   const create = <T>(contentType: string, data: Partial<T>): Promise<T> => {
-    return client(`/${contentType}`, { method: 'POST', body: { data } })
+    return client(`/${contentType}`, { method: 'POST', body: data })
   }
 
   /**
@@ -52,16 +63,15 @@ export const useStrapi4 = () => {
    * @param  {Record<string, any>} data - Form data
    * @returns Promise<T>
    */
-  const update = <T>(contentType: string, id: string | number | Partial<T>, data?: Partial<T>): Promise<T> => {
+  const update = <T>(contentType: string, id?: string | number | Partial<T>, data?: Partial<T>): Promise<T> => {
     if (typeof id === 'object') {
       data = id
-      // @ts-ignore
       id = undefined
     }
 
     const path = [contentType, id].filter(Boolean).join('/')
 
-    return client(path, { method: 'PUT', body: { data } })
+    return client(path, { method: 'PUT', body: data })
   }
 
   /**
@@ -78,6 +88,7 @@ export const useStrapi4 = () => {
   }
 
   return {
+    count,
     find,
     findOne,
     create,

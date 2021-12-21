@@ -5,8 +5,11 @@ import type { Nuxt } from '@nuxt/schema'
 import type { StrapiOptions } from './types'
 
 export default defineNuxtModule<StrapiOptions>({
-  name: '@nuxtjs/strapi',
-  configKey: 'strapi',
+  meta: {
+    name: '@nuxtjs/strapi',
+    compatibility: { nuxt: '^3.0.0' },
+    configKey: 'strapi'
+  },
   defaults: {
     url: 'http://localhost:1337',
     prefix: '/api',

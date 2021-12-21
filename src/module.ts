@@ -6,7 +6,11 @@ import type { StrapiOptions } from './types'
 export default defineNuxtModule<StrapiOptions>({
   meta: {
     name: '@nuxtjs/strapi',
-    configKey: 'strapi'
+    configKey: 'strapi',
+    compatibility: {
+      nuxt: '^3.0.0',
+      bridge: true
+    }
   },
   defaults: {
     url: process.env.STRAPI_URL || 'http://localhost:1337',

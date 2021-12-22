@@ -1,35 +1,45 @@
 import defu from 'defu'
 import { resolve } from 'pathe'
 import { defineNuxtModule, addPlugin } from '@nuxt/kit'
-import type { Nuxt } from '@nuxt/schema'
 import type { StrapiOptions } from './types'
 
 export default defineNuxtModule<StrapiOptions>({
   meta: {
     name: '@nuxtjs/strapi',
-    compatibility: { nuxt: '^3.0.0' },
-    configKey: 'strapi'
+    configKey: 'strapi',
+    compatibility: {
+      nuxt: '^3.0.0',
+      bridge: true
+    }
   },
   defaults: {
-    url: 'http://localhost:1337',
+    url: process.env.STRAPI_URL || 'http://localhost:1337',
     prefix: '/api',
     version: 'v4'
   },
-  setup (_options: StrapiOptions, nuxt: Nuxt) {
-    // Default runtimeConfig
-    const strapiConfig = nuxt.options.publicRuntimeConfig.strapi = defu({ url: process.env.STRAPI_URL }, _options)
-
+  setup (options: StrapiOptions, nuxt) {
     // Make sure url is set
-    if (!strapiConfig.url) {
+    if (!options.url) {
       throw new Error('Missing `STRAPI_URL` in `.env`')
     }
 
+    // Default runtimeConfig
+    nuxt.options.publicRuntimeConfig.strapi = defu(nuxt.options.publicRuntimeConfig.strapi, {
+      url: options.url,
+      prefix: options.prefix,
+      version: options.version
+    })
+
+    // Transpile runtime
+    const runtimeDir = resolve(__dirname, './runtime')
+    nuxt.options.build.transpile.push(runtimeDir)
+
     // Add plugin to load user before bootstrap
-    addPlugin(resolve(__dirname, './plugins/strapi'))
+    addPlugin(resolve(runtimeDir, 'strapi.plugin'))
 
     // Add strapi composables
     nuxt.hook('autoImports:dirs', (dirs) => {
-      dirs.push(resolve(__dirname, './composables'))
+      dirs.push(resolve(runtimeDir, 'composables'))
     })
   }
 })

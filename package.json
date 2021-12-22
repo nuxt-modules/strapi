@@ -31,7 +31,7 @@
     "@nuxtjs/eslint-config-typescript": "^8.0.0",
     "eslint": "^8.5.0",
     "nuxt3": "latest",
-    "ohmyfetch": "^0.4.11",
+    "ohmyfetch": "^0.4.13",
     "standard-version": "^9.3.2",
     "typescript": "^4.5.4",
     "unbuild": "^0.6.7"

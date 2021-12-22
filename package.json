@@ -5,9 +5,7 @@
   "repository": "nuxt-community/strapi-module",
   "license": "MIT",
   "exports": {
-    ".": {
-      "import": "./dist/module.mjs"
-    }
+    ".": "./dist/module.mjs"
   },
   "main": "./dist/module.mjs",
   "types": "./dist/module.d.ts",

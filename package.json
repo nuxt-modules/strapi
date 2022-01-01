@@ -27,9 +27,9 @@
   "devDependencies": {
     "@nuxt/schema": "npm:@nuxt/schema-edge@latest",
     "@nuxtjs/eslint-config-typescript": "^8.0.0",
-    "eslint": "^8.5.0",
+    "eslint": "^8.6.0",
     "nuxt3": "latest",
-    "ohmyfetch": "^0.4.13",
+    "ohmyfetch": "^0.4.14",
     "standard-version": "^9.3.2",
     "typescript": "^4.5.4",
     "unbuild": "^0.6.7"

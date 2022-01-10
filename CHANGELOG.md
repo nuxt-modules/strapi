@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/nuxt-community/strapi-module/compare/v0.3.4...v1.1.0) (2022-01-10)
+
+
+### Features
+
+* migrate module to nuxt3 + support strapi v4 ([#183](https://github.com/nuxt-community/strapi-module/issues/183)) ([0d8d49b](https://github.com/nuxt-community/strapi-module/commit/0d8d49b23f35d8038dbd2ff6f3b099f983c340b0))
+* module improvements ([#188](https://github.com/nuxt-community/strapi-module/issues/188)) ([bceac81](https://github.com/nuxt-community/strapi-module/commit/bceac813c13b8d32aa070730c89b042380354de6))
+* move auth methods into own `useStrapiAuth` composable ([b150c2f](https://github.com/nuxt-community/strapi-module/commit/b150c2fd78c57832a458d06ffee9b566d20457b6))
+
+
+### Bug Fixes
+
+* **example:** module import ([c460617](https://github.com/nuxt-community/strapi-module/commit/c4606172ecb79bd0d5149daa3da280415ae50c4e))
+* **module:** defu config priority ([a340a7a](https://github.com/nuxt-community/strapi-module/commit/a340a7a5b4b70149c6574720a26f8371532e3bae))
+* **plugins:** missing `defineNuxtPlugin` ([d05ace9](https://github.com/nuxt-community/strapi-module/commit/d05ace9fedc88a9acdc6292497969009ac96635b))
+* **plugins:** missing imports ([d5edd08](https://github.com/nuxt-community/strapi-module/commit/d5edd08c7ff26bf34bb80cdcab5fd3d89afdaeb9))
+* **plugins:** use new `useStrapiAuth` composable ([e7115f1](https://github.com/nuxt-community/strapi-module/commit/e7115f11871e78fde4eb7d65d01dd6e7b7467173))
+* provide exports without condition ([27afa67](https://github.com/nuxt-community/strapi-module/commit/27afa677a0f1b95fa677bf59f8d3638effe1e234))
+* **useStrapi4:** id is not optional ([0e22989](https://github.com/nuxt-community/strapi-module/commit/0e229896e12bb30d0294bdfe2e4985f747cd2f4d))
+* **useStrapiToken:** implement caching ([6e25a4a](https://github.com/nuxt-community/strapi-module/commit/6e25a4a884858590982a1efabc61a353d7e07dd3))
+
 ### [0.3.4](https://github.com/nuxt-community/strapi-module/compare/v0.3.3...v0.3.4) (2021-11-10)
 
 ### [0.3.3](https://github.com/nuxt-community/strapi-module/compare/v0.3.2...v0.3.3) (2021-10-15)

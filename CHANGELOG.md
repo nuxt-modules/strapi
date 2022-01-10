@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.5](https://github.com/nuxt-community/strapi-module/compare/v0.3.4...v0.3.5) (2022-01-10)
+
+
+### Bug Fixes
+
+* Hotfix publicRuntimeConfig vs Strapi default conf ([#181](https://github.com/nuxt-community/strapi-module/issues/181)) ([4a0af52](https://github.com/nuxt-community/strapi-module/commit/4a0af522521d979f5840d8c94b9c0c43e1ff6b8e))
+
 ### [0.3.4](https://github.com/nuxt-community/strapi-module/compare/v0.3.3...v0.3.4) (2021-11-10)
 
 ### [0.3.3](https://github.com/nuxt-community/strapi-module/compare/v0.3.2...v0.3.3) (2021-10-15)

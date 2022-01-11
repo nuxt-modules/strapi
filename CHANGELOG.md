@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/nuxt-community/strapi-module/compare/v1.0.0...v1.1.0) (2022-01-11)
+
+
+### Features
+
+* add `useStrapiGraphQL` composable ([11402ee](https://github.com/nuxt-community/strapi-module/commit/11402ee695d6fc8640bd96526e1eba0a16b1d36c))
+
 ## [1.0.0](https://github.com/nuxt-community/strapi-module/compare/v0.3.4...v1.1.0) (2022-01-10)
 
 

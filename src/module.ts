@@ -1,6 +1,7 @@
 import defu from 'defu'
 import { resolve } from 'pathe'
 import { defineNuxtModule, addPlugin } from '@nuxt/kit'
+import type { Nuxt } from '@nuxt/schema'
 import type { StrapiOptions } from './types'
 
 export default defineNuxtModule<StrapiOptions>({
@@ -17,7 +18,7 @@ export default defineNuxtModule<StrapiOptions>({
     prefix: '/api',
     version: 'v4'
   },
-  setup (options: StrapiOptions, nuxt) {
+  setup (options: StrapiOptions, nuxt: Nuxt) {
     // Make sure url is set
     if (!options.url) {
       throw new Error('Missing `STRAPI_URL` in `.env`')

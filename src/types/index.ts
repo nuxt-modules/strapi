@@ -1,3 +1,4 @@
+import { CookieOptions } from 'nuxt3/dist/app/composables/cookie'
 import type { Ref } from 'vue'
 
 export type StrapiLocale =
@@ -545,12 +546,11 @@ export interface StrapiOptions {
   version?: StrapiOptionsVersion
   
   /**
-   * Session Expiry
-   * @default 'session'
-   * @type string
-   * @example '31d'
+   * Nuxt Cookie Options
+   * @default {}
+   * @type CookieOptions
    */
-   expires?: 'session' | string | number
+   cookie?: CookieOptions
 }
 
 export type StrapiUser = object | null

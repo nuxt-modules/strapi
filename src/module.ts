@@ -1,5 +1,4 @@
 import defu from 'defu'
-import ms from 'ms'
 import { resolve } from 'pathe'
 import { defineNuxtModule, addPlugin } from '@nuxt/kit'
 import type { StrapiOptions } from './types'
@@ -17,7 +16,7 @@ export default defineNuxtModule<StrapiOptions>({
     url: process.env.STRAPI_URL || 'http://localhost:1337',
     prefix: '/api',
     version: 'v4',
-    expires: 'session',
+    cookie: {},
   },
   setup (options: StrapiOptions, nuxt) {
     // Make sure url is set
@@ -25,17 +24,12 @@ export default defineNuxtModule<StrapiOptions>({
       throw new Error('Missing `STRAPI_URL` in `.env`')
     }
 
-    // Convert expires time string to ms
-    if (typeof options.expires === 'string' && options.expires !== 'session') {
-      options.expires = ms(options.expires)
-    }
-
     // Default runtimeConfig
     nuxt.options.publicRuntimeConfig.strapi = defu(nuxt.options.publicRuntimeConfig.strapi, {
       url: options.url,
       prefix: options.prefix,
       version: options.version,
-      expires: options.expires
+      cookie: options.cookie
     })
 
     // Transpile runtime

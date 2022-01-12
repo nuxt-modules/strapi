@@ -543,6 +543,14 @@ export interface StrapiOptions {
    * @example 'v3'
    */
   version?: StrapiOptionsVersion
+  
+  /**
+   * Session Expiry
+   * @default 'session'
+   * @type string
+   * @example '31d'
+   */
+   expires?: 'session' | string | number
 }
 
 export type StrapiUser = object | null

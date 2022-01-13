@@ -7,5 +7,5 @@ export default defineBuildConfig({
     './src/module',
     { input: 'src/runtime/', outDir: 'dist/runtime' }
   ],
-  externals: ['@nuxt/kit', '@nuxt/schema', 'vue']
+  externals: ['@nuxt/kit', '@nuxt/schema', 'vue', 'nuxt3']
 })

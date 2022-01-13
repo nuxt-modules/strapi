@@ -16,7 +16,8 @@ export default defineNuxtModule<StrapiOptions>({
   defaults: {
     url: process.env.STRAPI_URL || 'http://localhost:1337',
     prefix: '/api',
-    version: 'v4'
+    version: 'v4',
+    cookie: {}
   },
   setup (options: StrapiOptions, nuxt: Nuxt) {
     // Make sure url is set
@@ -28,7 +29,8 @@ export default defineNuxtModule<StrapiOptions>({
     nuxt.options.publicRuntimeConfig.strapi = defu(nuxt.options.publicRuntimeConfig.strapi, {
       url: options.url,
       prefix: options.prefix,
-      version: options.version
+      version: options.version,
+      cookie: options.cookie
     })
 
     // Transpile runtime

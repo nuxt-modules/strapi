@@ -1,4 +1,4 @@
-import type { CookieOptions } from '#app/composables/cookie'
+import type { CookieOptions } from 'nuxt3/dist/app/composables/cookie'
 import type { Ref } from 'vue'
 
 export type StrapiLocale =

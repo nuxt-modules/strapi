@@ -1,4 +1,3 @@
-import type { CookieOptions } from 'nuxt3/dist/app/composables/cookie'
 import type { Ref } from 'vue'
 
 export type StrapiLocale =
@@ -517,41 +516,6 @@ export type StrapiAuthProvider =
   | 'reddit'
   | 'auth0'
 
-export type StrapiOptionsVersion =
-  | 'v4'
-  | 'v3'
-
-export interface StrapiOptions {
-  /**
-   * Strapi API URL
-   * @default process.env.STRAPI_URL
-   * @example 'http://localhost:1337'
-   * @type string
-   */
-  url?: string
-
-  /**
-  * Strapi Prefix
-  * @default '/api'
-  * @type string
-  */
-  prefix?: string
-
-  /**
-   * Strapi Version
-   * @default 'v4'
-   * @type string
-   * @example 'v3'
-   */
-  version?: StrapiOptionsVersion
-
-  /**
-   * Nuxt Cookie Options
-   * @default {}
-   * @type CookieOptions
-   */
-   cookie?: CookieOptions
-}
 
 export type StrapiUser = object | null
 

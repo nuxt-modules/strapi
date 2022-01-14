@@ -2,9 +2,41 @@ import defu from 'defu'
 import { resolve } from 'pathe'
 import { defineNuxtModule, addPlugin } from '@nuxt/kit'
 import type { Nuxt } from '@nuxt/schema'
-import type { StrapiOptions } from './types'
+import type { CookieOptions } from 'nuxt3/dist/app/composables/cookie'
 
-export default defineNuxtModule<StrapiOptions>({
+export interface ModuleOptions {
+  /**
+   * Strapi API URL
+   * @default process.env.STRAPI_URL
+   * @example 'http://localhost:1337'
+   * @type string
+   */
+  url?: string
+
+  /**
+  * Strapi Prefix
+  * @default '/api'
+  * @type string
+  */
+  prefix?: string
+
+  /**
+   * Strapi Version
+   * @default 'v4'
+   * @type string
+   * @example 'v3'
+   */
+  version?: 'v4' | 'v4'
+
+  /**
+   * Nuxt Cookie Options
+   * @default {}
+   * @type CookieOptions
+  */
+   cookie?: CookieOptions
+}
+
+export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: '@nuxtjs/strapi',
     configKey: 'strapi',
@@ -19,7 +51,7 @@ export default defineNuxtModule<StrapiOptions>({
     version: 'v4',
     cookie: {}
   },
-  setup (options: StrapiOptions, nuxt: Nuxt) {
+  setup (options: ModuleOptions, nuxt: Nuxt) {
     // Make sure url is set
     if (!options.url) {
       throw new Error('Missing `STRAPI_URL` in `.env`')
@@ -47,18 +79,16 @@ export default defineNuxtModule<StrapiOptions>({
   }
 })
 
-export * from './types'
-
 declare module '@nuxt/schema' {
   interface ConfigSchema {
     publicRuntimeConfig?: {
-      strapi?: StrapiOptions
+      strapi?: ModuleOptions
     }
   }
   interface NuxtConfig {
-    strapi?: StrapiOptions
+    strapi?: ModuleOptions
   }
   interface NuxtOptions {
-    strapi?: StrapiOptions
+    strapi?: ModuleOptions
   }
 }

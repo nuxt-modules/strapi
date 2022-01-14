@@ -1,4 +1,4 @@
-import type { StrapiLocale } from '../types'
+import type { StrapiLocale } from '.'
 
 export interface Strapi3Error {
   error: string

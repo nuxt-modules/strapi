@@ -1,4 +1,5 @@
 import type { FetchError, FetchOptions } from 'ohmyfetch'
+import { stringify } from 'qs'
 import type { Strapi4Error } from '../../types/v4'
 import type { Strapi3Error } from '../../types/v3'
 import { useStrapiUrl } from './useStrapiUrl'
@@ -29,11 +30,18 @@ export const useStrapiClient = () => {
   const token = useStrapiToken()
 
   return async <T> (url: string, fetchOptions: FetchOptions = {}): Promise<T> => {
-    const headers: any = {}
+    const headers: HeadersInit = {}
 
     if (token && token.value) {
       headers.Authorization = `Bearer ${token.value}`
     }
+
+    // Map params according to strapi v4 format
+    if (version === 'v4' && fetchOptions.params) {
+      url = `${url}?${stringify(fetchOptions.params, { encodeValuesOnly: true })}`
+      delete fetchOptions.params
+    }
+
     try {
       return await $fetch<T>(url, {
         retry: 0,

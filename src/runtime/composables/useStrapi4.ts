@@ -1,4 +1,4 @@
-import type { Strapi4RequestParams } from '../../types/v4'
+import type { Strapi4RequestParams } from '../types/v4'
 import { useStrapiVersion } from './useStrapiVersion'
 import { useStrapiClient } from './useStrapiClient'
 

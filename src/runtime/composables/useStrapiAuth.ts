@@ -10,7 +10,7 @@ import type {
   StrapiRegistrationData,
   StrapiResetPasswordData,
   StrapiUser
-} from '../../types'
+} from '../types'
 import { useStrapiToken } from './useStrapiToken'
 import { useStrapiUser } from './useStrapiUser'
 import { useStrapiClient } from './useStrapiClient'

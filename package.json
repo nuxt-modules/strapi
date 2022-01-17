@@ -5,18 +5,21 @@
   "repository": "nuxt-community/strapi-module",
   "license": "MIT",
   "exports": {
-    ".": "./dist/module.mjs"
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
   },
-  "main": "./dist/module.mjs",
-  "types": "./dist/module.d.ts",
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
+    "build": "nuxt-module-build",
     "dev": "nuxi dev example",
     "lint": "eslint --ext .js,.ts,.vue .",
-    "prepublishOnly": "yarn build",
+    "prepack": "yarn build",
     "release": "yarn lint && standard-version && git push --follow-tags"
   },
   "dependencies": {
@@ -26,15 +29,12 @@
     "qs": "^6.10.3"
   },
   "devDependencies": {
-    "@nuxt/schema": "npm:@nuxt/schema-edge@latest",
+    "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "^8.0.0",
     "@types/qs": "^6.9.7",
     "eslint": "^8.7.0",
     "nuxt3": "latest",
-    "ohmyfetch": "^0.4.15",
-    "standard-version": "^9.3.2",
-    "typescript": "^4.5.4",
-    "unbuild": "^0.6.7"
+    "standard-version": "^9.3.2"
   },
   "publishConfig": {
     "access": "public"

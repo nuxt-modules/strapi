@@ -1,5 +1,5 @@
 import type { FetchError, FetchOptions } from 'ohmyfetch'
-import qs from 'qs'
+import { stringify } from 'qs'
 import type { Strapi4Error } from '../types/v4'
 import type { Strapi3Error } from '../types/v3'
 import { useStrapiUrl } from './useStrapiUrl'
@@ -38,7 +38,7 @@ export const useStrapiClient = () => {
 
     // Map params according to strapi v4 format
     if (version === 'v4' && fetchOptions.params) {
-      url = `${url}?${qs.stringify(fetchOptions.params, { encodeValuesOnly: true })}`
+      url = `${url}?${stringify(fetchOptions.params, { encodeValuesOnly: true })}`
       delete fetchOptions.params
     }
 

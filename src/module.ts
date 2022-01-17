@@ -76,6 +76,8 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.hook('autoImports:dirs', (dirs) => {
       dirs.push(resolve(runtimeDir, 'composables'))
     })
+
+    nuxt.options.alias.qs = 'qs/dist/qs.js'
   }
 })
 

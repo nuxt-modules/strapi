@@ -1,5 +1,5 @@
 import type { FetchError, FetchOptions } from 'ohmyfetch'
-import { default as qs } from 'qs'
+import qs from 'qs'
 import type { Strapi4Error } from '../types/v4'
 import type { Strapi3Error } from '../types/v3'
 import { useStrapiUrl } from './useStrapiUrl'

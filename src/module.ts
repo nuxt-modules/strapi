@@ -77,17 +77,3 @@ export default defineNuxtModule<ModuleOptions>({
     })
   }
 })
-
-declare module '@nuxt/schema' {
-  interface ConfigSchema {
-    publicRuntimeConfig?: {
-      strapi?: ModuleOptions
-    }
-  }
-  interface NuxtConfig {
-    strapi?: ModuleOptions
-  }
-  interface NuxtOptions {
-    strapi?: ModuleOptions
-  }
-}

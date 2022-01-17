@@ -24,6 +24,8 @@
 
 [📖 &nbsp;Read the documentation](https://strapi.nuxtjs.org)
 
+> If you want to use this module for Nuxt 2, check out the documentation of the v0 of the module: http://strapi-v0.nuxtjs.org/.
+
 ## Development
 
 1. Clone this repository

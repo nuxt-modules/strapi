@@ -26,7 +26,7 @@ export interface ModuleOptions {
    * @type string
    * @example 'v3'
    */
-  version?: 'v4' | 'v4'
+  version?: 'v4' | 'v3'
 
   /**
    * Nuxt Cookie Options

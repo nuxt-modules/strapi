@@ -29,7 +29,7 @@
     "qs": "^6.10.3"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "latest",
+    "@nuxt/module-builder": "^0.1.6",
     "@nuxtjs/eslint-config-typescript": "^8.0.0",
     "@types/qs": "^6.9.7",
     "eslint": "^8.7.0",

@@ -1,6 +1,5 @@
 import type { FetchError, FetchOptions } from 'ohmyfetch'
-// @ts-ignore
-import * as stringify from 'qs/lib/stringify'
+import { stringify } from 'qs'
 import { useNuxtApp } from '#app'
 import type { Strapi4Error } from '../types/v4'
 import type { Strapi3Error } from '../types/v3'

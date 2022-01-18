@@ -1,7 +1,6 @@
-import type { StrapiOptionsVersion } from '../types'
 import { useRuntimeConfig } from '#app'
 
-export const useStrapiVersion = (): StrapiOptionsVersion => {
+export const useStrapiVersion = (): string => {
   const config = useRuntimeConfig()
   return config.strapi.version
 }

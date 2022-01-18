@@ -1,5 +1,5 @@
-import { useStrapiClient } from './useStrapiClient'
 import { useRuntimeConfig } from '#app'
+import { useStrapiClient } from './useStrapiClient'
 
 export const useStrapiGraphQL = () => {
   const client = useStrapiClient()

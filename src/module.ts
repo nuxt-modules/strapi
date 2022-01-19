@@ -76,6 +76,12 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.hook('autoImports:dirs', (dirs) => {
       dirs.push(resolve(runtimeDir, 'composables'))
     })
+
+    nuxt.options.vite = {
+      optimizeDeps: {
+        include: ['qs']
+      }
+    }
   }
 })
 

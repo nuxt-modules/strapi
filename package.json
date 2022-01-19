@@ -38,8 +38,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "build": {
-    "externals": ["vue", "nuxt3"]
   }
 }

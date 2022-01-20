@@ -1,7 +1,6 @@
 import defu from 'defu'
 import { resolve } from 'pathe'
 import { defineNuxtModule, addPlugin } from '@nuxt/kit'
-import type { Nuxt } from '@nuxt/schema'
 import type { CookieOptions } from 'nuxt3/dist/app/composables/cookie'
 
 export interface ModuleOptions {
@@ -51,7 +50,7 @@ export default defineNuxtModule<ModuleOptions>({
     version: 'v4',
     cookie: {}
   },
-  setup (options: ModuleOptions, nuxt: Nuxt) {
+  setup (options, nuxt) {
     // Make sure url is set
     if (!options.url) {
       throw new Error('Missing `STRAPI_URL` in `.env`')
@@ -90,11 +89,5 @@ declare module '@nuxt/schema' {
     publicRuntimeConfig?: {
       strapi?: ModuleOptions
     }
-  }
-  interface NuxtConfig {
-    strapi?: ModuleOptions
-  }
-  interface NuxtOptions {
-    strapi?: ModuleOptions
   }
 }

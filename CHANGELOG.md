@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/nuxt-community/strapi-module/compare/v1.1.0...v1.2.0) (2022-01-20)
+
+
+### Features
+
+* add cookie config ([#208](https://github.com/nuxt-community/strapi-module/issues/208)) ([0baf7e0](https://github.com/nuxt-community/strapi-module/commit/0baf7e0a38582b3e70d7028f40cafd0600f603b3))
+
+
+### Bug Fixes
+
+* **client:** Use strapi v4 format for query ([#212](https://github.com/nuxt-community/strapi-module/issues/212)) ([eaf21fa](https://github.com/nuxt-community/strapi-module/commit/eaf21faaf35f7d4ca9f4f0eb765a03d6268ed0dd))
+* lint ([1e1214e](https://github.com/nuxt-community/strapi-module/commit/1e1214eb88d42e2cdacaa272b8b282fd80b4231a))
+* **module:**  option type value ([6ad2e38](https://github.com/nuxt-community/strapi-module/commit/6ad2e38ec4434db1d0dd1342502322eebd845948))
+* **module:** `qs` import ([6c80fb7](https://github.com/nuxt-community/strapi-module/commit/6c80fb741691c1726ebf6e912620c97b1460629f))
+* **module:** add `qs` to transpile ([29350d7](https://github.com/nuxt-community/strapi-module/commit/29350d74406f54da2f5e7457940d90778da7f531))
+* **module:** add alias to  dist ([8f37003](https://github.com/nuxt-community/strapi-module/commit/8f370039bc70db2cabee2ad7cc3e1abbee7e471e))
+* **module:** exclude  from vite ([b5e51f0](https://github.com/nuxt-community/strapi-module/commit/b5e51f0889e484b0e616c1faf31cf0a36ae94f41))
+* **module:** remove transpile for `qs` ([cd12e1b](https://github.com/nuxt-community/strapi-module/commit/cd12e1b7600a7ca97cc65ac1fcf2474a4b8271e3))
+* **useStrapiClient:** `qs` import ([97d0df8](https://github.com/nuxt-community/strapi-module/commit/97d0df840e03cb7b21bb035f43b3f2977ffcf170))
+
 ## [1.1.0](https://github.com/nuxt-community/strapi-module/compare/v1.0.0...v1.1.0) (2022-01-11)
 
 

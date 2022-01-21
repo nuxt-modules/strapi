@@ -378,34 +378,12 @@
     error-stack-parser "^2.0.0"
     string-width "^4.2.3"
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.0.0-27379487.e0cf2d7":
+"@nuxt/kit@npm:@nuxt/kit-edge@3.0.0-27379487.e0cf2d7", "@nuxt/kit@npm:@nuxt/kit-edge@latest":
   version "3.0.0-27379487.e0cf2d7"
   resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.0.0-27379487.e0cf2d7.tgz#35fb014672b9e86d579dc5a8148521e21d52942d"
   integrity sha512-3ZXC92D9kznntUK1F4MwPWYZaGviER2C00yc7pzm2Dp442jgT6TheMAKNn9g9Xhr5HuupzXTRngVPcTrfT06Ug==
   dependencies:
     "@nuxt/schema" "npm:@nuxt/schema-edge@3.0.0-27379487.e0cf2d7"
-    consola "^2.15.3"
-    defu "^5.0.1"
-    dotenv "^14.2.0"
-    globby "^12.2.0"
-    hash-sum "^2.0.0"
-    jiti "^1.12.9"
-    lodash.template "^4.5.0"
-    mlly "^0.3.19"
-    pathe "^0.2.0"
-    pkg-types "^0.3.2"
-    rc9 "^1.2.0"
-    scule "^0.2.1"
-    semver "^7.3.5"
-    unctx "^1.0.2"
-    untyped "^0.3.0"
-
-"@nuxt/kit@npm:@nuxt/kit-edge@latest":
-  version "3.0.0-27379437.ed2d26f"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.0.0-27379437.ed2d26f.tgz#dbabc8c268d793cddfbdd578e113de010ae504b5"
-  integrity sha512-6rGJDifwA4J/9+sN0yVKU3CLsQmK/fRQUvQLqq830wBI8ORPhNu4gXULoT0cdWPzKcera8e8Hz9iqL9aCjFNBw==
-  dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.0.0-27379437.ed2d26f"
     consola "^2.15.3"
     defu "^5.0.1"
     dotenv "^14.2.0"
@@ -495,19 +473,6 @@
     unstorage "^0.3.3"
     vue-bundle-renderer "^0.3.5"
     vue-server-renderer "^2.6.14"
-
-"@nuxt/schema@npm:@nuxt/schema-edge@3.0.0-27379437.ed2d26f":
-  version "3.0.0-27379437.ed2d26f"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.0.0-27379437.ed2d26f.tgz#1ea25957d152e909813fe838d6c7592f9e638eac"
-  integrity sha512-2KJ5/cQasFv0nrkwc2+mi9oGRFkU73luRQGA0SFAONsPTa+x+4C2Qdnav7F9KNnl95OCsGgZMblQUyCTLVdHxA==
-  dependencies:
-    create-require "^1.1.1"
-    defu "^5.0.1"
-    jiti "^1.12.9"
-    pathe "^0.2.0"
-    scule "^0.2.1"
-    std-env "^3.0.1"
-    ufo "^0.7.9"
 
 "@nuxt/schema@npm:@nuxt/schema-edge@3.0.0-27379487.e0cf2d7":
   version "3.0.0-27379487.e0cf2d7"
@@ -913,9 +878,9 @@
     hash-sum "^2.0.0"
 
 "@vitejs/plugin-vue@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-2.0.1.tgz#db0e5eacf96358e04cc501c9008079b25a70a4ac"
-  integrity sha512-wtdMnGVvys9K8tg+DxowU1ytTrdVveXr3LzdhaKakysgGXyrsfaeds2cDywtvujEASjWOwWL/OgWM+qoeM8Plg==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-2.1.0.tgz#ddf5e0059f84f2ff649afc25ce5a59211e670542"
+  integrity sha512-AZ78WxvFMYd8JmM/GBV6a6SGGTU0GgN/0/4T+FnMMsLzFEzTeAUwuraapy50ifHZsC+G5SvWs86bvaCPTneFlA==
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.2.1":
   version "1.2.1"

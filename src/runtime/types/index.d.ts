@@ -513,8 +513,10 @@ export type StrapiAuthProvider =
   | 'instagram'
   | 'vk'
   | 'linkedin'
+  | 'cas'
   | 'reddit'
   | 'auth0'
+  | string
 
 
 export type StrapiUser = object | null
@@ -533,6 +535,7 @@ export interface StrapiRegistrationData {
   username?: string
   email: string
   password: string
+  [field: string]: string | number | boolean | object | Array<string | number | boolean | object>
 }
 
 export interface StrapiForgotPasswordData {

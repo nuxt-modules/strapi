@@ -12,3 +12,4 @@ dist
 lib
 types
 .husky
+dist

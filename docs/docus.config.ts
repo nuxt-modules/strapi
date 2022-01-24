@@ -19,7 +19,7 @@ export default {
   twitter: '@nuxt_js',
   github: {
     repo: 'nuxt-community/strapi-module',
-    branch: 'main',
-    releases: true
+    branch: 'v0-support',
+    releases: false
   }
 }

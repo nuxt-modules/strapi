@@ -8,8 +8,11 @@ import type { NuxtCookies } from 'cookie-universal-nuxt'
 import type {
   NuxtStrapiEmailData,
   NuxtStrapiLoginData,
-  NuxtStrapiLoginResult, NuxtStrapiQueryParams,
-  NuxtStrapiRegistrationData, NuxtStrapiResetPasswordData,
+  NuxtStrapiLoginResult,
+  NuxtStrapiQueryParams,
+  NuxtStrapiData,
+  NuxtStrapiRegistrationData,
+  NuxtStrapiResetPasswordData,
   NuxtStrapiUser,
   StrapiOptions
 } from './types'
@@ -141,11 +144,11 @@ export class Strapi extends Hookable {
     return this.$http.$get<T>(`/${entity}/${id}`, { searchParams })
   }
 
-  create<T = any, E = string> (entity: E, data: NuxtStrapiQueryParams): Promise<T> {
+  create<T = any, E = string> (entity: E, data: NuxtStrapiData): Promise<T> {
     return this.$http.$post<T>(`/${entity}`, data)
   }
 
-  update<T = any, E = string> (entity: E, id: string, data: NuxtStrapiQueryParams): Promise<T> {
+  update<T = any, E = string> (entity: E, id: string, data: NuxtStrapiData): Promise<T> {
     if (typeof id === 'object') {
       data = id
       id = undefined

@@ -17,8 +17,10 @@ await this.$strapi.login({ identifier: '', password: '' })
 
 ### Register
 
+Custom user fields, if added to the entity, can be sent with the registration payload as well. For example `phoneNumber`.
+
 ```js
-await this.$strapi.register({ email: '', username: '', password: '' })
+await this.$strapi.register({ email: '', username: '', password: '', phoneNumber: '' })
 ```
 
 ### Logout

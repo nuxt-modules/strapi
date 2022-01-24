@@ -4,7 +4,7 @@ export type NuxtStrapiUser = Record<string, any>
 
 export type NuxtStrapiQueryParams =
   string |
-  {[key: string]: string | number | boolean} |
+  {[key: string]: string | number | boolean | Array<string | number | boolean>} |
   Array<Array<string | number | boolean>> |
   URLSearchParams
 
@@ -25,9 +25,10 @@ export interface NuxtStrapiGraphQLParams {
 }
 
 export interface NuxtStrapiRegistrationData {
-  username: string;
+  username?: string;
   email: string;
   password: string;
+  [key: string]: string | number | boolean | Array<string | number | boolean>;
 }
 
 export interface NuxtStrapiLoginData {

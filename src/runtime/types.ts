@@ -25,9 +25,10 @@ export interface NuxtStrapiGraphQLParams {
 }
 
 export interface NuxtStrapiRegistrationData {
-  username: string;
+  username?: string;
   email: string;
   password: string;
+  [key: string]: string | number | boolean | Array<string | number | boolean>;
 }
 
 export interface NuxtStrapiLoginData {

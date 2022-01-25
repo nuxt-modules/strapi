@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.6](https://github.com/nuxt-community/strapi-module/compare/v0.3.5...v0.3.6) (2022-01-25)
+
+
+### Bug Fixes
+
+* **types:** split `NuxtStrapiQueryParams` in two with `NuxtStrapiData` ([5df392e](https://github.com/nuxt-community/strapi-module/commit/5df392e46788765123d36ebc86848a6fb47a2424))
+
 ### [0.3.5](https://github.com/nuxt-community/strapi-module/compare/v0.3.4...v0.3.5) (2022-01-10)
 
 

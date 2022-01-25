@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'url'
 import defu from 'defu'
 import { resolve } from 'pathe'
 import { defineNuxtModule, addPlugin } from '@nuxt/kit'
@@ -40,7 +41,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: '@nuxtjs/strapi',
     configKey: 'strapi',
     compatibility: {
-      nuxt: '^3.0.0',
+      nuxt: '^3.0.0 || ^2.16.0',
       bridge: true
     }
   },
@@ -65,7 +66,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // Transpile runtime
-    const runtimeDir = resolve(__dirname, './runtime')
+    const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
 
     // Add plugin to load user before bootstrap

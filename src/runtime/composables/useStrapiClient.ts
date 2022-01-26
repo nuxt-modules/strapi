@@ -53,7 +53,7 @@ export const useStrapiClient = () => {
         }
       })
     } catch (err: any) {
-      const e: Strapi4Error | Strapi3Error = err.response?.data || defaultErrors(err)[version]
+      const e: Strapi4Error | Strapi3Error = err.data || defaultErrors(err)[version]
 
       nuxt.hooks.callHook('strapi:error' as any, e)
       throw e

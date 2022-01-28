@@ -9,6 +9,7 @@ import type {
   StrapiForgotPasswordData,
   StrapiRegistrationData,
   StrapiResetPasswordData,
+  StrapiSendEmailConfirmationData,
   StrapiUser
 } from '../types'
 import { useStrapiToken } from './useStrapiToken'
@@ -136,13 +137,24 @@ export const useStrapiAuth = () => {
   }
 
   /**
+   * Confirm an email account
+   *
+   * @param  {StrapiEmailConfirmationData} data - Email confirmation form: `confirmation`
+   * @param  {string} data.confirmation - Token received by email to confirm the user email
+   * @returns Promise<void>
+   */
+  const emailConfirmation = async (data: StrapiEmailConfirmationData): Promise<void> => {
+    await client('/auth/email-confirmation', { method: 'GET', params: data })
+  }
+
+  /**
    * Send programmatically an email to a user in order to confirm his account
    *
-   * @param  {StrapiEmailConfirmationData} data - Email confirmation form: `email`
+   * @param  {StrapiSendEmailConfirmationData} data - Send email confirmation form: `email`
    * @param  {string} data.email - Email of the user who want to be confirmed
    * @returns Promise<void>
    */
-  const sendEmailConfirmation = async (data: StrapiEmailConfirmationData): Promise<void> => {
+  const sendEmailConfirmation = async (data: StrapiSendEmailConfirmationData): Promise<void> => {
     await client('/auth/send-email-confirmation', { method: 'POST', body: data })
   }
 
@@ -187,6 +199,7 @@ export const useStrapiAuth = () => {
     register,
     forgotPassword,
     resetPassword,
+    emailConfirmation,
     sendEmailConfirmation,
     getProviderAuthenticationUrl,
     authenticateProvider

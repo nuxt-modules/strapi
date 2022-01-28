@@ -549,6 +549,10 @@ export interface StrapiResetPasswordData {
 }
 
 export interface StrapiEmailConfirmationData {
+  confirmation: string
+}
+
+export interface StrapiSendEmailConfirmationData {
   email: string
 }
 

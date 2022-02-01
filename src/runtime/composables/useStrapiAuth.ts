@@ -153,7 +153,7 @@ export const useStrapiAuth = () => {
    * @returns string
    */
   const getProviderAuthenticationUrl = (provider: StrapiAuthProvider): string => {
-    return new URL(`/connect/${provider}`, url).href
+    return `${url}/connect/${provider}`
   }
 
   /**

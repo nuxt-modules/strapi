@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/nuxt-community/strapi-module/compare/v1.2.0...v1.3.0) (2022-02-07)
+
+
+### Features
+
+* custom payload properties for registration ([#218](https://github.com/nuxt-community/strapi-module/issues/218)) ([28e4179](https://github.com/nuxt-community/strapi-module/commit/28e417926e992173f85035df0f382f84df40fb8a))
+* **module:** Add pre commit linting ([#223](https://github.com/nuxt-community/strapi-module/issues/223)) ([4e996be](https://github.com/nuxt-community/strapi-module/commit/4e996be0ea8a58a715e09057bb179bdc231e8c86))
+
+
+### Bug Fixes
+
+* **client:** Update returned error ([#222](https://github.com/nuxt-community/strapi-module/issues/222)) ([f99c6e8](https://github.com/nuxt-community/strapi-module/commit/f99c6e8cbed9e8117d9a105cce41f7179253b17b))
+* **module:** improve bridge compatibility ([70f73af](https://github.com/nuxt-community/strapi-module/commit/70f73af859b77471101d7a8bd23a80ac5d9a3cb1))
+* **useStrapiAuth:** getProviderAuthenticationUrl fails to concat with prefix ([2f087f1](https://github.com/nuxt-community/strapi-module/commit/2f087f11a7c186a52978e64c469adbcd90a38c4c))
+
 ## [1.2.0](https://github.com/nuxt-community/strapi-module/compare/v1.1.0...v1.2.0) (2022-01-20)
 
 

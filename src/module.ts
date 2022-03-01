@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'url'
 import defu from 'defu'
 import { resolve } from 'pathe'
-import { defineNuxtModule, addPlugin } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, extendViteConfig } from '@nuxt/kit'
 import type { CookieOptions } from 'nuxt3/dist/app/composables/cookie'
 
 export interface ModuleOptions {
@@ -77,11 +77,11 @@ export default defineNuxtModule<ModuleOptions>({
       dirs.push(resolve(runtimeDir, 'composables'))
     })
 
-    nuxt.options.vite = {
-      optimizeDeps: {
-        include: ['qs']
-      }
-    }
+    extendViteConfig((config) => {
+      config.optimizeDeps = config.optimizeDeps || {}
+      config.optimizeDeps.include = config.optimizeDeps.include || []
+      config.optimizeDeps.include.push('qs')
+    })
   }
 })
 

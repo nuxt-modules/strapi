@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/nuxt-community/strapi-module/compare/v1.3.0...v1.3.1) (2022-03-02)
+
+
+### Bug Fixes
+
+* don't override vite config ([#232](https://github.com/nuxt-community/strapi-module/issues/232)) ([e722d34](https://github.com/nuxt-community/strapi-module/commit/e722d34b6d4a69e1b7d34d3807b636ba82a4b452))
+
 ## [1.3.0](https://github.com/nuxt-community/strapi-module/compare/v1.2.0...v1.3.0) (2022-02-07)
 
 

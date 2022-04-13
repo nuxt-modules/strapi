@@ -58,7 +58,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     // Default runtimeConfig
-    nuxt.options.publicRuntimeConfig.strapi = defu(nuxt.options.publicRuntimeConfig.strapi, {
+    nuxt.options.runtimeConfig.public.strapi = defu(nuxt.options.runtimeConfig.public.strapi, {
       url: options.url,
       prefix: options.prefix,
       version: options.version,

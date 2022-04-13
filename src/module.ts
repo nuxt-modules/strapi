@@ -1,5 +1,5 @@
 import { fileURLToPath } from 'url'
-import defu from 'defu'
+import { defu } from 'defu'
 import { resolve } from 'pathe'
 import { defineNuxtModule, addPlugin, extendViteConfig } from '@nuxt/kit'
 import type { CookieOptions } from 'nuxt3/dist/app/composables/cookie'

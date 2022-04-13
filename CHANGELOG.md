@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.2](https://github.com/nuxt-community/strapi-module/compare/v1.3.1...v1.3.2) (2022-04-13)
+
+
+### Bug Fixes
+
+* **module:** defu default import after v6 upgrade ([97dcc4e](https://github.com/nuxt-community/strapi-module/commit/97dcc4e3e2fe820da09c42b5f97089d4efc0ab06))
+* **module:** update runtime config override ([#244](https://github.com/nuxt-community/strapi-module/issues/244)) ([b7adc16](https://github.com/nuxt-community/strapi-module/commit/b7adc16da19c76c626392f7ac597fef54ea1a0ce))
+
 ### [1.3.1](https://github.com/nuxt-community/strapi-module/compare/v1.3.0...v1.3.1) (2022-03-02)
 
 

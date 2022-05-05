@@ -38,7 +38,10 @@ export const useStrapiClient = () => {
 
     // Map params according to strapi v4 format
     if (version === 'v4' && fetchOptions.params) {
-      url = `${url}?${stringify(fetchOptions.params, { encodeValuesOnly: true })}`
+      const params = stringify(fetchOptions.params, { encodeValuesOnly: true })
+      if (params) {
+        url = `${url}?${params}`
+      }
       delete fetchOptions.params
     }
 

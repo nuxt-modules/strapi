@@ -22,6 +22,10 @@
       <button type="submit">
         {{ loading ? 'Loading...' : 'Login' }}
       </button>
+
+      <button type="button" @click="onClick">
+        {{ loading ? 'Loading...' : 'Login with GitHub' }}
+      </button>
     </form>
   </div>
 </template>
@@ -30,7 +34,7 @@
 const user = useStrapiUser()
 const url = useStrapiUrl()
 const version = useStrapiVersion()
-const { login, logout } = useStrapiAuth()
+const { login, logout, getProviderAuthenticationUrl } = useStrapiAuth()
 
 const loading = ref(false)
 const form = reactive({ identifier: '', password: '' })
@@ -43,5 +47,9 @@ const onSubmit = async () => {
   } catch (e) {}
 
   loading.value = false
+}
+
+const onClick = () => {
+  window.location = getProviderAuthenticationUrl('github') as unknown as Location
 }
 </script>

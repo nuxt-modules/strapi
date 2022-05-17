@@ -1,6 +1,6 @@
 import { useRuntimeConfig } from '#app'
 
 export const useStrapiVersion = (): string => {
-  const config = useRuntimeConfig().public
+  const config = useRuntimeConfig()
   return config.strapi.version
 }

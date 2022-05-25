@@ -6,6 +6,13 @@ export const useStrapiGraphQL = () => {
   const config = useRuntimeConfig().public
 
   return <T> (query: string): Promise<T> => {
-    return client('/graphql', { method: 'POST', body: { query }, baseURL: config.strapi.url })
+    return client('/graphql', {
+      method: 'POST',
+      body: { query },
+      headers: {
+        accept: 'application/json'
+      },
+      baseURL: config.strapi.url
+    })
   }
 }

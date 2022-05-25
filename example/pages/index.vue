@@ -3,7 +3,9 @@
     <h1>@nuxtjs/strapi</h1>
 
     <h2>Url</h2>
-    <pre>{{ url }}</pre>
+    <client-only>
+      <pre>{{ url }}</pre>
+    </client-only>
     <h2>Version</h2>
     <pre>{{ version }}</pre>
 

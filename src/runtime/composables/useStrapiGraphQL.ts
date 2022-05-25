@@ -3,7 +3,7 @@ import { useStrapiClient } from './useStrapiClient'
 
 export const useStrapiGraphQL = () => {
   const client = useStrapiClient()
-  const config = useRuntimeConfig().public
+  const config = useRuntimeConfig()
 
   return <T> (query: string): Promise<T> => {
     return client('/graphql', {

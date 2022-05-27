@@ -552,5 +552,9 @@ export interface StrapiEmailConfirmationData {
   email: string
 }
 
+export interface StrapiGraphqlVariables {
+  [variable: string]: unknown
+}
+
 export * from './v3'
 export * from './v4'

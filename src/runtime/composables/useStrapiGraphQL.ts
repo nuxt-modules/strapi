@@ -8,10 +8,11 @@ export const useStrapiGraphQL = () => {
   const config = useRuntimeConfig()
 
   return <T> (query: string|DocumentNode, variables?: { [key: string]: unknown }): Promise<T> => {
+    const queryAsString = typeof query === 'string' ? query : print(query)
     return client('/graphql', {
       method: 'POST',
       body: {
-        query: typeof query === 'string' ? query : print(query),
+        query: queryAsString,
         variables
       },
       headers: {

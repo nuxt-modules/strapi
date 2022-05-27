@@ -2,7 +2,7 @@ import { useCookie, useNuxtApp, useRuntimeConfig } from '#app'
 
 export const useStrapiToken = () => {
   const nuxtApp = useNuxtApp()
-  const config = useRuntimeConfig().public
+  const config = useRuntimeConfig()
 
   nuxtApp._cookies = nuxtApp._cookies || {}
   if (nuxtApp._cookies.strapi_jwt) {

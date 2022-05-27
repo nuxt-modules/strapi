@@ -64,6 +64,12 @@ export default defineNuxtModule<ModuleOptions>({
       version: options.version,
       cookie: options.cookie
     })
+    nuxt.options.runtimeConfig.strapi = defu(nuxt.options.runtimeConfig.strapi, {
+      url: options.url,
+      prefix: options.prefix,
+      version: options.version,
+      cookie: options.cookie
+    })
 
     // Transpile runtime
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))

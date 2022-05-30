@@ -10,6 +10,8 @@
   },
   "devDependencies": {
     "nuxt": "^3.0.0-rc.3",
-    "@docus/docs-theme": "npm:@docus/docs-theme-edge@latest"
+    "@docus/docs-theme": "npm:@docus/docs-theme-edge@latest",
+    "@docus/github": "npm:@docus/github-edge@latest",
+    "vue-plausible": "^1.3.1"
   }
 }

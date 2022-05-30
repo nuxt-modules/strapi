@@ -30,7 +30,9 @@
 
 1. Clone this repository
 2. Install dependencies using `yarn install` or `npm install`
-3. Start development server using `yarn dev` or `npm run dev`
+3. Build module using `yarn build` or `npm run build` to build once
+   - Use `yarn build --stub` or `npm run build --stub` during active development
+4. Start development server using `yarn dev` or `npm run dev`
 
 ## License
 

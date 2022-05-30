@@ -1,0 +1,37 @@
+title: "@nuxtjs/strapi"
+
+layout: docs
+
+url: "https://strapi.nuxtjs.org/"
+
+description: Write pages in markdown, use Vue components and enjoy the power of Nuxt with a blazing fast developer experience.
+
+socials:
+  twitter: "@docus_"
+  github: "nuxtlabs/docus-starter"
+
+debug: false
+
+github: true
+
+cover:
+  src: https://user-images.githubusercontent.com/904724/105075054-872fac80-5a89-11eb-8aab-46dd254ad986.png
+  alt: A screenshot of a website built with Docus with the Docus logo on top of it.
+
+header:
+  title: false
+  logo: true
+
+aside:
+  level: 1
+    - /
+
+footer:
+  credits:
+    icon: IconDocus
+    text: Powered by Docus
+    href: https://docus.com
+  icons:
+  - label: NuxtJS
+    href: https://nuxtjs.org
+    component: IconNuxt

@@ -2,12 +2,13 @@ title: "@nuxtjs/strapi"
 
 layout: docs
 
-url: "https://strapi.nuxtjs.org/"
+url: "https://strapi.nuxtjs.org"
 
 description: "@nuxtjs/strapi is a Nuxt module for first class integration with Strapi."
 
 socials:
   github: "nuxt-community/strapi-module"
+  twitter: false
 
 debug: false
 
@@ -17,7 +18,7 @@ github:
   releases: true
 
 cover:
-  src: https://user-images.githubusercontent.com/904724/105075054-872fac80-5a89-11eb-8aab-46dd254ad986.png
+  src: https://strapi.nuxtjs.org/preview.png
   alt: A screenshot of a website built with Docus with the Docus logo on top of it.
 
 header:

@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     repo: 'strapi-module',
     branch: 'dev'
   },
+  theme: {},
   plausible: {
     domain: 'strapi.nuxtjs.org'
   },

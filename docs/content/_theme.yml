@@ -1,0 +1,36 @@
+title: "Nuxt Strapi"
+
+layout: docs
+
+url: "https://strapi.nuxtjs.org"
+
+description: "@nuxtjs/strapi is a Nuxt module for first class integration with Strapi."
+
+socials:
+  github: "nuxt-community/strapi-module"
+  twitter: false
+
+debug: false
+
+github:
+  root: docs/content
+  edit: true
+  releases: true
+
+cover:
+  src: https://strapi.nuxtjs.org/preview.png
+  alt: A screenshot of a website built with Docus with the Docus logo on top of it.
+
+header:
+  title: false
+  logo: true
+
+footer:
+  credits:
+    icon: IconDocus
+    text: Powered by Docus
+    href: https://docus.com
+  icons:
+  - label: NuxtJS
+    href: https://nuxtjs.org
+    component: IconNuxt

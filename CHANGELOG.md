@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/nuxt-community/strapi-module/compare/v1.3.2...v1.4.0) (2022-06-09)
+
+
+### Features
+
+* **module:** support server-specific runtime configuration ([#247](https://github.com/nuxt-community/strapi-module/issues/247)) ([3ee5b2a](https://github.com/nuxt-community/strapi-module/commit/3ee5b2a45a2341719a808e0885cab7903b201e31))
+* **useStrapiGraphQL:** support for imported graphql files ([#249](https://github.com/nuxt-community/strapi-module/issues/249)) ([0dfee89](https://github.com/nuxt-community/strapi-module/commit/0dfee89ce6a32bfe938781c5551b413d71fc219a))
+
+
+### Bug Fixes
+
+* **useStrapiClient:** prevent `?` suffix with undefined params ([14eaac5](https://github.com/nuxt-community/strapi-module/commit/14eaac5ff9b593ca6806e13a089f0919990b2d0b))
+* **useStrapiGraphQL:** add missing header preventing successful graphql requests ([#248](https://github.com/nuxt-community/strapi-module/issues/248)) ([7fb2755](https://github.com/nuxt-community/strapi-module/commit/7fb27554b80e30610a9d539d1272e0934cd35b70))
+
 ### [1.3.2](https://github.com/nuxt-community/strapi-module/compare/v1.3.1...v1.3.2) (2022-04-13)
 
 

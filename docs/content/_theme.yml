@@ -8,7 +8,7 @@ description: "@nuxtjs/strapi is a Nuxt module for first class integration with S
 
 socials:
   github: "nuxt-community/strapi-module"
-  twitter: false
+  twitter: "nuxt_js"
 
 debug: false
 

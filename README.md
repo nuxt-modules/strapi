@@ -1,4 +1,4 @@
-[![@nuxtjs/strapi](https://strapi.nuxtjs.org/preview.png)](https://strapi.nuxtjs.org)
+[![@nuxtjs/strapi](./docs/public/cover.jpg)](https://strapi.nuxtjs.org)
 
 # @nuxtjs/strapi
 

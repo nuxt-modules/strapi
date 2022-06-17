@@ -18,8 +18,8 @@ github:
   releases: true
 
 cover:
-  src: https://strapi.nuxtjs.org/preview.png
-  alt: A screenshot of a website built with Docus with the Docus logo on top of it.
+  src: /cover.jpg
+  alt: A screenshot of the Nuxt Strapi module.
 
 header:
   title: false

@@ -1,6 +1,6 @@
 [![@nuxtjs/strapi](./docs/public/cover.jpg)](https://strapi.nuxtjs.org)
 
-# @nuxtjs/strapi
+# Nuxt Strapi
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]

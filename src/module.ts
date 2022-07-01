@@ -4,6 +4,10 @@ import { resolve } from 'pathe'
 import { defineNuxtModule, addPlugin, extendViteConfig } from '@nuxt/kit'
 import type { CookieOptions } from 'nuxt/dist/app/composables/cookie'
 
+export interface AuthOptions {
+  populate?: string | string[]
+}
+
 export interface ModuleOptions {
   /**
    * Strapi API URL
@@ -33,7 +37,16 @@ export interface ModuleOptions {
    * @default {}
    * @type CookieOptions
   */
-   cookie?: CookieOptions
+  cookie?: CookieOptions
+
+  /**
+   * Strapi Auth Options
+   * @default {}
+   * @type AuthOptions
+   * @example { populate: '*' }
+   * @example { populate: ['profile', 'teams'] }
+  */
+  auth?: AuthOptions
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -49,7 +62,8 @@ export default defineNuxtModule<ModuleOptions>({
     url: process.env.STRAPI_URL || 'http://localhost:1337',
     prefix: '/api',
     version: 'v4',
-    cookie: {}
+    cookie: {},
+    auth: {}
   },
   setup (options, nuxt) {
     // Make sure url is set
@@ -62,13 +76,15 @@ export default defineNuxtModule<ModuleOptions>({
       url: options.url,
       prefix: options.prefix,
       version: options.version,
-      cookie: options.cookie
+      cookie: options.cookie,
+      auth: options.auth
     })
     nuxt.options.runtimeConfig.strapi = defu(nuxt.options.runtimeConfig.strapi, {
       url: options.url,
       prefix: options.prefix,
       version: options.version,
-      cookie: options.cookie
+      cookie: options.cookie,
+      auth: options.auth
     })
 
     // Transpile runtime

@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 
 import type { Ref } from 'vue'
+import { useRuntimeConfig } from '#app'
 import type {
   StrapiAuthenticationData,
   StrapiAuthenticationResponse,
@@ -21,6 +22,7 @@ export const useStrapiAuth = () => {
   const token = useStrapiToken()
   const user = useStrapiUser()
   const client = useStrapiClient()
+  const config = useRuntimeConfig()
 
   const setToken = (value: string | null) => {
     token.value = value
@@ -32,7 +34,7 @@ export const useStrapiAuth = () => {
   const fetchUser = async (): Promise<Ref<StrapiUser>> => {
     if (token.value && !user.value) {
       try {
-        user.value = await client('/users/me')
+        user.value = await client('/users/me', { params: config.strapi.auth })
       } catch (e) {
         setToken(null)
       }

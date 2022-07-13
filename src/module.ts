@@ -49,7 +49,7 @@ export interface ModuleOptions {
   auth?: AuthOptions
   /**
    * Strapi Cookie Name
-   * @default "strapi_jwt"
+   * @default 'strapi_jwt'
    * @type string
   */
   cookieName?: string
@@ -84,14 +84,16 @@ export default defineNuxtModule<ModuleOptions>({
       prefix: options.prefix,
       version: options.version,
       cookie: options.cookie,
-      auth: options.auth
+      auth: options.auth,
+      cookieName: options.cookieName
     })
     nuxt.options.runtimeConfig.strapi = defu(nuxt.options.runtimeConfig.strapi, {
       url: options.url,
       prefix: options.prefix,
       version: options.version,
       cookie: options.cookie,
-      auth: options.auth
+      auth: options.auth,
+      cookieName: options.cookieName
     })
 
     // Transpile runtime

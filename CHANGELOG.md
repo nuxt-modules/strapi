@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/nuxt-community/strapi-module/compare/v1.4.0...v1.5.0) (2022-07-18)
+
+
+### Features
+
+* make cookie name configurable ([#265](https://github.com/nuxt-community/strapi-module/issues/265)) ([e52e97d](https://github.com/nuxt-community/strapi-module/commit/e52e97d56ac979124d24a42a80a789c8c3f5bf26))
+* **module:** add `auth.populate` option for `fetchUser` ([#260](https://github.com/nuxt-community/strapi-module/issues/260)) ([f9fa58b](https://github.com/nuxt-community/strapi-module/commit/f9fa58b6d779e41a21be1a21413117e52b1ffb86))
+
+
+### Bug Fixes
+
+* **docs:** hydration issue on changelog ([cc39098](https://github.com/nuxt-community/strapi-module/commit/cc39098f817fc3c52d2048dba48ce56551d49bfd))
+* **docs:** rename `buildModules` to `modules` ([#263](https://github.com/nuxt-community/strapi-module/issues/263)) ([0c6de92](https://github.com/nuxt-community/strapi-module/commit/0c6de92c362ef909881457c08d034730848dbe2c))
+
 ## [1.4.0](https://github.com/nuxt-community/strapi-module/compare/v1.3.2...v1.4.0) (2022-06-09)
 
 

@@ -7,7 +7,7 @@ url: "https://strapi.nuxtjs.org"
 description: "@nuxtjs/strapi is a Nuxt module for first class integration with Strapi."
 
 socials:
-  github: "nuxt-community/strapi-module"
+  github: "nuxt-modules/strapi"
   twitter: "nuxt_js"
 
 debug: false

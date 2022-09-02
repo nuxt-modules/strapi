@@ -46,3 +46,8 @@ export interface Strapi4ResponseSingle<T> {
   data: Strapi4ResponseData<T>,
   meta: Record<string, unknown>
 }
+
+export interface Strapi4ResponseMany<T> {
+  data: Strapi4ResponseData<T>[],
+  meta: Record<string, unknown>
+}

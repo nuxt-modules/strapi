@@ -519,7 +519,17 @@ export type StrapiAuthProvider =
   | string
 
 
-export type StrapiUser = object | null
+  export type StrapiUser = {
+    id: number,
+    username: string,
+    email: string,
+    provider: string,
+    confirmed: boolean
+    blocked: boolean
+    createdAt: string
+    updatedAt: string
+  } | null
+
 
 export interface StrapiAuthenticationResponse {
   user: Ref<StrapiUser>

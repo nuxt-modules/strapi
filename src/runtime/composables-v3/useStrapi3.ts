@@ -1,6 +1,5 @@
 import type { Strapi3RequestParams } from '../types/v3'
-import { useStrapiVersion } from './useStrapiVersion'
-import { useStrapiClient } from './useStrapiClient'
+import { useStrapiVersion, useStrapiClient } from '#imports'
 
 export const useStrapi3 = () => {
   const client = useStrapiClient()

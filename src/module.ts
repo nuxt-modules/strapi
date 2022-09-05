@@ -60,7 +60,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: '@nuxtjs/strapi',
     configKey: 'strapi',
     compatibility: {
-      nuxt: '^3.0.0 || ^2.16.0',
+      nuxt: '^3.0.0-rc.8 || ^2.16.0',
       bridge: true
     }
   },
@@ -104,7 +104,7 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolve(runtimeDir, 'strapi.plugin'))
 
     // Add strapi composables
-    nuxt.hook('autoImports:dirs', (dirs) => {
+    nuxt.hook('imports:dirs', (dirs) => {
       dirs.push(resolve(runtimeDir, 'composables'))
     })
 

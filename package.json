@@ -34,7 +34,7 @@
     "@nuxtjs/eslint-config-typescript": "^10.0.0",
     "@types/qs": "^6.9.7",
     "eslint": "^8.20.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "nuxt": "^3.0.0-rc.9",
     "standard-version": "^9.3.2"
   },

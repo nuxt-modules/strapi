@@ -20,6 +20,7 @@
     "dev": "nuxi dev example",
     "lint": "eslint --ext .js,.ts,.vue .",
     "prepack": "yarn build",
+    "prepare": "nuxi prepare example",
     "release": "yarn lint && standard-version && git push --follow-tags"
   },
   "dependencies": {

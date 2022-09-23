@@ -520,10 +520,10 @@ export type StrapiAuthProvider =
 
 
   export type StrapiUser = {
-    id: number,
-    username: string,
-    email: string,
-    provider: string,
+    id: number
+    username: string
+    email: string
+    provider: string
     confirmed: boolean
     blocked: boolean
     createdAt: string

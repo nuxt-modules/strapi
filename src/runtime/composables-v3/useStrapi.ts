@@ -10,9 +10,6 @@ interface StrapiV3Client<T> {
   delete<F = T>(contentType: string, id: string | number | Partial<F>, data?: Partial<F>): Promise<F>
 }
 
-/**
- * @deprecated use `useStrapi` for correct types
- */
 export const useStrapi = <T>(): StrapiV3Client<T> => {
   return useStrapi3()
 }

@@ -1,4 +1,5 @@
 import type { Strapi4ResponseSingle, Strapi4RequestParams, Strapi4ResponseMany } from '../types/v4'
+// eslint-disable-next-line import/named
 import { useStrapi4 } from '#imports'
 
 interface StrapiV4Client<T> {

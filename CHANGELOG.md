@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](https://github.com/nuxt-community/strapi-module/compare/v1.5.0...v1.5.1) (2022-09-05)
+
+
+### Bug Fixes
+
+* **example:** missing app.vue ([df0f757](https://github.com/nuxt-community/strapi-module/commit/df0f757e3b6b50e457604f76ec974ab79f6f34a1))
+
 ## [1.5.0](https://github.com/nuxt-community/strapi-module/compare/v1.4.0...v1.5.0) (2022-07-18)
 
 

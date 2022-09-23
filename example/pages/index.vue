@@ -36,7 +36,7 @@
 const user = useStrapiUser()
 const url = useStrapiUrl()
 const version = useStrapiVersion()
-const { login, logout, getProviderAuthenticationUrl } = useStrapiAuth()
+const { login, getProviderAuthenticationUrl } = useStrapiAuth()
 
 const loading = ref(false)
 const form = reactive({ identifier: '', password: '' })

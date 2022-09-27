@@ -105,6 +105,7 @@ export default defineNuxtModule<ModuleOptions>({
     // Add strapi composables
     nuxt.hook('imports:dirs', (dirs) => {
       dirs.push(resolve(runtimeDir, 'composables'))
+      dirs.push(resolve(runtimeDir, `composables-${options.version}`))
     })
 
     extendViteConfig((config) => {

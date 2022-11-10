@@ -6,9 +6,9 @@ node_modules
 .vscode
 .DS_Store
 coverage
+dist
 sw.js
 
 .output
 .env
 .history
-dist

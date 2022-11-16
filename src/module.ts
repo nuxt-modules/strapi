@@ -1,7 +1,5 @@
-import { fileURLToPath } from 'url'
 import { defu } from 'defu'
-import { resolve } from 'pathe'
-import { defineNuxtModule, addPlugin, extendViteConfig } from '@nuxt/kit'
+import { defineNuxtModule, addImportsDir, addPlugin, createResolver, extendViteConfig } from '@nuxt/kit'
 import type { CookieOptions } from 'nuxt/dist/app/composables/cookie'
 
 export interface AuthOptions {
@@ -40,6 +38,13 @@ export interface ModuleOptions {
   cookie?: CookieOptions
 
   /**
+   * Strapi Cookie Name
+   * @default 'strapi_jwt'
+   * @type string
+  */
+  cookieName?: string
+
+  /**
    * Strapi Auth Options
    * @default {}
    * @type AuthOptions
@@ -47,12 +52,6 @@ export interface ModuleOptions {
    * @example { populate: ['profile', 'teams'] }
   */
   auth?: AuthOptions
-  /**
-   * Strapi Cookie Name
-   * @default 'strapi_jwt'
-   * @type string
-  */
-  cookieName?: string
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -78,35 +77,22 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     // Default runtimeConfig
-    nuxt.options.runtimeConfig.public.strapi = defu(nuxt.options.runtimeConfig.public.strapi, {
-      url: options.url,
-      prefix: options.prefix,
-      version: options.version,
-      cookie: options.cookie,
-      auth: options.auth,
-      cookieName: options.cookieName
-    })
-    nuxt.options.runtimeConfig.strapi = defu(nuxt.options.runtimeConfig.strapi, {
-      url: options.url,
-      prefix: options.prefix,
-      version: options.version,
-      cookie: options.cookie,
-      auth: options.auth,
-      cookieName: options.cookieName
-    })
+    nuxt.options.runtimeConfig.public = nuxt.options.runtimeConfig.public || {}
+    nuxt.options.runtimeConfig.public.strapi = defu(nuxt.options.runtimeConfig.public.strapi, options)
+    nuxt.options.runtimeConfig.strapi = defu(nuxt.options.runtimeConfig.strapi, options)
+
+    const { resolve } = createResolver(import.meta.url)
 
     // Transpile runtime
-    const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
+    const runtimeDir = resolve('./runtime')
     nuxt.options.build.transpile.push(runtimeDir)
 
     // Add plugin to load user before bootstrap
     addPlugin(resolve(runtimeDir, 'strapi.plugin'))
 
-    // Add strapi composables
-    nuxt.hook('imports:dirs', (dirs) => {
-      dirs.push(resolve(runtimeDir, 'composables'))
-      dirs.push(resolve(runtimeDir, `composables-${options.version}`))
-    })
+    // Add composables
+    addImportsDir(resolve(runtimeDir, 'composables'))
+    addImportsDir(resolve(runtimeDir, `composables-${options.version}`))
 
     extendViteConfig((config) => {
       config.optimizeDeps = config.optimizeDeps || {}

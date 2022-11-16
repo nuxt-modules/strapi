@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.3](https://github.com/nuxt-community/strapi-module/compare/v1.6.2...v1.6.3) (2022-11-16)
+
+
+### Bug Fixes
+
+* **example:** use `modules` instead of `buildModules` ([b590af0](https://github.com/nuxt-community/strapi-module/commit/b590af01e9527b78f019af3d3c3923318799da72))
+* **module:** upgrade to nuxt rc.14 ([2ce994d](https://github.com/nuxt-community/strapi-module/commit/2ce994d9b59b83ec5007b42f25cd037f0aea5020))
+
 ### [1.6.2](https://github.com/nuxt-community/strapi-module/compare/v1.6.1...v1.6.2) (2022-11-16)
 
 ### [1.6.1](https://github.com/nuxt-community/strapi-module/compare/v1.6.0...v1.6.1) (2022-09-29)

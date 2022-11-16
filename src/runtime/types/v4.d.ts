@@ -23,7 +23,7 @@ export interface PaginationByOffset {
 
 export interface Strapi4RequestParams {
   fields?: Array<string>
-  populate?: string | Array<string>
+  populate?: string | Array<string> | object
   sort?: string | Array<string>
   pagination?: PaginationByOffset | PaginationByPage
   filters?: Record<string, unknown>

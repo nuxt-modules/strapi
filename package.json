@@ -24,7 +24,7 @@
     "release": "yarn lint && standard-version && git push --follow-tags"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.14",
+    "@nuxt/kit": "^3.0.0",
     "defu": "^6.1.1",
     "graphql": "^16.6.0",
     "pathe": "^1.0.0",
@@ -36,7 +36,7 @@
     "@types/qs": "^6.9.7",
     "eslint": "^8.27.0",
     "husky": "^8.0.2",
-    "nuxt": "^3.0.0-rc.11",
+    "nuxt": "^3.0.0",
     "standard-version": "^9.5.0"
   },
   "publishConfig": {

@@ -1,7 +1,7 @@
 import module from '../src/module'
 
 export default defineNuxtConfig({
-  buildModules: [
+  modules: [
     module
   ],
   // example of separate client/server URLs

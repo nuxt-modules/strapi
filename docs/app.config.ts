@@ -13,16 +13,16 @@ export default defineAppConfig({
       logo: true
     },
     footer: {
-      credits: {
-        icon: 'IconDocus',
-        text: 'Powered by Docus',
-        href: 'https://docus.com'
-      },
-      icons: [
+      iconLinks: [
         {
-          label: 'NuxtJS',
-          href: 'https://nuxtjs.org',
-          component: 'IconNuxt'
+          label: 'Nuxt',
+          href: 'https://nuxt.com',
+          icon: 'simple-icons:nuxtdotjs'
+        },
+        {
+          label: 'Strapi',
+          href: 'https://strapi.io',
+          icon: 'simple-icons:strapi'
         }
       ]
     }

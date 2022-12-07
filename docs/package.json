@@ -9,9 +9,8 @@
     "preview": "nuxi preview"
   },
   "devDependencies": {
-    "@docus/docs-theme": "npm:@docus/docs-theme-edge@latest",
-    "@docus/github": "npm:@docus/github-edge@latest",
-    "nuxt": "^3.0.0-rc.5",
-    "vue-plausible": "^1.3.2"
+    "@nuxt-themes/docus": "^1.1.3",
+    "nuxt": "^3.0.0",
+    "nuxt-plausible": "latest"
   }
 }

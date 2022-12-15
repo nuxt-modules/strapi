@@ -8,7 +8,7 @@ export default defineAppConfig({
       github: 'nuxt-modules/strapi',
       twitter: 'nuxt_js'
     },
-    image: '/cover.jpg',
+    image: '/cover.png',
     header: {
       logo: true
     },

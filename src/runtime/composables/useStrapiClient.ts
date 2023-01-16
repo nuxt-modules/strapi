@@ -36,8 +36,8 @@ export const useStrapiClient = () => {
       headers.Authorization = `Bearer ${token.value}`
     }
 
-    // Map params according to strapi v4 format
-    if (version === 'v4' && fetchOptions.params) {
+    // Map params according to strapi v3 and v4 formats
+    if (fetchOptions.params) {
       const params = stringify(fetchOptions.params, { encodeValuesOnly: true })
       if (params) {
         url = `${url}?${params}`

@@ -1,7 +1,9 @@
 export default defineAppConfig({
   docus: {
     title: 'Nuxt Strapi',
-    layout: 'default',
+    layout: {
+      fluid: true
+    },
     url: 'https://strapi.nuxtjs.org',
     description: '@nuxtjs/strapi is a Nuxt module for first class integration with Strapi.',
     socials: {

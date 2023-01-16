@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/nuxt-community/strapi-module/compare/v1.6.3...v1.7.0) (2023-01-16)
+
+
+### Features
+
+* **composables:** add `useStrapiMedia` ([#298](https://github.com/nuxt-community/strapi-module/issues/298)) ([201303f](https://github.com/nuxt-community/strapi-module/commit/201303f271fb0478a62c3ba4ede5db896c5cdbcc))
+* **docs:** upgrade to latest Docus ([#297](https://github.com/nuxt-community/strapi-module/issues/297)) ([ab1619a](https://github.com/nuxt-community/strapi-module/commit/ab1619a9e7b4f542432f5a7abad5cae295b62415))
+
+
+### Bug Fixes
+
+* useStrapiClient params stringify for v3 ([#300](https://github.com/nuxt-community/strapi-module/issues/300)) ([32aad73](https://github.com/nuxt-community/strapi-module/commit/32aad73eeb2cf42e930fff31581045c1b9c92e1e)), closes [#299](https://github.com/nuxt-community/strapi-module/issues/299)
+
 ### [1.6.3](https://github.com/nuxt-community/strapi-module/compare/v1.6.2...v1.6.3) (2022-11-16)
 
 

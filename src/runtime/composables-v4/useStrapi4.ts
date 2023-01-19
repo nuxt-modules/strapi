@@ -31,8 +31,16 @@ export const useStrapi4 = () => {
    * @param  {Strapi4RequestParams} params? - Query parameters
    * @returns Promise<T>
    */
-  const findOne = <T>(contentType: string, id: string | number, params?: Strapi4RequestParams): Promise<T> => {
-    return client(`/${contentType}/${id}`, { method: 'GET', params })
+  const findOne = <T>(contentType: string, id?: string | number | Strapi4RequestParams, params?: Strapi4RequestParams): Promise<T> => {
+    if (typeof id === 'object') {
+      params = id
+      // @ts-ignore
+      id = undefined
+    }
+
+    const path = [contentType, id].filter(Boolean).join('/')
+
+    return client(path, { method: 'GET', params })
   }
 
   /**

@@ -62,7 +62,7 @@ export const useStrapi4 = () => {
    * @param  {Record<string, any>} data - Form data
    * @returns Promise<T>
    */
-  const update = <T>(contentType: string, id?: string | number | Partial<T>, data?: Partial<T>): Promise<T> => {
+  const update = <T>(contentType: string, id: string | number | Partial<T>, data?: Partial<T>): Promise<T> => {
     if (typeof id === 'object') {
       data = id
       // @ts-ignore

@@ -42,8 +42,16 @@ export const useStrapi3 = () => {
    * @param  {Strapi3RequestParams} params? - Query parameters
    * @returns Promise<T>
    */
-  const findOne = <T>(contentType: string, id: string | number, params?: Strapi3RequestParams): Promise<T> => {
-    return client(`/${contentType}/${id}`, { method: 'GET', params })
+  const findOne = <T>(contentType: string, id?: string | number | Strapi3RequestParams, params?: Strapi3RequestParams): Promise<T> => {
+    if (typeof id === 'object') {
+      params = id
+      // @ts-ignore
+      id = undefined
+    }
+
+    const path = [contentType, id].filter(Boolean).join('/')
+
+    return client(path, { method: 'GET', params })
   }
 
   /**
@@ -65,9 +73,10 @@ export const useStrapi3 = () => {
    * @param  {Record<string, any>} data - Form data
    * @returns Promise<T>
    */
-  const update = <T>(contentType: string, id: string | number | Partial<T>, data?: Partial<T>): Promise<T> => {
+  const update = <T>(contentType: string, id?: string | number | Partial<T>, data?: Partial<T>): Promise<T> => {
     if (typeof id === 'object') {
       data = id
+      // @ts-ignore
       id = undefined
     }
 

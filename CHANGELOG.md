@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.1](https://github.com/nuxt-modules/strapi/compare/v1.7.0...v1.7.1) (2023-01-23)
+
+
+### Bug Fixes
+
+* **composables:** handle single types ([#310](https://github.com/nuxt-modules/strapi/issues/310)) ([ca5b358](https://github.com/nuxt-modules/strapi/commit/ca5b35887a5ce8b41263260de047adb2bc97b922))
+
 ## [1.7.0](https://github.com/nuxt-community/strapi-module/compare/v1.6.3...v1.7.0) (2023-01-16)
 
 

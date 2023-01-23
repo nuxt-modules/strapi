@@ -557,6 +557,12 @@ export interface StrapiResetPasswordData {
   passwordConfirmation: string
 }
 
+export interface StrapiChangePasswordData {
+  currentPassword: string
+  password: string
+  passwordConfirmation: string
+}
+
 export interface StrapiEmailConfirmationData {
   email: string
 }

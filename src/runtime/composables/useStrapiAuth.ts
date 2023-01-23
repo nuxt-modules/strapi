@@ -10,6 +10,7 @@ import type {
   StrapiForgotPasswordData,
   StrapiRegistrationData,
   StrapiResetPasswordData,
+  StrapiChangePasswordData,
   StrapiUser
 } from '../types'
 import { useStrapiToken } from './useStrapiToken'
@@ -138,6 +139,19 @@ export const useStrapiAuth = () => {
   }
 
   /**
+   * Change the user password
+   *
+   * @param  {StrapiChangePasswordData} data - Change password form: `currentPassword`, `password`, `passwordConfirmation`
+   * @param  {string} data.currentPassword - Current password of the user
+   * @param  {string} data.password - New password of the user
+   * @param  {string} data.passwordConfirmation - Confirmation of the new password of the user
+   * @returns Promise<void>
+   */
+  const changePassword = async (data: StrapiChangePasswordData): Promise<void> => {
+    await client('/auth/change-password', { method: 'POST', body: data })
+  }
+
+  /**
    * Send programmatically an email to a user in order to confirm his account
    *
    * @param  {StrapiEmailConfirmationData} data - Email confirmation form: `email`
@@ -189,6 +203,7 @@ export const useStrapiAuth = () => {
     register,
     forgotPassword,
     resetPassword,
+    changePassword,
     sendEmailConfirmation,
     getProviderAuthenticationUrl,
     authenticateProvider

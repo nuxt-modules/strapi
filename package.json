@@ -27,7 +27,6 @@
     "@nuxt/kit": "^3.0.0",
     "defu": "^6.1.1",
     "graphql": "^16.6.0",
-    "pathe": "^1.0.0",
     "qs": "^6.11.0"
   },
   "devDependencies": {

@@ -9,7 +9,7 @@
 
 > [Strapi](https://strapi.io) module for Nuxt.
 
-- [✨ &nbsp;Release Notes](https://github.com/nuxt-community/strapi-module/releases)
+- [✨ &nbsp;Release Notes](https://github.com/nuxt-modules/strapi/releases)
 - [📖 &nbsp;Read the documentation](https://strapi.nuxtjs.org)
 
 ## Features

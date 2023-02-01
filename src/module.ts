@@ -4,6 +4,7 @@ import type { CookieOptions } from 'nuxt/dist/app/composables/cookie'
 
 export interface AuthOptions {
   populate?: string | string[]
+  fields?: string | string[]
 }
 
 export interface ModuleOptions {

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/nuxt-modules/strapi/compare/v1.7.1...v1.8.0) (2023-02-16)
+
+
+### Features
+
+* module config to pick user fields ([#314](https://github.com/nuxt-modules/strapi/issues/314)) ([3cdf5d1](https://github.com/nuxt-modules/strapi/commit/3cdf5d1bb1dcc106de8a92060f117ac7eab947d5))
+
 ### [1.7.1](https://github.com/nuxt-modules/strapi/compare/v1.7.0...v1.7.1) (2023-01-23)
 
 

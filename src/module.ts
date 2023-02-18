@@ -33,20 +33,6 @@ export interface ModuleOptions {
   version?: 'v4' | 'v3'
 
   /**
-   * Strapi API Token
-   * @default ''
-   * @type string | undefined
-  */
-  apiToken?: string,
-
-  /**
-   * Default Token for Requests
-   * @default 'api'
-   * @type 'api' | 'user'
-  */
-  defaultToken?: 'api' | 'user',
-
-  /**
    * Nuxt Cookie Options
    * @default {}
    * @type CookieOptions

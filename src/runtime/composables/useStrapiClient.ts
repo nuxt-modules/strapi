@@ -1,13 +1,17 @@
 import type { FetchError, FetchOptions } from 'ohmyfetch'
 import { stringify } from 'qs'
-import { useNuxtApp } from '#app'
+import { useNuxtApp, useRuntimeConfig } from '#app'
 import type { Strapi4Error } from '../types/v4'
 import type { Strapi3Error } from '../types/v3'
 import { useStrapiUrl } from './useStrapiUrl'
 import { useStrapiVersion } from './useStrapiVersion'
-import { useStrapiToken } from './useStrapiToken'
+import { useStrapiUserToken } from './useStrapiUserToken'
 
-const defaultErrors = (err: FetchError) => ({
+type DefaultError = {
+  [key: string]: Strapi3Error | Strapi4Error
+}
+
+const defaultErrors = (err: FetchError): DefaultError => ({
   v4: {
     error: {
       status: 500,
@@ -23,17 +27,24 @@ const defaultErrors = (err: FetchError) => ({
   }
 })
 
-export const useStrapiClient = () => {
+export const useStrapiClient = (options?: {
+  token?: string
+}) => {
   const nuxt = useNuxtApp()
+  const config = useRuntimeConfig()
+  const userToken = useStrapiUserToken()
   const baseURL = useStrapiUrl()
   const version = useStrapiVersion()
-  const token = useStrapiToken()
 
-  return async <T> (url: string, fetchOptions: FetchOptions = {}): Promise<T> => {
+  return async <T>(url: string, fetchOptions: FetchOptions = {}): Promise<T> => {
     const headers: HeadersInit = {}
 
-    if (token && token.value) {
-      headers.Authorization = `Bearer ${token.value}`
+    if (options?.token) {
+      headers.Authorization = `Bearer ${options.token}`
+    } else if (config.strapi.defaultToken === 'api' && config.strapi.apiToken) {
+      headers.Authorization = `Bearer ${config.strapi.apiToken}`
+    } else if (config.strapi.defaultToken === 'user' && userToken.value) {
+      headers.Authorization = `Bearer ${userToken.value}`
     }
 
     // Map params according to strapi v3 and v4 formats

@@ -32,6 +32,20 @@ export interface ModuleOptions {
   version?: 'v4' | 'v3'
 
   /**
+   * Strapi API Key
+   * @default ''
+   * @type string | undefined
+  */
+  apiToken?: string,
+
+  /**
+   * Strapi API Key
+   * @default 'api'
+   * @type string
+  */
+  defaultToken?: 'api' | 'user',
+
+  /**
    * Nuxt Cookie Options
    * @default {}
    * @type CookieOptions
@@ -67,6 +81,8 @@ export default defineNuxtModule<ModuleOptions>({
     url: process.env.STRAPI_URL || 'http://localhost:1337',
     prefix: '/api',
     version: 'v4',
+    apiToken: process.env.STRAPI_API_TOKEN || '',
+    defaultToken: 'api',
     cookie: {},
     auth: {},
     cookieName: 'strapi_jwt'

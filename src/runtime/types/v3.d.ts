@@ -2,7 +2,7 @@ import type { StrapiLocale } from '.'
 
 export interface Strapi3Error {
   error: string
-  message: Record<string, unknown> | Record<string, unknown>[]
+  message: string
   statusCode: number
 }
 

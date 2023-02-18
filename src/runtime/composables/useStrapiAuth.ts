@@ -13,14 +13,14 @@ import type {
   StrapiChangePasswordData,
   StrapiUser
 } from '../types'
-import { useStrapiToken } from './useStrapiToken'
+import { useStrapiUserToken } from './useStrapiUserToken'
 import { useStrapiUser } from './useStrapiUser'
 import { useStrapiClient } from './useStrapiClient'
 import { useStrapiUrl } from './useStrapiUrl'
 
 export const useStrapiAuth = () => {
   const url = useStrapiUrl()
-  const token = useStrapiToken()
+  const token = useStrapiUserToken()
   const user = useStrapiUser()
   const client = useStrapiClient()
   const config = useRuntimeConfig()

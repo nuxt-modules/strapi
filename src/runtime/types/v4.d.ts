@@ -1,3 +1,4 @@
+import type { FetchError } from 'ohmyfetch'
 import type { StrapiLocale } from '.'
 
 export interface Strapi4Error {
@@ -5,7 +6,7 @@ export interface Strapi4Error {
     status: number
     name: string
     message: string
-    details: Record<string, unknown>
+    details: FetchError | Record<string, unknown>
   }
 }
 

@@ -32,16 +32,16 @@ export interface ModuleOptions {
   version?: 'v4' | 'v3'
 
   /**
-   * Strapi API Key
+   * Strapi API Token
    * @default ''
    * @type string | undefined
   */
   apiToken?: string,
 
   /**
-   * Strapi API Key
+   * Default Token for Requests
    * @default 'api'
-   * @type string
+   * @type 'api' | 'user'
   */
   defaultToken?: 'api' | 'user',
 

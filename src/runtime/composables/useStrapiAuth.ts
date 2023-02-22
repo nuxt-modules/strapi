@@ -35,7 +35,7 @@ export const useStrapiAuth = () => {
   const fetchUser = async (): Promise<Ref<StrapiUser>> => {
     if (token.value && !user.value) {
       try {
-        user.value = await client('/users/me', { params: config.strapi.auth })
+        user.value = await client('/users/me', { params: config.strapi.auth, headers: { Authorization: `Bearer ${token.value}` } })
       } catch (e) {
         setToken(null)
       }
@@ -58,7 +58,6 @@ export const useStrapiAuth = () => {
     const { jwt }: StrapiAuthenticationResponse = await client('/auth/local', { method: 'POST', body: data })
 
     setToken(jwt)
-
     const user = await fetchUser()
 
     return {
@@ -111,7 +110,7 @@ export const useStrapiAuth = () => {
   const forgotPassword = async (data: StrapiForgotPasswordData): Promise<void> => {
     setToken(null)
 
-    await client('/auth/forgot-password', { method: 'POST', body: data })
+    await client('/auth/forgot-password', { method: 'POST', headers: { Authorization: `Bearer ${token.value}` }, body: data })
   }
 
   /**
@@ -126,7 +125,7 @@ export const useStrapiAuth = () => {
   const resetPassword = async (data: StrapiResetPasswordData): Promise<StrapiAuthenticationResponse> => {
     setToken(null)
 
-    const { jwt }: StrapiAuthenticationResponse = await client('/auth/reset-password', { method: 'POST', body: data })
+    const { jwt }: StrapiAuthenticationResponse = await client('/auth/reset-password', { method: 'POST', headers: { Authorization: `Bearer ${token.value}` }, body: data })
 
     setToken(jwt)
 

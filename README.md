@@ -6,7 +6,7 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
-<a href="https://volta.net/nuxt-modules/strapi?utm_source=nuxt_strapi_readme"><img src="https://user-images.githubusercontent.com/904724/209143798-32345f6c-3cf8-4e06-9659-f4ace4a6acde.svg" alt="Volta board"></a>
+[![Volta][volta-src]][volta-href]
 
 [Strapi](https://strapi.io) module for [Nuxt](https://nuxt.com).
 
@@ -47,5 +47,9 @@
 
 [license-src]: https://img.shields.io/npm/l/@nuxtjs/strapi.svg?style=flat&colorA=18181B&colorB=28CF8D
 [license-href]: https://npmjs.com/package/@nuxtjs/strapi
+
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
+
+[volta-src]: https://user-images.githubusercontent.com/904724/209143798-32345f6c-3cf8-4e06-9659-f4ace4a6acde.svg
+[volta-href]: https://volta.net/nuxt-modules/strapi?utm_source=nuxt_strapi_readme

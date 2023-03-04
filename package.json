@@ -27,7 +27,8 @@
     "@nuxt/kit": "^3.2.3",
     "defu": "^6.1.2",
     "graphql": "^16.6.0",
-    "qs": "^6.11.0"
+    "qs": "^6.11.0",
+    "ufo": "^1.1.1"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.2.1",

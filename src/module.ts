@@ -1,6 +1,7 @@
 import { defu } from 'defu'
-import { defineNuxtModule, addImportsDir, addPlugin, createResolver, extendViteConfig } from '@nuxt/kit'
+import { defineNuxtModule, addImportsDir, addPlugin, createResolver, extendViteConfig, logger } from '@nuxt/kit'
 import type { CookieOptions } from 'nuxt/dist/app/composables/cookie'
+import { joinURL } from 'ufo'
 
 export interface AuthOptions {
   populate?: string | string[]
@@ -110,6 +111,11 @@ export default defineNuxtModule<ModuleOptions>({
       config.optimizeDeps.include = config.optimizeDeps.include || []
       config.optimizeDeps.include.push('qs')
     })
+
+    if (nuxt.options.dev) {
+      const adminUrl = joinURL(options.url as string, '/admin/')
+      logger.info(`Strapi Admin URL: ${adminUrl}`)
+    }
   }
 })
 

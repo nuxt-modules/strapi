@@ -31,6 +31,7 @@
     "ufo": "^1.1.1"
   },
   "devDependencies": {
+    "@nuxt/devtools": "^0.2.5",
     "@nuxt/module-builder": "^0.2.1",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@types/node": "^18.14.6",

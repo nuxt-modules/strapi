@@ -88,11 +88,6 @@ export default defineNuxtModule<ModuleOptions>({
     cookieName: 'strapi_jwt'
   },
   setup (options, nuxt) {
-    // Make sure url is set
-    if (!options.url) {
-      throw new Error('Missing `STRAPI_URL` in `.env`')
-    }
-
     // Default runtimeConfig
     nuxt.options.runtimeConfig.public.strapi = defu(nuxt.options.runtimeConfig.public.strapi, options)
     nuxt.options.runtimeConfig.strapi = defu(nuxt.options.runtimeConfig.strapi, options)

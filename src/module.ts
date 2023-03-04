@@ -2,7 +2,6 @@ import { defu } from 'defu'
 import { defineNuxtModule, addImportsDir, addPlugin, createResolver, extendViteConfig, logger } from '@nuxt/kit'
 import type { CookieOptions } from 'nuxt/dist/app/composables/cookie'
 import { joinURL } from 'ufo'
-import { $fetch } from 'ofetch'
 
 export interface AuthOptions {
   populate?: string | string[]

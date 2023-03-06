@@ -54,6 +54,15 @@ export interface ModuleOptions {
    * @example { populate: ['profile', 'teams'] }
   */
   auth?: AuthOptions
+
+  /**
+   * Add Strapi Admin in Nuxt Devtools
+   *
+   * Please read the instructions on https://strapi.nuxtjs.org/devtools
+   *
+   * @default false
+  */
+  devtools?: boolean
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -70,7 +79,8 @@ export default defineNuxtModule<ModuleOptions>({
     version: 'v4',
     cookie: {},
     auth: {},
-    cookieName: 'strapi_jwt'
+    cookieName: 'strapi_jwt',
+    devtools: false
   },
   setup (options, nuxt) {
     // Default runtimeConfig
@@ -96,9 +106,21 @@ export default defineNuxtModule<ModuleOptions>({
       config.optimizeDeps.include.push('qs')
     })
 
-    if (nuxt.options.dev) {
-      const adminUrl = joinURL(options.url as string, '/admin/')
-      logger.info(`Strapi Admin URL: ${adminUrl}`)
+    const adminUrl = joinURL(nuxt.options.runtimeConfig.public.strapi.url, '/admin/')
+    logger.info(`Strapi Admin URL: ${adminUrl}`)
+    if (options.devtools) {
+      // @ts-expect-error - private API
+      nuxt.hook('devtools:customTabs', (iframeTabs) => {
+        iframeTabs.push({
+          name: 'strapi',
+          title: 'Strapi',
+          icon: 'i-logos-strapi-icon',
+          view: {
+            type: 'iframe',
+            src: adminUrl
+          }
+        })
+      })
     }
   }
 })

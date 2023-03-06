@@ -1,8 +1,8 @@
-import module from '../src/module'
 
 export default defineNuxtConfig({
   modules: [
-    module
+    '../src/module',
+    '@nuxt/devtools'
   ],
   // example of separate client/server URLs
   /* runtimeConfig: {
@@ -13,5 +13,10 @@ export default defineNuxtConfig({
   }, */
   strapi: {
     url: 'http://localhost:1337'
+    // To enable the devtools, read https://strapi.nuxtjs.org/devtools
+    // devtools: true
+  },
+  typescript: {
+    includeWorkspace: true
   }
 })

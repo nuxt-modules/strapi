@@ -33,7 +33,7 @@ export const useStrapiAuth = () => {
   }
 
   const fetchUser = async (): Promise<Ref<StrapiUser>> => {
-    if (token.value && !user.value) {
+    if (token.value) {
       try {
         user.value = await client('/users/me', { params: config.strapi.auth, headers: { Authorization: `Bearer ${token.value}` } })
       } catch (e) {

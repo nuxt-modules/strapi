@@ -1,8 +1,13 @@
 import { defineNuxtPlugin } from '#app'
 import { useStrapiAuth } from './composables/useStrapiAuth'
+import { useStrapiUser } from './composables/useStrapiUser'
 
 export default defineNuxtPlugin(async () => {
-  const { fetchUser } = useStrapiAuth()
+  const user = useStrapiUser()
 
-  await fetchUser()
+  if (!user.value) {
+    const { fetchUser } = useStrapiAuth()
+
+    await fetchUser()
+  }
 })

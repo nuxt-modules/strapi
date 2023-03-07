@@ -98,12 +98,8 @@ export const useStrapi = <T>(options?: {
     return client(path, { method: 'DELETE' })
   }
 
-  return {
-    count,
-    find,
-    findOne,
-    create,
-    update,
-    delete: _delete
-  }
+export const useStrapi = <T>(options?: {
+  token?: string
+}): StrapiV3Client<T> => {
+  return useStrapi3(options)
 }

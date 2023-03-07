@@ -33,6 +33,20 @@ export interface ModuleOptions {
   version?: 'v4' | 'v3'
 
   /**
+   * Strapi API Token
+   * @default ''
+   * @type string | undefined
+  */
+  apiToken?: string,
+
+  /**
+   * Default Token for Requests
+   * @default 'user'
+   * @type 'api' | 'user'
+  */
+  defaultToken?: 'api' | 'user',
+
+  /**
    * Nuxt Cookie Options
    * @default {}
    * @type CookieOptions
@@ -78,13 +92,16 @@ export default defineNuxtModule<ModuleOptions>({
     prefix: '/api',
     version: 'v4',
     apiToken: process.env.STRAPI_API_TOKEN || '',
-    defaultToken: 'api',
+    defaultToken: 'user',
     cookie: {},
     auth: {},
     cookieName: 'strapi_jwt',
     devtools: false
   },
   setup (options, nuxt) {
+    if (options.defaultToken === 'api' && !options.apiToken) {
+      throw new Error('Missing `STRAPI_API_TOKEN` in `.env`')
+    }
     // Default runtimeConfig
     nuxt.options.runtimeConfig.public.strapi = defu(nuxt.options.runtimeConfig.public.strapi, options)
     nuxt.options.runtimeConfig.strapi = defu(nuxt.options.runtimeConfig.strapi, options)

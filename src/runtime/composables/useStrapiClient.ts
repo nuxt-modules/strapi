@@ -5,7 +5,7 @@ import type { Strapi4Error } from '../types/v4'
 import type { Strapi3Error } from '../types/v3'
 import { useStrapiUrl } from './useStrapiUrl'
 import { useStrapiVersion } from './useStrapiVersion'
-import { useStrapiUserToken } from './useStrapiUserToken'
+import { useStrapiToken } from './useStrapiToken'
 
 type DefaultError = {
   [key: string]: Strapi3Error | Strapi4Error
@@ -32,7 +32,7 @@ export const useStrapiClient = (options?: {
 }) => {
   const nuxt = useNuxtApp()
   const config = useRuntimeConfig()
-  const userToken = useStrapiUserToken()
+  const userToken = useStrapiToken()
   const baseURL = useStrapiUrl()
   const version = useStrapiVersion()
 
@@ -41,10 +41,10 @@ export const useStrapiClient = (options?: {
 
     if (options?.token) {
       headers.Authorization = `Bearer ${options.token}`
-    } else if (config.strapi.defaultToken === 'api' && config.strapi.apiToken) {
-      headers.Authorization = `Bearer ${config.strapi.apiToken}`
     } else if (config.strapi.defaultToken === 'user' && userToken.value) {
       headers.Authorization = `Bearer ${userToken.value}`
+    } else if ((config.strapi.defaultToken === 'api' || config.strapi.apiToken) || config.strapi.apiToken) {
+      headers.Authorization = `Bearer ${config.strapi.apiToken}`
     }
 
     // Map params according to strapi v3 and v4 formats

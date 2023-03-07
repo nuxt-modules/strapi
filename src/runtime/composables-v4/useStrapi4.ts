@@ -1,12 +1,15 @@
-import type { Strapi4RequestParams, Strapi4ResponseMany, Strapi4ResponseSingle } from '../types/v4'
-import { useStrapiClient, useStrapiVersion } from '#imports'
+import type { Strapi4RequestParams } from '../types/v4'
+import { useStrapiVersion, useStrapiClient } from '#imports'
 
-export const useStrapi = <T>(options?: {
-  token?: string,
+/**
+ * @deprecated use `useStrapi` for correct types
+ */
+
+export const useStrapi4 = (options?: {
+  token?: string
 }) => {
   const client = useStrapiClient(options)
   const version = useStrapiVersion()
-
   if (version !== 'v4') {
     // eslint-disable-next-line no-console
     console.warn('useStrapi4 is only available for v4')
@@ -19,7 +22,7 @@ export const useStrapi = <T>(options?: {
    * @param  {Strapi4RequestParams} params? - Query parameters
    * @returns Promise<T>
    */
-  const find = <F = T>(contentType: string, params?: Strapi4RequestParams): Promise<Strapi4ResponseMany<F>> => {
+  const find = <T>(contentType: string, params?: Strapi4RequestParams): Promise<T> => {
     return client(`/${contentType}`, { method: 'GET', params })
   }
 
@@ -31,7 +34,7 @@ export const useStrapi = <T>(options?: {
    * @param  {Strapi4RequestParams} params? - Query parameters
    * @returns Promise<T>
    */
-  const findOne = <F = T>(contentType: string, id?: string | number | Strapi4RequestParams, params?: Strapi4RequestParams): Promise<Strapi4ResponseSingle<F>> => {
+  const findOne = <T>(contentType: string, id?: string | number | Strapi4RequestParams, params?: Strapi4RequestParams): Promise<T> => {
     if (typeof id === 'object') {
       params = id
       // @ts-ignore
@@ -50,7 +53,7 @@ export const useStrapi = <T>(options?: {
    * @param  {Record<string, any>} data - Form data
    * @returns Promise<T>
    */
-  const create = <F = T>(contentType: string, data: Partial<F>): Promise<Strapi4ResponseSingle<F>> => {
+  const create = <T>(contentType: string, data: Partial<T>): Promise<T> => {
     return client(`/${contentType}`, { method: 'POST', body: { data } })
   }
 
@@ -62,7 +65,7 @@ export const useStrapi = <T>(options?: {
    * @param  {Record<string, any>} data - Form data
    * @returns Promise<T>
    */
-  const update = <F = T>(contentType: string, id: string | number | Partial<F>, data?: Partial<F>): Promise<Strapi4ResponseSingle<F>> => {
+  const update = <T>(contentType: string, id: string | number | Partial<T>, data?: Partial<T>): Promise<T> => {
     if (typeof id === 'object') {
       data = id
       // @ts-ignore
@@ -81,14 +84,17 @@ export const useStrapi = <T>(options?: {
    * @param  {string|number} id - ID of entry to be deleted
    * @returns Promise<T>
    */
-  const _delete = <F = T>(contentType: string, id?: string | number): Promise<Strapi4ResponseSingle<F>> => {
+  const _delete = <T>(contentType: string, id?: string | number): Promise<T> => {
     const path = [contentType, id].filter(Boolean).join('/')
 
     return client(path, { method: 'DELETE' })
   }
 
-export const useStrapi = <T>(options?: {
-  token?: string
-}): StrapiV4Client<T> => {
-  return useStrapi4(options)
+  return {
+    find,
+    findOne,
+    create,
+    update,
+    delete: _delete
+  }
 }

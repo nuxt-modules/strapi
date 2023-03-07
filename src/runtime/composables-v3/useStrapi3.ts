@@ -4,8 +4,10 @@ import { useStrapiVersion, useStrapiClient } from '#imports'
 /**
  * @deprecated use `useStrapi` for correct types
  */
-export const useStrapi3 = () => {
-  const client = useStrapiClient()
+export const useStrapi3 = (options?: {
+  token?: string
+}) => {
+  const client = useStrapiClient(options)
   const version = useStrapiVersion()
   if (version !== 'v3') {
     // eslint-disable-next-line no-console

@@ -10,6 +10,8 @@ interface StrapiV4Client<T> {
   delete<F = T>(contentType: string, id?: string | number): Promise<Strapi4ResponseSingle<F>>
 }
 
-export const useStrapi = <T>(): StrapiV4Client<T> => {
-  return useStrapi4()
+export const useStrapi = <T>(options?: {
+  token?: string
+}): StrapiV4Client<T> => {
+  return useStrapi4(options)
 }

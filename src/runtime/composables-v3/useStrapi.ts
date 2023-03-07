@@ -11,6 +11,8 @@ interface StrapiV3Client<T> {
   delete<F = T>(contentType: string, id?: string | number): Promise<F>
 }
 
-export const useStrapi = <T>(): StrapiV3Client<T> => {
-  return useStrapi3()
+export const useStrapi = <T>(options?: {
+  token?: string
+}): StrapiV3Client<T> => {
+  return useStrapi3(options)
 }

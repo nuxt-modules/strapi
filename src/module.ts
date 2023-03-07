@@ -56,6 +56,20 @@ export interface ModuleOptions {
   auth?: AuthOptions
 
   /**
+   * Strapi API Token
+   * @default ''
+   * @type string | undefined
+  */
+  apiToken?: string,
+
+  /**
+   * Default Token for Requests
+   * @default 'user'
+   * @type 'api' | 'user'
+  */
+  defaultToken?: 'api' | 'user',
+
+  /**
    * Add Strapi Admin in Nuxt Devtools
    *
    * Please read the instructions on https://strapi.nuxtjs.org/devtools
@@ -78,11 +92,17 @@ export default defineNuxtModule<ModuleOptions>({
     prefix: '/api',
     version: 'v4',
     cookie: {},
-    auth: {},
     cookieName: 'strapi_jwt',
+    auth: {},
+    apiToken: process.env.STRAPI_API_TOKEN || '',
+    defaultToken: 'user',
     devtools: false
   },
   setup (options, nuxt) {
+    if (options.defaultToken === 'api' && !options.apiToken) {
+      throw new Error('Missing `STRAPI_API_TOKEN` in `.env`')
+    }
+
     // Default runtimeConfig
     nuxt.options.runtimeConfig.public.strapi = defu(nuxt.options.runtimeConfig.public.strapi, options)
     nuxt.options.runtimeConfig.strapi = defu(nuxt.options.runtimeConfig.strapi, options)

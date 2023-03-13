@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/nuxt-modules/strapi/compare/v1.8.1...v1.9.0) (2023-03-13)
+
+
+### Features
+
+* add option to add Strapi admin in Nuxt Devtools ([#323](https://github.com/nuxt-modules/strapi/issues/323)) ([3726b66](https://github.com/nuxt-modules/strapi/commit/3726b6640aecfa6d1cd701f9af93d01a885fbf30))
+
 ### [1.8.1](https://github.com/nuxt-modules/strapi/compare/v1.8.0...v1.8.1) (2023-02-16)
 
 

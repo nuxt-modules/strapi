@@ -84,7 +84,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   setup (options, nuxt) {
     // Default runtimeConfig
-    nuxt.options.runtimeConfig.public.strapi = defu(nuxt.options.runtimeConfig.public.strapi, options)
+    nuxt.options.runtimeConfig.strapi = defu(nuxt.options.runtimeConfig.strapi, options)
     nuxt.options.runtimeConfig.strapi = defu(nuxt.options.runtimeConfig.strapi, options)
 
     const { resolve } = createResolver(import.meta.url)
@@ -106,7 +106,7 @@ export default defineNuxtModule<ModuleOptions>({
       config.optimizeDeps.include.push('qs')
     })
 
-    const adminUrl = joinURL(nuxt.options.runtimeConfig.public.strapi.url, '/admin/')
+    const adminUrl = joinURL(nuxt.options.runtimeConfig.strapi.url, '/admin/')
     logger.info(`Strapi Admin URL: ${adminUrl}`)
     if (options.devtools) {
       // @ts-expect-error - private API

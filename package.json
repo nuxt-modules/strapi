@@ -38,7 +38,7 @@
     "@types/qs": "^6.9.7",
     "eslint": "^8.36.0",
     "husky": "^8.0.3",
-    "nuxt": "^3.3.1",
+    "nuxt": "^3.4.0",
     "standard-version": "^9.5.0"
   },
   "publishConfig": {

@@ -1,7 +1,8 @@
 import { useRuntimeConfig } from '#app'
+import { joinURL } from 'ufo'
 
-export const useStrapiMedia = (url: string): string => {
-  const config = useRuntimeConfig()
+export const useStrapiMedia = (path: string): string => {
+  const config = process.server ? useRuntimeConfig() : useRuntimeConfig().public
 
-  return config.strapi.url + url
+  return joinURL(config.strapi.url, path)
 }

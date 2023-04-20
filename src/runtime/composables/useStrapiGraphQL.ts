@@ -6,7 +6,7 @@ import { useStrapiClient } from './useStrapiClient'
 
 export const useStrapiGraphQL = () => {
   const client = useStrapiClient()
-  const config = useRuntimeConfig()
+  const config = process.server ? useRuntimeConfig() : useRuntimeConfig().public
 
   return <T> (query: string|DocumentNode, variables?: StrapiGraphqlVariables): Promise<T> => {
     const queryAsString = typeof query === 'string' ? query : print(query)

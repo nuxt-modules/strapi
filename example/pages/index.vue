@@ -3,9 +3,7 @@
     <h1>@nuxtjs/strapi</h1>
 
     <h2>Url</h2>
-    <client-only>
-      <pre>{{ url }}</pre>
-    </client-only>
+    <pre>{{ url }}</pre>
     <h2>Version</h2>
     <pre>{{ version }}</pre>
 
@@ -36,7 +34,7 @@
 const user = useStrapiUser()
 const url = useStrapiUrl()
 const version = useStrapiVersion()
-const { login, getProviderAuthenticationUrl } = useStrapiAuth()
+const { login, logout, getProviderAuthenticationUrl } = useStrapiAuth()
 
 const loading = ref(false)
 const form = reactive({ identifier: '', password: '' })

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.1](https://github.com/nuxt-modules/strapi/compare/v1.9.0...v1.9.1) (2023-04-20)
+
+
+### Bug Fixes
+
+* **module:** type errors ([ebba8ff](https://github.com/nuxt-modules/strapi/commit/ebba8fff00ec26f36683d89dae36f83995fc3964))
+
 ## [1.9.0](https://github.com/nuxt-modules/strapi/compare/v1.8.1...v1.9.0) (2023-03-13)
 
 

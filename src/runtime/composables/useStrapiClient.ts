@@ -1,4 +1,4 @@
-import type { FetchError, FetchOptions } from 'ohmyfetch'
+import type { FetchError, FetchOptions } from 'ofetch'
 import { stringify } from 'qs'
 import { useNuxtApp } from '#app'
 import type { Strapi4Error } from '../types/v4'

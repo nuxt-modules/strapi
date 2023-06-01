@@ -16,7 +16,6 @@
     "dist"
   ],
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "build": "nuxt-module-build",
     "dev": "nuxi dev example",
     "lint": "eslint --ext .js,.ts,.vue .",

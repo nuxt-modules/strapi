@@ -12,7 +12,7 @@ export interface ModuleOptions {
   /**
    * Strapi API URL
    * @default process.env.STRAPI_URL
-   * @example 'http://localhost:1337'
+   * @example 'http://127.0.0.1:1337'
    * @type string
    */
   url?: string
@@ -74,7 +74,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
   },
   defaults: {
-    url: process.env.STRAPI_URL || 'http://localhost:1337',
+    url: process.env.STRAPI_URL || 'http://127.0.0.1:1337',
     prefix: '/api',
     version: 'v4',
     cookie: {},
@@ -82,7 +82,7 @@ export default defineNuxtModule<ModuleOptions>({
     cookieName: 'strapi_jwt',
     devtools: false
   },
-  setup (options, nuxt) {
+  setup(options, nuxt) {
     // Default runtimeConfig
     nuxt.options.runtimeConfig.public.strapi = defu(nuxt.options.runtimeConfig.public.strapi, options)
     nuxt.options.runtimeConfig.strapi = defu(nuxt.options.runtimeConfig.strapi, options)

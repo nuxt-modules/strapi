@@ -82,7 +82,7 @@ export default defineNuxtModule<ModuleOptions>({
     cookieName: 'strapi_jwt',
     devtools: false
   },
-  setup(options, nuxt) {
+  setup (options, nuxt) {
     // Default runtimeConfig
     nuxt.options.runtimeConfig.public.strapi = defu(nuxt.options.runtimeConfig.public.strapi, options)
     nuxt.options.runtimeConfig.strapi = defu(nuxt.options.runtimeConfig.strapi, options)

@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
 
 import type { Ref } from 'vue'
-import { useRuntimeConfig } from '#app'
 import type {
   StrapiAuthenticationData,
   StrapiAuthenticationResponse,
@@ -17,6 +16,7 @@ import { useStrapiToken } from './useStrapiToken'
 import { useStrapiUser } from './useStrapiUser'
 import { useStrapiClient } from './useStrapiClient'
 import { useStrapiUrl } from './useStrapiUrl'
+import { useRuntimeConfig } from '#imports'
 
 export const useStrapiAuth = () => {
   const url = useStrapiUrl()

@@ -1,4 +1,4 @@
-import { useCookie, useNuxtApp, useRuntimeConfig } from '#app'
+import { useCookie, useNuxtApp, useRuntimeConfig } from '#imports'
 
 export const useStrapiToken = () => {
   const nuxt = useNuxtApp()

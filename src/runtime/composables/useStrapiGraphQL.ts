@@ -1,8 +1,8 @@
-import { useRuntimeConfig } from '#app'
 import { print } from 'graphql'
 import type { DocumentNode } from 'graphql'
 import type { StrapiGraphqlVariables } from '../types'
 import { useStrapiClient } from './useStrapiClient'
+import { useRuntimeConfig } from '#imports'
 
 export const useStrapiGraphQL = () => {
   const client = useStrapiClient()

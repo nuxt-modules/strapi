@@ -39,15 +39,33 @@ export interface Strapi4ResponseData<T> {
 
 export interface Strapi4Response<T> {
   data: Strapi4ResponseData<T> | Strapi4ResponseData<T>[],
-  meta: Record<string, unknown>
+  meta: Strapi4ResponseMeta
 }
 
 export interface Strapi4ResponseSingle<T> {
   data: Strapi4ResponseData<T>,
-  meta: Record<string, unknown>
+  meta: Strapi4ResponseMeta
 }
 
 export interface Strapi4ResponseMany<T> {
   data: Strapi4ResponseData<T>[],
-  meta: Record<string, unknown>
+  meta: Strapi4ResponseMeta
+}
+
+export interface Strapi4ResponseMeta {
+  pagination: MetaResponsePaginationByPage | MetaResponsePaginationByOffset,
+  [key: string]: unknown
+}
+
+export interface MetaResponsePaginationByPage {
+  page: number,
+  pageSize: number,
+  pageCount: number,
+  total: number
+}
+
+export interface MetaResponsePaginationByOffset {
+  start: number,
+  limit: number,
+  total: number
 }

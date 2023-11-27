@@ -1,9 +1,32 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  css: ['@/assets/css/main.css'],
-  extends: ['@nuxt-themes/docus'],
-  modules: ['nuxt-plausible'],
-  // @ts-ignore
-  plausible: {
-    domain: 'strapi.nuxtjs.org'
-  }
+  extends: ['@nuxt/ui-pro'],
+  modules: [
+    '@nuxt/content',
+    '@nuxt/ui',
+    '@nuxtjs/fontaine',
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/plausible',
+    'nuxt-og-image'
+  ],
+  ui: {
+    icons: ['heroicons', 'simple-icons']
+  },
+  // Fonts
+  fontMetrics: {
+    fonts: ['DM Sans']
+  },
+  googleFonts: {
+    display: 'swap',
+    download: true,
+    families: {
+      'DM+Sans': [400, 500, 600, 700]
+    }
+  },
+  routeRules: {
+    '/api/search.json': { prerender: true },
+  },
+  // Devtools / Typescript
+  devtools: { enabled: true },
+  typescript: { strict: false }
 })

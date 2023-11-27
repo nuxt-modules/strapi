@@ -1,0 +1,49 @@
+title: 'Nuxt Strapi'
+description: 'Nuxt module for first class integration with the Strapi CMS.'
+navigation: false
+hero:
+  title: 'Nuxt [Strapi]{.text-primary}'
+  description: 'Nuxt module for first class integration with the Strapi CMS.'
+  orientation: horizontal
+  links:
+    - label: 'Get started'
+      icon: 'i-heroicons-rocket-launch'
+      to: '/setup'
+      size: lg
+    - label: 'Star on GitHub'
+      icon: 'i-simple-icons-github'
+      color: 'white'
+      to: 'https://github.com/nuxt-modules/strapi'
+      target: '_blank'
+      size: lg
+  code: |
+    ```ts [nuxt.config.ts]
+    export default defineNuxtConfig({
+      modules: ['@nuxtjs/strapi'],
+      strapi: {
+        version: 'v4',
+        prefix: '/api'
+      }
+    })
+    ```
+features:
+  title: 'Shipped with many features.'
+  items:
+    - title: 'Nuxt 3 Ready'
+      description: 'Leverage our auto-imported [composables](/usage) and our [devtools](/devtools) integration.'
+      icon: 'i-simple-icons-nuxtdotjs'
+    - title: 'Strapi v3 & v4'
+      description: 'Works with the different versions of Strapi.'
+      icon: 'i-simple-icons-strapi'
+    - title: 'Authentication'
+      description: 'Leverage [`useStrapiUser`](/auth) composable to bring auth to your app.'
+      icon: 'i-heroicons-lock-closed'
+    - title: 'RESTful'
+      description: 'Interact with all the HTTP methods to your Strapi API.'
+      icon: 'i-heroicons-arrows-right-left'
+    - title: 'Error Handling'
+      description: 'Handle errors with our [hooks](/advanced#errors-handling) to provide a great UX.'
+      icon: 'i-heroicons-bug-ant'
+    - title: 'TypeScript Support'
+      description: 'Our composables support types augmentation.'
+      icon: 'i-simple-icons-typescript'

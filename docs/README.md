@@ -1,31 +1,40 @@
-![docus preview](./static/preview.png)
+# Nuxt Strapi - Docs
 
-# Docus Starter
-
-Starter template for [Docus](https://docus.dev).
+[![Nuxt UI Pro](https://img.shields.io/badge/Made%20with-Nuxt%20UI%20Pro-00DC82?logo=nuxt.js&labelColor=020420)](https://ui.nuxt.com/pro)
 
 ## Setup
 
-Install dependencies:
+Make sure to install the dependencies in the `docs/` directory:
 
 ```bash
-yarn install
+pnpm install
 ```
 
-## Development
+## Development Server
+
+Start the development server on `http://localhost:3000`:
 
 ```bash
-yarn dev
+# npm
+npm run dev
 ```
 
-## Static Generation
+## Production
 
-This will create the `dist/` directory for publishing to static hosting:
+Make sure to add your [Nuxt UI Pro](https://ui.nuxt.com/pro) license in the `.env` file before building the application.
+
+Build the application for production:
 
 ```bash
-yarn build
+# npm
+npm run generate
 ```
 
-To preview the static generated app, run `yarn start`
+Locally preview production build:
 
-For detailed explanation on how things work, checkout [Docus](https://docus.dev).
+```bash
+# npm
+npm run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

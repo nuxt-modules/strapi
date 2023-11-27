@@ -1,11 +1,17 @@
 import type { FetchError, FetchOptions } from 'ofetch'
 import { stringify } from 'qs'
+import dns from 'dns'
 import type { Strapi4Error } from '../types/v4'
 import type { Strapi3Error } from '../types/v3'
 import { useStrapiUrl } from './useStrapiUrl'
 import { useStrapiVersion } from './useStrapiVersion'
 import { useStrapiToken } from './useStrapiToken'
 import { useNuxtApp } from '#imports'
+
+// Fixes `ECONNREFUSED` on Node 18: https://github.com/node-fetch/node-fetch/issues/1624#issuecomment-1407717012
+if (process.server && process.dev) {
+  dns.setDefaultResultOrder('ipv4first')
+}
 
 const defaultErrors = (err: FetchError) => ({
   v4: {

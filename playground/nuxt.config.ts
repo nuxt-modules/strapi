@@ -1,8 +1,6 @@
-
 export default defineNuxtConfig({
   modules: [
-    '../src/module',
-    '@nuxt/devtools'
+    '../src/module'
   ],
   // example of separate client/server URLs
   // runtimeConfig: {
@@ -17,7 +15,5 @@ export default defineNuxtConfig({
     // To enable the devtools, read https://strapi.nuxtjs.org/devtools
     // devtools: true
   },
-  typescript: {
-    includeWorkspace: true
-  }
+  devtools: { enabled: true }
 })

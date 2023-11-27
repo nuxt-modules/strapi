@@ -1,5 +1,5 @@
 import type { Strapi4ResponseSingle, Strapi4RequestParams, Strapi4ResponseMany } from '../types/v4'
-// eslint-disable-next-line import/named
+// @ts-ignore
 import { useStrapi4 } from '#imports'
 
 interface StrapiV4Client<T> {
@@ -11,5 +11,6 @@ interface StrapiV4Client<T> {
 }
 
 export const useStrapi = <T>(): StrapiV4Client<T> => {
+  // @ts-ignore
   return useStrapi4()
 }

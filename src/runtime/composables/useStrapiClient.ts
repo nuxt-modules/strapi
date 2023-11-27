@@ -52,6 +52,7 @@ export const useStrapiClient = () => {
     }
 
     try {
+      // @ts-ignore
       return await $fetch<T>(url, {
         retry: 0,
         baseURL,
@@ -62,6 +63,7 @@ export const useStrapiClient = () => {
         }
       })
     } catch (err: any) {
+      // @ts-ignore
       const e: Strapi4Error | Strapi3Error = err.data || defaultErrors(err)[version]
 
       nuxt.hooks.callHook('strapi:error' as any, e)

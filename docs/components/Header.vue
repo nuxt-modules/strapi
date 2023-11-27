@@ -9,7 +9,7 @@ const { header } = useAppConfig()
 <template>
   <UHeader>
     <template #logo>
-      <Logo class="h-8 w-auto text-primary" />
+      <Logo class="h-7 w-auto text-primary" />
     </template>
 
     <template v-if="header?.search" #center>

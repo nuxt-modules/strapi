@@ -1,5 +1,5 @@
 import type { Strapi3RequestParams } from '../types/v3'
-// eslint-disable-next-line import/named
+// @ts-ignore
 import { useStrapi3 } from '#imports'
 
 interface StrapiV3Client<T> {

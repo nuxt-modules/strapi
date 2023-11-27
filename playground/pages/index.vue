@@ -44,7 +44,9 @@ const onSubmit = async () => {
 
   try {
     await login(form)
-  } catch (e) {}
+  } catch (e) {
+    console.error(e)
+  }
 
   loading.value = false
 }

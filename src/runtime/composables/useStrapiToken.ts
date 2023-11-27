@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useCookie, useNuxtApp, useRuntimeConfig } from '#imports'
 
 export const useStrapiToken = () => {

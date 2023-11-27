@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/nuxt-modules/strapi/compare/v1.9.3...v1.10.0) (2023-11-27)
+
+
+### Features
+
+* **find/findOne:** allow fetch options as third param ([#360](https://github.com/nuxt-modules/strapi/issues/360)) ([b360ad3](https://github.com/nuxt-modules/strapi/commit/b360ad37b0b35656ee9d61c2e731748d4d4aeb01))
+
+
+### Bug Fixes
+
+* **docs:** fixed code snippets ([#368](https://github.com/nuxt-modules/strapi/issues/368)) ([a31e00f](https://github.com/nuxt-modules/strapi/commit/a31e00fe0996910dda9bf80a1d6dd4ab9f50092e))
+* **types:** make typings for meta in responses v4 more specific ([#359](https://github.com/nuxt-modules/strapi/issues/359)) ([199d56e](https://github.com/nuxt-modules/strapi/commit/199d56e0f241dcbff550a35be61df7f1d1e684c4))
+* **useStrapiClient:** prevent cookie ([93b8bb8](https://github.com/nuxt-modules/strapi/commit/93b8bb8d15bb59d54179c9e8bb0291955078212c)), closes [#366](https://github.com/nuxt-modules/strapi/issues/366) [#364](https://github.com/nuxt-modules/strapi/issues/364) [#138](https://github.com/nuxt-modules/strapi/issues/138) [#229](https://github.com/nuxt-modules/strapi/issues/229)
+
 ### [1.9.3](https://github.com/nuxt-modules/strapi/compare/v1.9.2...v1.9.3) (2023-06-01)
 
 ### [1.9.2](https://github.com/nuxt-modules/strapi/compare/v1.9.1...v1.9.2) (2023-05-26)

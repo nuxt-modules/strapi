@@ -1,4 +1,5 @@
 import type { Strapi4RequestParams } from '../types/v4'
+import type { FetchOptions } from 'ofetch'
 import { useStrapiVersion, useStrapiClient } from '#imports'
 
 /**
@@ -19,8 +20,8 @@ export const useStrapi4 = () => {
    * @param  {Strapi4RequestParams} params? - Query parameters
    * @returns Promise<T>
    */
-  const find = <T>(contentType: string, params?: Strapi4RequestParams): Promise<T> => {
-    return client(`/${contentType}`, { method: 'GET', params })
+  const find = <T>(contentType: string, params?: Strapi4RequestParams, fetchOptions?: FetchOptions): Promise<T> => {
+    return client(`/${contentType}`, { method: 'GET', params, ...fetchOptions })
   }
 
   /**
@@ -31,7 +32,7 @@ export const useStrapi4 = () => {
    * @param  {Strapi4RequestParams} params? - Query parameters
    * @returns Promise<T>
    */
-  const findOne = <T>(contentType: string, id?: string | number | Strapi4RequestParams, params?: Strapi4RequestParams): Promise<T> => {
+  const findOne = <T>(contentType: string, id?: string | number | Strapi4RequestParams, params?: Strapi4RequestParams, fetchOptions?: FetchOptions): Promise<T> => {
     if (typeof id === 'object') {
       params = id
       // @ts-ignore
@@ -40,7 +41,7 @@ export const useStrapi4 = () => {
 
     const path = [contentType, id].filter(Boolean).join('/')
 
-    return client(path, { method: 'GET', params })
+    return client(path, { method: 'GET', params, ...fetchOptions })
   }
 
   /**

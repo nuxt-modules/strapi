@@ -1,7 +1,7 @@
 export default defineAppConfig({
   ui: {
     primary: 'strapi',
-    gray: 'cool',
+    gray: 'slate',
     footer: {
       bottom: {
         left: 'text-sm text-gray-500 dark:text-gray-400',
@@ -20,7 +20,6 @@ export default defineAppConfig({
     }]
   },
   footer: {
-    credits: 'Copyright © 2023',
     colorMode: false,
     links: [{
       icon: 'i-simple-icons-discord',

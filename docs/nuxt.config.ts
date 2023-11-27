@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtjs/fontaine',
     '@nuxtjs/google-fonts',
+    '@nuxtjs/plausible',
     'nuxt-og-image'
   ],
   ui: {

@@ -18,6 +18,7 @@
     "@nuxt/ui-pro": "^0.5.0",
     "@nuxtjs/fontaine": "^0.4.1",
     "@nuxtjs/google-fonts": "^3.0.2",
+    "@nuxtjs/plausible": "^0.2.3",
     "nuxt": "^3.8.2",
     "nuxt-og-image": "^2.2.4"
   },

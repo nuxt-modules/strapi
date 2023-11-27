@@ -12,7 +12,9 @@ const router = useRouter()
 onMounted(async () => {
   try {
     await authenticateProvider(route.params.provider as StrapiAuthProvider, route.query.access_token as string)
-  } catch (e) {}
+  } catch (e) {
+    console.error(e)
+  }
 
   router.push('/')
 })

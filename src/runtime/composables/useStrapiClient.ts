@@ -12,7 +12,7 @@ import { useNuxtApp } from '#imports'
 if (process.server && process.dev) {
   import('dns')
     .then((dns) => dns.setDefaultResultOrder('ipv4first'))
-    .catch((error) => console.error('Error importing dns module:', error));
+    .catch((error) => console.error('Error importing dns module:', error))
 }
 
 const defaultErrors = (err: FetchError) => ({

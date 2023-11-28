@@ -7,13 +7,7 @@ import { useStrapiVersion } from './useStrapiVersion'
 import { useStrapiToken } from './useStrapiToken'
 import { useNuxtApp } from '#imports'
 
-// Fixes `ECONNREFUSED` on Node 18: https://github.com/node-fetch/node-fetch/issues/1624#issuecomment-1407717012
-// Import dns only if running in a server environment during development
-if (process.server && process.dev) {
-  import('dns')
-    .then((dns) => dns.setDefaultResultOrder('ipv4first'))
-    .catch((error) => console.error('Error importing dns module:', error))
-}
+
 
 const defaultErrors = (err: FetchError) => ({
   v4: {

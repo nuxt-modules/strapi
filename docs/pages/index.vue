@@ -9,8 +9,8 @@ useSeoMeta({
   ogTitle: page.value.title,
   description: page.value.description,
   ogDescription: page.value.description,
-  ogImage: joinURL(url, '/social-card.png'),
-  twitterImage: joinURL(url, '/social-card.png')
+  ogImage: joinURL(url, '/cover.png'),
+  twitterImage: joinURL(url, '/cover.png')
 })
 </script>
 

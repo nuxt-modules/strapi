@@ -23,8 +23,8 @@ dependencies:
 
 devDependencies:
   '@nuxt/devtools':
-    specifier: ^1.0.3
-    version: 1.0.3(nuxt@3.8.2)(rollup@3.29.4)(vite@4.5.0)
+    specifier: ^1.0.4
+    version: 1.0.4(nuxt@3.8.2)(rollup@3.29.4)(vite@4.5.0)
   '@nuxt/eslint-config':
     specifier: ^0.2.0
     version: 0.2.0(eslint@8.54.0)
@@ -32,7 +32,7 @@ devDependencies:
     specifier: ^0.5.4
     version: 0.5.4(@nuxt/kit@3.8.2)(nuxi@3.10.0)(typescript@5.3.2)
   '@types/node':
-    specifier: ^20.9.3
+    specifier: ^20.10.0
     version: 20.10.0
   eslint:
     specifier: ^8.54.0
@@ -1045,8 +1045,8 @@ packages:
     resolution: {integrity: sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA==}
     dev: true
 
-  /@nuxt/devtools-kit@1.0.3(nuxt@3.8.2)(rollup@3.29.4)(vite@4.5.0):
-    resolution: {integrity: sha512-a/ZAVmrD5yOfUYhRVfC9afMkczzL8J8zdf0h6QHbTd33rJW/jmjwTn++RTdnbSD2gg2fSBRi/h8y17RmqIdb9g==}
+  /@nuxt/devtools-kit@1.0.4(nuxt@3.8.2)(rollup@3.29.4)(vite@4.5.0):
+    resolution: {integrity: sha512-AXNeI1dBilNryCmwuTd3lU7CrPBhzUJ5ntTFiXw9MmFwe5QT3NOxDFOv0gX7z1DFnmBEmx5mPKWysCwh7htEnQ==}
     peerDependencies:
       nuxt: ^3.8.1
       vite: '*'
@@ -1061,8 +1061,8 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/devtools-wizard@1.0.3:
-    resolution: {integrity: sha512-iningPOhBVMYov+7hDX5yr1tAVVA6AmJ7EgRkNfmHqPX2rerhD4eIN7Ao4KwkjGmQJ7qdM7k8w+NiL8OQOpdFQ==}
+  /@nuxt/devtools-wizard@1.0.4:
+    resolution: {integrity: sha512-3QHRfmkiITM67lAzSIOiI6N4Qzi5i705TCQ53pHQbce0+E00f5vck2hPauflN2X0/M3SZdkUV8UayaHc4egmdA==}
     hasBin: true
     dependencies:
       consola: 3.2.3
@@ -1077,16 +1077,16 @@ packages:
       semver: 7.5.4
     dev: true
 
-  /@nuxt/devtools@1.0.3(nuxt@3.8.2)(rollup@3.29.4)(vite@4.5.0):
-    resolution: {integrity: sha512-2mXvQiS3KTMF0fO80Y9WLx95yubRoIp2wSCarmhhqInPe8/0K9VZ4TUiTGF20ti45h0ky3OAxiVSmLfViwDWjg==}
+  /@nuxt/devtools@1.0.4(nuxt@3.8.2)(rollup@3.29.4)(vite@4.5.0):
+    resolution: {integrity: sha512-G1Oo9+TaOYzePIXpNX+Zzalw/rJyIZKZpZmXfzolPlOJSA1i0JKzZX6Z7iQHdqPwNJ8t+HnVaF4PghPIpo1kwg==}
     hasBin: true
     peerDependencies:
       nuxt: ^3.8.1
       vite: '*'
     dependencies:
       '@antfu/utils': 0.7.6
-      '@nuxt/devtools-kit': 1.0.3(nuxt@3.8.2)(rollup@3.29.4)(vite@4.5.0)
-      '@nuxt/devtools-wizard': 1.0.3
+      '@nuxt/devtools-kit': 1.0.4(nuxt@3.8.2)(rollup@3.29.4)(vite@4.5.0)
+      '@nuxt/devtools-wizard': 1.0.4
       '@nuxt/kit': 3.8.2(rollup@3.29.4)
       birpc: 0.2.14
       consola: 3.2.3
@@ -5451,7 +5451,7 @@ packages:
         optional: true
     dependencies:
       '@nuxt/devalue': 2.0.2
-      '@nuxt/devtools': 1.0.3(nuxt@3.8.2)(rollup@3.29.4)(vite@4.5.0)
+      '@nuxt/devtools': 1.0.4(nuxt@3.8.2)(rollup@3.29.4)(vite@4.5.0)
       '@nuxt/kit': 3.8.2(rollup@3.29.4)
       '@nuxt/schema': 3.8.2(rollup@3.29.4)
       '@nuxt/telemetry': 2.5.3(rollup@3.29.4)

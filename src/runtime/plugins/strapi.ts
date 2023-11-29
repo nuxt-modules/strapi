@@ -1,5 +1,5 @@
-import { useStrapiAuth } from './composables/useStrapiAuth'
-import { useStrapiUser } from './composables/useStrapiUser'
+import { useStrapiAuth } from '../composables/useStrapiAuth'
+import { useStrapiUser } from '../composables/useStrapiUser'
 import { defineNuxtPlugin } from '#imports'
 
 export default defineNuxtPlugin(async () => {

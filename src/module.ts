@@ -94,7 +94,8 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.build.transpile.push(runtimeDir)
 
     // Add plugin to load user before bootstrap
-    addPlugin(resolve(runtimeDir, 'strapi.plugin'))
+    addPlugin(resolve(runtimeDir, 'plugins', 'strapi'))
+    addPlugin(resolve(runtimeDir, 'plugins', 'dns.server'))
 
     // Add composables
     addImportsDir(resolve(runtimeDir, 'composables'))

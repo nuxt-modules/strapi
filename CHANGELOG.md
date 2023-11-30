@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.1](https://github.com/nuxt-modules/strapi/compare/v1.10.0...v1.10.1) (2023-11-30)
+
+
+### Bug Fixes
+
+* **useStrapiClient:** import `dns` module only in development ([#370](https://github.com/nuxt-modules/strapi/issues/370)) ([8c696de](https://github.com/nuxt-modules/strapi/commit/8c696de361e58289d893a95e39f031204a9a7466))
+* **useStrapiClient:** move logic to plugin to prevent vite warn ([13aa063](https://github.com/nuxt-modules/strapi/commit/13aa06317e215f5e0b170871631b290d711c0f80))
+
 ## [1.10.0](https://github.com/nuxt-modules/strapi/compare/v1.9.3...v1.10.0) (2023-11-27)
 
 

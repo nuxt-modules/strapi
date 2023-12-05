@@ -25,6 +25,13 @@ export interface ModuleOptions {
   prefix?: string
 
   /**
+   * Strapi Admin Prefix
+   * @default '/admin'
+   * @type string
+   */
+  admin?: string;
+
+  /**
    * Strapi Version
    * @default 'v4'
    * @type string
@@ -76,6 +83,7 @@ export default defineNuxtModule<ModuleOptions>({
   defaults: {
     url: process.env.STRAPI_URL || 'http://localhost:1337',
     prefix: '/api',
+    admin: '/admin',
     version: 'v4',
     cookie: {},
     auth: {},
@@ -107,7 +115,7 @@ export default defineNuxtModule<ModuleOptions>({
       config.optimizeDeps.include.push('qs')
     })
 
-    const adminUrl = joinURL(nuxt.options.runtimeConfig.public.strapi.url, '/admin/')
+    const adminUrl = joinURL(nuxt.options.runtimeConfig.public.strapi.url, nuxt.options.runtimeConfig.public.strapi.admin)
     logger.info(`Strapi Admin URL: ${adminUrl}`)
     if (options.devtools) {
       nuxt.hook('devtools:customTabs', (iframeTabs) => {

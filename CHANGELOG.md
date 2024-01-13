@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/nuxt-modules/strapi/compare/v1.10.1...v1.11.0) (2024-01-13)
+
+
+### Features
+
+* **module:** add `admin` option to config ([#374](https://github.com/nuxt-modules/strapi/issues/374)) ([f56a1a9](https://github.com/nuxt-modules/strapi/commit/f56a1a97869afd4678086d8f9a1fe499b5242d1d))
+
 ### [1.10.1](https://github.com/nuxt-modules/strapi/compare/v1.10.0...v1.10.1) (2023-11-30)
 
 

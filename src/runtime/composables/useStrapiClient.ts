@@ -7,6 +7,8 @@ import { useStrapiVersion } from './useStrapiVersion'
 import { useStrapiToken } from './useStrapiToken'
 import { useNuxtApp } from '#imports'
 
+export type { FetchOptions };
+
 const defaultErrors = (err: FetchError) => ({
   v4: {
     error: {

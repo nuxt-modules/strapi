@@ -23,7 +23,7 @@ export const useStrapiAuth = () => {
   const token = useStrapiToken()
   const user = useStrapiUser()
   const client = useStrapiClient()
-  const config = process.server ? useRuntimeConfig() : useRuntimeConfig().public
+  const config = import.meta.server ? useRuntimeConfig() : useRuntimeConfig().public
 
   const setToken = (value: string | null) => {
     token.value = value

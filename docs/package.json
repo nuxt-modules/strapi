@@ -28,9 +28,5 @@
     "eslint": "^8.57.0",
     "typescript": "^5.4.3",
     "vue-tsc": "^2.0.7"
-  },
-  "resolutions": {
-    "vue": "3.3.13",
-    "scule": "1.1.1"
   }
 }

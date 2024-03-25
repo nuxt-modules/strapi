@@ -1,6 +1,6 @@
 import { defu } from 'defu'
 import { defineNuxtModule, addImportsDir, addPlugin, createResolver, extendViteConfig, logger } from '@nuxt/kit'
-import type { CookieOptions } from 'nuxt/dist/app/composables/cookie'
+import type { CookieOptions } from 'nuxt/app'
 import { joinURL } from 'ufo'
 
 export interface AuthOptions {

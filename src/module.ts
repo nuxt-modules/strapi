@@ -3,6 +3,8 @@ import { defineNuxtModule, addImportsDir, addPlugin, createResolver, extendViteC
 import type { CookieOptions } from 'nuxt/app'
 import { joinURL } from 'ufo'
 
+export type * from './runtime/types'
+
 export interface AuthOptions {
   populate?: string | string[]
   fields?: string | string[]

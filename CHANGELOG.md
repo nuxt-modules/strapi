@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/nuxt-modules/strapi/compare/v1.11.0...v1.12.0) (2024-04-02)
+
+
+### Bug Fixes
+
+* export runtime types ([#403](https://github.com/nuxt-modules/strapi/issues/403)) ([d0f8416](https://github.com/nuxt-modules/strapi/commit/d0f8416196d4a6448899d740ec758456a2cb58b0))
+* **module:** import `CookieOptions` from `nuxt/app` ([95a521c](https://github.com/nuxt-modules/strapi/commit/95a521c87d7468b0481d4b5668be583323c98e52))
+* **module:** update compatibility to `^3.7.0` ([caec416](https://github.com/nuxt-modules/strapi/commit/caec4160b33fa158e21bc4c2e130f4fd78c37447))
+* opt in to `import.meta.*` properties ([#401](https://github.com/nuxt-modules/strapi/issues/401)) ([53bb585](https://github.com/nuxt-modules/strapi/commit/53bb5855c812c167a2007977c78a48c714b54d12))
+
 ## [1.11.0](https://github.com/nuxt-modules/strapi/compare/v1.10.1...v1.11.0) (2024-01-13)
 
 

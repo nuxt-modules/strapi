@@ -21,7 +21,7 @@
     "prepack": "pnpm build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "lint": "eslint .",
     "typecheck": "vue-tsc --noEmit",
     "release": "pnpm lint && standard-version && git push --follow-tags"
@@ -46,5 +46,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "resolutions": {
+    "@nuxtjs/strapi": "workspace:*"
   }
 }

@@ -46,7 +46,7 @@ export const useStrapiClient = () => {
     }
 
     try {
-      // @ts-expect-error
+      // @ts-expect-error method is not explicitly typed
       return await $fetch<T>(url, {
         retry: 0,
         baseURL,
@@ -57,12 +57,17 @@ export const useStrapiClient = () => {
         },
       })
     }
-    catch (err: any) {
-      // @ts-expect-error
+    catch (err) {
       const e: Strapi4Error | Strapi3Error = err.data || defaultErrors(err)[version]
 
-      nuxt.hooks.callHook('strapi:error' as any, e)
+      nuxt.hooks.callHook('strapi:error', e)
       throw e
     }
+  }
+}
+
+declare module '#app' {
+  interface RuntimeNuxtHooks {
+    'strapi:error': (error: Strapi3Error | Strapi4Error) => void
   }
 }

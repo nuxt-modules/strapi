@@ -1,5 +1,5 @@
 import type { Strapi3RequestParams } from '../types/v3'
-// @ts-expect-error
+// @ts-expect-error this import is not available in stubbed version
 import { useStrapi3 } from '#imports'
 
 interface StrapiV3Client<T> {

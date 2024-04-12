@@ -34,7 +34,6 @@ export const useStrapi4 = () => {
   const findOne = <T>(contentType: string, id?: string | number | Strapi4RequestParams, params?: Strapi4RequestParams, fetchOptions?: FetchOptions): Promise<T> => {
     if (typeof id === 'object') {
       params = id
-      // @ts-expect-error
       id = undefined
     }
 
@@ -65,7 +64,6 @@ export const useStrapi4 = () => {
   const update = <T>(contentType: string, id: string | number | Partial<T>, data?: Partial<T>): Promise<T> => {
     if (typeof id === 'object') {
       data = id
-      // @ts-expect-error
       id = undefined
     }
 

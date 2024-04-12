@@ -29,7 +29,7 @@ provide('navigation', navigation)
 
 <template>
   <div>
-    <Header />
+    <TheHeader />
 
     <UMain>
       <NuxtLayout>
@@ -37,7 +37,7 @@ provide('navigation', navigation)
       </NuxtLayout>
     </UMain>
 
-    <Footer />
+    <TheFooter />
 
     <ClientOnly>
       <LazyUContentSearch

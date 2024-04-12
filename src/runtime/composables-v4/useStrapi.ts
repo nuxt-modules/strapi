@@ -1,5 +1,4 @@
 import type { Strapi4ResponseSingle, Strapi4RequestParams, Strapi4ResponseMany } from '../types/v4'
-// @ts-expect-error
 import { useStrapi4 } from '#imports'
 
 interface StrapiV4Client<T> {
@@ -11,6 +10,5 @@ interface StrapiV4Client<T> {
 }
 
 export const useStrapi = <T>(): StrapiV4Client<T> => {
-  // @ts-expect-error
-  return useStrapi4()
+  return useStrapi4() as StrapiV4Client<T>
 }

@@ -13,14 +13,14 @@ const defaultErrors = (err: FetchError) => ({
       status: 500,
       name: 'UnknownError',
       message: err.message,
-      details: err
-    }
+      details: err,
+    },
   },
   v3: {
     error: 'UnknownError',
     message: err.message,
-    statusCode: 500
-  }
+    statusCode: 500,
+  },
 })
 
 export const useStrapiClient = () => {
@@ -46,18 +46,19 @@ export const useStrapiClient = () => {
     }
 
     try {
-      // @ts-ignore
+      // @ts-expect-error
       return await $fetch<T>(url, {
         retry: 0,
         baseURL,
         ...fetchOptions,
         headers: {
           ...headers,
-          ...fetchOptions.headers
-        }
+          ...fetchOptions.headers,
+        },
       })
-    } catch (err: any) {
-      // @ts-ignore
+    }
+    catch (err: any) {
+      // @ts-expect-error
       const e: Strapi4Error | Strapi3Error = err.data || defaultErrors(err)[version]
 
       nuxt.hooks.callHook('strapi:error' as any, e)

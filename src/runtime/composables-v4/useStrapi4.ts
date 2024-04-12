@@ -1,5 +1,5 @@
-import type { Strapi4RequestParams } from '../types/v4'
 import type { FetchOptions } from 'ofetch'
+import type { Strapi4RequestParams } from '../types/v4'
 import { useStrapiVersion, useStrapiClient } from '#imports'
 
 /**
@@ -9,7 +9,6 @@ export const useStrapi4 = () => {
   const client = useStrapiClient()
   const version = useStrapiVersion()
   if (version !== 'v4') {
-    // eslint-disable-next-line no-console
     console.warn('useStrapi4 is only available for v4')
   }
 
@@ -35,7 +34,7 @@ export const useStrapi4 = () => {
   const findOne = <T>(contentType: string, id?: string | number | Strapi4RequestParams, params?: Strapi4RequestParams, fetchOptions?: FetchOptions): Promise<T> => {
     if (typeof id === 'object') {
       params = id
-      // @ts-ignore
+      // @ts-expect-error
       id = undefined
     }
 
@@ -66,7 +65,7 @@ export const useStrapi4 = () => {
   const update = <T>(contentType: string, id: string | number | Partial<T>, data?: Partial<T>): Promise<T> => {
     if (typeof id === 'object') {
       data = id
-      // @ts-ignore
+      // @ts-expect-error
       id = undefined
     }
 
@@ -93,6 +92,6 @@ export const useStrapi4 = () => {
     findOne,
     create,
     update,
-    delete: _delete
+    delete: _delete,
   }
 }

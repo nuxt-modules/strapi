@@ -9,21 +9,42 @@
 
     <div v-if="user">
       <h2>User</h2>
-      <button type="button" @click="logout">
+      <button
+        type="button"
+        @click="logout"
+      >
         Logout
       </button>
       <pre>{{ user }}</pre>
     </div>
-    <form v-else @submit.prevent="onSubmit">
-      <input v-model="form.identifier" placeholder="Email" type="text" name="email" required>
+    <form
+      v-else
+      @submit.prevent="onSubmit"
+    >
+      <input
+        v-model="form.identifier"
+        placeholder="Email"
+        type="text"
+        name="email"
+        required
+      >
 
-      <input v-model="form.password" placeholder="Password" type="password" name="password" required>
+      <input
+        v-model="form.password"
+        placeholder="Password"
+        type="password"
+        name="password"
+        required
+      >
 
       <button type="submit">
         {{ loading ? 'Loading...' : 'Login' }}
       </button>
 
-      <button type="button" @click="onClick">
+      <button
+        type="button"
+        @click="onClick"
+      >
         {{ loading ? 'Loading...' : 'Login with GitHub' }}
       </button>
     </form>
@@ -44,7 +65,8 @@ const onSubmit = async () => {
 
   try {
     await login(form)
-  } catch (e) {
+  }
+  catch (e) {
     console.error(e)
   }
 

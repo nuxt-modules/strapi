@@ -1,5 +1,5 @@
 import type { Strapi3RequestParams } from '../types/v3'
-// @ts-ignore
+// @ts-expect-error
 import { useStrapi3 } from '#imports'
 
 interface StrapiV3Client<T> {

@@ -518,7 +518,6 @@ export type StrapiAuthProvider =
   | 'auth0'
   | string
 
-
 export type StrapiUser = {
   id: number
   username?: string

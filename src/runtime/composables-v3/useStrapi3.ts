@@ -8,7 +8,6 @@ export const useStrapi3 = () => {
   const client = useStrapiClient()
   const version = useStrapiVersion()
   if (version !== 'v3') {
-    // eslint-disable-next-line no-console
     console.warn('useStrapi3 is only available for v3')
   }
 
@@ -45,7 +44,7 @@ export const useStrapi3 = () => {
   const findOne = <T>(contentType: string, id?: string | number | Strapi3RequestParams, params?: Strapi3RequestParams): Promise<T> => {
     if (typeof id === 'object') {
       params = id
-      // @ts-ignore
+      // @ts-expect-error
       id = undefined
     }
 
@@ -76,7 +75,7 @@ export const useStrapi3 = () => {
   const update = <T>(contentType: string, id: string | number | Partial<T>, data?: Partial<T>): Promise<T> => {
     if (typeof id === 'object') {
       data = id
-      // @ts-ignore
+      // @ts-expect-error
       id = undefined
     }
 
@@ -104,6 +103,6 @@ export const useStrapi3 = () => {
     findOne,
     create,
     update,
-    delete: _delete
+    delete: _delete,
   }
 }

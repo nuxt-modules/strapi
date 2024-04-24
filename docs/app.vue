@@ -4,24 +4,24 @@ import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation())
 const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {
   default: () => [],
-  server: false,
+  server: false
 })
 
 useHead({
   meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' },
+    { rel: 'icon', href: '/favicon.ico' }
   ],
   htmlAttrs: {
-    lang: 'en',
-  },
+    lang: 'en'
+  }
 })
 
 useSeoMeta({
   ogSiteName: 'Nuxt Strapi',
-  twitterCard: 'summary_large_image',
+  twitterCard: 'summary_large_image'
 })
 
 provide('navigation', navigation)

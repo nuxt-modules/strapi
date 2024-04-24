@@ -9,10 +9,9 @@ export default defineNuxtPlugin({
         const dns = await import('node:dns')
 
         await dns.setDefaultResultOrder('ipv4first')
-      }
-      catch (e) {
+      } catch (e) {
         console.error('Error importing dns module:', e)
       }
     }
-  },
+  }
 })

@@ -14,12 +14,12 @@ export const useStrapiGraphQL = () => {
       method: 'POST',
       body: {
         query: queryAsString,
-        variables,
+        variables
       },
       headers: {
-        accept: 'application/json',
+        accept: 'application/json'
       },
-      baseURL: config.strapi.url,
+      baseURL: config.strapi.url
     })
   }
 }

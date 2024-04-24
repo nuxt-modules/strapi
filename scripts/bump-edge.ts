@@ -12,7 +12,7 @@ async function loadPackage(dir: string) {
   return {
     dir,
     data,
-    save,
+    save
   }
 }
 

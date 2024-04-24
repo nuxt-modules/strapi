@@ -79,8 +79,8 @@ export default defineNuxtModule<ModuleOptions>({
     name: '@nuxtjs/strapi',
     configKey: 'strapi',
     compatibility: {
-      nuxt: '^3.7.0',
-    },
+      nuxt: '^3.7.0'
+    }
   },
   defaults: {
     url: process.env.STRAPI_URL || 'http://localhost:1337',
@@ -90,7 +90,7 @@ export default defineNuxtModule<ModuleOptions>({
     cookie: {},
     auth: {},
     cookieName: 'strapi_jwt',
-    devtools: false,
+    devtools: false
   },
   setup(options, nuxt) {
     // Default runtimeConfig
@@ -127,10 +127,10 @@ export default defineNuxtModule<ModuleOptions>({
           icon: 'i-logos-strapi-icon',
           view: {
             type: 'iframe',
-            src: adminUrl,
-          },
+            src: adminUrl
+          }
         })
       })
     }
-  },
+  }
 })

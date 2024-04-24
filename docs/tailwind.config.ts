@@ -5,7 +5,7 @@ export default <Partial<Config>>{
   theme: {
     extend: {
       fontFamily: {
-        sans: ['DM Sans', 'DM Sans fallback', ...defaultTheme.fontFamily.sans],
+        sans: ['DM Sans', 'DM Sans fallback', ...defaultTheme.fontFamily.sans]
       },
       colors: {
         strapi: {
@@ -19,9 +19,9 @@ export default <Partial<Config>>{
           700: '#3e2ad8',
           800: '#3325ae',
           900: '#2d2689',
-          950: '#1c1650',
-        },
-      },
-    },
-  },
+          950: '#1c1650'
+        }
+      }
+    }
+  }
 }

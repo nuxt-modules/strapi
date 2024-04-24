@@ -15,7 +15,7 @@ export const useStrapi3 = () => {
    * Count {content-type} entries
    *
    * @param  {string} contentType - Content type's name pluralized
-   * @param  {Strapi3RequestParams} params? - Query parameters
+   * @param  {Strapi3RequestParams} [params] - Query parameters
    * @returns Promise<number>
    */
   const count = (contentType: string, params?: Strapi3RequestParams): Promise<number> => {
@@ -26,7 +26,7 @@ export const useStrapi3 = () => {
    * Get a list of {content-type} entries
    *
    * @param  {string} contentType - Content type's name pluralized
-   * @param  {Strapi3RequestParams} params? - Query parameters
+   * @param  {Strapi3RequestParams} [params] - Query parameters
    * @returns Promise<T>
    */
   const find = <T>(contentType: string, params?: Strapi3RequestParams): Promise<T> => {
@@ -38,7 +38,7 @@ export const useStrapi3 = () => {
    *
    * @param  {string} contentType - Content type's name pluralized
    * @param  {string|number} id - ID of entry
-   * @param  {Strapi3RequestParams} params? - Query parameters
+   * @param  {Strapi3RequestParams} [params] - Query parameters
    * @returns Promise<T>
    */
   const findOne = <T>(contentType: string, id?: string | number | Strapi3RequestParams, params?: Strapi3RequestParams): Promise<T> => {
@@ -101,6 +101,6 @@ export const useStrapi3 = () => {
     findOne,
     create,
     update,
-    delete: _delete,
+    delete: _delete
   }
 }

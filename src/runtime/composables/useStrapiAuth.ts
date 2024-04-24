@@ -8,7 +8,7 @@ import type {
   StrapiRegistrationData,
   StrapiResetPasswordData,
   StrapiChangePasswordData,
-  StrapiUser,
+  StrapiUser
 } from '../types'
 import { useStrapiToken } from './useStrapiToken'
 import { useStrapiUser } from './useStrapiUser'
@@ -34,8 +34,7 @@ export const useStrapiAuth = () => {
     if (token.value) {
       try {
         user.value = await client('/users/me', { params: config.strapi.auth })
-      }
-      catch (e) {
+      } catch (e) {
         setToken(null)
       }
     }
@@ -62,14 +61,12 @@ export const useStrapiAuth = () => {
 
     return {
       user,
-      jwt,
+      jwt
     }
   }
 
   /**
    * Logout by removing authentication token
-   *
-   * @returns void
    */
   const logout = (): void => {
     setToken(null)
@@ -96,7 +93,7 @@ export const useStrapiAuth = () => {
 
     return {
       user,
-      jwt,
+      jwt
     }
   }
 
@@ -133,7 +130,7 @@ export const useStrapiAuth = () => {
 
     return {
       user,
-      jwt,
+      jwt
     }
   }
 
@@ -189,7 +186,7 @@ export const useStrapiAuth = () => {
 
     return {
       user,
-      jwt,
+      jwt
     }
   }
 
@@ -205,6 +202,6 @@ export const useStrapiAuth = () => {
     changePassword,
     sendEmailConfirmation,
     getProviderAuthenticationUrl,
-    authenticateProvider,
+    authenticateProvider
   }
 }

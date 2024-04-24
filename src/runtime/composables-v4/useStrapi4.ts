@@ -16,7 +16,7 @@ export const useStrapi4 = () => {
    * Get a list of {content-type} entries
    *
    * @param  {string} contentType - Content type's name pluralized
-   * @param  {Strapi4RequestParams} params? - Query parameters
+   * @param  {Strapi4RequestParams} [params] - Query parameters
    * @returns Promise<T>
    */
   const find = <T>(contentType: string, params?: Strapi4RequestParams, fetchOptions?: FetchOptions): Promise<T> => {
@@ -28,7 +28,7 @@ export const useStrapi4 = () => {
    *
    * @param  {string} contentType - Content type's name pluralized
    * @param  {string|number} id - ID of entry
-   * @param  {Strapi4RequestParams} params? - Query parameters
+   * @param  {Strapi4RequestParams} [params] - Query parameters
    * @returns Promise<T>
    */
   const findOne = <T>(contentType: string, id?: string | number | Strapi4RequestParams, params?: Strapi4RequestParams, fetchOptions?: FetchOptions): Promise<T> => {
@@ -90,6 +90,6 @@ export const useStrapi4 = () => {
     findOne,
     create,
     update,
-    delete: _delete,
+    delete: _delete
   }
 }

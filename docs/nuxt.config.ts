@@ -7,26 +7,26 @@ export default defineNuxtConfig({
     '@nuxtjs/fontaine',
     '@nuxtjs/google-fonts',
     '@nuxtjs/plausible',
-    'nuxt-og-image',
+    'nuxt-og-image'
   ],
   ui: {
-    icons: ['heroicons', 'simple-icons'],
+    icons: ['heroicons', 'simple-icons']
   },
   // Fonts
   fontMetrics: {
-    fonts: ['DM Sans'],
+    fonts: ['DM Sans']
   },
   googleFonts: {
     display: 'swap',
     download: true,
     families: {
-      'DM+Sans': [400, 500, 600, 700],
-    },
+      'DM+Sans': [400, 500, 600, 700]
+    }
   },
   routeRules: {
-    '/api/search.json': { prerender: true },
+    '/api/search.json': { prerender: true }
   },
   // Devtools / Typescript
   devtools: { enabled: true },
-  typescript: { strict: false },
+  typescript: { strict: false }
 })

@@ -120,7 +120,6 @@ export default defineNuxtModule<ModuleOptions>({
     const adminUrl = joinURL(nuxt.options.runtimeConfig.public.strapi.url, nuxt.options.runtimeConfig.public.strapi.admin)
     logger.info(`Strapi Admin URL: ${adminUrl}`)
     if (options.devtools) {
-      // @ts-expect-error not yet typed
       nuxt.hook('devtools:customTabs', (iframeTabs) => {
         iframeTabs.push({
           name: 'strapi',

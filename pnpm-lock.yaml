@@ -73,8 +73,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0(focus-trap@7.5.4)(nuxt@3.11.2(@parcel/watcher@2.4.1)(@types/node@20.12.7)(@unocss/reset@0.59.4)(encoding@0.1.13)(eslint@8.57.0)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.16.4))(vue@3.4.25(typescript@5.4.5)))(fuse.js@6.6.2)(ioredis@5.3.2)(meow@8.1.2)(optionator@0.9.3)(rollup@4.16.4)(terser@5.29.2)(typescript@5.4.5)(unocss@0.59.4(@unocss/webpack@0.59.4(rollup@4.16.4)(webpack@5.91.0))(postcss@8.4.38)(rollup@4.16.4)(vite@5.2.10(@types/node@20.12.7)(terser@5.29.2)))(vite@5.2.10(@types/node@20.12.7)(terser@5.29.2))(vue-tsc@2.0.14(typescript@5.4.5)))(rollup@4.16.4)(vite@5.2.10(@types/node@20.12.7)(terser@5.29.2))(vue@3.4.25(typescript@5.4.5))
       '@nuxtjs/plausible':
-        specifier: ^0.2.4
-        version: 0.2.4(rollup@4.16.4)
+        specifier: ^1.0.0
+        version: 1.0.0(rollup@4.16.4)
       nuxt:
         specifier: ^3.11.2
         version: 3.11.2(@parcel/watcher@2.4.1)(@types/node@20.12.7)(@unocss/reset@0.59.4)(encoding@0.1.13)(eslint@8.57.0)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.16.4))(vue@3.4.25(typescript@5.4.5)))(fuse.js@6.6.2)(ioredis@5.3.2)(meow@8.1.2)(optionator@0.9.3)(rollup@4.16.4)(terser@5.29.2)(typescript@5.4.5)(unocss@0.59.4(@unocss/webpack@0.59.4(rollup@4.16.4)(webpack@5.91.0))(postcss@8.4.38)(rollup@4.16.4)(vite@5.2.10(@types/node@20.12.7)(terser@5.29.2)))(vite@5.2.10(@types/node@20.12.7)(terser@5.29.2))(vue-tsc@2.0.14(typescript@5.4.5))
@@ -328,6 +328,9 @@ packages:
   '@babel/types@7.24.0':
     resolution: {integrity: sha512-+j7a5c253RfKh8iABBhywc8NSfP5LURe7Uh4qpsh6jc+aLJguvmIUBdjSdEMQv2bENrCR5MfRdjGo7vzS/ob7w==}
     engines: {node: '>=6.9.0'}
+
+  '@barbapapazes/plausible-tracker@0.4.0':
+    resolution: {integrity: sha512-4hhXK62ORb4feJfjnIILXRnb6xfejHM6yvGCid6MwNdKiQyj6YLW0M779zXLH5IBS4mQObmrNul2HUleeavSKw==}
 
   '@capsizecss/metrics@2.2.0':
     resolution: {integrity: sha512-DkFIser1KbGxWyG2hhQQeCit72TnOQDx5pr9bkA7+XlIy7qv+4lYtslH3bidVxm2qkY2guAgypSIPYuQQuk70A==}
@@ -916,8 +919,8 @@ packages:
   '@nuxtjs/mdc@0.6.1':
     resolution: {integrity: sha512-zS5QK7DZ/SBrjqQX1DOy7GnxKy+wbj2+LvooefOWmQqHfLTAqJLVIjuv/BmKnQWiRCq19+uysys3iY42EoY5/A==}
 
-  '@nuxtjs/plausible@0.2.4':
-    resolution: {integrity: sha512-9HrSl9ZGKS/7bULAt8uzAGo9BJyIZebzRSLQD8ZhiODaGyRdEQlgcJBw5JgUzjcC5n4T0ZlX3FC6C3Wyp7opgA==}
+  '@nuxtjs/plausible@1.0.0':
+    resolution: {integrity: sha512-2K0/AbPJAEr3yMA8oDD0I6WB+SXs/YlF297azjR5eSZVQjuimDAwLf4bEXk9ilbrzoMFmm0Tpzn4CC6f0rISBA==}
 
   '@nuxtjs/tailwindcss@6.12.0':
     resolution: {integrity: sha512-vXvEq8z177TQcx0tc10mw3O6T9WeN0iTL8hIKGDfidmr+HKReexJU01aPgHefFrCu4LJB70egYFYnywzB9lMyQ==}
@@ -4608,10 +4611,6 @@ packages:
   pkg-types@1.1.0:
     resolution: {integrity: sha512-/RpmvKdxKf8uILTtoOhAgf30wYbP2Qw+L9p3Rvshx1JZVX+XQNZQFjlbmGHEGIm4CkVPlSn+NXmIM8+9oWQaSA==}
 
-  plausible-tracker@0.3.8:
-    resolution: {integrity: sha512-lmOWYQ7s9KOUJ1R+YTOR3HrjdbxIS2Z4de0P/Jx2dQPteznJl2eX3tXxKClpvbfyGP59B5bbhW8ftN59HbbFSg==}
-    engines: {node: '>=10'}
-
   playwright-core@1.43.1:
     resolution: {integrity: sha512-EI36Mto2Vrx6VF7rm708qSnesVQKbxEWvPrfA1IPY6HgczBplDx7ENtx+K2n4kJ41sLLkuGfmb0ZLSSXlDhqPg==}
     engines: {node: '>=16'}
@@ -6483,6 +6482,8 @@ snapshots:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
+  '@barbapapazes/plausible-tracker@0.4.0': {}
+
   '@capsizecss/metrics@2.2.0': {}
 
   '@capsizecss/unpack@2.1.0(encoding@0.1.13)':
@@ -7476,12 +7477,11 @@ snapshots:
       - rollup
       - supports-color
 
-  '@nuxtjs/plausible@0.2.4(rollup@4.16.4)':
+  '@nuxtjs/plausible@1.0.0(rollup@4.16.4)':
     dependencies:
+      '@barbapapazes/plausible-tracker': 0.4.0
       '@nuxt/kit': 3.11.2(rollup@4.16.4)
       defu: 6.1.4
-      pathe: 1.1.2
-      plausible-tracker: 0.3.8
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -12222,8 +12222,6 @@ snapshots:
       confbox: 0.1.7
       mlly: 1.6.1
       pathe: 1.1.2
-
-  plausible-tracker@0.3.8: {}
 
   playwright-core@1.43.1: {}
 

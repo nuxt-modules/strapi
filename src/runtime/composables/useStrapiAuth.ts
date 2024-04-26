@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-
 import type { Ref } from 'vue'
 import type {
   StrapiAuthenticationData,
@@ -69,8 +67,6 @@ export const useStrapiAuth = () => {
 
   /**
    * Logout by removing authentication token
-   *
-   * @returns void
    */
   const logout = (): void => {
     setToken(null)

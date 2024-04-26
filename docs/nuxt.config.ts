@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     icons: ['heroicons', 'simple-icons']
   },
   routeRules: {
-    '/api/search.json': { prerender: true },
+    '/api/search.json': { prerender: true }
   },
   // Devtools / Typescript
   devtools: { enabled: true },

@@ -20,10 +20,10 @@ export interface ModuleOptions {
   url?: string
 
   /**
-  * Strapi Prefix
-  * @default '/api'
-  * @type string
-  */
+   * Strapi Prefix
+   * @default '/api'
+   * @type string
+   */
   prefix?: string
 
   /**
@@ -31,7 +31,7 @@ export interface ModuleOptions {
    * @default '/admin'
    * @type string
    */
-  admin?: string;
+  admin?: string
 
   /**
    * Strapi Version
@@ -45,14 +45,14 @@ export interface ModuleOptions {
    * Nuxt Cookie Options
    * @default {}
    * @type CookieOptions
-  */
+   */
   cookie?: CookieOptions
 
   /**
    * Strapi Cookie Name
    * @default 'strapi_jwt'
    * @type string
-  */
+   */
   cookieName?: string
 
   /**
@@ -61,7 +61,7 @@ export interface ModuleOptions {
    * @type AuthOptions
    * @example { populate: '*' }
    * @example { populate: ['profile', 'teams'] }
-  */
+   */
   auth?: AuthOptions
 
   /**
@@ -70,7 +70,7 @@ export interface ModuleOptions {
    * Please read the instructions on https://strapi.nuxtjs.org/devtools
    *
    * @default false
-  */
+   */
   devtools?: boolean
 }
 
@@ -92,7 +92,7 @@ export default defineNuxtModule<ModuleOptions>({
     cookieName: 'strapi_jwt',
     devtools: false
   },
-  setup (options, nuxt) {
+  setup(options, nuxt) {
     // Default runtimeConfig
     nuxt.options.runtimeConfig.public.strapi = defu(nuxt.options.runtimeConfig.public.strapi, options)
     nuxt.options.runtimeConfig.strapi = defu(nuxt.options.runtimeConfig.strapi, options)

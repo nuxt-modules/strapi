@@ -79,7 +79,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: '@nuxtjs/strapi',
     configKey: 'strapi',
     compatibility: {
-      nuxt: '^3.7.0'
+      nuxt: '>=3.7.0'
     }
   },
   defaults: {

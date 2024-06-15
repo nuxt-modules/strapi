@@ -6,9 +6,9 @@ import { useRuntimeConfig } from '#imports'
 
 export const useStrapiGraphQL = () => {
   const client = useStrapiClient()
-  const config = process.server ? useRuntimeConfig() : useRuntimeConfig().public
+  const config = import.meta.server ? useRuntimeConfig() : useRuntimeConfig().public
 
-  return <T> (query: string|DocumentNode, variables?: StrapiGraphqlVariables): Promise<T> => {
+  return <T> (query: string | DocumentNode, variables?: StrapiGraphqlVariables): Promise<T> => {
     const queryAsString = typeof query === 'string' ? query : print(query)
     return client('/graphql', {
       method: 'POST',

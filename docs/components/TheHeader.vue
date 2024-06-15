@@ -12,12 +12,19 @@ const { header } = useAppConfig()
       <Logo class="h-7 w-auto text-primary" />
     </template>
 
-    <template v-if="header?.search" #center>
-      <UDocsSearchButton class="hidden lg:flex" />
+    <template
+      v-if="header?.search"
+      #center
+    >
+      <UContentSearchButton class="hidden lg:flex" />
     </template>
 
     <template #right>
-      <UDocsSearchButton v-if="header?.search" :label="null" class="lg:hidden" />
+      <UContentSearchButton
+        v-if="header?.search"
+        :label="null"
+        class="lg:hidden"
+      />
 
       <UColorModeButton v-if="header?.colorMode" />
 

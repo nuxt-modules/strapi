@@ -29,7 +29,7 @@ provide('navigation', navigation)
 
 <template>
   <div>
-    <Header />
+    <TheHeader />
 
     <UMain>
       <NuxtLayout>
@@ -37,10 +37,13 @@ provide('navigation', navigation)
       </NuxtLayout>
     </UMain>
 
-    <Footer />
+    <TheFooter />
 
     <ClientOnly>
-      <LazyUDocsSearch :files="files" :navigation="navigation" />
+      <LazyUContentSearch
+        :files="files"
+        :navigation="navigation"
+      />
     </ClientOnly>
 
     <UNotifications />

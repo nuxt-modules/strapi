@@ -1,4 +1,4 @@
-import type { StrapiLocale } from '.'
+import type { MetaResponsePaginationByOffset, MetaResponsePaginationByPage, PaginationByOffset, PaginationByPage, StrapiLocale } from '.'
 
 export interface Strapi5Error {
   error: {
@@ -7,18 +7,6 @@ export interface Strapi5Error {
     message: string
     details: Record<string, unknown>
   }
-}
-
-export interface PaginationByPage {
-  page: number
-  pageSize: number
-  withCount?: boolean
-}
-
-export interface PaginationByOffset {
-  start: number
-  limit: number
-  withCount?: boolean
 }
 
 export interface Strapi5RequestParams {
@@ -56,17 +44,4 @@ export interface Strapi5ResponseMany<T> {
 export interface Strapi5ResponseMeta {
   pagination: MetaResponsePaginationByPage | MetaResponsePaginationByOffset
   [key: string]: unknown
-}
-
-export interface MetaResponsePaginationByPage {
-  page: number
-  pageSize: number
-  pageCount: number
-  total: number
-}
-
-export interface MetaResponsePaginationByOffset {
-  start: number
-  limit: number
-  total: number
 }

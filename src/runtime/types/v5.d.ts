@@ -26,11 +26,6 @@ export interface Strapi5SystemFields {
 
 export type Strapi5ResponseData<T> = Strapi5SystemFields & T
 
-export interface Strapi5Response<T> {
-  data: Strapi5ResponseData<T> | Strapi5ResponseData<T>[]
-  meta: Strapi5ResponseMeta
-}
-
 export interface Strapi5ResponseSingle<T> {
   data: Strapi5ResponseData<T>
   meta: Strapi5ResponseMeta

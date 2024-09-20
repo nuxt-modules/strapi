@@ -1,7 +1,7 @@
 import type { FetchOptions } from 'ofetch'
 
 import type { Strapi5ResponseSingle, Strapi5RequestParams, Strapi5ResponseMany } from '../types/v5'
-import { useStrapiVersion, useStrapiClient } from '#imports'
+import { useStrapiClient } from '#imports'
 
 interface StrapiV5Client<T> {
   find<F = T>(contentType: string, params?: Strapi5RequestParams): Promise<Strapi5ResponseMany<F>>
@@ -13,10 +13,6 @@ interface StrapiV5Client<T> {
 
 export const useStrapi = <T>(): StrapiV5Client<T> => {
   const client = useStrapiClient()
-  const version = useStrapiVersion()
-  if (version !== 'v5') {
-    console.warn('useStrapi5 is only available for v5')
-  }
 
   /**
    * Get a list of {content-type} entries

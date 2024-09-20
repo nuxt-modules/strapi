@@ -12,3 +12,5 @@ sw.js
 .output
 .env
 .history
+
+package-lock.json

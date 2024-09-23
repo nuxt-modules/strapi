@@ -5,10 +5,10 @@ import { useStrapiClient } from '#imports'
 
 interface StrapiV5Client<T> {
   find<F = T>(contentType: string, params?: Strapi5RequestParams): Promise<Strapi5ResponseMany<F>>
-  findOne<F = T>(contentType: string, docuemntId?: string | Strapi5RequestParams, params?: Strapi5RequestParams): Promise<Strapi5ResponseSingle<F>>
+  findOne<F = T>(contentType: string, documentId?: string | Strapi5RequestParams, params?: Strapi5RequestParams): Promise<Strapi5ResponseSingle<F>>
   create<F = T>(contentType: string, data: Partial<F>): Promise<Strapi5ResponseSingle<F>>
-  update<F = T>(contentType: string, docuemntId: string | Partial<F>, data?: Partial<F>): Promise<Strapi5ResponseSingle<F>>
-  delete<F = T>(contentType: string, docuemntId?: string): Promise<Strapi5ResponseSingle<F>>
+  update<F = T>(contentType: string, documentId: string | Partial<F>, data?: Partial<F>): Promise<Strapi5ResponseSingle<F>>
+  delete<F = T>(contentType: string, documentId?: string): Promise<Strapi5ResponseSingle<F>>
 }
 
 export const useStrapi = <T>(): StrapiV5Client<T> => {
@@ -29,17 +29,17 @@ export const useStrapi = <T>(): StrapiV5Client<T> => {
    * Get a specific {content-type} entry
    *
    * @param  {string} contentType - Content type's name pluralized
-   * @param  {string} docuemntId - ID of entry
+   * @param  {string} documentId - ID of entry
    * @param  {Strapi5RequestParams} [params] - Query parameters
    * @returns Promise<T>
    */
-  const findOne = <T>(contentType: string, docuemntId?: string | Strapi5RequestParams, params?: Strapi5RequestParams, fetchOptions?: FetchOptions): Promise<Strapi5ResponseSingle<T>> => {
-    if (typeof docuemntId === 'object') {
-      params = docuemntId
-      docuemntId = undefined
+  const findOne = <T>(contentType: string, documentId?: string | Strapi5RequestParams, params?: Strapi5RequestParams, fetchOptions?: FetchOptions): Promise<Strapi5ResponseSingle<T>> => {
+    if (typeof documentId === 'object') {
+      params = documentId
+      documentId = undefined
     }
 
-    const path = [contentType, docuemntId].filter(Boolean).join('/')
+    const path = [contentType, documentId].filter(Boolean).join('/')
 
     return client(path, { method: 'GET', params, ...fetchOptions })
   }
@@ -59,17 +59,17 @@ export const useStrapi = <T>(): StrapiV5Client<T> => {
    * Update an entry
    *
    * @param  {string} contentType - Content type's name pluralized
-   * @param  {string} docuemntId - ID of entry to be updated
+   * @param  {string} documentId - ID of entry to be updated
    * @param  {Record<string, any>} data - Form data
    * @returns Promise<T>
    */
-  const update = <T>(contentType: string, docuemntId: string | Partial<T>, data?: Partial<T>): Promise<Strapi5ResponseSingle<T>> => {
-    if (typeof docuemntId === 'object') {
-      data = docuemntId
-      docuemntId = undefined
+  const update = <T>(contentType: string, documentId: string | Partial<T>, data?: Partial<T>): Promise<Strapi5ResponseSingle<T>> => {
+    if (typeof documentId === 'object') {
+      data = documentId
+      documentId = undefined
     }
 
-    const path = [contentType, docuemntId].filter(Boolean).join('/')
+    const path = [contentType, documentId].filter(Boolean).join('/')
 
     return client(path, { method: 'PUT', body: { data } })
   }

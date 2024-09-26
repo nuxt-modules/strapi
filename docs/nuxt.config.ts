@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
+
   modules: [
     '@nuxt/content',
     '@nuxt/ui',
@@ -8,13 +9,21 @@ export default defineNuxtConfig({
     '@nuxtjs/plausible',
     'nuxt-og-image'
   ],
-  ui: {
-    icons: ['heroicons', 'simple-icons']
+
+  icon: {
+    clientBundle: {
+      scan: true
+    }
   },
+
   routeRules: {
     '/api/search.json': { prerender: true }
   },
+
   // Devtools / Typescript
   devtools: { enabled: true },
-  typescript: { strict: false }
+
+  typescript: { strict: false },
+
+  compatibilityDate: '2024-09-26'
 })

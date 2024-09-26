@@ -42,7 +42,7 @@ export default defineAppConfig({
     title: 'Table of Contents',
     bottom: {
       title: 'Community',
-      edit: 'https://github.com/nuxt-modules/strapi/edit/main/docs/content',
+      edit: 'https://github.com/nuxt-modules/strapi/edit/dev/docs/content',
       links: [{
         icon: 'i-heroicons-star',
         label: 'Star on GitHub',

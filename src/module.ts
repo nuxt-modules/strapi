@@ -39,7 +39,7 @@ export interface ModuleOptions {
    * @type string
    * @example 'v3'
    */
-  version?: 'v4' | 'v3'
+  version?: 'v5' | 'v4' | 'v3'
 
   /**
    * Nuxt Cookie Options

@@ -1,12 +1,13 @@
+import type { Ref } from 'vue'
 import { useCookie, useNuxtApp, useRuntimeConfig } from '#imports'
 
-export const useStrapiToken = () => {
+export const useStrapiToken = (): Ref<string | null> => {
   const nuxt = useNuxtApp()
   const config = import.meta.server ? useRuntimeConfig() : useRuntimeConfig().public
 
   nuxt._cookies = nuxt._cookies || {}
   if (nuxt._cookies[config.strapi.cookieName]) {
-    return nuxt._cookies[config.strapi.cookieName]
+    return nuxt._cookies[config.strapi.cookieName] as Ref<string>
   }
 
   const cookie = useCookie<string | null>(config.strapi.cookieName, config.strapi.cookie)

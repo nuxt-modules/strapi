@@ -19,12 +19,24 @@ export interface Strapi5RequestParams {
   locale?: StrapiLocale
 }
 
-export interface Strapi5SystemFields {
+export interface StrapiSystemFields {
   documentId: string
-  locale?: StrapiLocale
+  locale?: string
 }
 
-export type Strapi5ResponseData<T> = Strapi5SystemFields & T
+export type Strapi5ResponseData<T> = T extends object
+  ? T extends Array<infer U>
+    ? Array<Strapi5ResponseData<U>> // Handle arrays
+    : T extends Record<string, unknown>
+      ? { [K in keyof T]: Strapi5ResponseData<T[K]> } & StrapiSystemFields
+      : T
+  : T
+
+// Pagination interface for optional pagination info in the meta field
+export interface StrapiResponseMetaPagination {
+  page: number
+  pageSize: number
+}
 
 export interface Strapi5ResponseSingle<T> {
   data: Strapi5ResponseData<T>

@@ -73,7 +73,7 @@ export const useStrapi = <T>(): StrapiV5Client<T> => {
 
     const path = [contentType, documentId].filter(Boolean).join('/')
 
-    return client(path, { method: 'PUT', body: { data } })
+    return client(path, { method: 'PUT', body: { data }, params })
   }
 
   /**

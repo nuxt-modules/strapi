@@ -49,10 +49,11 @@ export const useStrapi = <T>(): StrapiV5Client<T> => {
    *
    * @param  {string} contentType - Content type's name pluralized
    * @param  {Record<string, any>} data - Form data
+   * @param  {Strapi5RequestParams} [params] - Query parameters
    * @returns Promise<T>
    */
-  const create = <T>(contentType: string, data: Partial<T>): Promise<Strapi5ResponseSingle<T>> => {
-    return client(`/${contentType}`, { method: 'POST', body: { data } })
+  const create = <T>(contentType: string, data: Partial<T>, params: Strapi5RequestParams = {}): Promise<Strapi5ResponseSingle<T>> => {
+    return client(`/${contentType}`, { method: 'POST', body: { data }, params })
   }
 
   /**
@@ -61,9 +62,10 @@ export const useStrapi = <T>(): StrapiV5Client<T> => {
    * @param  {string} contentType - Content type's name pluralized
    * @param  {string} documentId - ID of entry to be updated
    * @param  {Record<string, any>} data - Form data
+   * @param  {Strapi5RequestParams} [params] - Query parameters
    * @returns Promise<T>
    */
-  const update = <T>(contentType: string, documentId: string | Partial<T>, data?: Partial<T>): Promise<Strapi5ResponseSingle<T>> => {
+  const update = <T>(contentType: string, documentId: string | Partial<T>, data?: Partial<T>, params: Strapi5RequestParams = {}): Promise<Strapi5ResponseSingle<T>> => {
     if (typeof documentId === 'object') {
       data = documentId
       documentId = undefined
@@ -71,7 +73,7 @@ export const useStrapi = <T>(): StrapiV5Client<T> => {
 
     const path = [contentType, documentId].filter(Boolean).join('/')
 
-    return client(path, { method: 'PUT', body: { data } })
+    return client(path, { method: 'PUT', body: { data }, params })
   }
 
   /**

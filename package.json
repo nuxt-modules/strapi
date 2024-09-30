@@ -39,7 +39,7 @@
     "@nuxt/devtools": "^1.5.1",
     "@nuxt/eslint-config": "^0.5.7",
     "@nuxt/module-builder": "^0.8.4",
-    "@types/node": "^20.16.9",
+    "@types/node": "^20.16.10",
     "eslint": "^9.11.1",
     "nuxt": "^3.13.2",
     "standard-version": "^9.5.0",

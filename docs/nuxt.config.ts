@@ -10,20 +10,20 @@ export default defineNuxtConfig({
     'nuxt-og-image'
   ],
 
-  icon: {
-    clientBundle: {
-      scan: true
-    }
-  },
+  // Devtools / Typescript
+  devtools: { enabled: true },
 
   routeRules: {
     '/api/search.json': { prerender: true }
   },
 
-  // Devtools / Typescript
-  devtools: { enabled: true },
+  compatibilityDate: '2024-09-26',
 
   typescript: { strict: false },
 
-  compatibilityDate: '2024-09-26'
+  icon: {
+    clientBundle: {
+      scan: true
+    }
+  }
 })

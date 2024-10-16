@@ -21,7 +21,7 @@ hero:
     export default defineNuxtConfig({
       modules: ['@nuxtjs/strapi'],
       strapi: {
-        version: 'v4',
+        version: 'v5',
         prefix: '/api'
       }
     })
@@ -32,7 +32,7 @@ features:
     - title: 'Nuxt 3 Ready'
       description: 'Leverage our auto-imported [composables](/usage) and our [devtools](/devtools) integration.'
       icon: 'i-simple-icons-nuxtdotjs'
-    - title: 'Strapi v3 & v4'
+    - title: 'Strapi v4/v3/v5'
       description: 'Works with the different versions of Strapi.'
       icon: 'i-simple-icons-strapi'
     - title: 'Authentication'

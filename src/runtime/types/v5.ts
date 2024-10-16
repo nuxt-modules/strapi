@@ -16,7 +16,7 @@ export interface Strapi5RequestParams {
   pagination?: PaginationByOffset | PaginationByPage
   filters?: Record<string, unknown>
   publicationState?: 'live' | 'preview'
-  locale?: StrapiLocale
+  locale?: StrapiLocale | null
 }
 
 export interface StrapiSystemFields {

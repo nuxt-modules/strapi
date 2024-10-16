@@ -35,9 +35,9 @@ export interface ModuleOptions {
 
   /**
    * Strapi Version
-   * @default 'v4'
+   * @default 'v5'
    * @type string
-   * @example 'v3'
+   * @example 'v4'
    */
   version?: 'v5' | 'v4' | 'v3'
 
@@ -86,7 +86,7 @@ export default defineNuxtModule<ModuleOptions>({
     url: process.env.STRAPI_URL || 'http://localhost:1337',
     prefix: '/api',
     admin: '/admin',
-    version: 'v4',
+    version: 'v5',
     cookie: {},
     auth: {},
     cookieName: 'strapi_jwt',

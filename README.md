@@ -16,7 +16,7 @@
 ## Features
 
 - Nuxt 3 ready
-- Strapi v3 + v4 compatible
+- Strapi v5/v4/v3 compatible
 - Authentication support
 - RESTful methods
 - Handle errors with hooks

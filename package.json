@@ -32,7 +32,7 @@
     "release": "pnpm lint && standard-version && git push --follow-tags"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.13.2",
+    "@nuxt/kit": "^3.14.1592",
     "defu": "^6.1.4",
     "graphql": "^16.9.0",
     "qs": "^6.13.0",
@@ -43,7 +43,7 @@
     "@nuxt/eslint-config": "^0.6.1",
     "@nuxt/module-builder": "^0.8.4",
     "eslint": "^9.14.0",
-    "nuxt": "^3.13.2",
+    "nuxt": "^3.14.1592",
     "standard-version": "^9.5.0",
     "typescript": "^5.6.3",
     "vue-tsc": "^2.1.10"

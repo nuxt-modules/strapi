@@ -34,15 +34,15 @@
   "dependencies": {
     "@nuxt/kit": "^3.14.1592",
     "defu": "^6.1.4",
-    "graphql": "^16.9.0",
+    "graphql": "^16.10.0",
     "qs": "^6.13.1",
     "ufo": "^1.5.4"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^1.6.1",
-    "@nuxt/eslint-config": "^0.7.2",
+    "@nuxt/devtools": "^1.6.4",
+    "@nuxt/eslint-config": "^0.7.3",
     "@nuxt/module-builder": "^0.8.4",
-    "eslint": "^9.15.0",
+    "eslint": "^9.17.0",
     "nuxt": "^3.14.1592",
     "standard-version": "^9.5.0",
     "typescript": "^5.6.3",

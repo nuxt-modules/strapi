@@ -45,7 +45,7 @@
     "eslint": "^9.21.0",
     "nuxt": "^3.15.4",
     "standard-version": "^9.5.0",
-    "typescript": "^5.7.3",
+    "typescript": "^5.6.3",
     "vue-tsc": "^2.2.4"
   },
   "publishConfig": {
@@ -53,6 +53,6 @@
   },
   "resolutions": {
     "@nuxtjs/strapi": "workspace:*",
-    "typescript": "^5.7.3"
+    "typescript": "5.6.3"
   }
 }

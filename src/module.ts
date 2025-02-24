@@ -20,7 +20,7 @@ export interface ModuleOptions {
   url?: string
   /**
    * Strapi API TOKEN
-   * @default process.env.STRAPI_TOKEN'
+   * @default process.env.STRAPI_TOKEN
    * @type string
    */
   token?: string

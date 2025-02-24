@@ -18,6 +18,12 @@ export interface ModuleOptions {
    * @type string
    */
   url?: string
+  /**
+   * Strapi API TOKEN
+   * @default process.env.STRAPI_TOKEN
+   * @type string
+   */
+  token?: string
 
   /**
    * Strapi Prefix
@@ -84,6 +90,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   defaults: {
     url: process.env.STRAPI_URL || 'http://localhost:1337',
+    token: process.env.STRAPI_TOKEN,
     prefix: '/api',
     admin: '/admin',
     version: 'v5',

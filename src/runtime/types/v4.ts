@@ -31,10 +31,10 @@ export interface Strapi4RequestParams<T> {
   locale?: StrapiLocale
 }
 
-type Strapi4RequestPopulateParams<T> = Pick<Strapi4RequestParams<T>, 'fields' | 'sort' | 'populate' | 'filters'>
+export type Strapi4RequestPopulateParams<T> = Pick<Strapi4RequestParams<T>, 'fields' | 'sort' | 'populate' | 'filters'>
 
 // Unified type for Strapi populate, combining both string paths and nested objects.
-type Strapi4RequestPopulateParam<T> =
+export type Strapi4RequestPopulateParam<T> =
   | '*' // Populate all relations.
   | { [K in keyof T]?: // Nested object population.
     T[K] extends object

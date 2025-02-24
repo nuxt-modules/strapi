@@ -19,10 +19,10 @@ export interface Strapi5RequestParams<T> {
   locale?: StrapiLocale | null
 }
 
-type Strapi5RequestPopulateParams<T> = Pick<Strapi5RequestParams<T>, 'fields' | 'sort' | 'populate' | 'filters'>
+export type Strapi5RequestPopulateParams<T> = Pick<Strapi5RequestParams<T>, 'fields' | 'sort' | 'populate' | 'filters'>
 
 // Unified type for Strapi populate, combining both string paths and nested objects.
-type Strapi5RequestPopulateParam<T> =
+export type Strapi5RequestPopulateParam<T> =
   | '*' // Populate all relations.
   | { [K in keyof T]?: // Nested object population.
     T[K] extends object

@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/nuxt-modules/strapi/compare/v2.0.0...v2.1.0) (2025-06-26)
+
+
+### Features
+
+* **module:** add `token` option to be used as fallback ([#459](https://github.com/nuxt-modules/strapi/issues/459)) ([6eaa30f](https://github.com/nuxt-modules/strapi/commit/6eaa30fa9f447488a3209993e4e98e4a52cfea2d))
+* **useStrapi:** improve types for `v5` and `v4` ([#445](https://github.com/nuxt-modules/strapi/issues/445)) ([8838d55](https://github.com/nuxt-modules/strapi/commit/8838d555ffb3d171ed4568254f6fca1cfe0dd357))
+
+
+### Bug Fixes
+
+* **docs:** 2.setup.md ([#472](https://github.com/nuxt-modules/strapi/issues/472)) ([8c0b9c8](https://github.com/nuxt-modules/strapi/commit/8c0b9c801f33bc123af708db8b386c04ab7f5442))
+* **plugins:** infer type from `#app` ([3a4fa3e](https://github.com/nuxt-modules/strapi/commit/3a4fa3e23d12174ce9b82038012fd1a614dce379))
+* **useStrapiToken:** improve `nuxt._cookies` usage ([#471](https://github.com/nuxt-modules/strapi/issues/471)) ([1f35a22](https://github.com/nuxt-modules/strapi/commit/1f35a22d89f80f75ab382d9ef04c3ae25dc225a8))
+* **v5:** publicationState and its values have been renamed ([#451](https://github.com/nuxt-modules/strapi/issues/451)) ([9572f7b](https://github.com/nuxt-modules/strapi/commit/9572f7b6a94ea959d125f8a647874a96b4ae63f7))
+
 ## [2.0.0](https://github.com/nuxt-modules/strapi/compare/v1.12.0...v2.0.0) (2024-11-04)
 
 

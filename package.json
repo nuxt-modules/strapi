@@ -6,16 +6,20 @@
     "type": "git",
     "url": "git+https://github.com/nuxt-modules/strapi.git"
   },
+  "homepage": "https://strapi.nuxtjs.org",
   "license": "MIT",
+  "type": "module",
   "exports": {
-    ".": {
-      "types": "./dist/module.d.ts",
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+    ".": "./dist/module.mjs"
+  },
+  "main": "./dist/module.mjs",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/module.d.mts"
+      ]
     }
   },
-  "main": "./dist/module.cjs",
-  "types": "./dist/types.d.ts",
   "files": [
     "dist"
   ],
@@ -41,7 +45,7 @@
   "devDependencies": {
     "@nuxt/devtools": "^2.5.0",
     "@nuxt/eslint-config": "^1.4.1",
-    "@nuxt/module-builder": "^0.8.4",
+    "@nuxt/module-builder": "^1.0.1",
     "eslint": "^9.29.0",
     "nuxt": "^3.17.5",
     "standard-version": "^9.5.0",

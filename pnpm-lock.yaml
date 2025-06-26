@@ -13,7 +13,7 @@ importers:
   .:
     dependencies:
       '@nuxt/kit':
-        specifier: ^3.15.4
+        specifier: ^3.17.5
         version: 3.17.5(magicast@0.3.5)
       defu:
         specifier: ^6.1.4
@@ -41,7 +41,7 @@ importers:
         specifier: ^9.29.0
         version: 9.29.0(jiti@2.4.2)
       nuxt:
-        specifier: ^3.15.4
+        specifier: ^3.17.5
         version: 3.17.5(@parcel/watcher@2.5.1)(@types/node@24.0.4)(db0@0.3.2)(eslint@9.29.0(jiti@2.4.2))(ioredis@5.6.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@3.29.5)(terser@5.43.1)(typescript@5.6.3)(vite@6.3.5(@types/node@24.0.4)(jiti@2.4.2)(terser@5.43.1)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.6.3))(yaml@2.8.0)
       standard-version:
         specifier: ^9.5.0
@@ -74,7 +74,7 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0(magicast@0.3.5)
       nuxt:
-        specifier: ^3.15.4
+        specifier: ^3.17.5
         version: 3.17.5(@parcel/watcher@2.5.1)(@types/node@24.0.4)(db0@0.3.2)(eslint@9.29.0(jiti@2.4.2))(ioredis@5.6.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.44.1)(terser@5.43.1)(typescript@5.6.3)(vite@6.3.5(@types/node@24.0.4)(jiti@2.4.2)(terser@5.43.1)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.6.3))(yaml@2.8.0)
       nuxt-og-image:
         specifier: ^5.1.8

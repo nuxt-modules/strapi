@@ -41,7 +41,7 @@
   "devDependencies": {
     "@nuxt/devtools": "^2.5.0",
     "@nuxt/eslint-config": "^1.4.1",
-    "@nuxt/module-builder": "^0.8.4",
+    "@nuxt/module-builder": "^1.0.1",
     "eslint": "^9.29.0",
     "nuxt": "^3.17.5",
     "standard-version": "^9.5.0",

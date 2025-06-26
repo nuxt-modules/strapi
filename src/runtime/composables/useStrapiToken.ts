@@ -11,7 +11,7 @@ export const useStrapiToken = (): Ref<string | null> => {
   }
 
   const cookie = useCookie<string | null>(config.strapi.cookieName, config.strapi.cookie)
-  nuxt._cookies[config.strapi.cookieName] = cookie
+  nuxt._cookies[config.strapi.cookieName] = cookie.value
 
   if (!cookie.value && config.strapi.token) {
     return ref(config.strapi.token)

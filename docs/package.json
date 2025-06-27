@@ -1,5 +1,5 @@
 {
-  "name": "docus-starter",
+  "name": "nuxt-strapi-docs",
   "scripts": {
     "dev": "docus dev",
     "build": "docus build"

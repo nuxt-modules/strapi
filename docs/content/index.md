@@ -7,35 +7,24 @@ seo:
 ---
 
 ::u-page-hero{orientation="horizontal"}
+---
+links:
+  - label: Get started
+    to: /setup
+    trailingIcon: i-lucide-arrow-right
+  - label: Star on GitHub
+    to: https://github.com/nuxt-modules/strapi
+    target: _blank
+    icon: i-simple-icons-github
+    color: neutral
+    variant: subtle
+---
+
 #title
 Nuxt [Strapi]{.text-primary}
 
 #description
 Nuxt module for first class integration with the Strapi CMS.
-
-#links
-  :::u-button
-  ---
-  color: neutral
-  size: lg
-  icon: i-lucide-rocket
-  to: /setup
-  ---
-  #default{unwrap="p"}
-  Get started
-  :::
-
-  :::u-button
-  ---
-  color: white
-  icon: i-simple-icons-github
-  size: lg
-  to: https://github.com/nuxt-modules/strapi
-  target: _blank
-  ---
-  #default{unwrap="p"}
-  Star on GitHub
-  :::
 
 #default
   ```ts [nuxt.config.ts]

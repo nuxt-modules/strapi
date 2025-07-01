@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@import "@nuxt/ui-pro";
+
+@source "../../../content/**/*";
+@source "../../../node_modules/docus/app/**/*";
+
+@theme static {
+  --font-sans: 'Public Sans', sans-serif;
+}
+
+@theme {
+  --color-indigo-50: #ecf0ff;
+  --color-indigo-100: #dde4ff;
+  --color-indigo-200: #c2ccff;
+  --color-indigo-300: #9caaff;
+  --color-indigo-400: #757cff;
+  --color-indigo-500: #4945ff;
+  --color-indigo-600: #4936f5;
+  --color-indigo-700: #3e2ad8;
+  --color-indigo-800: #3325ae;
+  --color-indigo-900: #2d2689;
+  --color-indigo-950: #1c1650;
+}

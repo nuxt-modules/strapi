@@ -5,9 +5,9 @@
     "build": "docus build"
   },
   "dependencies": {
-    "docus": "latest",
-    "better-sqlite3": "^11.10.0",
-    "nuxt": "^3.17.3"
+    "docus": "^3.0.5",
+    "better-sqlite3": "^12.2.0",
+    "nuxt": "^3.17.5"
   },
   "devDependencies": {
     "@nuxtjs/plausible": "1.2.0"

@@ -34,17 +34,17 @@ export interface Strapi4RequestParams<T> {
 export type Strapi4RequestPopulateParams<T> = Pick<Strapi4RequestParams<T>, 'fields' | 'sort' | 'populate' | 'filters'>
 
 // Unified type for Strapi populate, combining both string paths and nested objects.
-export type Strapi4RequestPopulateParam<T> =
-  | '*' // Populate all relations.
-  | { [K in keyof T]?: // Nested object population.
-    T[K] extends object
-      ? T[K] extends Array<infer I>
-        ? Strapi4RequestPopulateParam<I> | Strapi4RequestPopulateParams<I>
-        : Strapi4RequestPopulateParam<T[K]> | Strapi4RequestPopulateParams<T[K]>
-      : never
-  }
-  | StrapiRequestParamPopulate<T> // String paths like "field.subfield".
-  | Array<StrapiRequestParamPopulate<T>> // Array of string paths.
+export type Strapi4RequestPopulateParam<T>
+  = | '*' // Populate all relations.
+    | { [K in keyof T]?: // Nested object population.
+      T[K] extends object
+        ? T[K] extends Array<infer I>
+          ? Strapi4RequestPopulateParam<I> | Strapi4RequestPopulateParams<I>
+          : Strapi4RequestPopulateParam<T[K]> | Strapi4RequestPopulateParams<T[K]>
+        : never
+    }
+    | StrapiRequestParamPopulate<T> // String paths like "field.subfield".
+    | Array<StrapiRequestParamPopulate<T>> // Array of string paths.
 
 export interface Strapi4ResponseData<T> {
   id: number

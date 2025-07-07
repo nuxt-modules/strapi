@@ -22,17 +22,17 @@ export interface Strapi5RequestParams<T> {
 export type Strapi5RequestPopulateParams<T> = Pick<Strapi5RequestParams<T>, 'fields' | 'sort' | 'populate' | 'filters'>
 
 // Unified type for Strapi populate, combining both string paths and nested objects.
-export type Strapi5RequestPopulateParam<T> =
-  | '*' // Populate all relations.
-  | { [K in keyof T]?: // Nested object population.
-    T[K] extends object
-      ? T[K] extends Array<infer I>
-        ? Strapi5RequestPopulateParam<I> | Strapi5RequestPopulateParams<I>
-        : Strapi5RequestPopulateParam<T[K]> | Strapi5RequestPopulateParams<T[K]>
-      : never
-  }
-  | StrapiRequestParamPopulate<T> // String paths like "field.subfield".
-  | Array<StrapiRequestParamPopulate<T>> // Array of string paths.
+export type Strapi5RequestPopulateParam<T>
+  = | '*' // Populate all relations.
+    | { [K in keyof T]?: // Nested object population.
+      T[K] extends object
+        ? T[K] extends Array<infer I>
+          ? Strapi5RequestPopulateParam<I> | Strapi5RequestPopulateParams<I>
+          : Strapi5RequestPopulateParam<T[K]> | Strapi5RequestPopulateParams<T[K]>
+        : never
+    }
+    | StrapiRequestParamPopulate<T> // String paths like "field.subfield".
+    | Array<StrapiRequestParamPopulate<T>> // Array of string paths.
 
 export interface StrapiSystemFields {
   documentId: string

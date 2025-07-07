@@ -18,11 +18,8 @@ import { useRuntimeConfig } from '#imports'
  * // Development: '/uploads/favicon.svg' → 'http://localhost:1337/uploads/favicon.svg'
  * // Production: 'https://domain.media.strapiapp.com/favicon.svg' → 'https://domain.media.strapiapp.com/favicon.svg'
  */
-export const useStrapiMedia = (path?: string | null): string | undefined => {
-  if (!path || typeof path !== 'string' || path.trim() === '') return undefined
-
+export const useStrapiMedia = (path: string): string => {
   try {
-    // If path is already an absolute URL, return as-is
     const url = new URL(path)
     return url.href
   } catch (_e) { // eslint-disable-line @typescript-eslint/no-unused-vars

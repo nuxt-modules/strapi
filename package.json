@@ -49,15 +49,14 @@
     "eslint": "^9.30.0",
     "nuxt": "^3.17.5",
     "standard-version": "^9.5.0",
-    "typescript": "^5.6.3",
+    "typescript": "^5.8.3",
     "vue-tsc": "^2.2.10"
   },
   "publishConfig": {
     "access": "public"
   },
   "resolutions": {
-    "@nuxtjs/strapi": "workspace:*",
-    "typescript": "5.6.3"
+    "@nuxtjs/strapi": "workspace:*"
   },
   "packageManager": "pnpm@10.12.4"
 }

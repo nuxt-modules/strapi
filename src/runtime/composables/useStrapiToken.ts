@@ -1,4 +1,5 @@
-import { ref, type Ref } from 'vue'
+import { ref } from 'vue'
+import type { Ref } from 'vue'
 import { useCookie, useNuxtApp, useRuntimeConfig } from '#imports'
 
 export const useStrapiToken = (): Ref<string | null> => {

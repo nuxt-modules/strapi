@@ -50,7 +50,7 @@
     "nuxt": "^3.17.6",
     "standard-version": "^9.5.0",
     "typescript": "^5.8.3",
-    "vue-tsc": "^2.2.12"
+    "vue-tsc": "^3.0.1"
   },
   "publishConfig": {
     "access": "public"

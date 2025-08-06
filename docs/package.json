@@ -1,13 +1,13 @@
 {
   "name": "nuxt-strapi-docs",
   "scripts": {
-    "dev": "docus dev",
-    "build": "docus build"
+    "dev": "nuxt dev",
+    "build": "nuxt build"
   },
   "dependencies": {
-    "docus": "^3.0.5",
+    "docus": "^4.0.3",
     "better-sqlite3": "^12.2.0",
-    "nuxt": "^4.0.0"
+    "nuxt": "^4.0.3"
   },
   "devDependencies": {
     "@nuxtjs/plausible": "1.2.0"

@@ -26,11 +26,11 @@
   "scripts": {
     "build": "nuxt-module-build build",
     "prepack": "pnpm build",
-    "dev": "nuxi dev playground",
-    "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground && nuxi prepare docs",
-    "docs": "docus dev docs",
-    "docs:build": "docus build docs",
+    "dev": "nuxt dev playground",
+    "dev:build": "nuxt build playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground && nuxt prepare docs --extends docus",
+    "docs": "nuxt dev docs",
+    "docs:build": "nuxt build docs",
     "lint": "eslint .",
     "typecheck": "vue-tsc --noEmit",
     "release": "pnpm lint && standard-version && git push --follow-tags"

@@ -5,7 +5,7 @@
     "build": "docus build"
   },
   "dependencies": {
-    "docus": "^3.0.5",
+    "docus": "^4.2.0",
     "better-sqlite3": "^12.2.0",
     "nuxt": "^4.0.0"
   },

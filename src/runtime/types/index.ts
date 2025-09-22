@@ -463,6 +463,7 @@ export type StrapiLocale
     | 'bo'
     | 'bo-CN'
     | 'bo-IN'
+    | 'tg-TJ'
     | 'ti'
     | 'ti-ER'
     | 'ti-ET'

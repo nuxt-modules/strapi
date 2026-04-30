@@ -1,5 +1,5 @@
 import type { FetchError, FetchOptions } from 'ofetch'
-import { stringify } from 'qs'
+import type { Strapi5Error } from '../types/v5'
 import type { Strapi4Error } from '../types/v4'
 import type { Strapi3Error } from '../types/v3'
 import { useStrapiUrl } from './useStrapiUrl'
@@ -8,6 +8,14 @@ import { useStrapiToken } from './useStrapiToken'
 import { useNuxtApp } from '#imports'
 
 const defaultErrors = (err: FetchError) => ({
+  v5: {
+    error: {
+      status: 500,
+      name: 'UnknownError',
+      message: err.message,
+      details: err
+    }
+  },
   v4: {
     error: {
       status: 500,
@@ -29,7 +37,10 @@ export const useStrapiClient = () => {
   const version = useStrapiVersion()
   const token = useStrapiToken()
 
-  return async <T> (url: string, fetchOptions: FetchOptions = {}): Promise<T> => {
+  return async <T>(
+    url: string,
+    fetchOptions: FetchOptions = {}
+  ): Promise<T> => {
     const headers: HeadersInit = {}
 
     if (token && token.value) {
@@ -38,7 +49,7 @@ export const useStrapiClient = () => {
 
     // Map params according to strapi v3 and v4 formats
     if (fetchOptions.params) {
-      const params = stringify(fetchOptions.params, { encodeValuesOnly: true })
+      const params = new URLSearchParams(fetchOptions.params).toString()
       if (params) {
         url = `${url}?${params}`
       }
@@ -57,7 +68,8 @@ export const useStrapiClient = () => {
         }
       })
     } catch (err) {
-      const e: Strapi4Error | Strapi3Error = err.data || defaultErrors(err)[version]
+      const e: Strapi5Error | Strapi4Error | Strapi3Error
+        = err.data || defaultErrors(err)[version]
 
       nuxt.hooks.callHook('strapi:error', e)
       throw e
@@ -67,6 +79,6 @@ export const useStrapiClient = () => {
 
 declare module '#app' {
   interface RuntimeNuxtHooks {
-    'strapi:error': (error: Strapi3Error | Strapi4Error) => void
+    'strapi:error': (error: Strapi3Error | Strapi4Error | Strapi5Error) => void
   }
 }

@@ -121,7 +121,6 @@ export default defineNuxtModule<ModuleOptions>({
     extendViteConfig((config) => {
       config.optimizeDeps = config.optimizeDeps || {}
       config.optimizeDeps.include = config.optimizeDeps.include || []
-      config.optimizeDeps.include.push('qs')
     })
 
     const adminUrl = joinURL(nuxt.options.runtimeConfig.public.strapi.url, nuxt.options.runtimeConfig.public.strapi.admin)

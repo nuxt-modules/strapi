@@ -36,6 +36,7 @@ export const useStrapiAuth = () => {
         user.value = await client('/users/me', { params: config.strapi.auth })
       } catch {
         setToken(null)
+        setUser(null)
       }
     }
 

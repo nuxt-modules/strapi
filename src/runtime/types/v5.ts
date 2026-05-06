@@ -1,6 +1,7 @@
 import type { MetaResponsePaginationByOffset, MetaResponsePaginationByPage, PaginationByOffset, PaginationByPage, StrapiLocale, StrapiRequestParamField, StrapiRequestParamPopulate, StrapiRequestParamSort, StrapiFilterRequestParam } from '.'
 
 export interface Strapi5Error {
+  data: null
   error: {
     status: number
     name: string
@@ -35,23 +36,15 @@ export type Strapi5RequestPopulateParam<T>
     | Array<StrapiRequestParamPopulate<T>> // Array of string paths.
 
 export interface StrapiSystemFields {
+  id: number
   documentId: string
+  createdAt: string
+  updatedAt: string
+  publishedAt: string | null
   locale?: string
 }
 
-export type Strapi5ResponseData<T> = T extends object
-  ? T extends Array<infer U>
-    ? Array<Strapi5ResponseData<U>> // Handle arrays
-    : T extends Record<string, unknown>
-      ? { [K in keyof T]: Strapi5ResponseData<T[K]> } & StrapiSystemFields
-      : T
-  : T
-
-// Pagination interface for optional pagination info in the meta field
-export interface StrapiResponseMetaPagination {
-  page: number
-  pageSize: number
-}
+export type Strapi5ResponseData<T> = T & StrapiSystemFields
 
 export interface Strapi5ResponseSingle<T> {
   data: Strapi5ResponseData<T>
@@ -64,6 +57,6 @@ export interface Strapi5ResponseMany<T> {
 }
 
 export interface Strapi5ResponseMeta {
-  pagination: MetaResponsePaginationByPage | MetaResponsePaginationByOffset
+  pagination?: MetaResponsePaginationByPage | MetaResponsePaginationByOffset
   [key: string]: unknown
 }

@@ -1,6 +1,8 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest'
 import { ref } from 'vue'
 
+import { useStrapiClient } from '../../src/runtime/composables/useStrapiClient'
+
 const mockToken = ref<string | null>('test-token')
 const mockFetch = vi.fn()
 const mockConfig = {
@@ -18,8 +20,6 @@ vi.mock('#imports', () => ({
 }))
 
 vi.stubGlobal('$fetch', mockFetch)
-
-import { useStrapiClient } from '../../src/runtime/composables/useStrapiClient'
 
 describe('useStrapiClient', () => {
   beforeEach(() => {
@@ -45,8 +45,7 @@ describe('useStrapiClient', () => {
   })
 
   it('throws v5 default error when fetch fails without data', async () => {
-    const fetchError = new Error('Network error')
-    ;(fetchError as any).data = undefined
+    const fetchError = Object.assign(new Error('Network error'), { data: undefined })
     mockFetch.mockRejectedValue(fetchError)
 
     const client = useStrapiClient()
@@ -62,8 +61,7 @@ describe('useStrapiClient', () => {
 
   it('throws err.data when fetch fails with data', async () => {
     const strapiError = { error: { status: 404, name: 'NotFound', message: 'Not found', details: {} } }
-    const fetchError = new Error('Not found')
-    ;(fetchError as any).data = strapiError
+    const fetchError = Object.assign(new Error('Not found'), { data: strapiError })
     mockFetch.mockRejectedValue(fetchError)
 
     const client = useStrapiClient()

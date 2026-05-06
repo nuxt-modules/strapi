@@ -1,9 +1,11 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest'
 import { ref } from 'vue'
 
+import { useStrapiAuth } from '../../src/runtime/composables/useStrapiAuth'
+
 const mockClient = vi.fn()
 const mockToken = ref<string | null>(null)
-const mockUser = ref<any>(null)
+const mockUser = ref<Record<string, unknown> | null>(null)
 const mockConfig = {
   strapi: { url: 'http://localhost:1337', prefix: '/api', version: 'v5', cookieName: 'strapi_jwt', cookie: {}, token: undefined, auth: {} }
 }
@@ -19,8 +21,6 @@ vi.mock('#imports', () => ({
 }))
 
 vi.stubGlobal('$fetch', mockClient)
-
-import { useStrapiAuth } from '../../src/runtime/composables/useStrapiAuth'
 
 describe('useStrapiAuth', () => {
   beforeEach(() => {

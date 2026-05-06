@@ -74,8 +74,9 @@ export const useStrapi = <T>(): StrapiV5Client<T> => {
    * Delete an entry
    *
    * @param  {string} contentType - Content type's name pluralized
-   * @param  {string|number} id - ID of entry to be deleted
-   * @returns Promise<T>
+   * @param  {string} documentId - ID of entry to be deleted
+   * @param  {object} params - Query parameters
+   * @returns Promise<void>
    */
   const _delete = (contentType: string, documentId?: string, params?: Pick<Strapi5RequestParams<never>, 'locale'>): Promise<void> => {
     const path = [contentType, documentId].filter(Boolean).join('/')

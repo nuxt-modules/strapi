@@ -1,5 +1,7 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest'
 
+import { useStrapiUrl } from '../../src/runtime/composables/useStrapiUrl'
+
 let mockVersion = 'v5'
 let mockUrl = 'http://localhost:1337'
 let mockPrefix = '/api'
@@ -9,8 +11,6 @@ vi.mock('#imports', () => ({
     public: { strapi: { version: mockVersion, url: mockUrl, prefix: mockPrefix } }
   })
 }))
-
-import { useStrapiUrl } from '../../src/runtime/composables/useStrapiUrl'
 
 describe('useStrapiUrl', () => {
   beforeEach(() => {

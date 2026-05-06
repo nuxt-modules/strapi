@@ -1,8 +1,10 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest'
 import { ref } from 'vue'
 
+import { useStrapiToken } from '../../src/runtime/composables/useStrapiToken'
+
 let mockCookieValue: string | null = null
-let mockNuxtApp: { _cookies: Record<string, any> }
+let mockNuxtApp: { _cookies: Record<string, unknown> }
 const mockConfig = {
   strapi: { cookieName: 'strapi_jwt', cookie: {}, token: undefined as string | undefined }
 }
@@ -12,8 +14,6 @@ vi.mock('#imports', () => ({
   useRuntimeConfig: () => ({ public: mockConfig }),
   useCookie: () => ref(mockCookieValue)
 }))
-
-import { useStrapiToken } from '../../src/runtime/composables/useStrapiToken'
 
 describe('useStrapiToken', () => {
   beforeEach(() => {

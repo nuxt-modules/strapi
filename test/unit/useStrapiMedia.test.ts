@@ -1,4 +1,6 @@
-import { describe, expect, it, vi, beforeEach } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
+
+import { useStrapiMedia } from '../../src/runtime/composables/useStrapiMedia'
 
 const mockConfig = {
   strapi: { url: 'http://localhost:1337', prefix: '/api', version: 'v5' }
@@ -7,8 +9,6 @@ const mockConfig = {
 vi.mock('#imports', () => ({
   useRuntimeConfig: () => ({ public: mockConfig })
 }))
-
-import { useStrapiMedia } from '../../src/runtime/composables/useStrapiMedia'
 
 describe('useStrapiMedia', () => {
   it('returns absolute https URLs as-is', () => {

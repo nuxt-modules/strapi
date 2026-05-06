@@ -18,5 +18,7 @@ export default defineNuxtConfig({
     url: 'http://localhost:1337'
     // To enable the devtools, read https://strapi.nuxtjs.org/devtools
     // devtools: true
-  }
+  },
+
+  compatibilityDate: '2026-05-06'
 })

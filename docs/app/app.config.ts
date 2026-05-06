@@ -8,18 +8,6 @@ export default defineAppConfig({
       neutral: 'slate'
     }
   },
-  uiPro: {
-    footer: {
-      slots: {
-        root: 'border-t border-default'
-      }
-    },
-    contentNavigation: {
-      defaultVariants: {
-        variant: 'pill'
-      }
-    }
-  },
   github: {
     rootDir: 'docs'
   },
@@ -32,14 +20,14 @@ export default defineAppConfig({
     bottom: {
       title: 'Community',
       links: [{
-        icon: 'i-simple-icons-nuxtdotjs',
+        icon: 'i-simple-icons-nuxt',
         label: 'Nuxt docs',
         to: 'https://nuxt.com',
         target: '_blank'
       }, {
         icon: 'i-simple-icons-strapi',
         label: 'Strapi docs',
-        to: 'https://docs.strapi.io/dev-docs/intro',
+        to: 'https://docs.strapi.io/',
         target: '_blank'
       }]
     }

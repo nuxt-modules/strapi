@@ -51,6 +51,7 @@ export const useStrapiClient = () => {
       if (params) {
         url = `${url}?${params}`
       }
+      fetchOptions = { ...fetchOptions }
       delete fetchOptions.params
     }
 

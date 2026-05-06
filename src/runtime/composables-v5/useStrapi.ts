@@ -3,10 +3,10 @@ import type { Strapi5ResponseSingle, Strapi5RequestParams, Strapi5ResponseMany }
 import { useStrapiClient } from '#imports'
 
 interface StrapiV5Client<T> {
-  find<F = T>(contentType: string, params?: Strapi5RequestParams<F>): Promise<Strapi5ResponseMany<F>>
-  findOne<F = T>(contentType: string, documentId?: string | Strapi5RequestParams<F>, params?: Strapi5RequestParams<F>): Promise<Strapi5ResponseSingle<F>>
-  create<F = T>(contentType: string, data: Partial<F>): Promise<Strapi5ResponseSingle<F>>
-  update<F = T>(contentType: string, documentId: string | Partial<F>, data?: Partial<F>): Promise<Strapi5ResponseSingle<F>>
+  find<F = T>(contentType: string, params?: Strapi5RequestParams<F>, fetchOptions?: FetchOptions): Promise<Strapi5ResponseMany<F>>
+  findOne<F = T>(contentType: string, documentId: string, params?: Omit<Strapi5RequestParams<F>, 'filter'>, fetchOptions?: FetchOptions): Promise<Strapi5ResponseSingle<F>>
+  create<F = T>(contentType: string, data: Partial<F>, params?: Omit<Strapi5RequestParams<F>, 'filter'>): Promise<Strapi5ResponseSingle<F>>
+  update<F = T>(contentType: string, documentId: string | Partial<F>, data?: Partial<F>, params?: Omit<Strapi5RequestParams<F>, 'filter'>): Promise<Strapi5ResponseSingle<F>>
   delete<F = T>(contentType: string, documentId?: string): Promise<Strapi5ResponseSingle<F>>
 }
 

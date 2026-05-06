@@ -1,13 +1,22 @@
 import type { FetchError, FetchOptions } from 'ofetch'
 import { stringify } from 'qs'
-import type { Strapi4Error } from '../types/v4'
 import type { Strapi3Error } from '../types/v3'
+import type { Strapi4Error } from '../types/v4'
+import type { Strapi5Error } from '../types/v5'
 import { useStrapiUrl } from './useStrapiUrl'
 import { useStrapiVersion } from './useStrapiVersion'
 import { useStrapiToken } from './useStrapiToken'
 import { useNuxtApp } from '#imports'
 
 const defaultErrors = (err: FetchError) => ({
+  v5: {
+    error: {
+      status: 500,
+      name: 'UnknownError',
+      message: err.message,
+      details: err
+    }
+  },
   v4: {
     error: {
       status: 500,
@@ -57,7 +66,7 @@ export const useStrapiClient = () => {
         }
       })
     } catch (err) {
-      const e: Strapi4Error | Strapi3Error = err.data || defaultErrors(err)[version]
+      const e: Strapi3Error | Strapi4Error | Strapi5Error = err.data || defaultErrors(err)[version]
 
       nuxt.hooks.callHook('strapi:error', e)
       throw e
@@ -67,6 +76,6 @@ export const useStrapiClient = () => {
 
 declare module '#app' {
   interface RuntimeNuxtHooks {
-    'strapi:error': (error: Strapi3Error | Strapi4Error) => void
+    'strapi:error': (error: Strapi3Error | Strapi4Error | Strapi5Error) => void
   }
 }

@@ -1,5 +1,5 @@
 import { defu } from 'defu'
-import { defineNuxtModule, addImportsDir, addPlugin, createResolver, extendViteConfig, logger } from '@nuxt/kit'
+import { defineNuxtModule, addImportsDir, addPlugin, createResolver, logger } from '@nuxt/kit'
 import type { CookieOptions } from 'nuxt/app'
 import { joinURL } from 'ufo'
 
@@ -117,12 +117,6 @@ export default defineNuxtModule<ModuleOptions>({
     // Add composables
     addImportsDir(resolve(runtimeDir, 'composables'))
     addImportsDir(resolve(runtimeDir, `composables-${options.version}`))
-
-    extendViteConfig((config) => {
-      config.optimizeDeps = config.optimizeDeps || {}
-      config.optimizeDeps.include = config.optimizeDeps.include || []
-      config.optimizeDeps.include.push('qs')
-    })
 
     const adminUrl = joinURL(nuxt.options.runtimeConfig.public.strapi.url, nuxt.options.runtimeConfig.public.strapi.admin)
     logger.info(`Strapi Admin URL: ${adminUrl}`)

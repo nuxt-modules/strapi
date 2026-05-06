@@ -1,8 +1,8 @@
 import type { FetchError, FetchOptions } from 'ofetch'
-import { stringify } from 'qs'
 import type { Strapi3Error } from '../types/v3'
 import type { Strapi4Error } from '../types/v4'
 import type { Strapi5Error } from '../types/v5'
+import { stringify } from '../utils/stringify'
 import { useStrapiUrl } from './useStrapiUrl'
 import { useStrapiVersion } from './useStrapiVersion'
 import { useStrapiToken } from './useStrapiToken'
@@ -47,7 +47,7 @@ export const useStrapiClient = () => {
 
     // Map params according to strapi v3 and v4 formats
     if (fetchOptions.params) {
-      const params = stringify(fetchOptions.params, { encodeValuesOnly: true })
+      const params = stringify(fetchOptions.params as Record<string, unknown>)
       if (params) {
         url = `${url}?${params}`
       }

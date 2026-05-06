@@ -20,9 +20,6 @@ importers:
       graphql:
         specifier: ^16.14.0
         version: 16.14.0
-      qs:
-        specifier: ^6.15.1
-        version: 6.15.1
       ufo:
         specifier: ^1.6.4
         version: 1.6.4

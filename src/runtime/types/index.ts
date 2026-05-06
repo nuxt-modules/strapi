@@ -602,6 +602,7 @@ export type StrapiPrimitiveOperators<T>
 // String-specific operators
 export type StrapiStringOperators
   = | { $eqi: string } // Equal (case-insensitive)
+    | { $nei: string } // Not equal (case-insensitive)
     | { $contains: string } // Contains a substring
     | { $notContains: string } // Does not contain a substring
     | { $containsi: string } // Contains a substring (case-insensitive)
@@ -610,6 +611,11 @@ export type StrapiStringOperators
     | { $startsWithi: string } // Starts with a substring (case-insensitive)
     | { $endsWith: string } // Ends with a substring
     | { $endsWithi: string } // Ends with a substring (case-insensitive)
+    | { $lt: string } // Less than (for dates)
+    | { $lte: string } // Less than or equal to (for dates)
+    | { $gt: string } // Greater than (for dates)
+    | { $gte: string } // Greater than or equal to (for dates)
+    | { $between: [string, string] } // Is between (for dates)
 
 // Numeric-specific operators
 export type StrapiNumberOperators

@@ -1,3 +1,4 @@
 typescript.includeWorkspace=true
 typescript.strict=false
-modules[]=@nuxt/devtools
+modules.0="@nuxt/devtools"
+setups.@nuxt/test-utils="4.0.3"

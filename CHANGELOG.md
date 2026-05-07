@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.2.0](https://github.com/nuxt-modules/strapi/compare/v2.1.1...v2.2.0) (2026-05-07)
+
+### Bug Fixes
+
+* add missing `fetchOptions` to `useStrapi` interface declarations ([1f4ea5a](https://github.com/nuxt-modules/strapi/commit/1f4ea5a5756c884bab28e9cd1ddea1d76c1afe9c)), closes [#415](https://github.com/nuxt-modules/strapi/issues/415)
+* **auth:** clear user state on failed `fetchUser` ([6dd1f02](https://github.com/nuxt-modules/strapi/commit/6dd1f02fe6bd7675cf01ea983a39d96efb17b547))
+* cache token ref in `useStrapiToken` when using static token ([18d0190](https://github.com/nuxt-modules/strapi/commit/18d0190b8aeca452b3592854951b7fd567a6b0cb)), closes [#498](https://github.com/nuxt-modules/strapi/issues/498)
+* **client:** avoid mutating caller's `fetchOptions` ([13ada46](https://github.com/nuxt-modules/strapi/commit/13ada46dd5e89f2793cd6c9aff3e8adb4625c0dd))
+* **plugin:** skip `fetchUser` when using static API token from config ([8ac794e](https://github.com/nuxt-modules/strapi/commit/8ac794eb654db641f881f53b3f44fd7f605c8b9f)), closes [#474](https://github.com/nuxt-modules/strapi/issues/474)
+* **types:** add missing filter operators ([d6aa6ba](https://github.com/nuxt-modules/strapi/commit/d6aa6ba67cdadd9bc6eb376b39f77969f0887ed6))
+* **types:** add missing locale code for Tajik lang ([#497](https://github.com/nuxt-modules/strapi/issues/497)) ([8c6dcfc](https://github.com/nuxt-modules/strapi/commit/8c6dcfc3532ec2714495b003fdfc34475c7337e6))
+* **useStrapiMedia:** return absolute URLs as-is ([4c55979](https://github.com/nuxt-modules/strapi/commit/4c559798682a6037cbffb7e6bd15bdbf1c862e66)), closes [#484](https://github.com/nuxt-modules/strapi/issues/484)
+* **v5:** align response types with Strapi v5 REST API ([755d616](https://github.com/nuxt-modules/strapi/commit/755d616d20877378386929f41debe3d2f1cdc2f1))
+* **v5:** fix composable types and `delete` behavior ([8b3e977](https://github.com/nuxt-modules/strapi/commit/8b3e9771469759bb8c5eead8284d625c1ece1f79))
+* **v5:** missing Strapi5Error in useStrapiClient ([#493](https://github.com/nuxt-modules/strapi/issues/493)) ([5127aeb](https://github.com/nuxt-modules/strapi/commit/5127aeb6e08aebb7a4b1ba4053a12b75e46d48c2))
+
 All notable changes to this project will be documented in this file. See [release-it](https://github.com/release-it/release-it) for commit guidelines.
 
 ### [2.1.1](https://github.com/nuxt-modules/strapi/compare/v2.1.0...v2.1.1) (2025-06-30)

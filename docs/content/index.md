@@ -48,7 +48,7 @@ Shipped with many features.
   icon: i-simple-icons-nuxtdotjs
   ---
   #title{unwrap="p"}
-  Nuxt 3 Ready
+  Nuxt Ready
   #description{unwrap="p"}
   Leverage our auto-imported [composables](/usage) and our [devtools](/devtools) integration.
   :::
@@ -58,7 +58,7 @@ Shipped with many features.
   icon: i-simple-icons-strapi
   ---
   #title{unwrap="p"}
-  Strapi v4/v3/v5
+  Strapi v5/v4/v3
   #description{unwrap="p"}
   Works with the different versions of Strapi.
   :::

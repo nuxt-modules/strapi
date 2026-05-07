@@ -6,6 +6,16 @@ export default defineAppConfig({
     colors: {
       primary: 'indigo',
       neutral: 'slate'
+    },
+    footer: {
+      slots: {
+        root: 'border-t border-default'
+      }
+    },
+    contentToc: {
+      defaultVariants: {
+        highlightVariant: 'circuit'
+      }
     }
   },
   github: {

@@ -34,7 +34,7 @@
     "test": "vitest run",
     "lint": "eslint .",
     "typecheck": "vue-tsc --noEmit",
-    "release": "pnpm lint && standard-version && git push --follow-tags"
+    "release": "release-it"
   },
   "dependencies": {
     "@nuxt/kit": "^4.4.4",
@@ -47,9 +47,10 @@
     "@nuxt/eslint-config": "^1.15.2",
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/test-utils": "^4.0.3",
+    "@release-it/conventional-changelog": "^11.0.0",
     "eslint": "^10.3.0",
     "nuxt": "^4.4.4",
-    "standard-version": "^9.5.0",
+    "release-it": "^20.0.1",
     "typescript": "^6.0.3",
     "vitest": "^4.1.5",
     "vue-tsc": "^3.2.8"

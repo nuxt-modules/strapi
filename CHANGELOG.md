@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [release-it](https://github.com/release-it/release-it) for commit guidelines.
 
 ### [2.1.1](https://github.com/nuxt-modules/strapi/compare/v2.1.0...v2.1.1) (2025-06-30)
 

@@ -48,12 +48,12 @@
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/test-utils": "^4.0.3",
     "@release-it/conventional-changelog": "^11.0.0",
-    "eslint": "^10.3.0",
+    "eslint": "^10.4.0",
     "nuxt": "^4.4.5",
     "release-it": "^20.0.1",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.5",
-    "vue-tsc": "^3.2.8"
+    "vitest": "^4.1.6",
+    "vue-tsc": "^3.3.0"
   },
   "publishConfig": {
     "access": "public"

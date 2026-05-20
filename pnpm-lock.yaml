@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@nuxtjs/strapi': workspace:*
-
 importers:
 
   .:
@@ -73,7 +70,7 @@ importers:
   playground:
     dependencies:
       '@nuxtjs/strapi':
-        specifier: workspace:*
+        specifier: latest
         version: link:..
       nuxt:
         specifier: latest

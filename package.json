@@ -58,8 +58,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "resolutions": {
-    "@nuxtjs/strapi": "workspace:*"
-  },
   "packageManager": "pnpm@11.1.3"
 }

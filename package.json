@@ -37,7 +37,7 @@
     "release": "release-it"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.4.5",
+    "@nuxt/kit": "^4.4.6",
     "defu": "^6.1.7",
     "graphql": "^16.14.0",
     "ufo": "^1.6.4"
@@ -49,7 +49,7 @@
     "@nuxt/test-utils": "^4.0.3",
     "@release-it/conventional-changelog": "^11.0.0",
     "eslint": "^10.4.0",
-    "nuxt": "^4.4.5",
+    "nuxt": "^4.4.6",
     "release-it": "^20.0.1",
     "typescript": "^6.0.3",
     "vitest": "^4.1.6",

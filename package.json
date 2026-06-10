@@ -39,7 +39,7 @@
   "dependencies": {
     "@nuxt/kit": "^4.4.6",
     "defu": "^6.1.7",
-    "graphql": "^16.14.0",
+    "graphql": "^16.14.1",
     "ufo": "^1.6.4"
   },
   "devDependencies": {
@@ -52,11 +52,11 @@
     "nuxt": "^4.4.6",
     "release-it": "^20.2.0",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.7",
-    "vue-tsc": "^3.3.3"
+    "vitest": "^4.1.8",
+    "vue-tsc": "^3.3.4"
   },
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@11.5.0"
+  "packageManager": "pnpm@11.5.2"
 }

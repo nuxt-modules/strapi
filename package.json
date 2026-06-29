@@ -48,9 +48,9 @@
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/test-utils": "^4.0.3",
     "@release-it/conventional-changelog": "^11.0.1",
-    "eslint": "^10.5.0",
+    "eslint": "^10.6.0",
     "nuxt": "^4.4.8",
-    "release-it": "^20.2.0",
+    "release-it": "^20.2.1",
     "typescript": "^6.0.3",
     "vitest": "^4.1.9",
     "vue-tsc": "^3.3.5"
@@ -58,5 +58,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@11.8.0"
+  "packageManager": "pnpm@11.9.0"
 }

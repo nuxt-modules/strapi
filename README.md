@@ -10,6 +10,9 @@
 
 [Strapi](https://strapi.io) module for [Nuxt](https://nuxt.com).
 
+> [!NOTE]
+> This module is a **client** for a Strapi backend. It connects your Nuxt app to a Strapi server you run and host separately. It does not install, run, or bundle Strapi itself.
+
 - [✨ &nbsp;Release Notes](https://github.com/nuxt-modules/strapi/releases)
 - [📖 &nbsp;Read the documentation](https://strapi.nuxtjs.org)
 

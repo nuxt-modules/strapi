@@ -43,20 +43,20 @@
     "ufo": "^1.6.4"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^3.3.1",
+    "@nuxt/devtools": "^3.4.0",
     "@nuxt/eslint-config": "^1.16.0",
     "@nuxt/module-builder": "^1.0.3",
-    "@nuxt/test-utils": "^4.0.3",
+    "@nuxt/test-utils": "^4.1.0",
     "@release-it/conventional-changelog": "^11.0.1",
     "eslint": "^10.8.0",
     "nuxt": "^4.5.1",
     "release-it": "^20.2.1",
     "typescript": "^6.0.3",
     "vitest": "^4.1.10",
-    "vue-tsc": "^3.3.8"
+    "vue-tsc": "^3.3.9"
   },
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@11.17.0"
+  "packageManager": "pnpm@11.18.0"
 }

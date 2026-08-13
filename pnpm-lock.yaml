@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@nuxt/kit':
-        specifier: ^4.5.1
+        specifier: ^4.5.2
         version: 4.5.2(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(unplugin@3.3.0(esbuild@0.28.0)(rolldown@1.2.3)(rollup@4.60.3)(vite@8.2.1(@types/node@25.6.0)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.46.2)(yaml@2.9.0)))
       defu:
         specifier: ^6.1.7
@@ -40,7 +40,7 @@ importers:
         specifier: ^10.8.1
         version: 10.8.1(jiti@2.7.0)(supports-color@10.2.2)
       nuxt:
-        specifier: ^4.5.1
+        specifier: ^4.5.2
         version: 4.5.2(3e2312540ea2b42c9d9c62b9884703ab)
       release-it:
         specifier: ^20.2.1
@@ -64,7 +64,7 @@ importers:
         specifier: ^5.12.3
         version: 5.12.3(a8017dcd43645189c0e446f8d5a86f32)
       nuxt:
-        specifier: ^4.5.1
+        specifier: ^4.5.2
         version: 4.5.2(6443012100586acf355f9e9735ff9877)
 
   playground:

@@ -53,10 +53,10 @@
     "release-it": "^20.2.1",
     "typescript": "^6.0.3",
     "vitest": "^4.1.10",
-    "vue-tsc": "^3.3.9"
+    "vue-tsc": "^3.3.10"
   },
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@11.20.0"
+  "packageManager": "pnpm@11.22.0"
 }

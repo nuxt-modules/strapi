@@ -1,6 +1,11 @@
 export default defineNuxtConfig({
   extends: ['docus'],
   css: ['~/assets/css/main.css'],
+  content: {
+    experimental: {
+      sqliteConnector: 'native'
+    }
+  },
   site: {
     name: 'Nuxt Strapi',
     url: 'https://strapi.nuxtjs.org'

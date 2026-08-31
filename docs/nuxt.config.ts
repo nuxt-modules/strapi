@@ -5,6 +5,11 @@ export default defineNuxtConfig({
     name: 'Nuxt Strapi',
     url: 'https://strapi.nuxtjs.org'
   },
+  content: {
+    experimental: {
+      sqliteConnector: 'native'
+    }
+  },
   llms: {
     domain: 'https://strapi.nuxtjs.org',
     title: 'Nuxt Strapi',

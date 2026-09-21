@@ -52,7 +52,7 @@
     "nuxt": "^4.5.2",
     "release-it": "^21.1.0",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.11",
+    "vitest": "^5.0.1",
     "vue-tsc": "^3.3.11"
   },
   "publishConfig": {

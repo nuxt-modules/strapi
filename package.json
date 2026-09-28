@@ -52,11 +52,11 @@
     "nuxt": "^4.5.2",
     "release-it": "^21.1.0",
     "typescript": "^6.0.3",
-    "vitest": "^5.0.1",
+    "vitest": "^5.0.2",
     "vue-tsc": "^3.3.11"
   },
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@12.5.1"
+  "packageManager": "pnpm@12.6.0"
 }

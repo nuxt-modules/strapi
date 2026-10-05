@@ -39,7 +39,7 @@
   "dependencies": {
     "@nuxt/kit": "^4.5.2",
     "defu": "^6.1.7",
-    "graphql": "^16.14.2",
+    "graphql": "^17.0.2",
     "ufo": "^1.6.4"
   },
   "devDependencies": {

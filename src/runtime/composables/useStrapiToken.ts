@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import type { Ref } from 'vue'
 import { useCookie, useNuxtApp, useRuntimeConfig } from '#imports'
 
@@ -6,19 +6,25 @@ export const useStrapiToken = (): Ref<string | null> => {
   const nuxt = useNuxtApp()
   const config = import.meta.server ? useRuntimeConfig() : useRuntimeConfig().public
 
-  nuxt._cookies = nuxt._cookies || {}
-  if (nuxt._cookies[config.strapi.cookieName]) {
-    return nuxt._cookies[config.strapi.cookieName] as Ref<string>
+  if (nuxt._strapiToken) {
+    return nuxt._strapiToken as Ref<string | null>
   }
 
   const cookie = useCookie<string | null>(config.strapi.cookieName, config.strapi.cookie)
+  // Static API token from config, used as fallback until a token is set explicitly
+  const fallback = ref<string | null>((!cookie.value && config.strapi.token) || null)
 
-  if (!cookie.value && config.strapi.token) {
-    const tokenRef = ref(config.strapi.token)
-    nuxt._cookies[config.strapi.cookieName] = tokenRef
-    return tokenRef
-  }
+  const token = computed<string | null>({
+    get: () => cookie.value || fallback.value,
+    set: (value) => {
+      fallback.value = null
 
-  nuxt._cookies[config.strapi.cookieName] = cookie
-  return cookie
+      if ((cookie.value ?? null) !== value) {
+        cookie.value = value
+      }
+    }
+  })
+
+  nuxt._strapiToken = token
+  return token
 }

@@ -1,0 +1,6 @@
+# tia triage config. Reference: https://github.com/benjamincanac/tia#configuration
+maintainers:
+  - benjamincanac
+package:
+  name: "@nuxtjs/strapi"
+help: https://strapi.nuxtjs.org

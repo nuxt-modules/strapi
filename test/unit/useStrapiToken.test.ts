@@ -1,10 +1,12 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest'
 import { ref } from 'vue'
+import type { Ref } from 'vue'
 
 import { useStrapiToken } from '../../src/runtime/composables/useStrapiToken'
 
 let mockCookieValue: string | null = null
-let mockNuxtApp: { _cookies: Record<string, unknown> }
+let mockCookie: Ref<string | null>
+let mockNuxtApp: Record<string, unknown>
 const mockConfig = {
   strapi: { cookieName: 'strapi_jwt', cookie: {}, token: undefined as string | undefined }
 }
@@ -12,14 +14,17 @@ const mockConfig = {
 vi.mock('#imports', () => ({
   useNuxtApp: () => mockNuxtApp,
   useRuntimeConfig: () => ({ public: mockConfig }),
-  useCookie: () => ref(mockCookieValue)
+  useCookie: () => {
+    mockCookie = ref(mockCookieValue)
+    return mockCookie
+  }
 }))
 
 describe('useStrapiToken', () => {
   beforeEach(() => {
     mockCookieValue = null
     mockConfig.strapi.token = undefined
-    mockNuxtApp = { _cookies: {} }
+    mockNuxtApp = {}
   })
 
   it('returns cookie ref when cookie has a value', () => {
@@ -58,5 +63,31 @@ describe('useStrapiToken', () => {
     const first = useStrapiToken()
     const second = useStrapiToken()
     expect(first).toBe(second)
+  })
+
+  it('writes to the cookie when a token is set over the static token', () => {
+    mockConfig.strapi.token = 'static-api-token'
+    const token = useStrapiToken()
+
+    token.value = 'user-jwt'
+
+    expect(mockCookie.value).toBe('user-jwt')
+    expect(useStrapiToken().value).toBe('user-jwt')
+  })
+
+  it('does not fall back to the static token once cleared', () => {
+    mockConfig.strapi.token = 'static-api-token'
+    const token = useStrapiToken()
+
+    token.value = null
+
+    expect(token.value).toBeNull()
+    expect(useStrapiToken().value).toBeNull()
+  })
+
+  it('does not use the nuxt cookies cache', () => {
+    mockCookieValue = 'jwt-value'
+    useStrapiToken()
+    expect(mockNuxtApp._cookies).toBeUndefined()
   })
 })

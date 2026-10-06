@@ -34,9 +34,14 @@ export const useStrapiAuth = () => {
     if (token.value) {
       try {
         user.value = await client('/users/me', { params: config.strapi.auth })
-      } catch {
-        setToken(null)
-        setUser(null)
+      } catch (e) {
+        // Only clear the session when Strapi rejects the token, not on network or server errors
+        const status = e?.error?.status ?? e?.statusCode
+
+        if (status === 401 || status === 403) {
+          setToken(null)
+          setUser(null)
+        }
       }
     }
 

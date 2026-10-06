@@ -48,16 +48,28 @@ describe('useStrapiAuth', () => {
       expect(mockClient).not.toHaveBeenCalled()
     })
 
-    it('clears both token and user on fetch error', async () => {
+    it.each([401, 403])('clears both token and user on %i', async (status) => {
       mockToken.value = 'expired-jwt'
       mockUser.value = { id: 1, username: 'john' }
-      mockClient.mockRejectedValue(new Error('401'))
+      mockClient.mockRejectedValue({ data: { data: null, error: { status, name: 'Error', message: 'Error', details: {} } } })
 
       const { fetchUser } = useStrapiAuth()
       await fetchUser()
 
       expect(mockToken.value).toBeNull()
       expect(mockUser.value).toBeNull()
+    })
+
+    it('keeps token and user when the request fails for another reason', async () => {
+      mockToken.value = 'valid-jwt'
+      mockUser.value = { id: 1, username: 'john' }
+      mockClient.mockRejectedValue(new Error('fetch failed'))
+
+      const { fetchUser } = useStrapiAuth()
+      await fetchUser()
+
+      expect(mockToken.value).toBe('valid-jwt')
+      expect(mockUser.value).toEqual({ id: 1, username: 'john' })
     })
   })
 

@@ -7,6 +7,6 @@
   },
   "dependencies": {
     "docus": "^5.13.0",
-    "nuxt": "^4.5.2"
+    "nuxt": "^4.6.0"
   }
 }

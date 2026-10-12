@@ -4,3 +4,5 @@ maintainers:
 package:
   name: "@nuxtjs/strapi"
 help: https://strapi.nuxtjs.org
+discord:
+  digestChannel: false

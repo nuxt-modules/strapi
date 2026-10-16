@@ -6,7 +6,7 @@ export const useStrapiMedia = (path: string): string => {
     return path
   }
 
-  const config = import.meta.server ? useRuntimeConfig() : useRuntimeConfig().public
+  const config = useRuntimeConfig().public
 
   return joinURL(config.strapi.url, path)
 }

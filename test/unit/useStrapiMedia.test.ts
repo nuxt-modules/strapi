@@ -3,11 +3,14 @@ import { describe, expect, it, vi } from 'vitest'
 import { useStrapiMedia } from '../../src/runtime/composables/useStrapiMedia'
 
 const mockConfig = {
-  strapi: { url: 'http://localhost:1337', prefix: '/api', version: 'v5' }
+  strapi: { url: 'http://localhost:1337', prefix: '/api', version: 'v5' },
+  public: {
+    strapi: { url: 'https://media.example.com', prefix: '/api', version: 'v5' }
+  }
 }
 
 vi.mock('#imports', () => ({
-  useRuntimeConfig: () => ({ public: mockConfig })
+  useRuntimeConfig: () => mockConfig
 }))
 
 describe('useStrapiMedia', () => {
@@ -26,13 +29,13 @@ describe('useStrapiMedia', () => {
       .toBe('https://domain.media.strapiapp.com/uploads/image.jpg')
   })
 
-  it('joins relative paths with strapi URL', () => {
+  it('joins relative paths with the public Strapi URL', () => {
     expect(useStrapiMedia('/uploads/image.jpg'))
-      .toBe('http://localhost:1337/uploads/image.jpg')
+      .toBe('https://media.example.com/uploads/image.jpg')
   })
 
   it('joins paths without leading slash', () => {
     expect(useStrapiMedia('uploads/image.jpg'))
-      .toBe('http://localhost:1337/uploads/image.jpg')
+      .toBe('https://media.example.com/uploads/image.jpg')
   })
 })

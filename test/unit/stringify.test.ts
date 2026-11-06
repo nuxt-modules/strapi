@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { stringify } from '../../src/runtime/utils/stringify'
+import type { Strapi4RequestParams, Strapi4ResponseSingle, Strapi4ResponseMany } from '../../src/runtime/types/v4'
 
 describe('stringify', () => {
   it('returns empty string for empty object', () => {
@@ -19,6 +20,24 @@ describe('stringify', () => {
   it('serializes deeply nested filters', () => {
     expect(stringify({ filters: { author: { name: { $contains: 'John' } } } }))
       .toBe('filters[author][name][$contains]=John')
+  })
+
+  it('serializes typed v4 relation filters without response wrappers', () => {
+    type Page = {
+      slug: string
+      parent?: Strapi4ResponseSingle<Page>
+      localizations?: Strapi4ResponseMany<Page>
+    }
+    const params = {
+      filters: {
+        parent: { slug: { $null: true } },
+        localizations: { slug: { $eq: 'home' } }
+      }
+    } satisfies Strapi4RequestParams<Page>
+
+    expect(stringify(params)).toBe(
+      'filters[parent][slug][$null]=true&filters[localizations][slug][$eq]=home'
+    )
   })
 
   it('serializes arrays with index notation', () => {

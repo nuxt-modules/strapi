@@ -21,12 +21,21 @@ export interface PaginationByOffset {
   withCount?: boolean
 }
 
+// Keep existing filters assignable while adding direct relation attribute filters.
+export type Strapi4FilterRequestParam<T> = StrapiFilterRequestParam<T> | Strapi4RelationFilterRequestParam<T>
+
+type Strapi4RelationFilterRequestParam<T> = T extends Strapi4Response<infer Attributes>
+  ? Strapi4FilterRequestParam<Attributes & { id: number }>
+  : T extends object
+    ? { [K in keyof T]?: Strapi4FilterRequestParam<T[K]> }
+    : never
+
 export interface Strapi4RequestParams<T> {
   fields?: Array<StrapiRequestParamField<T>>
   populate?: Strapi4RequestPopulateParam<T>
   sort?: StrapiRequestParamSort<T> | Array<StrapiRequestParamSort<T>>
   pagination?: PaginationByOffset | PaginationByPage
-  filters?: StrapiFilterRequestParam<T>
+  filters?: Strapi4FilterRequestParam<T>
   publicationState?: 'live' | 'preview'
   locale?: StrapiLocale
 }

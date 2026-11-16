@@ -51,7 +51,7 @@
     "eslint": "^10.14.0",
     "nuxt": "^4.6.4",
     "release-it": "^21.1.2",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vitest": "^5.1.0",
     "vue": "^3.5.45",
     "vue-tsc": "^3.3.14"
